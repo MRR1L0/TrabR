@@ -111,9 +111,6 @@ public class CadastroProduto extends javax.swing.JFrame {
     /**
      * @return the jLabel2
      */
-    public javax.swing.JLabel getjLabel2() {
-        return jLabel2;
-    }
 
     /**
      * @return the jLabel3
@@ -216,9 +213,6 @@ public class CadastroProduto extends javax.swing.JFrame {
     /**
      * @return the jPanel2
      */
-    public javax.swing.JPanel getjPanel2() {
-        return jPanel2;
-    }
 
     /**
      * @return the jPanel3

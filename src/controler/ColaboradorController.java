@@ -23,7 +23,7 @@ public class ColaboradorController implements ActionListener {
         CadastroColaborador cadastroColaborador = new CadastroColaborador();
         if (e.getSource() == cadastroColaborador.getBtnCancelar()) {
             cadastroColaborador.dispose();
-        } else if (e.getSource() == cadastroColaborador.getBtnSalvar()) {
+        } else if (e.getSource() == cadastroColaborador.getBtnCadastrar()) {
             cadastroColaborador.getTxtBairro().getText();
             cadastroColaborador.getTxtCEP().getText();
             cadastroColaborador.getTxtCidade().getText();

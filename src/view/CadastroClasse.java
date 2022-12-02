@@ -11,6 +11,55 @@ package view;
 public class CadastroClasse extends javax.swing.JFrame {
 
     /**
+     * @return the jLabel1
+     */
+    public javax.swing.JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    /**
+     * @param jLabel1 the jLabel1 to set
+     */
+    public void setjLabel1(javax.swing.JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    /**
+     * @return the jLabel2
+     */
+    public javax.swing.JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    /**
+     * @return the jNomeClasseProd
+     */
+    public javax.swing.JLabel getjNomeClasseProd() {
+        return jNomeClasseProd;
+    }
+
+    /**
+     * @return the jNomeClasseProd1
+     */
+    public javax.swing.JLabel getjNomeClasseProd1() {
+        return jNomeClasseProd1;
+    }
+
+    /**
+     * @return the jPanel1
+     */
+    public javax.swing.JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    /**
+     * @return the jPanel2
+     */
+    public javax.swing.JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    /**
      * @return the BtnCadastrar
      */
     public javax.swing.JButton getBtnCadastrar() {

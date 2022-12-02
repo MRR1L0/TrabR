@@ -23,7 +23,7 @@ public class ClienteController implements ActionListener {
         CadastroCliente cadastroCliente = new CadastroCliente();
         if (e.getSource() == cadastroCliente.getBtnCancelar()) {
             cadastroCliente.dispose();
-        } else if (e.getSource() == cadastroCliente.getBtnSalvar()) {
+        } else if (e.getSource() == cadastroCliente.getBtnCadastrar()) {
             cadastroCliente.getTxtBairro().getText();
             cadastroCliente.getTxtCep().getText();
             cadastroCliente.getTxtCidade().getText();

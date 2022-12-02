@@ -11,6 +11,41 @@ package view;
 public class CadastroColaborador extends javax.swing.JFrame {
 
     /**
+     * @param BtnCadastrar the BtnCadastrar to set
+     */
+    public void setBtnCadastrar(javax.swing.JButton BtnCadastrar) {
+        this.BtnCadastrar = BtnCadastrar;
+    }
+
+    /**
+     * @return the BtnCadastrar
+     */
+    public javax.swing.JButton getBtnCadastrar() {
+        return BtnCadastrar;
+    }
+
+    /**
+     * @return the TxtConfirmarSenha
+     */
+    public javax.swing.JPasswordField getTxtConfirmarSenha() {
+        return TxtConfirmarSenha;
+    }
+
+    /**
+     * @return the TxtDigitarSenha
+     */
+    public javax.swing.JPasswordField getTxtDigitarSenha() {
+        return TxtDigitarSenha;
+    }
+
+    /**
+     * @return the jTextArea1
+     */
+    public javax.swing.JTextArea getjTextArea1() {
+        return jTextArea1;
+    }
+
+    /**
      * @return the TxtSenha
      */
     public javax.swing.JPasswordField getTxtSenha() {
@@ -167,10 +202,6 @@ public class CadastroColaborador extends javax.swing.JFrame {
     /**
      * @return the pnCentro
      */
-    public javax.swing.JPanel getPnCentro() {
-        return pnCentro;
-    }
-
     /**
      * @return the pnEndereco
      */
@@ -188,10 +219,6 @@ public class CadastroColaborador extends javax.swing.JFrame {
     /**
      * @return the BtnSalvar
      */
-    public javax.swing.JButton getBtnSalvar() {
-        return BtnSalvar;
-    }
-
     /**
      * @return the TxtCEP
      */

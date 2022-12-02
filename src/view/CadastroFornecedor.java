@@ -76,16 +76,6 @@ public class CadastroFornecedor extends javax.swing.JFrame {
     /**
      * @return the TxtFone1
      */
-    public javax.swing.JFormattedTextField getTxtFone1() {
-        return TxtFone1;
-    }
-
-    /**
-     * @return the TxtFone2
-     */
-    public javax.swing.JFormattedTextField getTxtFone2() {
-        return TxtFone2;
-    }
 
     /**
      * @return the TxtInscEstadual
