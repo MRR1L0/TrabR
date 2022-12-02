@@ -85,102 +85,69 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="TxtDescricao" min="-2" pref="211" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabelDescri" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelBarraSaida" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelValorVenda" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelBarraEntrada" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelEstoqMinimo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="TxtEstoqueMinimo" min="-2" pref="124" max="-2" attributes="0"/>
-                                  <Component id="TxtBarraEntrada" min="-2" pref="124" max="-2" attributes="0"/>
-                                  <Component id="TxtBarraSaida" min="-2" pref="124" max="-2" attributes="0"/>
-                                  <Component id="jLabelId" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="TxtId" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
-                                  <Component id="jLabelValorCompra" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="TxtValorVenda" alignment="0" pref="124" max="32767" attributes="0"/>
-                                      <Component id="TxtValorCompra" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextFieldStatus" min="-2" pref="124" max="-2" attributes="0"/>
-                                  <Component id="jLabelStatus" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelEstoqMaximo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldStatus1" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                                  <Component id="jLabelUnidadeCompra" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelUnidadeVenda" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldBarraSaida" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldValorVenda" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                                  <Component id="jLabelFatorConversao" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldUnidadeVenda" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                                  <Component id="jLabelDataCadastro" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField1" min="-2" pref="124" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="TxtDescricao" min="-2" pref="387" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="BtnCadastrar" min="-2" pref="221" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabelDescri" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelBarraSaida" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelValorVenda" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelBarraEntrada" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelEstoqMinimo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelId" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="TxtId" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="jLabelValorCompra" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="TxtEstoqueMinimo" pref="185" max="32767" attributes="0"/>
+                          <Component id="TxtBarraEntrada" alignment="0" max="32767" attributes="0"/>
+                          <Component id="TxtBarraSaida" alignment="0" max="32767" attributes="0"/>
+                          <Component id="TxtValorCompra" alignment="0" max="32767" attributes="0"/>
+                          <Component id="TxtValorVenda" alignment="0" max="32767" attributes="0"/>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="BtnCancelar" min="-2" pref="221" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabelStatus" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelEstoqMaximo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelUnidadeCompra" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelUnidadeVenda" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelFatorConversao" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelDataCadastro" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldStatus" pref="185" max="32767" attributes="0"/>
+                          <Component id="jTextFieldStatus1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldBarraSaida" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldValorVenda" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldUnidadeVenda" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="BtnCadastrar" min="-2" pref="221" max="-2" attributes="0"/>
+              <EmptySpace pref="108" max="32767" attributes="0"/>
+              <Component id="BtnCancelar" min="-2" pref="221" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+          </Group>
+          <Component id="jPanel3" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabelId" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelStatus" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="TxtId" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldStatus" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jLabelEstoqMaximo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jTextFieldStatus1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelId" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <Component id="TxtId" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabelUnidadeCompra" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Component id="jTextFieldBarraSaida" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabelUnidadeVenda" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                      <Component id="jTextFieldValorVenda" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                      <Component id="jLabelFatorConversao" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jTextFieldUnidadeVenda" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabelDataCadastro" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
                       <Component id="jLabelEstoqMinimo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Component id="TxtEstoqueMinimo" min="-2" max="-2" attributes="0"/>
@@ -201,17 +168,42 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="TxtValorVenda" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jLabelStatus" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <Component id="jTextFieldStatus" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabelEstoqMaximo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jTextFieldStatus1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabelUnidadeCompra" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                      <Component id="jTextFieldBarraSaida" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabelUnidadeVenda" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                      <Component id="jTextFieldValorVenda" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      <Component id="jLabelFatorConversao" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jTextFieldUnidadeVenda" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabelDataCadastro" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Component id="jLabelDescri" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="TxtDescricao" min="-2" pref="38" max="-2" attributes="0"/>
-              <EmptySpace pref="66" max="32767" attributes="0"/>
+              <Component id="TxtDescricao" min="-2" pref="69" max="-2" attributes="0"/>
+              <EmptySpace pref="47" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="BtnCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BtnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -220,7 +212,7 @@
     <Container class="javax.swing.JPanel" name="jPanel3">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="99" red="33" type="rgb"/>
+          <Color blue="0" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
@@ -233,9 +225,9 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="242" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -244,7 +236,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="42" max="32767" attributes="0"/>
+                  <EmptySpace pref="48" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
