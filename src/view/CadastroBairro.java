@@ -89,7 +89,6 @@ public class CadastroBairro extends javax.swing.JFrame {
         });
 
         jLabel3.setText("Bairro");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(

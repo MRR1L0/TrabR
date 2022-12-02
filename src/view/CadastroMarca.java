@@ -90,7 +90,7 @@ public class CadastroMarca extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Descrição");
+        jLabel3.setText("Descrição*");
 
         TxtDescricao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
