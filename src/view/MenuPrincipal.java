@@ -4,6 +4,13 @@
  */
 package view;
 
+import controler.ClasseController;
+import controler.ClienteController;
+import controler.ColaboradorController;
+import controler.FornecedorController;
+import controler.MarcaController;
+import controler.ProdutoController;
+
 /**
  *
  * @author DEPAUL
@@ -28,13 +35,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItemBairro = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItemCadProduto = new javax.swing.JMenuItem();
         jMenuItemMarca = new javax.swing.JMenuItem();
         jMenuItemClasse = new javax.swing.JMenuItem();
+        jMenuItemCadProduto1 = new javax.swing.JMenuItem();
+        jMenuItemCadProduto2 = new javax.swing.JMenuItem();
+        jMenuItemCadProduto3 = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenuItemSair = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -45,33 +52,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jMenu1.setText("Cadastros");
-
-        jMenuItemBairro.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItemBairro.setText("Bairro");
-        jMenuItemBairro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemBairroActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItemBairro);
-
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem2.setText("Endereço");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
-
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_J, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem3.setText("Cidade");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem3);
         jMenu1.add(jSeparator1);
 
         jMenuItemCadProduto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -100,6 +80,33 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItemClasse);
+
+        jMenuItemCadProduto1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItemCadProduto1.setText("Cliente");
+        jMenuItemCadProduto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadProduto1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItemCadProduto1);
+
+        jMenuItemCadProduto2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItemCadProduto2.setText("Fornecedor");
+        jMenuItemCadProduto2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadProduto2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItemCadProduto2);
+
+        jMenuItemCadProduto3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItemCadProduto3.setText("Colaborador");
+        jMenuItemCadProduto3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadProduto3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItemCadProduto3);
         jMenu1.add(jSeparator2);
 
         jMenuItemSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -142,47 +149,47 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItemBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBairroActionPerformed
-        FoCadBairroFinal telaCadBairro = new FoCadBairroFinal();
-        ControllerCadBairro controllerCadBairro = new ControllerCadBairro(telaCadBairro) {};
-        telaCadBairro.setVisible(true);
-    }//GEN-LAST:event_jMenuItemBairroActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        FoCadastroEndereco telaCadEndereco = new FoCadastroEndereco();
-        ControllerCadEndereco controllerCadEndereco = new ControllerCadEndereco(telaCadEndereco) {};
-        telaCadEndereco.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        FoCadCidade telaCadCidade = new FoCadCidade();
-        ControllerCadCidade ControllerCadCidade = new ControllerCadCidade(telaCadCidade) {};
-        telaCadCidade.setVisible(true);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
-
     private void jMenuItemCadProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadProdutoActionPerformed
-        FoCadastroProduto telaCadProduto = new FoCadastroProduto();
-        ControllerCadastroProduto controllerCadastroProduto = new ControllerCadastroProduto(telaCadProduto) {};
+        CadastroProduto telaCadProduto = new CadastroProduto();
+        ProdutoController produtoController = new ProdutoController();
         telaCadProduto.setVisible(true);
     }//GEN-LAST:event_jMenuItemCadProdutoActionPerformed
 
     private void jMenuItemMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMarcaActionPerformed
         CadastroMarca telaCadMarca = new CadastroMarca();
-        ControllerCadMarca controllerCadMarca = new ControllerCadMarca(telaCadMarca) {};
+        MarcaController marcaController = new MarcaController();
         telaCadMarca.setVisible(true);
     }//GEN-LAST:event_jMenuItemMarcaActionPerformed
 
     private void jMenuItemClasseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClasseActionPerformed
-        FoCadastroClasse telaCadClasse = new FoCadastroClasse();
-        ControllerCadClasse controllerCadClasse = new ControllerCadClasse(telaCadClasse) {};
+        CadastroClasse telaCadClasse = new CadastroClasse();
+        ClasseController classeController = new ClasseController();
         telaCadClasse.setVisible(true);
     }//GEN-LAST:event_jMenuItemClasseActionPerformed
 
     private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
 
-        FormMenuPrincipal menu = new FormMenuPrincipal();
+        MenuPrincipal menu = new MenuPrincipal();
         menu.dispose();
     }//GEN-LAST:event_jMenuItemSairActionPerformed
+
+    private void jMenuItemCadProduto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadProduto1ActionPerformed
+        CadastroCliente cadastroCliente = new CadastroCliente();
+        ClienteController clienteController = new ClienteController();
+        cadastroCliente.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadProduto1ActionPerformed
+
+    private void jMenuItemCadProduto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadProduto2ActionPerformed
+        CadastroFornecedor cadastroFornecedor = new CadastroFornecedor();
+        FornecedorController fornecedorController = new FornecedorController();
+        cadastroFornecedor.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadProduto2ActionPerformed
+
+    private void jMenuItemCadProduto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadProduto3ActionPerformed
+        CadastroColaborador cadastroColaborador = new CadastroColaborador();
+        ColaboradorController colaboradorController = new ColaboradorController();
+        cadastroColaborador.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadProduto3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,10 +233,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItemBairro;
     private javax.swing.JMenuItem jMenuItemCadProduto;
+    private javax.swing.JMenuItem jMenuItemCadProduto1;
+    private javax.swing.JMenuItem jMenuItemCadProduto2;
+    private javax.swing.JMenuItem jMenuItemCadProduto3;
     private javax.swing.JMenuItem jMenuItemClasse;
     private javax.swing.JMenuItem jMenuItemMarca;
     private javax.swing.JMenuItem jMenuItemSair;
