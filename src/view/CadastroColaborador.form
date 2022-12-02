@@ -135,16 +135,16 @@
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="tfUsuario" min="-2" pref="221" max="-2" attributes="0"/>
+                          <Component id="TxtUsuario" min="-2" pref="221" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="pfSenha" alignment="0" min="-2" pref="221" max="-2" attributes="0"/>
+                              <Component id="TxtSenha" alignment="0" min="-2" pref="221" max="-2" attributes="0"/>
                               <Component id="jLabel9" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel7" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
-                              <Component id="pfSenhaConfirm" alignment="0" min="-2" pref="221" max="-2" attributes="0"/>
+                              <Component id="TxtSenhaConfirm" alignment="0" min="-2" pref="221" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="pnEndereco" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -196,9 +196,9 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="tfUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="pfSenha" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="pfSenhaConfirm" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TxtUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TxtSenha" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TxtSenhaConfirm" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="pnEndereco" min="-2" max="-2" attributes="0"/>
@@ -253,7 +253,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea1">
+            <Component class="javax.swing.JTextArea" name="TxtObservacao">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
@@ -266,7 +266,7 @@
             <Property name="text" type="java.lang.String" value="Confirme sua senha"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfUsuario">
+        <Component class="javax.swing.JTextField" name="TxtUsuario">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
@@ -278,9 +278,9 @@
             <Property name="text" type="java.lang.String" value="Digite uma senha"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="pfSenha">
+        <Component class="javax.swing.JPasswordField" name="TxtSenha">
         </Component>
-        <Component class="javax.swing.JPasswordField" name="pfSenhaConfirm">
+        <Component class="javax.swing.JPasswordField" name="TxtSenhaConfirm">
         </Component>
         <Container class="javax.swing.JPanel" name="pnEndereco">
           <Properties>
@@ -297,10 +297,10 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="tfBairro" alignment="0" pref="231" max="32767" attributes="0"/>
+                          <Component id="TxtBairro" alignment="0" pref="231" max="32767" attributes="0"/>
                           <Component id="jLabel12" alignment="0" min="-2" pref="43" max="-2" attributes="0"/>
                           <Component id="jLabel15" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
-                          <Component id="ftfCEP" alignment="0" max="32767" attributes="0"/>
+                          <Component id="TxtCEP" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -312,16 +312,16 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="tfLogradouro" alignment="0" pref="231" max="32767" attributes="0"/>
-                                      <Component id="tfEstado" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="TxtLogradouro" alignment="0" pref="231" max="32767" attributes="0"/>
+                                      <Component id="TxtEstado" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel16" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="tfCidade" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="TxtCidade" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel17" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
-                                  <Component id="tfComplemento" alignment="0" pref="231" max="32767" attributes="0"/>
+                                  <Component id="TxtComplemento" alignment="0" pref="231" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -340,9 +340,9 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tfEstado" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfCidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ftfCEP" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TxtEstado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TxtCidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TxtCEP" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -352,9 +352,9 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tfBairro" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfLogradouro" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfComplemento" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TxtBairro" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TxtLogradouro" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TxtComplemento" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="36" max="32767" attributes="0"/>
                   </Group>
@@ -372,7 +372,7 @@
                 <Property name="text" type="java.lang.String" value="Estado"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfEstado">
+            <Component class="javax.swing.JTextField" name="TxtEstado">
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -382,7 +382,7 @@
                 <Property name="text" type="java.lang.String" value="Cidade"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfCidade">
+            <Component class="javax.swing.JTextField" name="TxtCidade">
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -392,7 +392,7 @@
                 <Property name="text" type="java.lang.String" value="Bairro"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfBairro">
+            <Component class="javax.swing.JTextField" name="TxtBairro">
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -402,7 +402,7 @@
                 <Property name="text" type="java.lang.String" value="Logradouro"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfLogradouro">
+            <Component class="javax.swing.JTextField" name="TxtLogradouro">
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -412,9 +412,9 @@
                 <Property name="text" type="java.lang.String" value="Complemento"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfComplemento">
+            <Component class="javax.swing.JTextField" name="TxtComplemento">
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="ftfCEP">
+            <Component class="javax.swing.JFormattedTextField" name="TxtCEP">
             </Component>
           </SubComponents>
         </Container>

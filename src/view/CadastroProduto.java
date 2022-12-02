@@ -11,6 +11,279 @@ package view;
 public class CadastroProduto extends javax.swing.JFrame {
 
     /**
+     * @return the BtnCadastrar
+     */
+    public javax.swing.JButton getBtnCadastrar() {
+        return BtnCadastrar;
+    }
+
+    /**
+     * @return the BtnCancelar
+     */
+    public javax.swing.JButton getBtnCancelar() {
+        return BtnCancelar;
+    }
+
+    /**
+     * @return the TxtBarraEntrada
+     */
+    public javax.swing.JTextField getTxtBarraEntrada() {
+        return TxtBarraEntrada;
+    }
+
+    /**
+     * @return the TxtBarraSaida
+     */
+    public javax.swing.JTextField getTxtBarraSaida() {
+        return TxtBarraSaida;
+    }
+
+    /**
+     * @return the TxtDescricao
+     */
+    public javax.swing.JTextField getTxtDescricao() {
+        return TxtDescricao;
+    }
+
+    /**
+     * @return the TxtEstoqueMinimo
+     */
+    public javax.swing.JTextField getTxtEstoqueMinimo() {
+        return TxtEstoqueMinimo;
+    }
+
+    /**
+     * @return the TxtId
+     */
+    public javax.swing.JTextField getTxtId() {
+        return TxtId;
+    }
+
+    /**
+     * @return the TxtValorCompra
+     */
+    public javax.swing.JTextField getTxtValorCompra() {
+        return TxtValorCompra;
+    }
+
+    /**
+     * @return the TxtValorVenda
+     */
+    public javax.swing.JTextField getTxtValorVenda() {
+        return TxtValorVenda;
+    }
+
+    /**
+     * @return the btBuscar
+     */
+    public javax.swing.JButton getBtBuscar() {
+        return btBuscar;
+    }
+
+    /**
+     * @return the btCancelar
+     */
+    public javax.swing.JButton getBtCancelar() {
+        return btCancelar;
+    }
+
+    /**
+     * @return the btNovo
+     */
+    public javax.swing.JButton getBtNovo() {
+        return btNovo;
+    }
+
+    /**
+     * @return the btSair
+     */
+    public javax.swing.JButton getBtSair() {
+        return btSair;
+    }
+
+    /**
+     * @return the btSalvar
+     */
+    public javax.swing.JButton getBtSalvar() {
+        return btSalvar;
+    }
+
+    /**
+     * @return the jLabel2
+     */
+    public javax.swing.JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    /**
+     * @return the jLabel3
+     */
+    public javax.swing.JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    /**
+     * @return the jLabelBarraEntrada
+     */
+    public javax.swing.JLabel getjLabelBarraEntrada() {
+        return jLabelBarraEntrada;
+    }
+
+    /**
+     * @return the jLabelBarraSaida
+     */
+    public javax.swing.JLabel getjLabelBarraSaida() {
+        return jLabelBarraSaida;
+    }
+
+    /**
+     * @return the jLabelDataCadastro
+     */
+    public javax.swing.JLabel getjLabelDataCadastro() {
+        return jLabelDataCadastro;
+    }
+
+    /**
+     * @return the jLabelDescri
+     */
+    public javax.swing.JLabel getjLabelDescri() {
+        return jLabelDescri;
+    }
+
+    /**
+     * @return the jLabelEstoqMaximo
+     */
+    public javax.swing.JLabel getjLabelEstoqMaximo() {
+        return jLabelEstoqMaximo;
+    }
+
+    /**
+     * @return the jLabelEstoqMinimo
+     */
+    public javax.swing.JLabel getjLabelEstoqMinimo() {
+        return jLabelEstoqMinimo;
+    }
+
+    /**
+     * @return the jLabelFatorConversao
+     */
+    public javax.swing.JLabel getjLabelFatorConversao() {
+        return jLabelFatorConversao;
+    }
+
+    /**
+     * @return the jLabelId
+     */
+    public javax.swing.JLabel getjLabelId() {
+        return jLabelId;
+    }
+
+    /**
+     * @return the jLabelStatus
+     */
+    public javax.swing.JLabel getjLabelStatus() {
+        return jLabelStatus;
+    }
+
+    /**
+     * @return the jLabelUnidadeCompra
+     */
+    public javax.swing.JLabel getjLabelUnidadeCompra() {
+        return jLabelUnidadeCompra;
+    }
+
+    /**
+     * @return the jLabelUnidadeVenda
+     */
+    public javax.swing.JLabel getjLabelUnidadeVenda() {
+        return jLabelUnidadeVenda;
+    }
+
+    /**
+     * @return the jLabelValorCompra
+     */
+    public javax.swing.JLabel getjLabelValorCompra() {
+        return jLabelValorCompra;
+    }
+
+    /**
+     * @return the jLabelValorVenda
+     */
+    public javax.swing.JLabel getjLabelValorVenda() {
+        return jLabelValorVenda;
+    }
+
+    /**
+     * @return the jPanel2
+     */
+    public javax.swing.JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    /**
+     * @return the jPanel3
+     */
+    public javax.swing.JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    /**
+     * @return the jPanel4
+     */
+    public javax.swing.JPanel getjPanel4() {
+        return jPanel4;
+    }
+
+    /**
+     * @return the jTextField1
+     */
+    public javax.swing.JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    /**
+     * @return the jTextFieldBarraSaida
+     */
+    public javax.swing.JTextField getjTextFieldBarraSaida() {
+        return jTextFieldBarraSaida;
+    }
+
+    /**
+     * @return the jTextFieldStatus
+     */
+    public javax.swing.JTextField getjTextFieldStatus() {
+        return jTextFieldStatus;
+    }
+
+    /**
+     * @return the jTextFieldStatus1
+     */
+    public javax.swing.JTextField getjTextFieldStatus1() {
+        return jTextFieldStatus1;
+    }
+
+    /**
+     * @return the jTextFieldUnidadeCompra2
+     */
+    public javax.swing.JTextField getjTextFieldUnidadeCompra2() {
+        return jTextFieldUnidadeCompra2;
+    }
+
+    /**
+     * @return the jTextFieldUnidadeVenda
+     */
+    public javax.swing.JTextField getjTextFieldUnidadeVenda() {
+        return jTextFieldUnidadeVenda;
+    }
+
+    /**
+     * @return the jTextFieldValorVenda
+     */
+    public javax.swing.JTextField getjTextFieldValorVenda() {
+        return jTextFieldValorVenda;
+    }
+
+    /**
      * Creates new form CadastroProduto
      */
     public CadastroProduto() {

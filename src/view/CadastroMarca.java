@@ -11,6 +11,76 @@ package view;
 public class CadastroMarca extends javax.swing.JFrame {
 
     /**
+     * @return the BtnCadastrar
+     */
+    public javax.swing.JButton getBtnCadastrar() {
+        return BtnCadastrar;
+    }
+
+    /**
+     * @return the BtnCancelar
+     */
+    public javax.swing.JButton getBtnCancelar() {
+        return BtnCancelar;
+    }
+
+    /**
+     * @return the TxtDescricao
+     */
+    public javax.swing.JTextField getTxtDescricao() {
+        return TxtDescricao;
+    }
+
+    /**
+     * @return the TxtId
+     */
+    public javax.swing.JTextField getTxtId() {
+        return TxtId;
+    }
+
+    /**
+     * @return the TxtMarca
+     */
+    public javax.swing.JTextField getTxtMarca() {
+        return TxtMarca;
+    }
+
+    /**
+     * @return the jLabel1
+     */
+    public javax.swing.JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    /**
+     * @return the jLabel3
+     */
+    public javax.swing.JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    /**
+     * @return the jLabel4
+     */
+    public javax.swing.JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    /**
+     * @return the jLabelMarca
+     */
+    public javax.swing.JLabel getjLabelMarca() {
+        return jLabelMarca;
+    }
+
+    /**
+     * @return the jPanel1
+     */
+    public javax.swing.JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    /**
      * Creates new form CadastroMarca
      */
     public CadastroMarca() {

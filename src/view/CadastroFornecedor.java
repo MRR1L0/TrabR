@@ -11,6 +11,258 @@ package view;
 public class CadastroFornecedor extends javax.swing.JFrame {
 
     /**
+     * @return the BtnCadastrar
+     */
+    public javax.swing.JButton getBtnCadastrar() {
+        return BtnCadastrar;
+    }
+
+    /**
+     * @return the BtnCancelar
+     */
+    public javax.swing.JButton getBtnCancelar() {
+        return BtnCancelar;
+    }
+
+    /**
+     * @return the TxtBairro
+     */
+    public javax.swing.JTextField getTxtBairro() {
+        return TxtBairro;
+    }
+
+    /**
+     * @return the TxtCEP
+     */
+    public javax.swing.JFormattedTextField getTxtCEP() {
+        return TxtCEP;
+    }
+
+    /**
+     * @return the TxtCNPJ
+     */
+    public javax.swing.JFormattedTextField getTxtCNPJ() {
+        return TxtCNPJ;
+    }
+
+    /**
+     * @return the TxtCPF
+     */
+    public javax.swing.JFormattedTextField getTxtCPF() {
+        return TxtCPF;
+    }
+
+    /**
+     * @return the TxtCidade
+     */
+    public javax.swing.JTextField getTxtCidade() {
+        return TxtCidade;
+    }
+
+    /**
+     * @return the TxtComplemento
+     */
+    public javax.swing.JTextField getTxtComplemento() {
+        return TxtComplemento;
+    }
+
+    /**
+     * @return the TxtEstado
+     */
+    public javax.swing.JTextField getTxtEstado() {
+        return TxtEstado;
+    }
+
+    /**
+     * @return the TxtFone1
+     */
+    public javax.swing.JFormattedTextField getTxtFone1() {
+        return TxtFone1;
+    }
+
+    /**
+     * @return the TxtFone2
+     */
+    public javax.swing.JFormattedTextField getTxtFone2() {
+        return TxtFone2;
+    }
+
+    /**
+     * @return the TxtInscEstadual
+     */
+    public javax.swing.JTextField getTxtInscEstadual() {
+        return TxtInscEstadual;
+    }
+
+    /**
+     * @return the TxtLogradouro
+     */
+    public javax.swing.JLabel getTxtLogradouro() {
+        return TxtLogradouro;
+    }
+
+    /**
+     * @return the TxtNome
+     */
+    public javax.swing.JTextField getTxtNome() {
+        return TxtNome;
+    }
+
+    /**
+     * @return the TxtObservacao
+     */
+    public javax.swing.JTextArea getTxtObservacao() {
+        return TxtObservacao;
+    }
+
+    /**
+     * @return the TxtRG
+     */
+    public javax.swing.JFormattedTextField getTxtRG() {
+        return TxtRG;
+    }
+
+    /**
+     * @return the TxtRazaoSocial
+     */
+    public javax.swing.JTextField getTxtRazaoSocial() {
+        return TxtRazaoSocial;
+    }
+
+    /**
+     * @return the jLabel10
+     */
+    public javax.swing.JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    /**
+     * @return the jLabel11
+     */
+    public javax.swing.JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    /**
+     * @return the jLabel12
+     */
+    public javax.swing.JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    /**
+     * @return the jLabel13
+     */
+    public javax.swing.JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    /**
+     * @return the jLabel14
+     */
+    public javax.swing.JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    /**
+     * @return the jLabel15
+     */
+    public javax.swing.JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    /**
+     * @return the jLabel17
+     */
+    public javax.swing.JLabel getjLabel17() {
+        return jLabel17;
+    }
+
+    /**
+     * @return the jLabel2
+     */
+    public javax.swing.JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    /**
+     * @return the jLabel3
+     */
+    public javax.swing.JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    /**
+     * @return the jLabel4
+     */
+    public javax.swing.JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    /**
+     * @return the jLabel5
+     */
+    public javax.swing.JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    /**
+     * @return the jLabel6
+     */
+    public javax.swing.JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    /**
+     * @return the jLabel7
+     */
+    public javax.swing.JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    /**
+     * @return the jLabel8
+     */
+    public javax.swing.JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    /**
+     * @return the jLabel9
+     */
+    public javax.swing.JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    /**
+     * @return the jPanel2
+     */
+    public javax.swing.JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    /**
+     * @return the jScrollPane1
+     */
+    public javax.swing.JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    /**
+     * @return the pnEndereco
+     */
+    public javax.swing.JPanel getPnEndereco() {
+        return pnEndereco;
+    }
+
+    /**
+     * @return the tfLogradouro
+     */
+    public javax.swing.JTextField getTfLogradouro() {
+        return tfLogradouro;
+    }
+
+    /**
      * Creates new form CadastroFornecedor
      */
     public CadastroFornecedor() {
