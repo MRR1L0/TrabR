@@ -42,7 +42,7 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         TxtInscEstadual = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         TxtNome = new javax.swing.JTextField();
-        TxtFone2 = new javax.swing.JFormattedTextField();
+        TxtTelefone2 = new javax.swing.JFormattedTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         TxtObservacao = new javax.swing.JTextArea();
         jLabel11 = new javax.swing.JLabel();
@@ -61,7 +61,7 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         TxtCEP = new javax.swing.JFormattedTextField();
         BtnCadastrar = new javax.swing.JButton();
         BtnCancelar = new javax.swing.JButton();
-        TxtFone3 = new javax.swing.JFormattedTextField();
+        TxtTelefone1 = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,9 +110,9 @@ public class CadastroFornecedor extends javax.swing.JFrame {
             }
         });
 
-        TxtFone2.addActionListener(new java.awt.event.ActionListener() {
+        TxtTelefone2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtFone2ActionPerformed(evt);
+                TxtTelefone2ActionPerformed(evt);
             }
         });
 
@@ -219,9 +219,9 @@ public class CadastroFornecedor extends javax.swing.JFrame {
             }
         });
 
-        TxtFone3.addActionListener(new java.awt.event.ActionListener() {
+        TxtTelefone1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtFone3ActionPerformed(evt);
+                TxtTelefone1ActionPerformed(evt);
             }
         });
 
@@ -229,23 +229,12 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1)
                         .addGap(353, 353, 353))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pnEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(BtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(108, 108, 108)
-                                .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(216, 216, 216)))
-                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -268,17 +257,14 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(84, 84, 84)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(TxtFone3, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TxtTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(TxtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(TxtCNPJ)
-                                    .addComponent(TxtFone2)))
+                                    .addComponent(TxtTelefone2)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(TxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -288,8 +274,18 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                                     .addComponent(TxtRazaoSocial)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                                        .addGap(0, 71, Short.MAX_VALUE)))))
                         .addGap(29, 29, 29))))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(29, 29, 29))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(127, 127, 127)
+                .addComponent(BtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108)
+                .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -325,8 +321,8 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TxtInscEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TxtFone2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TxtFone3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtTelefone2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11)
                 .addGap(18, 18, 18)
@@ -343,9 +339,9 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TxtFone2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtFone2ActionPerformed
+    private void TxtTelefone2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTelefone2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtFone2ActionPerformed
+    }//GEN-LAST:event_TxtTelefone2ActionPerformed
 
     private void TxtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNomeActionPerformed
         // TODO add your handling code here:
@@ -363,9 +359,9 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtCidadeActionPerformed
 
-    private void TxtFone3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtFone3ActionPerformed
+    private void TxtTelefone1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTelefone1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtFone3ActionPerformed
+    }//GEN-LAST:event_TxtTelefone1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -412,14 +408,14 @@ public class CadastroFornecedor extends javax.swing.JFrame {
     private javax.swing.JTextField TxtCidade;
     private javax.swing.JTextField TxtComplemento;
     private javax.swing.JTextField TxtEstado;
-    private javax.swing.JFormattedTextField TxtFone2;
-    private javax.swing.JFormattedTextField TxtFone3;
     private javax.swing.JTextField TxtInscEstadual;
     private javax.swing.JLabel TxtLogradouro;
     private javax.swing.JTextField TxtNome;
     private javax.swing.JTextArea TxtObservacao;
     private javax.swing.JFormattedTextField TxtRG;
     private javax.swing.JTextField TxtRazaoSocial;
+    private javax.swing.JFormattedTextField TxtTelefone1;
+    private javax.swing.JFormattedTextField TxtTelefone2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
