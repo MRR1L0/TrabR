@@ -309,6 +309,7 @@ public class CadastroCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -381,10 +382,13 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         jLabel5.setText("RG");
 
+        buttonGroup1.add(rbNaoInformar);
         rbNaoInformar.setText("Não Informar");
 
+        buttonGroup1.add(rbMasculino);
         rbMasculino.setText("Masculino");
 
+        buttonGroup1.add(rbFeminino);
         rbFeminino.setText("Feminino");
 
         jLabel16.setText("Sexo");
@@ -650,6 +654,7 @@ public class CadastroCliente extends javax.swing.JFrame {
     private javax.swing.JTextField TxtRg;
     private javax.swing.JFormattedTextField TxtTelefone1;
     private javax.swing.JFormattedTextField TxtTelefone2;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
