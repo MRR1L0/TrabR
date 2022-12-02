@@ -11,6 +11,62 @@ package view;
 public class CadastroClasse extends javax.swing.JFrame {
 
     /**
+     * @return the BtnCadastrar
+     */
+    public javax.swing.JButton getBtnCadastrar() {
+        return BtnCadastrar;
+    }
+
+    /**
+     * @param BtnCadastrar the BtnCadastrar to set
+     */
+    public void setBtnCadastrar(javax.swing.JButton BtnCadastrar) {
+        this.BtnCadastrar = BtnCadastrar;
+    }
+
+    /**
+     * @return the BtnCancelar
+     */
+    public javax.swing.JButton getBtnCancelar() {
+        return BtnCancelar;
+    }
+
+    /**
+     * @param BtnCancelar the BtnCancelar to set
+     */
+    public void setBtnCancelar(javax.swing.JButton BtnCancelar) {
+        this.BtnCancelar = BtnCancelar;
+    }
+
+    /**
+     * @return the TxtDescricao
+     */
+    public javax.swing.JTextField getTxtDescricao() {
+        return TxtDescricao;
+    }
+
+    /**
+     * @param TxtDescricao the TxtDescricao to set
+     */
+    public void setTxtDescricao(javax.swing.JTextField TxtDescricao) {
+        this.TxtDescricao = TxtDescricao;
+    }
+
+    /**
+     * @return the TxtId
+     */
+    public javax.swing.JTextField getTxtId() {
+        return TxtId;
+    }
+
+    /**
+     * @param TxtId the TxtId to set
+     */
+    public void setTxtId(javax.swing.JTextField TxtId) {
+        this.TxtId = TxtId;
+    }
+
+    /**
      * Creates new form CadastroClasse
      */
     public CadastroClasse() {
