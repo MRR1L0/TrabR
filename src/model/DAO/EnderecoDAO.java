@@ -3,39 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
-
+package model.DAO;
 import java.util.List;
-import model.bo.CondicaoPgto;
+import model.bo.Endereco;
 
 /**
  *
  * @author aluno
  */
-public class CondicaoPgtoDAO implements InterfaceDAO<model.bo.CondicaoPgto> {
+public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco>{
 
     @Override
-    public CondicaoPgto create(CondicaoPgto t) {
+    public Endereco create(Endereco t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public CondicaoPgto update(CondicaoPgto t) {
+    public Endereco update(Endereco t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public CondicaoPgto search(CondicaoPgto t) {
+    public Endereco search(Endereco t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<CondicaoPgto> search() {
+    public List<Endereco> search() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void remove(CondicaoPgto t) {
+    public void remove(Endereco t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

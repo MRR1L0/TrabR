@@ -3,39 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
-
+package model.DAO;
 import java.util.List;
-import model.bo.Colaborador;
+import model.bo.CondicaoPgto;
 
 /**
  *
  * @author aluno
  */
-public class ColaboradorDAO implements InterfaceDAO<model.bo.Colaborador>{
+public class CondicaoPgtoDAO implements InterfaceDAO<model.bo.CondicaoPgto> {
 
     @Override
-    public Colaborador create(Colaborador t) {
+    public CondicaoPgto create(CondicaoPgto t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Colaborador update(Colaborador t) {
+    public CondicaoPgto update(CondicaoPgto t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Colaborador search(Colaborador t) {
+    public CondicaoPgto search(CondicaoPgto t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Colaborador> search() {
+    public List<CondicaoPgto> search() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void remove(Colaborador t) {
+    public void remove(CondicaoPgto t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

@@ -3,39 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
-
+package model.DAO;
 import java.util.List;
-import model.bo.Endereco;
+import model.bo.ItensCupomFiscal;
 
 /**
  *
  * @author aluno
  */
-public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco>{
+public class ItensCupomFiscalDAO implements InterfaceDAO<model.bo.ItensCupomFiscal> {
 
     @Override
-    public Endereco create(Endereco t) {
+    public ItensCupomFiscal create(ItensCupomFiscal t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Endereco update(Endereco t) {
+    public ItensCupomFiscal update(ItensCupomFiscal t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Endereco search(Endereco t) {
+    public ItensCupomFiscal search(ItensCupomFiscal t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Endereco> search() {
+    public List<ItensCupomFiscal> search() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void remove(Endereco t) {
+    public void remove(ItensCupomFiscal t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

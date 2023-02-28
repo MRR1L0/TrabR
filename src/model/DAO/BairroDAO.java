@@ -3,39 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
-
+package model.DAO;
 import java.util.List;
-import model.bo.CupomFiscal;
+import model.bo.Bairro;
 
 /**
  *
  * @author aluno
  */
-public class CupomFiscalDAO implements InterfaceDAO<model.bo.CupomFiscal> {
+public class BairroDAO implements InterfaceDAO<model.bo.Bairro>{
 
     @Override
-    public CupomFiscal create(CupomFiscal t) {
+    public Bairro create(Bairro t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public CupomFiscal update(CupomFiscal t) {
+    public Bairro update(Bairro t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public CupomFiscal search(CupomFiscal t) {
+    public Bairro search(Bairro t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<CupomFiscal> search() {
+    public List<Bairro> search() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void remove(CupomFiscal t) {
+    public void remove(Bairro t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

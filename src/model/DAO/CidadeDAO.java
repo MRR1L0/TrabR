@@ -3,39 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
-
+package model.DAO;
 import java.util.List;
-import model.bo.Bairro;
+import model.bo.Cidade;
 
 /**
  *
  * @author aluno
  */
-public class BairroDAO implements InterfaceDAO<model.bo.Bairro>{
+public class CidadeDAO implements InterfaceDAO<model.bo.Cidade>{
 
     @Override
-    public Bairro create(Bairro t) {
+    public Cidade create(Cidade t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Bairro update(Bairro t) {
+    public Cidade update(Cidade t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Bairro search(Bairro t) {
+    public Cidade search(Cidade t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Bairro> search() {
+    public List<Cidade> search() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void remove(Bairro t) {
+    public void remove(Cidade t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

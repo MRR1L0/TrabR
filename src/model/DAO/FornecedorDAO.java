@@ -3,39 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
-
+package model.DAO;
 import java.util.List;
-import model.bo.Pagamento;
+import model.bo.Fornecedor;
 
 /**
  *
  * @author aluno
  */
-public class PagamentoDAO implements InterfaceDAO<model.bo.Pagamento>{
+public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor>{
 
     @Override
-    public Pagamento create(Pagamento t) {
+    public Fornecedor create(Fornecedor t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Pagamento update(Pagamento t) {
+    public Fornecedor update(Fornecedor t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Pagamento search(Pagamento t) {
+    public Fornecedor search(Fornecedor t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Pagamento> search() {
+    public List<Fornecedor> search() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void remove(Pagamento t) {
+    public void remove(Fornecedor t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

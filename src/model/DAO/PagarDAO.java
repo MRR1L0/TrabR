@@ -3,39 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
-
+package model.DAO;
 import java.util.List;
-import model.bo.Marca;
+import model.bo.Pagar;
 
 /**
  *
  * @author aluno
  */
-public class MarcaDAO implements InterfaceDAO<model.bo.Marca>{
+public class PagarDAO implements InterfaceDAO<model.bo.Pagar> {
 
     @Override
-    public Marca create(Marca t) {
+    public Pagar create(Pagar t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Marca update(Marca t) {
+    public Pagar update(Pagar t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Marca search(Marca t) {
+    public Pagar search(Pagar t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Marca> search() {
+    public List<Pagar> search() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void remove(Marca t) {
+    public void remove(Pagar t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
