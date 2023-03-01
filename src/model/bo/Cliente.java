@@ -24,9 +24,6 @@ public class Cliente extends Pessoa {
         this.sexo = sexo;
     }
     
- 
-
-
     public String getCpf() {
         return cpf;
     }
