@@ -10,15 +10,9 @@ import java.sql.Connection;
 import model.bo.Bairro;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.ResultSet;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
-/**
- *
- * @author aluno
- */
 public class BairroDAO implements InterfaceDAO<model.bo.Bairro> {
 
     @Override
