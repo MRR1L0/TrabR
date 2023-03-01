@@ -32,5 +32,7 @@ public class Bairro {
         return this.getId() + ";" + this.getDescricao();
     }
     
+    public String sqlConection() {
+        return "descricao";    }
     
 }

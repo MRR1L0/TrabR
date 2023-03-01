@@ -61,7 +61,11 @@ public class ItensCompra {
     }
     
     
-
+public String sqlConection (){
+    return null;
+    
+    
+    }
     
     
     

@@ -38,6 +38,8 @@ public class Colaborador extends Pessoa {
         return super.toString()+ ";" + this.getLogin() + ";" + this.getSenha();
     }
     
-    
+     public String sqlConection() {
+        return super.sqlConection() + "login, senha";    
+    }
     
 }

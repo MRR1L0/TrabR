@@ -87,7 +87,11 @@ public class Pagamento {
     }
 
     
+    public String sqlConection (){
+    return null;
     
+    
+    }
     
 }
 

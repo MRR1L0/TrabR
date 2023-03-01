@@ -74,7 +74,10 @@ public class CondicaoPgto {
     }
     
     
+   public String sqlConection (){
+        return "descricaoCondicao, numeroParcelas, diasPrimeiraParcela, diasEntreParcela, status";
    
+   }
     
     
     

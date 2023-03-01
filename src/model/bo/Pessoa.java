@@ -119,6 +119,8 @@ public abstract class Pessoa {
                 + ";" + this.getObservacao() + ";" + this.getStatus() + ";" + this.getEndereco() ;
     }
     
-    
+     
+    public String sqlConection() {
+        return "nome, fone1, fone2, email, dtCadastro, complementoEndereco, observacao, status, endereco ,";    }
     
 }

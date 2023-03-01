@@ -69,6 +69,10 @@ public class ItensCupomFiscal {
         return "ItensCupomFiscal{" + "id=" + id + ", qtdProduto=" + qtdProduto + ", valorUnitarioProduto=" + valorUnitarioProduto + ", status=" + status + ", cupomFiscal=" + cupomFiscal + '}';
     }
    
-   
+   public String sqlConection (){
+    return null;
+    
+    
+    }
     
 }

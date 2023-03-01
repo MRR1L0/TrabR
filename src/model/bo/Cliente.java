@@ -64,6 +64,9 @@ public class Cliente extends Pessoa {
         return this.getCpf() + ";" + this.getRg() + ";" + this.getDtNascimento() + ";" + this.getSexo();
     }
     
-    
+     
+    public String sqlConection() {
+        return super.sqlConection() + "cpf, rg, dtNascimento, sexo";    
+    }
     
 }

@@ -85,7 +85,11 @@ public class Fornecedor extends Pessoa {
     }
     
     
+    public String sqlConection (){
+    return null;
     
+    
+    }
     
     
 }

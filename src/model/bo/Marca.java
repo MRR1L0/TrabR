@@ -33,7 +33,11 @@ public class Marca {
         return "Marca{" + "id=" + id + ", descricao=" + descricao + '}';
     }
     
+    public String sqlConection (){
+    return null;
     
+    
+    }
     
     
 }

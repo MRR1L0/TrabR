@@ -88,7 +88,11 @@ public class CupomFiscal {
     }
     
     
+    public String sqlConection (){
+    return null;
     
+    
+    }
     
     
     

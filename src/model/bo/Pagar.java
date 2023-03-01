@@ -88,7 +88,11 @@ public class Pagar {
     }
     
     
+    public String sqlConection (){
+    return null;
     
+    
+    }
     
 }
 

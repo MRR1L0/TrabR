@@ -32,11 +32,9 @@ public class Classe {
     public String toString() {
         return this.getId() + ";" + this.getDescricao();
     }
-    
-    
-    
-    
-    
-    
+   
+    public String sqlConection() {
+        return "descricao";    }
+   
     
 }

@@ -89,7 +89,11 @@ public class HistoricoMovimentacao {
     }
     
     
+    public String sqlConection (){
+    return null;
     
+    
+    }
     
     
     

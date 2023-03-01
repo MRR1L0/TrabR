@@ -111,11 +111,10 @@ public class Compra {
         return "Compra{" + "id=" + id + ", dataCompra=" + dataCompra + ", horaCompra=" + horaCompra + ", numeroNF=" + numeroNF + ", tipoNF=" + tipoNF + ", valorDesconto=" + valorDesconto + ", valorAcrescimo=" + valorAcrescimo + ", totalNF=" + totalNF + ", status=" + status + '}';
     }
     
-    
-    
-    
-    
-    
+      
+    public String sqlConection() {
+        return "dataCompra, horaCompra, numeroNF, tipoNF, valorDesconto, valorAcrescimo, totalNF, status, fornecedor, condicaoPgto, pagar";    
+    }
     
     
 }
