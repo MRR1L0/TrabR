@@ -34,10 +34,7 @@ public class Marca {
     }
     
     public String sqlConection (){
-    return null;
-    
-    
+        return "descricao";
     }
-    
-    
+      
 }

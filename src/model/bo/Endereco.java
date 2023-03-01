@@ -65,8 +65,8 @@ public class Endereco {
         return "Endereco{" + "id=" + id + ", logradouro=" + logradouro + ", cep=" + cep + ", bairro=" + bairro + ", cidade=" + cidade + '}';
     }
     
-public String sqlConection (){
-    return null;
+    public String sqlConection (){
+           return "logradouro, cep, bairro, cidade";
     
     
     }

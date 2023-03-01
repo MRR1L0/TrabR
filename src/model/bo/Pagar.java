@@ -89,7 +89,7 @@ public class Pagar {
     
     
     public String sqlConection (){
-    return null;
+        return "dataEmissao, horaEmissao, dataVencimento, valorPagar, status";
     
     
     }

@@ -86,7 +86,7 @@ public class Fornecedor extends Pessoa {
     
     
     public String sqlConection (){
-    return null;
+    return "cnpj,inscEstadual, contato, razaoSocial, cpf, rg";
     
     
     }

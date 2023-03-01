@@ -90,7 +90,7 @@ public class HistoricoMovimentacao {
     
     
     public String sqlConection (){
-    return null;
+    return "data, hora, tipo, qtd, status";
     
     
     }

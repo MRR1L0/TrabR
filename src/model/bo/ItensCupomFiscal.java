@@ -70,7 +70,7 @@ public class ItensCupomFiscal {
     }
    
    public String sqlConection (){
-    return null;
+         return "qtdProduto, valorUnitarioProduto, status, cupomFiscal, historicoMovimentacao";
     
     
     }

@@ -89,7 +89,7 @@ public class CupomFiscal {
     
     
     public String sqlConection (){
-    return null;
+    return "dataVenda, horaVenda,valorDesconto, valorAcrescimo, totalCupom, status";
     
     
     }

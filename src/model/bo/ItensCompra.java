@@ -61,14 +61,10 @@ public class ItensCompra {
     }
     
     
-public String sqlConection (){
-    return null;
-    
+    public String sqlConection (){
+        return "qtdProduto, valorUnitarioProduto, status, historicoMovimentacao, compra";
     
     }
-    
-    
-    
-    
+   
     
 }
