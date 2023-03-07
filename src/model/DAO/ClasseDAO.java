@@ -22,13 +22,12 @@ public class ClasseDAO implements InterfaceDAO<model.bo.Classe>{
     public Classe create(Classe t) {
                 Connection conexao = ConnectionFactory.getConnection();
         
-        var sqlExecutar = "INSERT INTO pagar "+t.sqlConection()+" values(?,?,?,?,?,?,?,?,?,?,?)";
+        var sqlExecutar = "INSERT INTO pagar "+t.sqlConection()+" values(?)";
   
         try {
             
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setString(0, t.getDescricao());
-            pstm.setString(1, String.valueOf(t.getValorCompra()));
             pstm.executeUpdate();
         
         } catch (SQLException ex) {

@@ -11,7 +11,6 @@ import model.bo.Bairro;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 
 public class BairroDAO implements InterfaceDAO<model.bo.Bairro> {
 

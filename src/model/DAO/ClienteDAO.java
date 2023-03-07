@@ -27,8 +27,19 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente>{
         try {
             
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getDescricao());
-            pstm.setString(1, String.valueOf(t.getValorCompra()));
+            pstm.setString(0, t.getNome());
+            pstm.setString(1, t.getFone1());
+            pstm.setString(2, t.getFone2());
+            pstm.setString(3, t.getEmail());
+            pstm.setString(4, String.valueOf(t.getDtCadastro()));
+            pstm.setString(5, t.getComplementoEndereco());
+            pstm.setString(6, t.getObservacao());
+            pstm.setString(7, String.valueOf(t.getStatus()));
+            pstm.setString(8, String.valueOf(t.getEndereco().toString()));
+            pstm.setString(9, t.getCpf());
+            pstm.setString(10, t.getRg());
+            pstm.setString(11, String.valueOf(t.getDtNascimento()));
+            pstm.setString(12, String.valueOf(t.getSexo()));
             pstm.executeUpdate();
         
         } catch (SQLException ex) {

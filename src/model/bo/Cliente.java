@@ -16,7 +16,8 @@ public class Cliente extends Pessoa {
         this.sexo = sexo;
     }
 
-    public Cliente(String cpf, String rg, Date dtNascimento, char sexo, int id, String nome, String fone1, String fone2, String email, Date dtCadastro, String complementoEndereco, String observacao, char status, Endereco endereco) {
+    public Cliente(String cpf, String rg, Date dtNascimento, char sexo, int id, String nome, String fone1, String fone2,
+     String email, Date dtCadastro, String complementoEndereco, String observacao, char status, Endereco endereco) {
         super(id, nome, fone1, fone2, email, dtCadastro, complementoEndereco, observacao, status, endereco);
         this.cpf = cpf;
         this.rg = rg;
