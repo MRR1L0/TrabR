@@ -92,9 +92,6 @@ public class CupomFiscal {
     return "dataVenda, horaVenda,valorDesconto, valorAcrescimo, totalCupom, status";
     
     
-    }
-    
-    
-    
+    }  
     
 }

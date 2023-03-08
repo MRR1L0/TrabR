@@ -28,8 +28,10 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco>{
         try {
             
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getDescricao());
-            pstm.setString(1, String.valueOf(t.getValorCompra()));
+            pstm.setString(0, t.getLogradouro());
+            pstm.setString(1, t.getCep());
+            pstm.setString(2, String.valueOf(t.getBairro()));
+            pstm.setString(3, String.valueOf(t.getCidade()));
             pstm.executeUpdate();
         
         } catch (SQLException ex) {

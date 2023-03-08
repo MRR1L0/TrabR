@@ -27,8 +27,18 @@ public class CompraDAO implements InterfaceDAO<model.bo.Compra>{
         try {
             
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getDescricao());
-            pstm.setString(1, String.valueOf(t.getValorCompra()));
+            pstm.setString(0, String.valueOf(t.getDataCompra()));
+            pstm.setString(1, String.valueOf(t.getHoraCompra()));
+            pstm.setString(2, String.valueOf(t.getNumeroNF()));
+            pstm.setString(3, t.getNumeroNF());
+            pstm.setString(4, t.getTipoNF());
+            pstm.setString(5, String.valueOf(t.getValorDesconto()));
+            pstm.setString(6, String.valueOf(t.getValorAcrescimo()));
+            pstm.setString(7, String.valueOf(t.getTotalNF()));
+            pstm.setString(8, String.valueOf(t.getStatus()));
+            pstm.setString(9, t.getFornecedor().toString());
+            pstm.setString(10, t.getCondicaoPgto().toString());
+            pstm.setString(11, t.getPagar().toString());
             pstm.executeUpdate();
         
         } catch (SQLException ex) {

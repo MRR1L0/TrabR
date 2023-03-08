@@ -27,8 +27,13 @@ public class CupomFiscalDAO implements InterfaceDAO<model.bo.CupomFiscal> {
         try {
             
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getDescricao());
-            pstm.setString(1, String.valueOf(t.getValorCompra()));
+            //pstm.setString(0, t.getDescricao());
+            pstm.setString(0, String.valueOf(t.getDataVenda()));
+            pstm.setString(1, t.getHoraVenda());
+            pstm.setString(2, String.valueOf(t.getValorDesconto()));
+            pstm.setString(3, String.valueOf(t.getValorAcrescimo()));
+            pstm.setString(4, String.valueOf(t.getTotalCupom()));
+            pstm.setString(5, String.valueOf(t.getStatus()));
             pstm.executeUpdate();
         
         } catch (SQLException ex) {

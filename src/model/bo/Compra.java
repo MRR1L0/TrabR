@@ -69,6 +69,26 @@ public class Compra {
     public String getTipoNF() {
         return tipoNF;
     }
+    
+    public Fornecedor getFornecedor() {
+        return this.fornecedor;
+    }
+
+    public CondicaoPgto getCondicaoPgto() {
+        return condicaoPgto;
+    }
+
+    public void setCondicaoPgto(CondicaoPgto condicaoPgto) {
+        this.condicaoPgto = condicaoPgto;
+    }
+
+    public Pagar getPagar() {
+        return pagar;
+    }
+
+    public void setPagar(Pagar pagar) {
+        this.pagar = pagar;
+    }
 
     public void setTipoNF(String tipoNF) {
         this.tipoNF = tipoNF;

@@ -27,8 +27,11 @@ public class CondicaoPgtoDAO implements InterfaceDAO<model.bo.CondicaoPgto> {
         try {
             
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getDescricao());
-            pstm.setString(1, String.valueOf(t.getValorCompra()));
+            pstm.setString(0, t.getDescricaoCondicao());
+            pstm.setString(1, String.valueOf(t.getNumeroParcelas()));
+            pstm.setString(2, String.valueOf(t.getDiasPrimeiraParcela()));
+            pstm.setString(3, String.valueOf(t.getDiasEntreParcela()));
+            pstm.setString(4, String.valueOf(t.getStatus()));
             pstm.executeUpdate();
         
         } catch (SQLException ex) {
