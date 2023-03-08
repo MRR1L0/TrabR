@@ -83,9 +83,11 @@ public class CupomFiscal {
     }
 
     @Override
-    public String toString() {
-        return "CupomFiscal{" + "id=" + id + ", dataVenda=" + dataVenda + ", horaVenda=" + horaVenda + ", valorDesconto=" + valorDesconto + ", valorAcrescimo=" + valorAcrescimo + ", totalCupom=" + totalCupom + ", status=" + status + '}';
-    }
+	public String toString() {
+		return "CupomFiscal [id=" + id + ", dataVenda=" + dataVenda + ", horaVenda=" + horaVenda + ", valorDesconto="
+				+ valorDesconto + ", valorAcrescimo=" + valorAcrescimo + ", totalCupom=" + totalCupom + ", status="
+				+ status + "]";
+	}
     
     
     public String sqlConection (){

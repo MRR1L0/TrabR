@@ -84,9 +84,10 @@ public class HistoricoMovimentacao {
     }
 
     @Override
-    public String toString() {
-        return "HistoricoMovimentacao{" + "id=" + id + ", data=" + data + ", hora=" + hora + ", tipo=" + tipo + ", qtd=" + qtd + ", status=" + status + '}';
-    }
+	public String toString() {
+		return "HistoricoMovimentacao [id=" + id + ", data=" + data + ", hora=" + hora + ", tipo=" + tipo + ", qtd="
+				+ qtd + ", status=" + status + "]";
+	}
     
     
     public String sqlConection (){

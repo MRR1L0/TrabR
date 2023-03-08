@@ -82,9 +82,11 @@ public class Pagamento {
     }
 
     @Override
-    public String toString() {
-        return "dataPagamento, horaPagamento, valorDesconto, valorAcrescimo, valorPago, status";
-    }
+	public String toString() {
+		return "Pagamento [id=" + id + ", dataPagamento=" + dataPagamento + ", horaPagamento=" + horaPagamento
+				+ ", valorDesconto=" + valorDesconto + ", valorAcrescimo=" + valorAcrescimo + ", valorPago=" + valorPago
+				+ ", status=" + status + "]";
+	}
 
     
     public String sqlConection (){

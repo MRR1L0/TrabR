@@ -23,7 +23,7 @@ public class ItensCupomFiscalDAO implements InterfaceDAO<model.bo.ItensCupomFisc
         
                 Connection conexao = ConnectionFactory.getConnection();
         
-        var sqlExecutar = "INSERT INTO pagar "+t.sqlConection()+" values(?,?,?,?,?,?,?,?,?,?,?)";
+        var sqlExecutar = "INSERT INTO itens_cupom_fiscal ("+t.sqlConection()+") values(?,?,?,?,?,?)";
   
         try {
             
@@ -38,12 +38,31 @@ public class ItensCupomFiscalDAO implements InterfaceDAO<model.bo.ItensCupomFisc
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return t;
     }
 
     @Override
     public ItensCupomFiscal update(ItensCupomFiscal t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "UPDATE itens_cupom_fiscal SET quantidade_produto= (?), valor_unitario = (?)"
+        		+ ", status = (?), cupom_fiscal = (?), historico_movimentacao = (?)"
+        		+ " WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(1, String.valueOf(t.getQtdProduto()));
+            pstm.setString(2, String.valueOf(t.getValorUnitarioProduto()));
+            pstm.setString(3, String.valueOf(t.getStatus()));
+            pstm.setString(4, String.valueOf(t.getCupomFiscal()));
+            pstm.setString(5, String.valueOf(t.getHistoricoMovimentacao()));
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
+        return t;
     }
 
     @Override
@@ -58,7 +77,17 @@ public class ItensCupomFiscalDAO implements InterfaceDAO<model.bo.ItensCupomFisc
 
     @Override
     public void remove(ItensCupomFiscal t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "DELETE FROM itens_cupom_fiscal WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
     }
     
 }

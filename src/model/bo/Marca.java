@@ -29,9 +29,9 @@ public class Marca {
     }
 
     @Override
-    public String toString() {
-        return "Marca{" + "id=" + id + ", descricao=" + descricao + '}';
-    }
+	public String toString() {
+		return "Marca [id=" + id + ", descricao=" + descricao + "]";
+	}
     
     public String sqlConection (){
         return "descricao";

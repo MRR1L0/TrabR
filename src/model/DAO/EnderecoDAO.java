@@ -23,7 +23,7 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco>{
         
                 Connection conexao = ConnectionFactory.getConnection();
         
-        var sqlExecutar = "INSERT INTO pagar "+t.sqlConection()+" values(?,?,?,?,?,?,?,?,?,?,?)";
+        var sqlExecutar = "INSERT INTO endereco ("+t.sqlConection()+") values(?,?,?,?)";
   
         try {
             
@@ -37,12 +37,29 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco>{
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return t;
     }
 
     @Override
     public Endereco update(Endereco t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "UPDATE endereco SET logradouro = (?), cep = (?), bairro = (?)"
+        		+ ", cidade = (?) WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(0, t.getLogradouro());
+            pstm.setString(1, t.getCep());
+            pstm.setString(2, String.valueOf(t.getBairro()));
+            pstm.setString(3, String.valueOf(t.getCidade()));
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
+        return t;
     }
 
     @Override
@@ -57,7 +74,17 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco>{
 
     @Override
     public void remove(Endereco t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "DELETE FROM endereco WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
     }
     
 }

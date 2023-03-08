@@ -22,7 +22,7 @@ public class ClasseDAO implements InterfaceDAO<model.bo.Classe>{
     public Classe create(Classe t) {
                 Connection conexao = ConnectionFactory.getConnection();
         
-        var sqlExecutar = "INSERT INTO pagar "+t.sqlConection()+" values(?)";
+        var sqlExecutar = "INSERT INTO classe ("+t.sqlConection()+") values(?)";
   
         try {
             
@@ -38,7 +38,19 @@ public class ClasseDAO implements InterfaceDAO<model.bo.Classe>{
 
     @Override
     public Classe update(Classe t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "UPDATE classe SET descricao = (?) WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(0, t.getDescricao());
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
+        return t;
     }
 
     @Override
@@ -53,7 +65,17 @@ public class ClasseDAO implements InterfaceDAO<model.bo.Classe>{
 
     @Override
     public void remove(Classe t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "DELETE FROM classe WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
     }
     
 }

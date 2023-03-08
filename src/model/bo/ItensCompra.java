@@ -64,9 +64,11 @@ public class ItensCompra {
     }
 
     @Override
-    public String toString() {
-        return "ItensCompra{" + "id=" + id + ", qtdProduto=" + qtdProduto + ", valorUnitarioProduto=" + valorUnitarioProduto + ", status=" + status + '}';
-    }
+	public String toString() {
+		return "ItensCompra [id=" + id + ", qtdProduto=" + qtdProduto + ", valorUnitarioProduto=" + valorUnitarioProduto
+				+ ", status=" + status + ", historicoMovimentacao=" + historicoMovimentacao + ", compra=" + compra
+				+ "]";
+	}
     
     
     public String sqlConection (){

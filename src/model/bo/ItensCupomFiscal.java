@@ -69,9 +69,11 @@ public class ItensCupomFiscal {
     }
 
     @Override
-    public String toString() {
-        return "ItensCupomFiscal{" + "id=" + id + ", qtdProduto=" + qtdProduto + ", valorUnitarioProduto=" + valorUnitarioProduto + ", status=" + status + ", cupomFiscal=" + cupomFiscal + '}';
-    }
+	public String toString() {
+		return "ItensCupomFiscal [id=" + id + ", qtdProduto=" + qtdProduto + ", valorUnitarioProduto="
+				+ valorUnitarioProduto + ", status=" + status + ", cupomFiscal=" + cupomFiscal
+				+ ", historicoMovimentacao=" + historicoMovimentacao + "]";
+	}
    
    public String sqlConection (){
          return "qtdProduto, valorUnitarioProduto, status, cupomFiscal, historicoMovimentacao";

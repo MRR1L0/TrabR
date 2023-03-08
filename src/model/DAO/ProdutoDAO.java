@@ -25,10 +25,9 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto>{
         
         Connection conexao = ConnectionFactory.getConnection();
         
-        var sqlExecutar = "INSERT INTO produto "+t.sqlConection()+" values(?,?,?,?,?,?,?,?,?,?,?)";
+        var sqlExecutar = "INSERT INTO produto ("+t.sqlConection()+") values(?,?,?,?,?,?,?,?,?,?,?)";
   
         try {
-            
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setString(0, t.getDescricao());
             pstm.setString(1, String.valueOf(t.getValorCompra()));
@@ -77,7 +76,6 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto>{
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
         return t;
     }
 
@@ -88,13 +86,13 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto>{
                 + ", fatorConversao, status, dataCadastro, barraEntrada"
                 + ", barraSaida, estoqueMinino, estoqueMaximo, marca, classe"
                 + " from produto where id = "+t.getId();
-        
+        var produto = new Produto();
         PreparedStatement pstm;
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             ResultSet rst = pstm.executeQuery();
 
-            var produto = new Produto();
+           
             produto.setId(rst.getInt("id"));
             produto.setDescricao(rst.getString("descricao"));
             produto.setValorCompra(rst.getFloat("valorCompra"));
@@ -111,11 +109,11 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto>{
             produto.setMarca(rst.getObject("marca", model.bo.Marca.class));
             produto.setClasse(rst.getObject("classe",model.bo.Classe.class));
             
-            return produto;
+            
         } catch (SQLException ex) {
-            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
+            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);     
         }
+        return produto;
     }
 
     @Override
@@ -125,11 +123,12 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto>{
                 + ", fatorConversao, status, dataCadastro, barraEntrada"
                 + ", barraSaida, estoqueMinino, estoqueMaximo, marca,classe from produto";
         
+        List<Produto> listaProduto = new ArrayList<>();
         PreparedStatement pstm;
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             ResultSet rst = pstm.executeQuery();
-            List<Produto> listaProduto = new ArrayList<>();
+           
             while(rst.next()){
                 var produto = new Produto();
                 produto.setId(rst.getInt("id"));
@@ -149,15 +148,25 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto>{
                 produto.setClasse(rst.getObject("classe",model.bo.Classe.class));
                 listaProduto.add(produto);
             }
-            return listaProduto;
+            
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
         }
+        return listaProduto;
     }
 
     @Override
     public void remove(Produto t) {
-      
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "DELETE FROM produto WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
     }   
 }

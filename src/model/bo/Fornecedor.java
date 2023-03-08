@@ -79,10 +79,10 @@ public class Fornecedor extends Pessoa {
     }
 
     @Override
-    public String toString() {
-        return this.getCnpj() + ";" + this.getInscEstadual() + ";" + this.getContato() + ";" + 
-                this.getRazaoSocial() + ";" + this.getCpf() + ";" + this.getRg();
-    }
+	public String toString() {
+		return "Fornecedor [cnpj=" + cnpj + ", inscEstadual=" + inscEstadual + ", contato=" + contato + ", razaoSocial="
+				+ razaoSocial + ", cpf=" + cpf + ", rg=" + rg + "]";
+	}
     
     
     public String sqlConection (){

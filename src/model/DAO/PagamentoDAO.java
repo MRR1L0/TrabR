@@ -22,28 +22,48 @@ public class PagamentoDAO implements InterfaceDAO<model.bo.Pagamento>{
     public Pagamento create(Pagamento t) {
                 Connection conexao = ConnectionFactory.getConnection();
         
-        var sqlExecutar = "INSERT INTO pagar "+t.sqlConection()+" values(?,?,?,?,?,?,?,?,?,?,?)";
+        var sqlExecutar = "INSERT INTO pagamento ("+t.sqlConection()+") values(?,?,?,?,?,?)";
   
         try {
             
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setString(0, String.valueOf(t.getDataPagamento()));
             pstm.setString(1, String.valueOf(t.getHoraPagamento()));
-            pstm.setString(0, String.valueOf(t.getValorDesconto()));
-            pstm.setString(1, String.valueOf(t.getValorAcrescimo()));
-            pstm.setString(0, String.valueOf(t.getValorPago()));
-            pstm.setString(1, String.valueOf(t.getStatus()));
+            pstm.setString(2, String.valueOf(t.getValorDesconto()));
+            pstm.setString(3, String.valueOf(t.getValorAcrescimo()));
+            pstm.setString(4, String.valueOf(t.getValorPago()));
+            pstm.setString(5, String.valueOf(t.getStatus()));
             pstm.executeUpdate();
         
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return t;
     }
 
     @Override
     public Pagamento update(Pagamento t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "UPDATE pagamento SET data_pagamento= (?), hora_pagamento = (?)"
+        		+ ", valor_desconto = (?), valor_acrescimo = (?), valor_pago = (?), status = (?)"
+        		+ " WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(0, String.valueOf(t.getDataPagamento()));
+            pstm.setString(1, String.valueOf(t.getHoraPagamento()));
+            pstm.setString(2, String.valueOf(t.getValorDesconto()));
+            pstm.setString(3, String.valueOf(t.getValorAcrescimo()));
+            pstm.setString(4, String.valueOf(t.getValorPago()));
+            pstm.setString(5, String.valueOf(t.getStatus()));
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
+        return t;
     }
 
     @Override
@@ -58,7 +78,17 @@ public class PagamentoDAO implements InterfaceDAO<model.bo.Pagamento>{
 
     @Override
     public void remove(Pagamento t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "DELETE FROM pagamento WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
     }
     
 }

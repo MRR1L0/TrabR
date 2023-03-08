@@ -163,9 +163,13 @@ public class Produto {
     }
 
     @Override
-    public String toString() {
-        return "Produto{" + "id=" + id + ", descricao=" + descricao + ", valorCompra=" + valorCompra + ", valorVenda=" + valorVenda + ", undCompra=" + undCompra + ", undVanda=" + undVanda + ", fatorConversao=" + fatorConversao + ", status=" + status + ", dataCadastro=" + dataCadastro + ", barraEntrada=" + barraEntrada + ", barraSaida=" + barraSaida + ", estoqueMinino=" + estoqueMinino + ", estoqueMaximo=" + estoqueMaximo + ", marca=" + marca + ", classe=" + classe + '}';
-    }
+	public String toString() {
+		return "Produto [id=" + id + ", descricao=" + descricao + ", valorCompra=" + valorCompra + ", valorVenda="
+				+ valorVenda + ", undCompra=" + undCompra + ", undVanda=" + undVanda + ", fatorConversao="
+				+ fatorConversao + ", status=" + status + ", dataCadastro=" + dataCadastro + ", barraEntrada="
+				+ barraEntrada + ", barraSaida=" + barraSaida + ", estoqueMinino=" + estoqueMinino + ", estoqueMaximo="
+				+ estoqueMaximo + ", marca=" + marca + ", classe=" + classe + "]";
+	}
 
 
     public String sqlConection(){
