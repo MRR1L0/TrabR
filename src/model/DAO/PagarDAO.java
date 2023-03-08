@@ -27,8 +27,11 @@ public class PagarDAO implements InterfaceDAO<model.bo.Pagar> {
         try {
             
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getDescricao());
-            pstm.setString(1, String.valueOf(t.getValorCompra()));
+            pstm.setString(0, String.valueOf(t.getDataEmissao()));
+            pstm.setString(1, String.valueOf(t.getHoraEmissao()));
+            pstm.setString(2, String.valueOf(t.getDataVencimento()));
+            pstm.setString(3, String.valueOf(t.getValorPagar()));
+            pstm.setString(4, String.valueOf(t.getStatus()));
             pstm.executeUpdate();
         
         } catch (SQLException ex) {

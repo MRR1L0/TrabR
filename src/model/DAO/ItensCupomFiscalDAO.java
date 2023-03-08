@@ -28,8 +28,11 @@ public class ItensCupomFiscalDAO implements InterfaceDAO<model.bo.ItensCupomFisc
         try {
             
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getDescricao());
-            pstm.setString(1, String.valueOf(t.getValorCompra()));
+            pstm.setString(1, String.valueOf(t.getQtdProduto()));
+            pstm.setString(2, String.valueOf(t.getValorUnitarioProduto()));
+            pstm.setString(3, String.valueOf(t.getStatus()));
+            pstm.setString(4, String.valueOf(t.getCupomFiscal()));
+            pstm.setString(5, String.valueOf(t.getHistoricoMovimentacao()));
             pstm.executeUpdate();
         
         } catch (SQLException ex) {

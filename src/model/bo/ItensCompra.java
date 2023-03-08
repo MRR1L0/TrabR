@@ -43,6 +43,14 @@ public class ItensCompra {
         return valorUnitarioProduto;
     }
 
+    public Compra getCompra() {
+        return compra;
+    }
+
+    public HistoricoMovimentacao getHistoricoMovimentacao() {
+        return historicoMovimentacao;
+    }
+
     public void setValorUnitarioProduto(float valorUnitarioProduto) {
         this.valorUnitarioProduto = valorUnitarioProduto;
     }

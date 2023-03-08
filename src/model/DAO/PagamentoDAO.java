@@ -27,8 +27,12 @@ public class PagamentoDAO implements InterfaceDAO<model.bo.Pagamento>{
         try {
             
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getDescricao());
-            pstm.setString(1, String.valueOf(t.getValorCompra()));
+            pstm.setString(0, String.valueOf(t.getDataPagamento()));
+            pstm.setString(1, String.valueOf(t.getHoraPagamento()));
+            pstm.setString(0, String.valueOf(t.getValorDesconto()));
+            pstm.setString(1, String.valueOf(t.getValorAcrescimo()));
+            pstm.setString(0, String.valueOf(t.getValorPago()));
+            pstm.setString(1, String.valueOf(t.getStatus()));
             pstm.executeUpdate();
         
         } catch (SQLException ex) {

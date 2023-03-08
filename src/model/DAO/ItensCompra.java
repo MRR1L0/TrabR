@@ -27,8 +27,11 @@ public class ItensCompra implements InterfaceDAO<model.bo.ItensCompra> {
         try {
             
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getDescricao());
-            pstm.setString(1, String.valueOf(t.getValorCompra()));
+            pstm.setString(1, String.valueOf(t.getQtdProduto()));
+            pstm.setString(1, String.valueOf(t.getValorUnitarioProduto()));
+            pstm.setString(1, String.valueOf(t.getStatus()));
+            pstm.setString(1, String.valueOf(t.getHistoricoMovimentacao()));
+            pstm.setString(1, String.valueOf(t.getCompra()));
             pstm.executeUpdate();
         
         } catch (SQLException ex) {

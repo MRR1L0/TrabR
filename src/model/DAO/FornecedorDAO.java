@@ -21,18 +21,30 @@ public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor>{
     @Override
     public Fornecedor create(Fornecedor t) {
         
-                Connection conexao = ConnectionFactory.getConnection();
+        Connection conexao = ConnectionFactory.getConnection();
         
         var sqlExecutar = "INSERT INTO pagar "+t.sqlConection()+" values(?,?,?,?,?,?,?,?,?,?,?)";
   
         try {
             
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getDescricao());
-            pstm.setString(1, String.valueOf(t.getValorCompra()));
-            pstm.executeUpdate();
-        
-        } catch (SQLException ex) {
+            pstm.setString(0, t.getNome());
+            pstm.setString(1, t.getFone1());
+            pstm.setString(2, t.getFone2());
+            pstm.setString(3, t.getEmail());
+            pstm.setString(4, String.valueOf(t.getDtCadastro()));
+            pstm.setString(5, t.getComplementoEndereco());
+            pstm.setString(6, t.getObservacao());
+            pstm.setString(7, String.valueOf(t.getStatus()));
+            pstm.setString(8, String.valueOf(t.getEndereco().toString()));
+            pstm.setString(9, t.getCnpj());
+            pstm.setString(10, t.getInscEstadual());
+            pstm.setString(11, t.getContato());
+            pstm.setString(12, t.getRazaoSocial());
+            pstm.setString(13, t.getCpf());
+            pstm.setString(13, t.getRg());
+
+        }catch(SQLException ex){
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -29,7 +29,6 @@ public class MarcaDAO implements InterfaceDAO<model.bo.Marca>{
             
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setString(0, t.getDescricao());
-            pstm.setString(1, String.valueOf(t.getValorCompra()));
             pstm.executeUpdate();
         
         } catch (SQLException ex) {

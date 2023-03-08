@@ -52,6 +52,10 @@ public class ItensCupomFiscal {
         return status;
     }
 
+    public HistoricoMovimentacao getHistoricoMovimentacao() {
+        return historicoMovimentacao;
+    }
+
     public void setStatus(char status) {
         this.status = status;
     }

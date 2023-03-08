@@ -83,7 +83,7 @@ public class Pagamento {
 
     @Override
     public String toString() {
-        return "Pagamento{" + "id=" + id + ", dataPagamento=" + dataPagamento + ", horaPagamento=" + horaPagamento + ", valorDesconto=" + valorDesconto + ", valorAcrescimo=" + valorAcrescimo + ", valorPago=" + valorPago + ", status=" + status + '}';
+        return "dataPagamento, horaPagamento, valorDesconto, valorAcrescimo, valorPago, status";
     }
 
     
