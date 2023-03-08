@@ -42,7 +42,7 @@ public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor>{
             pstm.setString(11, t.getContato());
             pstm.setString(12, t.getRazaoSocial());
             pstm.setString(13, t.getCpf());
-            pstm.setString(13, t.getRg());
+            pstm.setString(14, t.getRg());
 
         }catch(SQLException ex){
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
