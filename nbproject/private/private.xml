@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/aluno/TRoberval/TrabR/src/model/bo/Cliente.java</file>
             <file>file:/C:/Users/aluno/TRoberval/TrabR/src/model/DAO/ConnectionFactory.java</file>
-            <file>file:/C:/Users/aluno/TRoberval/TrabR/src/model/bo/Marca.java</file>
+            <file>file:/C:/Users/aluno/TRoberval/TrabR/src/model/DAO/CompraDAO.java</file>
+            <file>file:/C:/Users/aluno/TRoberval/TrabR/src/model/DAO/CupomFiscalDAO.java</file>
+            <file>file:/C:/Users/aluno/TRoberval/TrabR/src/model/DAO/EnderecoDAO.java</file>
             <file>file:/C:/Users/aluno/TRoberval/TrabR/src/model/DAO/BairroDAO.java</file>
-            <file>file:/C:/Users/aluno/TRoberval/TrabR/src/model/bo/Produto.java</file>
-            <file>file:/C:/Users/aluno/TRoberval/TrabR/src/model/bo/Bairro.java</file>
-            <file>file:/C:/Users/aluno/TRoberval/TrabR/src/model/DAO/ItensCupomFiscalDAO.java</file>
-            <file>file:/C:/Users/aluno/TRoberval/TrabR/src/model/bo/CondicaoPgto.java</file>
+            <file>file:/C:/Users/aluno/TRoberval/TrabR/src/model/DAO/CondicaoPgtoDAO.java</file>
+            <file>file:/C:/Users/aluno/TRoberval/TrabR/src/model/DAO/ClienteDAO.java</file>
         </group>
     </open-files>
 </project-private>
