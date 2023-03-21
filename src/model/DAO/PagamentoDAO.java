@@ -56,7 +56,7 @@ public class PagamentoDAO implements InterfaceDAO<Pagamento> {
             while (rst.next()) {
                 pagamento.setId(rst.getInt("id"));
                 pagamento.setDataPagamento(rst.getDate("dataPagamento"));
-                pagamento.setHoraPagamento(rst.getTime("horaPagamento"));
+                pagamento.setHoraPagamento(rst.getString("horaPagamento"));
                 pagamento.setValorDesconto(rst.getFloat("valorDesconto"));
                 pagamento.setValorAcrescimo(rst.getFloat("valorAcrescimo"));
                 pagamento.setValorPago(rst.getFloat("valorPago"));
@@ -92,7 +92,7 @@ public class PagamentoDAO implements InterfaceDAO<Pagamento> {
             while (rst.next()) {
                 pagamento.setId(rst.getInt("id"));
                 pagamento.setDataPagamento(rst.getDate("dataPagamento"));
-                pagamento.setHoraPagamento(rst.getTime("horaPagamento"));
+                pagamento.setHoraPagamento(rst.getString("horaPagamento"));
                 pagamento.setValorDesconto(rst.getFloat("valorDesconto"));
                 pagamento.setValorAcrescimo(rst.getFloat("valorAcrescimo"));
                 pagamento.setValorPago(rst.getFloat("valorPago"));
@@ -129,7 +129,7 @@ public class PagamentoDAO implements InterfaceDAO<Pagamento> {
                 Pagamento pagamento = new Pagamento();
                 pagamento.setId(rst.getInt("id"));
                 pagamento.setDataPagamento(rst.getDate("dataPagamento"));
-                pagamento.setHoraPagamento(rst.getTime("horaPagamento"));
+                pagamento.setHoraPagamento(rst.getString("horaPagamento"));
                 pagamento.setValorDesconto(rst.getFloat("valorDesconto"));
                 pagamento.setValorAcrescimo(rst.getFloat("valorAcrescimo"));
                 pagamento.setValorPago(rst.getFloat("valorPago"));

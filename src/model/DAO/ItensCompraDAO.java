@@ -22,7 +22,7 @@ public class ItensCompraDAO implements InterfaceDAO<ItensCompra> {
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setFloat(1, objeto.getQtdProduto());
-            pstm.setFloat(2, objeto.getValorUnitario());
+            pstm.setFloat(2, objeto.getValorUnitarioProduto());
             pstm.setString(3, objeto.getStatus());
             pstm.executeUpdate();
         } catch (SQLException ex) {
@@ -51,7 +51,7 @@ public class ItensCompraDAO implements InterfaceDAO<ItensCompra> {
             while (rst.next()) {
                 itensCompra.setId(rst.getInt("id"));
                 itensCompra.setQtdProduto(rst.getFloat("qtdProduto"));
-                itensCompra.setValorUnitario(rst.getFloat("valorUnitarioProduto"));
+                itensCompra.setValorUnitarioProduto(rst.getFloat("valorUnitarioProduto"));
                 itensCompra.setStatus(rst.getString("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
@@ -83,7 +83,7 @@ public class ItensCompraDAO implements InterfaceDAO<ItensCompra> {
             while (rst.next()) {
                 itensCompra.setId(rst.getInt("id"));
                 itensCompra.setQtdProduto(rst.getFloat("qtdProduto"));
-                itensCompra.setValorUnitario(rst.getFloat("valorUnitarioProduto"));
+                itensCompra.setValorUnitarioProduto(rst.getFloat("valorUnitarioProduto"));
                 itensCompra.setStatus(rst.getString("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
@@ -115,7 +115,7 @@ public class ItensCompraDAO implements InterfaceDAO<ItensCompra> {
             while (rst.next()) {
                 ItensCompra itensCompra = new ItensCompra();
                 itensCompra.setQtdProduto(rst.getFloat("qtdProduto"));
-                itensCompra.setValorUnitario(rst.getFloat("valorUnitarioProduto"));
+                itensCompra.setValorUnitarioProduto(rst.getFloat("valorUnitarioProduto"));
                 itensCompra.setStatus(rst.getString("status"));
                 listaItensCompra.add(itensCompra);
             }
@@ -139,7 +139,7 @@ public class ItensCompraDAO implements InterfaceDAO<ItensCompra> {
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setFloat(1, objeto.getQtdProduto());
-            pstm.setFloat(2, objeto.getValorUnitario());
+            pstm.setFloat(2, objeto.getValorUnitarioProduto());
             pstm.setString(3, objeto.getStatus());
             pstm.setInt(4, objeto.getId());
             pstm.executeUpdate();
