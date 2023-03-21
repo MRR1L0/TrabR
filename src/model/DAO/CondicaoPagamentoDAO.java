@@ -6,12 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import model.bo.CondicaoPagamento;
+import model.bo.CondicaoPgto;
 
-public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPagamento> {
+public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
 
     @Override
-    public void create(CondicaoPagamento objeto) {
+    public void create(CondicaoPgto objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO condicaopgto (descricaoCondicao, numeroParcelas, diasPrimeiraParcela, diasEntreParcela\n"
@@ -36,7 +36,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPagamento> {
     }
 
     @Override
-    public CondicaoPagamento search(int codigo) {
+    public CondicaoPgto search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT condicaopgto.id, condicaopgto.descricaoCondicao from condicaopgto where condicaopgto.id = ?";
@@ -48,7 +48,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPagamento> {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setInt(1, codigo);
             rst = pstm.executeQuery();
-            CondicaoPagamento condicaoPagamento = new CondicaoPagamento();
+            CondicaoPgto condicaoPagamento = new CondicaoPgto();
 
             while (rst.next()) {
                 condicaoPagamento.setId(rst.getInt("id"));
@@ -69,7 +69,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPagamento> {
     }
 
     @Override
-    public CondicaoPagamento search(String descricao) {
+    public CondicaoPgto search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT condicaopgto.id, condicaopgto.descricaoCondicao from condicaopgto where condicaopgto.descricaoCondicao = ?";
@@ -81,7 +81,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPagamento> {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setString(0, descricao);
             rst = pstm.executeQuery();
-            CondicaoPagamento condicaoPagamento = new CondicaoPagamento();
+            CondicaoPgto condicaoPagamento = new CondicaoPgto();
 
             while (rst.next()) {
                 condicaoPagamento.setId(rst.getInt("id"));
@@ -100,7 +100,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPagamento> {
     }
 
     @Override
-    public List<CondicaoPagamento> search() {
+    public List<CondicaoPgto> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT condicaopgto.id, condicaopgto.descricaoCondicao, condicaopgto.status  from condicaopgto";
@@ -108,14 +108,14 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPagamento> {
         PreparedStatement pstm = null;
         ResultSet rst = null;
 
-        List<CondicaoPagamento> listaCondicaoPagamento = new ArrayList<>();
+        List<CondicaoPgto> listaCondicaoPagamento = new ArrayList<>();
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             rst = pstm.executeQuery();
 
             while (rst.next()) {
-                CondicaoPagamento condicaoPagamento = new CondicaoPagamento();
+                CondicaoPgto condicaoPagamento = new CondicaoPgto();
                 condicaoPagamento.setId(rst.getInt("id"));
                 condicaoPagamento.setDescricaoCondicao(rst.getString("descricao"));
                 condicaoPagamento.setStatus((char) rst.getInt("status"));
@@ -133,7 +133,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPagamento> {
     }
 
     @Override
-    public void update(CondicaoPagamento objeto) {
+    public void update(CondicaoPgto objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "UPDATE condicaopgto set condicaopgto.descricao = ? where condicaopgto.id = ?";
@@ -154,7 +154,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPagamento> {
     }
 
     @Override
-    public void delete(CondicaoPagamento objeto) {
+    public void delete(CondicaoPgto objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "DELETE FROM condicaopgto WHERE condicaopgto.id = ?";
