@@ -7,11 +7,11 @@ import model.DAO.CidadeDAO;
 import model.bo.Cidade;
 import view.FormBusCidade;
 
-public class ControllerBusCidade implements ActionListener {
+public class ControlerBuscaCidade implements ActionListener {
 
     FormBusCidade formBusCidade;
 
-    public ControllerBusCidade(FormBusCidade formBusCidade) {
+    public ControlerBuscaCidade(FormBusCidade formBusCidade) {
 
         this.formBusCidade = formBusCidade;
 
@@ -21,7 +21,7 @@ public class ControllerBusCidade implements ActionListener {
         //carregar os dados para a jTable
         DefaultTableModel tabela = (DefaultTableModel) this.formBusCidade.getjTableBuscas().getModel();
         CidadeDAO cidadeDAO = new CidadeDAO();
-        for (Cidade objetoAtualDaLista : cidadeDAO.retrieve()) {
+        for (Cidade objetoAtualDaLista : cidadeDAO.search()) {
             
             tabela.addRow(new Object[]{objetoAtualDaLista.getId(),
                                        objetoAtualDaLista.getDescricao()});            

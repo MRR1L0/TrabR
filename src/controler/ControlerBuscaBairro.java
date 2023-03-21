@@ -7,11 +7,11 @@ import model.DAO.BairroDAO;
 import model.bo.Bairro;
 import view.FormBusBairro;
 
-public class ControllerBusBairro implements ActionListener {
+public class ControlerBuscaBairro implements ActionListener {
 
     FormBusBairro formBusBairro;
 
-    public ControllerBusBairro(FormBusBairro formBusBairro) {
+    public ControlerBuscaBairro(FormBusBairro formBusBairro) {
 
         this.formBusBairro = formBusBairro;
 
@@ -21,7 +21,7 @@ public class ControllerBusBairro implements ActionListener {
         ///carregar os dados para a jTable
         DefaultTableModel tabela = (DefaultTableModel) this.formBusBairro.getjTableBuscas().getModel();
         BairroDAO bairroDAO = new BairroDAO();
-        for (Bairro objetoAtualDaLista : bairroDAO.retrieve()) {
+        for (Bairro objetoAtualDaLista : bairroDAO.search()) {
             tabela.addRow(new Object[]{objetoAtualDaLista.getId(), objetoAtualDaLista.getDescricao()});
 
         }
@@ -34,7 +34,7 @@ public class ControllerBusBairro implements ActionListener {
 
         if (evento.getSource() == this.formBusBairro.getjButtonCarregar()) {
             if(this.formBusBairro.getjTableBuscas().getValueAt(this.formBusBairro.getjTableBuscas().getSelectedRow(), 0) != null){
-                    ControllerCadBairro.codigo = (int) this.formBusBairro.getjTableBuscas().getValueAt(this.formBusBairro.getjTableBuscas().getSelectedRow(),0);
+                    ControlerCadastroBairro.codigo = (int) this.formBusBairro.getjTableBuscas().getValueAt(this.formBusBairro.getjTableBuscas().getSelectedRow(),0);
                     formBusBairro.dispose();
                     
 

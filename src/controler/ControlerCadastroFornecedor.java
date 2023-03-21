@@ -7,11 +7,11 @@ import model.bo.Fornecedor;
 import view.CadastroFornecedor;
 import view.FormBusFornecedor;
 
-public class ControllerCadFornecedor implements ActionListener {
+public class ControlerCadastroFornecedor implements ActionListener {
 
     CadastroFornecedor telaCadFornecedor;
 
-    public ControllerCadFornecedor(CadastroFornecedor parTelaCadFornecedor) {
+    public ControlerCadastroFornecedor(CadastroFornecedor parTelaCadFornecedor) {
 
         this.telaCadFornecedor = parTelaCadFornecedor;
 

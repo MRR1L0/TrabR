@@ -7,11 +7,11 @@ import model.DAO.CondicaoPagamentoDAO;
 import model.bo.CondicaoPagamento;
 import view.FormBusCondPgto;
 
-public class ControllerBusCondPgto implements ActionListener {
+public class ControlerBuscaCondicaoPagamento implements ActionListener {
 
     FormBusCondPgto formBusCondPgto;
 
-    public ControllerBusCondPgto(FormBusCondPgto formBusCondPgto) {
+    public ControlerBuscaCondicaoPagamento(FormBusCondPgto formBusCondPgto) {
 
         this.formBusCondPgto = formBusCondPgto;
 

@@ -9,12 +9,12 @@ import view.CadastroBairro;
 import view.FormBusBairro;
 
 
-public class ControllerCadBairro implements ActionListener {
+public class ControlerCadastroBairro implements ActionListener {
 
     CadastroBairro telaCadBairro;
     public static int codigo;
 
-    public ControllerCadBairro(CadastroBairro parTelaCadBairro) {
+    public ControlerCadastroBairro(CadastroBairro parTelaCadBairro) {
 
         this.telaCadBairro = parTelaCadBairro;
 
@@ -74,7 +74,7 @@ public class ControllerCadBairro implements ActionListener {
             this.codigo = 0;
 
             FormBusBairro formBuscaBairro = new FormBusBairro(null, true);
-            ControllerBusBairro controllerBusBairro = new ControllerBusBairro(formBuscaBairro);
+            ControlerBuscaBairro controllerBusBairro = new ControlerBuscaBairro(formBuscaBairro);
             formBuscaBairro.setVisible(true);
 
             if (this.codigo != 0){

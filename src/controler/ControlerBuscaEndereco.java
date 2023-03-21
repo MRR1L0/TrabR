@@ -4,11 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.FormBusEndereco;
 
-public class ControllerBusEndereco implements ActionListener {
+public class ControlerBuscaEndereco implements ActionListener {
 
     FormBusEndereco formBusEndereco;
 
-    public ControllerBusEndereco(FormBusEndereco formBusEndereco) {
+    public ControlerBuscaEndereco(FormBusEndereco formBusEndereco) {
 
         this.formBusEndereco = formBusEndereco;
 

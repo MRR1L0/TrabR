@@ -7,11 +7,11 @@ import model.bo.Marca;
 import view.CadastroMarca;
 import view.FormBusMarca;
 
-public class ControllerCadMarca implements ActionListener {
+public class ControlerCadastroMarca implements ActionListener {
 
     CadastroMarca telaCadMarca;
 
-    public ControllerCadMarca(CadastroMarca parTelaCadMarca) {
+    public ControlerCadastroMarca(CadastroMarca parTelaCadMarca) {
 
         this.telaCadMarca = parTelaCadMarca;
 
@@ -55,7 +55,7 @@ public class ControllerCadMarca implements ActionListener {
         } else if (acao.getSource() == telaCadMarca.getjButtonBuscar()) {
 
             FormBusMarca formBusMarca = new FormBusMarca(null, true);
-            ControllerBusMarca controllerBusMarca = new ControllerBusMarca(formBusMarca);
+            ControlerBuscaMarca controllerBusMarca = new ControlerBuscaMarca(formBusMarca);
             formBusMarca.setVisible(true);
             
         } else if (acao.getSource() == telaCadMarca.getjButtonSair()) {

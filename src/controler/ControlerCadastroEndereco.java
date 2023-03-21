@@ -7,11 +7,11 @@ import model.bo.Endereco;
 import view.CadastroEndereco;
 import view.FormBusEndereco;
 
-public class ControllerCadEndereco implements ActionListener {
+public class ControlerCadastroEndereco implements ActionListener {
 
     CadastroEndereco telaCadEndereco;
 
-    public ControllerCadEndereco(CadastroEndereco parTelaCadEndereco) {
+    public ControlerCadastroEndereco(CadastroEndereco parTelaCadEndereco) {
 
         this.telaCadEndereco = parTelaCadEndereco;
 

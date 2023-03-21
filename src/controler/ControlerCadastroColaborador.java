@@ -7,11 +7,11 @@ import model.bo.Colaborador;
 import view.CadastroColaborador;
 import view.FormBusColaborador;
 
-public class ControllerCadColaborador implements ActionListener {
+public class ControlerCadastroColaborador implements ActionListener {
 
     CadastroColaborador telaCadColaborador;
 
-    public ControllerCadColaborador(CadastroColaborador parTelaCadColaborador) {
+    public ControlerCadastroColaborador(CadastroColaborador parTelaCadColaborador) {
 
         this.telaCadColaborador = parTelaCadColaborador;
 

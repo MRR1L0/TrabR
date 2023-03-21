@@ -4,11 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.FormBusProduto;
 
-public class ControllerBusProduto implements ActionListener {
+public class ControlerBuscaProduto implements ActionListener {
 
     FormBusProduto formBusProduto;
 
-    public ControllerBusProduto(FormBusProduto formBusProduto) {
+    public ControlerBuscaProduto(FormBusProduto formBusProduto) {
 
         this.formBusProduto = formBusProduto;
 

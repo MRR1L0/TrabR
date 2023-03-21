@@ -7,11 +7,11 @@ import model.bo.Classe;
 import view.CadastroClasse;
 import view.FormBusClasse;
 
-public class ControllerCadClasse implements ActionListener {
+public class ControlerCadastroClasse implements ActionListener {
 
     CadastroClasse telaCadClasse;
 
-    public ControllerCadClasse(CadastroClasse parTelaCadClasse) {
+    public ControlerCadastroClasse(CadastroClasse parTelaCadClasse) {
 
         this.telaCadClasse = parTelaCadClasse;
 
@@ -57,7 +57,7 @@ public class ControllerCadClasse implements ActionListener {
         } else if (acao.getSource() == telaCadClasse.getjButtonBuscar()) {
 
             FormBusClasse formBusClasse = new FormBusClasse(null, true);
-            ControllerBusClasse controllerBusClasse = new ControllerBusClasse(formBusClasse);
+            ControlerBuscaClasse controllerBusClasse = new ControlerBuscaClasse(formBusClasse);
             formBusClasse.setVisible(true);
 
         } else if (acao.getSource() == telaCadClasse.getjButtonSair()) {

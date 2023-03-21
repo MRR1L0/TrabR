@@ -7,11 +7,11 @@ import model.DAO.ClasseDAO;
 import model.bo.Classe;
 import view.FormBusClasse;
 
-public class ControllerBusClasse implements ActionListener {
+public class ControlerBuscaClasse implements ActionListener {
 
     FormBusClasse formBusClasse;
 
-    public ControllerBusClasse(FormBusClasse formBusClasse) {
+    public ControlerBuscaClasse(FormBusClasse formBusClasse) {
 
         this.formBusClasse = formBusClasse;
 
@@ -21,7 +21,7 @@ public class ControllerBusClasse implements ActionListener {
         //carregar os dados para a jTable
         DefaultTableModel tabela = (DefaultTableModel) this.formBusClasse.getjTableBuscas().getModel();
         ClasseDAO classeDAO = new ClasseDAO();
-        for (Classe objetoAtualDaLista : classeDAO.retrieve()) {
+        for (Classe objetoAtualDaLista : classeDAO.search()) {
 
             tabela.addRow(new Object[]{objetoAtualDaLista.getId(),
                 objetoAtualDaLista.getDescricao()});

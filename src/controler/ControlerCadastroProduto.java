@@ -7,11 +7,11 @@ import model.bo.Produto;
 import view.CadastroProduto;
 import view.FormBusProduto;
 
-public class ControllerCadProduto implements ActionListener {
+public class ControlerCadastroProduto implements ActionListener {
 
     CadastroProduto telaCadProduto;
 
-    public ControllerCadProduto(CadastroProduto parTelaCadProduto) {
+    public ControlerCadastroProduto(CadastroProduto parTelaCadProduto) {
 
         this.telaCadProduto = parTelaCadProduto;
 

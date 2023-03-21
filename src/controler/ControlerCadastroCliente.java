@@ -7,11 +7,11 @@ import model.bo.Cliente;
 import view.CadastroCliente;
 import view.FormBusCliente;
 
-public class ControllerCadCliente implements ActionListener {
+public class ControlerCadastroCliente implements ActionListener {
 
     CadastroCliente telaCadCliente;
 
-    public ControllerCadCliente(CadastroCliente parTelaCadCliente) {
+    public ControlerCadastroCliente(CadastroCliente parTelaCadCliente) {
 
         this.telaCadCliente = parTelaCadCliente;
 

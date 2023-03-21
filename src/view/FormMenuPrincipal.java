@@ -1,14 +1,14 @@
 package view;
 
-import controler.ControllerCadBairro;
-import controler.ControllerCadCidade;
-import controler.ControllerCadClasse;
-import controler.ControllerCadCliente;
-import controler.ControllerCadColaborador;
-import controler.ControllerCadCondicaoPgto;
-import controler.ControllerCadEndereco;
-import controler.ControllerCadFornecedor;
-import controler.ControllerCadMarca;
+import controler.ControlerCadastroBairro;
+import controler.ControlerCadastroCidade;
+import controler.ControlerCadastroClasse;
+import controler.ControlerCadastroCliente;
+import controler.ControlerCadastroColaborador;
+import controler.ControlerCadastroCondicaoPagamento;
+import controler.ControlerCadastroEndereco;
+import controler.ControlerCadastroFornecedor;
+import controler.ControlerCadastroMarca;
 import controler.;
 
 public class FormMenuPrincipal extends javax.swing.JFrame {
@@ -188,28 +188,28 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemColaboradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemColaboradorActionPerformed
         CadastroColaborador cadastroColaborador = new CadastroColaborador();
-        ControllerCadColaborador controllerCadColaborador = new ControllerCadColaborador(cadastroColaborador);
+        ControlerCadastroColaborador controllerCadColaborador = new ControlerCadastroColaborador(cadastroColaborador);
         cadastroColaborador.setVisible(true);
     }//GEN-LAST:event_jMenuItemColaboradorActionPerformed
 
     private void jMenuItemClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClienteActionPerformed
 
         CadastroCliente cadastroCliente = new CadastroCliente();
-        ControllerCadCliente controllerCadCliente = new ControllerCadCliente(cadastroCliente);
+        ControlerCadastroCliente controllerCadCliente = new ControlerCadastroCliente(cadastroCliente);
         cadastroCliente.setVisible(true);
     }//GEN-LAST:event_jMenuItemClienteActionPerformed
 
     private void jMenuItemEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEnderecoActionPerformed
 
         CadastroEndereco cadastroEndereco = new CadastroEndereco();
-        ControllerCadEndereco controllerCadEndereco = new ControllerCadEndereco(cadastroEndereco);
+        ControlerCadastroEndereco controllerCadEndereco = new ControlerCadastroEndereco(cadastroEndereco);
         cadastroEndereco.setVisible(true);
     }//GEN-LAST:event_jMenuItemEnderecoActionPerformed
 
     private void jMenuItemCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCidadeActionPerformed
 
         CadastroCidade cadastroCidade = new CadastroCidade();
-        ControllerCadCidade controllerCadCidade = new ControllerCadCidade(cadastroCidade);
+        ControlerCadastroCidade controllerCadCidade = new ControlerCadastroCidade(cadastroCidade);
         cadastroCidade.setVisible(true);
     }//GEN-LAST:event_jMenuItemCidadeActionPerformed
 
@@ -217,7 +217,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         //criado o obj de tela e instaciando o mesmo
 
         CadastroBairro cadastroBairro = new CadastroBairro();
-        ControllerCadBairro controllerCadBairro = new ControllerCadBairro(cadastroBairro);
+        ControlerCadastroBairro controllerCadBairro = new ControlerCadastroBairro(cadastroBairro);
         cadastroBairro.setVisible(true);
     }//GEN-LAST:event_jMenuItemBairroActionPerformed
 
@@ -229,7 +229,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     private void jMenuItemClasseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClasseActionPerformed
 
         CadastroClasse cadastroClasse = new CadastroClasse();
-        ControllerCadClasse controllerCadClasse = new ControllerCadClasse(cadastroClasse);
+        ControlerCadastroClasse controllerCadClasse = new ControlerCadastroClasse(cadastroClasse);
         cadastroClasse.setVisible(true);
 
     }//GEN-LAST:event_jMenuItemClasseActionPerformed
@@ -237,7 +237,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     private void jMenuItemMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMarcaActionPerformed
 
         CadastroMarca cadastroMarca = new CadastroMarca();
-        ControllerCadMarca controllerCadMarca = new ControllerCadMarca(cadastroMarca);
+        ControlerCadastroMarca controllerCadMarca = new ControlerCadastroMarca(cadastroMarca);
         cadastroMarca.setVisible(true);
 
 
@@ -246,7 +246,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     private void jMenuItemCondPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCondPagamentoActionPerformed
 
         CondicaoPgto condicaoPgto = new CondicaoPgto();
-        ControllerCadCondicaoPgto controllerCadCondicaoPgto = new ControllerCadCondicaoPgto(condicaoPgto);
+        ControlerCadastroCondicaoPagamento controllerCadCondicaoPgto = new ControlerCadastroCondicaoPagamento(condicaoPgto);
         condicaoPgto.setVisible(true);
 
 
@@ -255,7 +255,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     private void jMenuItemFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFornecedorActionPerformed
 
         CadastroFornecedor cadastroFornecedor = new CadastroFornecedor();
-        ControllerCadFornecedor controllerCadFornecedor = new ControllerCadFornecedor(cadastroFornecedor);
+        ControlerCadastroFornecedor controllerCadFornecedor = new ControlerCadastroFornecedor(cadastroFornecedor);
         cadastroFornecedor.setVisible(true);
 
     }//GEN-LAST:event_jMenuItemFornecedorActionPerformed

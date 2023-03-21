@@ -7,11 +7,11 @@ import model.bo.CondicaoPagamento;
 import view.CondicaoPgto;
 import view.FormBusCondPgto;
 
-public class ControllerCadCondicaoPgto implements ActionListener {
+public class ControlerCadastroCondicaoPagamento implements ActionListener {
 
     CondicaoPgto telaCondicaoPgto;
 
-    public ControllerCadCondicaoPgto(CondicaoPgto parTelaCadCondicaoPgto) {
+    public ControlerCadastroCondicaoPagamento(CondicaoPgto parTelaCadCondicaoPgto) {
 
         this.telaCondicaoPgto = parTelaCadCondicaoPgto;
 
@@ -55,7 +55,7 @@ public class ControllerCadCondicaoPgto implements ActionListener {
         } else if (acao.getSource() == telaCondicaoPgto.getjButtonBuscar()) {
 
             FormBusCondPgto formBusCondPgto = new FormBusCondPgto(null, true);
-            ControllerBusCondPgto controllerBusCondPgto = new ControllerBusCondPgto(formBusCondPgto);
+            ControlerBuscaCondicaoPagamento controllerBusCondPgto = new ControlerBuscaCondicaoPagamento(formBusCondPgto);
             formBusCondPgto.setVisible(true);
 
         } else if (acao.getSource() == telaCondicaoPgto.getjButtonSair()) {

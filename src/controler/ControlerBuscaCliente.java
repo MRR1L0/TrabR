@@ -4,11 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.FormBusCliente;
 
-public class ControllerBusCliente implements ActionListener {
+public class ControlerBuscaCliente implements ActionListener {
 
     FormBusCliente formBusCliente;
 
-    public ControllerBusCliente(FormBusCliente formBusCliente) {
+    public ControlerBuscaCliente(FormBusCliente formBusCliente) {
 
         this.formBusCliente = formBusCliente;
 

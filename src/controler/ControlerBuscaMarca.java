@@ -7,11 +7,11 @@ import model.DAO.MarcaDAO;
 import model.bo.Marca;
 import view.FormBusMarca;
 
-public class ControllerBusMarca implements ActionListener {
+public class ControlerBuscaMarca implements ActionListener {
 
     FormBusMarca formBusMarca;
 
-    public ControllerBusMarca(FormBusMarca formBusMarca) {
+    public ControlerBuscaMarca(FormBusMarca formBusMarca) {
 
         this.formBusMarca = formBusMarca;
 

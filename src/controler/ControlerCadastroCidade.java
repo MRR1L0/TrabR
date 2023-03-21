@@ -7,11 +7,11 @@ import model.bo.Cidade;
 import view.CadastroCidade;
 import view.FormBusCidade;
 
-public class ControllerCadCidade implements ActionListener {
+public class ControlerCadastroCidade implements ActionListener {
 
     CadastroCidade telaCadCidade;
 
-    public ControllerCadCidade(CadastroCidade parTelaCadCidade) {
+    public ControlerCadastroCidade(CadastroCidade parTelaCadCidade) {
 
         this.telaCadCidade = parTelaCadCidade;
 
@@ -57,7 +57,7 @@ public class ControllerCadCidade implements ActionListener {
         } else if (acao.getSource() == telaCadCidade.getjButtonBuscar()) {
 
             FormBusCidade formBusCidade = new FormBusCidade(null, true);
-            ControllerBusCidade controllerBusCidade = new ControllerBusCidade(formBusCidade);
+            ControlerBuscaCidade controllerBusCidade = new ControlerBuscaCidade(formBusCidade);
             formBusCidade.setVisible(true);
 
         } else if (acao.getSource() == telaCadCidade.getjButtonSair()) {
