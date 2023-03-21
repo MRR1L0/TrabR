@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import model.bo.CupomFiscal;
 
@@ -52,9 +53,10 @@ public class CupomFiscalDAO implements InterfaceDAO<CupomFiscal> {
             CupomFiscal cupomFiscal = new CupomFiscal();
 
             while (rst.next()) {
-                cupomFiscal.setId(rst.getInt("id"));
+                //SE NÂO FUNCIONAR USAR STRING TO UUID
+                cupomFiscal.setId(rst.getObject("id", UUID.class));
                 cupomFiscal.setDataVenda(rst.getDate("dataVenda"));
-                //cupomFiscal.setHoraVenda(rst.getTime("horaVenda"));
+                cupomFiscal.setHoraVenda(rst.getString("horaVenda"));
                 cupomFiscal.setValorDesconto(rst.getFloat("valorDesconto"));
                 cupomFiscal.setValorAcrescimo(rst.getFloat("valorAcrescimo"));
                 cupomFiscal.setTotalCupom(rst.getFloat("totalCupom"));
