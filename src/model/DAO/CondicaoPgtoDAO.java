@@ -22,7 +22,7 @@ public class CondicaoPgtoDAO implements InterfaceDAO<model.bo.CondicaoPgto> {
     public CondicaoPgto create(CondicaoPgto t) {
                 Connection conexao = ConnectionFactory.getConnection();
         
-        var sqlExecutar = "INSERT INTO pagar "+t.sqlConection()+" values(?,?,?,?,?,?,?,?,?,?,?)";
+        var sqlExecutar = "INSERT INTO condicao_pagamento ("+t.sqlConection()+") values(?,?,?,?,?)";
   
         try {
             
@@ -37,12 +37,30 @@ public class CondicaoPgtoDAO implements InterfaceDAO<model.bo.CondicaoPgto> {
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return t;
     }
 
     @Override
     public CondicaoPgto update(CondicaoPgto t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "UPDATE condicao_pagamento SET descricao_condicao = (?), numero_parcelas = (?), dias_primeira_parcela = (?)"
+        		+ ", dias_entre_parcela = (?), status = (?) WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(0, t.getDescricaoCondicao());
+            pstm.setString(1, String.valueOf(t.getNumeroParcelas()));
+            pstm.setString(2, String.valueOf(t.getDiasPrimeiraParcela()));
+            pstm.setString(3, String.valueOf(t.getDiasEntreParcela()));
+            pstm.setString(4, String.valueOf(t.getStatus()));
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
+        return t;
     }
 
     @Override
@@ -57,7 +75,17 @@ public class CondicaoPgtoDAO implements InterfaceDAO<model.bo.CondicaoPgto> {
 
     @Override
     public void remove(CondicaoPgto t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "DELETE FROM condicao_pagamento WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
     }
     
 }

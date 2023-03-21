@@ -29,9 +29,9 @@ public class Classe {
     }
 
     @Override
-    public String toString() {
-        return this.getId() + ";" + this.getDescricao();
-    }
+	public String toString() {
+		return "Classe [id=" + id + ", descricao=" + descricao + "]";
+	}
    
     public String sqlConection() {
         return "descricao";    }

@@ -34,9 +34,9 @@ public class Colaborador extends Pessoa {
     }
 
     @Override
-    public String toString() {
-        return super.toString()+ ";" + this.getLogin() + ";" + this.getSenha();
-    }
+	public String toString() {
+		return "Colaborador [login=" + login + ", senha=" + senha + "]";
+	}
     
      public String sqlConection() {
         return super.sqlConection() + "login, senha";    

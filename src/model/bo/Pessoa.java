@@ -114,10 +114,11 @@ public abstract class Pessoa {
     }
 
     @Override
-    public String toString() {
-        return this.getId() +";"+this.getNome()+ ";" + this.getFone1() + ";" + this.getFone2() + ";" + this.getEmail() + ";" + this.getDtCadastro() + ";" + this.getComplementoEndereco()
-                + ";" + this.getObservacao() + ";" + this.getStatus() + ";" + this.getEndereco() ;
-    }
+	public String toString() {
+		return "Pessoa [id=" + id + ", nome=" + nome + ", fone1=" + fone1 + ", fone2=" + fone2 + ", email=" + email
+				+ ", dtCadastro=" + dtCadastro + ", complementoEndereco=" + complementoEndereco + ", observacao="
+				+ observacao + ", status=" + status + ", endereco=" + endereco + "]";
+	}
     
      
     public String sqlConection() {

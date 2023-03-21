@@ -127,9 +127,12 @@ public class Compra {
     }
 
     @Override
-    public String toString() {
-        return "Compra{" + "id=" + id + ", dataCompra=" + dataCompra + ", horaCompra=" + horaCompra + ", numeroNF=" + numeroNF + ", tipoNF=" + tipoNF + ", valorDesconto=" + valorDesconto + ", valorAcrescimo=" + valorAcrescimo + ", totalNF=" + totalNF + ", status=" + status + '}';
-    }
+	public String toString() {
+		return "Compra [id=" + id + ", dataCompra=" + dataCompra + ", horaCompra=" + horaCompra + ", numeroNF="
+				+ numeroNF + ", tipoNF=" + tipoNF + ", valorDesconto=" + valorDesconto + ", valorAcrescimo="
+				+ valorAcrescimo + ", totalNF=" + totalNF + ", status=" + status + ", fornecedor=" + fornecedor
+				+ ", condicaoPgto=" + condicaoPgto + ", pagar=" + pagar + "]";
+	}
     
       
     public String sqlConection() {

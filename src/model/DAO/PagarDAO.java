@@ -22,7 +22,7 @@ public class PagarDAO implements InterfaceDAO<model.bo.Pagar> {
     public Pagar create(Pagar t) {
         Connection conexao = ConnectionFactory.getConnection();
         
-        var sqlExecutar = "INSERT INTO pagar "+t.sqlConection()+" values(?,?,?,?,?,?,?,?,?,?,?)";
+        var sqlExecutar = "INSERT INTO pagar ("+t.sqlConection()+") values(?,?,?,?,?)";
   
         try {
             
@@ -37,12 +37,31 @@ public class PagarDAO implements InterfaceDAO<model.bo.Pagar> {
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return t;
     }
 
     @Override
     public Pagar update(Pagar t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "UPDATE pagar SET data_emissao= (?), hora_emissao = (?)"
+        		+ ", data_vencimento = (?), valor_pagar = (?), status = (?)"
+        		+ " WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+
+        try {
+        	pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(0, String.valueOf(t.getDataEmissao()));
+            pstm.setString(1, String.valueOf(t.getHoraEmissao()));
+            pstm.setString(2, String.valueOf(t.getDataVencimento()));
+            pstm.setString(3, String.valueOf(t.getValorPagar()));
+            pstm.setString(4, String.valueOf(t.getStatus()));
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
+        return t;
     }
 
     @Override
@@ -57,7 +76,17 @@ public class PagarDAO implements InterfaceDAO<model.bo.Pagar> {
 
     @Override
     public void remove(Pagar t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "DELETE FROM pagar WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
     }
     
 }

@@ -22,8 +22,7 @@ public class CidadeDAO implements InterfaceDAO<model.bo.Cidade>{
     public Cidade create(Cidade t) {
                 Connection conexao = ConnectionFactory.getConnection();
         
-        var sqlExecutar = "INSERT INTO pagar "+t.sqlConection()+" values(?)";
-  
+        var sqlExecutar = "INSERT INTO cidade ("+t.sqlConection()+") values(?)";
         try {
             
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
@@ -33,12 +32,24 @@ public class CidadeDAO implements InterfaceDAO<model.bo.Cidade>{
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return t; //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Cidade update(Cidade t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "UPDATE cidade SET descricao = (?) WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(0, t.getDescricao());
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
+        return t;
     }
 
     @Override
@@ -53,7 +64,17 @@ public class CidadeDAO implements InterfaceDAO<model.bo.Cidade>{
 
     @Override
     public void remove(Cidade t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "DELETE FROM cidade WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
     }
     
 }

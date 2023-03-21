@@ -23,7 +23,7 @@ public class MarcaDAO implements InterfaceDAO<model.bo.Marca>{
         
                 Connection conexao = ConnectionFactory.getConnection();
         
-        var sqlExecutar = "INSERT INTO pagar "+t.sqlConection()+" values(?,?,?,?,?,?,?,?,?,?,?)";
+        var sqlExecutar = "INSERT INTO marca ("+t.sqlConection()+") values(?,?,?,?,?,?,?,?,?,?,?)";
   
         try {
             
@@ -39,7 +39,19 @@ public class MarcaDAO implements InterfaceDAO<model.bo.Marca>{
 
     @Override
     public Marca update(Marca t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "UPDATE marca SET descricao= (?) WHERE bairro.id = "+t.getId();
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(0, t.getDescricao());
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
+        return t;
     }
 
     @Override
@@ -54,7 +66,16 @@ public class MarcaDAO implements InterfaceDAO<model.bo.Marca>{
 
     @Override
     public void remove(Marca t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "DELETE FROM marca WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
+    }  
 }

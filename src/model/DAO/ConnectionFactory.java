@@ -10,9 +10,9 @@ import java.sql.ResultSet;
 public class ConnectionFactory {
 
     private static final String driver = "com.mysql.jdbc.Driver";
-    private static final String banco = "jdbc:mysql://localhost:3306/mydb";
+    private static final String banco = "jdbc:mysql://localhost:3306/retaguarda";
     private static final String user = "root";
-    private static final String senha = "rober";
+    private static final String senha = "ifsc";
 
     public static Connection getConnection() {
         //MysqlDataSource mySqlDataSource;

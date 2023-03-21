@@ -29,9 +29,9 @@ public class Cidade {
     }
 
     @Override
-    public String toString() {
-        return this.getId() + ";" + this.getDescricao();
-    }
+	public String toString() {
+		return "Cidade [id=" + id + ", descricao=" + descricao + "]";
+	}
     
      
     public String sqlConection() {

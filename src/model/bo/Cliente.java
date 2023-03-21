@@ -58,9 +58,9 @@ public class Cliente extends Pessoa {
     }
 
     @Override
-    public String toString() {
-        return this.getCpf() + ";" + this.getRg() + ";" + this.getDtNascimento() + ";" + this.getSexo();
-    }
+	public String toString() {
+		return "Cliente [cpf=" + cpf + ", rg=" + rg + ", dtNascimento=" + dtNascimento + ", sexo=" + sexo + "]";
+	}
     
      
     public String sqlConection() {

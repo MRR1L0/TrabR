@@ -22,27 +22,46 @@ public class ItensCompra implements InterfaceDAO<model.bo.ItensCompra> {
         
                 Connection conexao = ConnectionFactory.getConnection();
         
-        var sqlExecutar = "INSERT INTO pagar "+t.sqlConection()+" values(?,?,?,?,?,?,?,?,?,?,?)";
+        var sqlExecutar = "INSERT INTO itens_compra ("+t.sqlConection()+") values(?,?,?,?,?,?)";
   
         try {
             
             PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setString(1, String.valueOf(t.getQtdProduto()));
-            pstm.setString(1, String.valueOf(t.getValorUnitarioProduto()));
-            pstm.setString(1, String.valueOf(t.getStatus()));
-            pstm.setString(1, String.valueOf(t.getHistoricoMovimentacao()));
-            pstm.setString(1, String.valueOf(t.getCompra()));
+            pstm.setString(2, String.valueOf(t.getValorUnitarioProduto()));
+            pstm.setString(3, String.valueOf(t.getStatus()));
+            pstm.setString(4, String.valueOf(t.getHistoricoMovimentacao()));
+            pstm.setString(5, String.valueOf(t.getCompra()));
             pstm.executeUpdate();
         
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return t;
     }
 
     @Override
     public model.bo.ItensCompra update(model.bo.ItensCompra t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "UPDATE itens_compra SET quantidade_produto= (?), valor_unitario = (?)"
+        		+ ", status = (?), historico_movimentacao = (?), compra = (?)"
+        		+ " WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(0, String.valueOf(t.getQtdProduto()));
+            pstm.setString(1, String.valueOf(t.getValorUnitarioProduto()));
+            pstm.setString(2, String.valueOf(t.getStatus()));
+            pstm.setString(3, String.valueOf(t.getHistoricoMovimentacao()));
+            pstm.setString(4, String.valueOf(t.getCompra()));
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
+        return t;
     }
 
     @Override
@@ -57,7 +76,17 @@ public class ItensCompra implements InterfaceDAO<model.bo.ItensCompra> {
 
     @Override
     public void remove(model.bo.ItensCompra t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Connection conexao = ConnectionFactory.getConnection();
+        var sqlExecutar = "DELETE FROM itens_compra WHERE id = "+t.getId();
+        PreparedStatement pstm = null;
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        ConnectionFactory.closeConnection(conexao, pstm);
     }
     
 }

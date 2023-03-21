@@ -69,9 +69,11 @@ public class CondicaoPgto {
     }
 
     @Override
-    public String toString() {
-        return "CondicaoPgto{" + "id=" + id + ", descricaoCondicao=" + descricaoCondicao + ", numeroParcelas=" + numeroParcelas + ", diasPrimeiraParcela=" + diasPrimeiraParcela + ", diasEntreParcela=" + diasEntreParcela + ", status=" + status + '}';
-    }
+	public String toString() {
+		return "CondicaoPgto [id=" + id + ", descricaoCondicao=" + descricaoCondicao + ", numeroParcelas="
+				+ numeroParcelas + ", diasPrimeiraParcela=" + diasPrimeiraParcela + ", diasEntreParcela="
+				+ diasEntreParcela + ", status=" + status + "]";
+	}
     
     
    public String sqlConection (){
