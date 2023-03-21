@@ -211,12 +211,12 @@ public class CadastroCliente extends javax.swing.JFrame {
         setTitle("Cadastro de Cliente");
         setResizable(false);
 
-        jPanelTitulo.setBackground(new java.awt.Color(102, 255, 51));
+        jPanelTitulo.setBackground(new java.awt.Color(204, 51, 0));
         jPanelTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanelTitulo.setForeground(new java.awt.Color(102, 255, 51));
 
         jLabeltitulo.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabeltitulo.setForeground(new java.awt.Color(0, 0, 255));
+        jLabeltitulo.setForeground(new java.awt.Color(255, 255, 0));
         jLabeltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabeltitulo.setText("Cliente");
 
@@ -262,7 +262,7 @@ public class CadastroCliente extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        jLabelId.setText("CÃ³digo");
+        jLabelId.setText("Código");
 
         jLabelNome.setText("Nome*");
 
@@ -296,7 +296,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         jTextAreaObserv.setRows(5);
         jScrollPane1.setViewportView(jTextAreaObserv);
 
-        jLabelObserv.setText("ObservaÃ§Ã£o");
+        jLabelObserv.setText("Observação");
 
         jLabelCep.setText("CEP*");
 

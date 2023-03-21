@@ -212,12 +212,12 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         setTitle("Cadastro de Fornecedor");
         setResizable(false);
 
-        jPanelTitulo.setBackground(new java.awt.Color(102, 255, 51));
+        jPanelTitulo.setBackground(new java.awt.Color(204, 51, 0));
         jPanelTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanelTitulo.setForeground(new java.awt.Color(102, 255, 51));
 
         jLabeltitulo.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabeltitulo.setForeground(new java.awt.Color(0, 0, 255));
+        jLabeltitulo.setForeground(new java.awt.Color(255, 255, 0));
         jLabeltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabeltitulo.setText("Fornecedor");
 
@@ -234,7 +234,7 @@ public class CadastroFornecedor extends javax.swing.JFrame {
 
         jPanelDados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        jLabelId.setText("C√≥digo");
+        jLabelId.setText("CÛdigo");
 
         jLabelNome.setText("Nome*");
 
@@ -252,9 +252,9 @@ public class CadastroFornecedor extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        jLabelInscricaoEstadual.setText("Inscri√ß√£o Estadual*");
+        jLabelInscricaoEstadual.setText("InscriÁ„o Estadual*");
 
-        jLabelRazaoSocial.setText("Raz√£o Social*");
+        jLabelRazaoSocial.setText("Raz„o Social*");
 
         jLabelDatCadastro.setText("Data de Cadastro");
 
@@ -294,7 +294,7 @@ public class CadastroFornecedor extends javax.swing.JFrame {
 
         jLabelEmail.setText("E-mail");
 
-        jLabelObserv.setText("Observa√ß√£o");
+        jLabelObserv.setText("ObservaÁ„o");
 
         jTextAreaObserv.setColumns(20);
         jTextAreaObserv.setRows(5);

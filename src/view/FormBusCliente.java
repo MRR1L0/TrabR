@@ -62,12 +62,12 @@ public class FormBusCliente extends javax.swing.JFrame {
         setTitle("Busca de Cliente");
         setResizable(false);
 
-        jPanelTitulo.setBackground(new java.awt.Color(102, 255, 51));
+        jPanelTitulo.setBackground(new java.awt.Color(204, 51, 0));
         jPanelTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanelTitulo.setForeground(new java.awt.Color(102, 255, 51));
 
         jLabelTitulo.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabelTitulo.setForeground(new java.awt.Color(0, 0, 255));
+        jLabelTitulo.setForeground(new java.awt.Color(255, 255, 0));
         jLabelTitulo.setText("Cliente");
 
         javax.swing.GroupLayout jPanelTituloLayout = new javax.swing.GroupLayout(jPanelTitulo);
@@ -94,7 +94,7 @@ public class FormBusCliente extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "CÃ³digo", "Nome", "CPF", "Telefone", "Status"
+                "Código", "Nome", "CPF", "Telefone", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {

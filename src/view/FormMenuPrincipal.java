@@ -9,7 +9,7 @@ import controler.ControlerCadastroCondicaoPagamento;
 import controler.ControlerCadastroEndereco;
 import controler.ControlerCadastroFornecedor;
 import controler.ControlerCadastroMarca;
-import controler.;
+import controler.ControlerCadastroProduto;
 
 public class FormMenuPrincipal extends javax.swing.JFrame {
 
@@ -263,7 +263,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     private void jMenuItemProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProdutoActionPerformed
 
             CadastroProduto cadastroProduto = new CadastroProduto();
-            ControllerCadProduto controllerCadProduto = new ControllerCadProduto(cadastroProduto);
+            ControlerCadastroProduto controlerCadastroProduto = new ControlerCadastroProduto (cadastroProduto);
             cadastroProduto.setVisible(true);
             
     }//GEN-LAST:event_jMenuItemProdutoActionPerformed

@@ -53,17 +53,17 @@ public class FormBusCondPgto extends javax.swing.JDialog {
         jButtonSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Busca de CondiÃ§Ã£o de Pagamento");
+        setTitle("Busca de Condição de Pagamento");
         setResizable(false);
 
-        jPanelTitulo.setBackground(new java.awt.Color(102, 255, 51));
+        jPanelTitulo.setBackground(new java.awt.Color(204, 51, 0));
         jPanelTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanelTitulo.setForeground(new java.awt.Color(102, 255, 51));
 
         jLabelTitulo.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabelTitulo.setForeground(new java.awt.Color(0, 0, 255));
+        jLabelTitulo.setForeground(new java.awt.Color(255, 255, 0));
         jLabelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTitulo.setText("CondiÃ§Ã£o de Pagamento");
+        jLabelTitulo.setText("Condição de Pagamento");
 
         javax.swing.GroupLayout jPanelTituloLayout = new javax.swing.GroupLayout(jPanelTitulo);
         jPanelTitulo.setLayout(jPanelTituloLayout);
@@ -89,7 +89,7 @@ public class FormBusCondPgto extends javax.swing.JDialog {
 
             },
             new String [] {
-                "CÃ³digo", "DescriÃ§Ã£o"
+                "Código", "Descrição"
             }
         ) {
             boolean[] canEdit = new boolean [] {

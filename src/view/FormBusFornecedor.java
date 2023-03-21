@@ -55,12 +55,12 @@ public class FormBusFornecedor extends javax.swing.JFrame {
         setTitle("Busca de Fornecedor");
         setResizable(false);
 
-        jPanelTitulo.setBackground(new java.awt.Color(102, 255, 51));
+        jPanelTitulo.setBackground(new java.awt.Color(204, 51, 0));
         jPanelTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanelTitulo.setForeground(new java.awt.Color(102, 255, 51));
 
         jLabelTitulo.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabelTitulo.setForeground(new java.awt.Color(0, 0, 255));
+        jLabelTitulo.setForeground(new java.awt.Color(255, 255, 0));
         jLabelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTitulo.setText("Fornecedor");
 
@@ -88,7 +88,7 @@ public class FormBusFornecedor extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "C√≥digo", "CNPJ", "Raz√£o Social", "Inscri√ß√£o Estadual", "Status"
+                "CÛdigo", "CNPJ", "Raz„o Social", "InscriÁ„o Estadual", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
