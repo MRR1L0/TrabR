@@ -24,7 +24,7 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setDate(1, new java.sql.Date(objeto.getDataCompra().getTime()));
-            pstm.setTime(2, objeto.getHoraCompra());
+            pstm.setString(2, objeto.getHoraCompra());
             pstm.setString(3, objeto.getNumeroNF());
             pstm.setString(4, objeto.getTipoNF());
             pstm.setDouble(5, objeto.getValorDesconto());
@@ -61,13 +61,13 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
                 compras.setId(rst.getInt("id"));
                 compras.setId(rst.getInt("id"));
                 compras.setDataCompra(rst.getDate("dataCompra"));
-                compras.setHoraCompra(rst.getTime("horaCompra"));
+                compras.setHoraCompra(rst.getString("horaCompra"));
                 compras.setNumeroNF(rst.getString("numeroNF"));
                 compras.setTipoNF(rst.getString("tipoNF"));
                 compras.setValorDesconto(rst.getFloat("valorDesconto"));
                 compras.setValorAcrescimo(rst.getFloat("valorAcrescimo"));
                 compras.setTotalNF(rst.getFloat("totalNF"));
-                compras.setStatus(rst.getString("status"));
+                 compras.setStatus(rst.getString("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
             return compras;
@@ -98,13 +98,13 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
             while (rst.next()) {
                 compras.setId(rst.getInt("id"));
                 compras.setDataCompra(rst.getDate("dataCompra"));
-                compras.setHoraCompra(rst.getTime("horaCompra"));
+                compras.setHoraCompra(rst.getString("horaCompra"));
                 compras.setNumeroNF(rst.getString("numeroNF"));
                 compras.setTipoNF(rst.getString("tipoNF"));
                 compras.setValorDesconto(rst.getFloat("valorDesconto"));
                 compras.setValorAcrescimo(rst.getFloat("valorAcrescimo"));
                 compras.setTotalNF(rst.getFloat("totalNF"));
-                compras.setStatus(rst.getString("status"));
+                  compras.setStatus(rst.getString("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
             return compras;
@@ -137,7 +137,7 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
                 Compra compras = new Compra();
                 compras.setId(rst.getInt("id"));
                 compras.setDataCompra(rst.getDate("dataCompra"));
-                compras.setHoraCompra(rst.getTime("horaCompra"));
+                compras.setHoraCompra(rst.getString("horaCompra"));
                 compras.setNumeroNF(rst.getString("numeroNF"));
                 compras.setTipoNF(rst.getString("tipoNF"));
                 compras.setValorDesconto(rst.getFloat("valorDesconto"));
@@ -169,7 +169,7 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setObject(1, objeto.getDataCompra());
-            pstm.setTime(2, objeto.getHoraCompra());
+            pstm.setString(2, objeto.getHoraCompra());
             pstm.setString(3, objeto.getNumeroNF());
             pstm.setString(4, objeto.getTipoNF());
             pstm.setDouble(5, objeto.getValorDesconto());

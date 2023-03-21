@@ -6,13 +6,13 @@ public class Compra {
     
     private int id;
     private Date dataCompra;
-    private Time horaCompra;
+    private String horaCompra;
     private String numeroNF;
     private String tipoNF;
     private float valorDesconto;
     private float valorAcrescimo;
     private float totalNF;
-    private char status;
+    private String status;
     private Fornecedor fornecedor;
     private CondicaoPgto condicaoPgto;
     private Pagar pagar;
@@ -20,7 +20,7 @@ public class Compra {
     public Compra() {
     }
 
-    public Compra(int id, Date dataCompra, Time horaCompra, String numeroNF, String tipoNF, float valorDesconto, float valorAcrescimo, float totalNF, char status, Fornecedor fornecedor) {
+    public Compra(int id, Date dataCompra, String horaCompra, String numeroNF, String tipoNF, float valorDesconto, float valorAcrescimo, float totalNF, String status, Fornecedor fornecedor) {
         this.id = id;
         this.dataCompra = dataCompra;
         this.horaCompra = horaCompra;
@@ -49,11 +49,11 @@ public class Compra {
         this.dataCompra = dataCompra;
     }
 
-    public Time getHoraCompra() {
+    public String getHoraCompra() {
         return horaCompra;
     }
 
-    public void setHoraCompra(Time horaCompra) {
+    public void setHoraCompra(String horaCompra) {
         this.horaCompra = horaCompra;
     }
 
@@ -117,11 +117,11 @@ public class Compra {
         this.totalNF = totalNF;
     }
 
-    public char getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(char status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
