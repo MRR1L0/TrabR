@@ -61,7 +61,7 @@ public class ControlerCadastroFornecedor implements ActionListener {
 
             } else {
 
-                Fornecedor fornecedor = new Fornecedor();
+                var fornecedor = new Fornecedor();
                 fornecedor.setCnpj(telaCadFornecedor.getjFormattedTextFieldCnpj().getText());
 
                 telaCadFornecedor.ativa(true);

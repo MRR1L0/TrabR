@@ -29,6 +29,10 @@ public class Fornecedor extends Pessoa {
         this.cpf = cpf;
         this.rg = rg;
     }
+
+    public Fornecedor() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public String getCnpj() {
         return cnpj;

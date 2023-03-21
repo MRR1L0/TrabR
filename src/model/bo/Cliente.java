@@ -24,6 +24,10 @@ public class Cliente extends Pessoa {
         this.dtNascimento = dtNascimento;
         this.sexo = sexo;
     }
+
+    public Cliente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public String getCpf() {
         return cpf;
