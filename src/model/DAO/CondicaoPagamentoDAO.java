@@ -6,30 +6,25 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import model.bo.CondicaoPagamento;
 
-import model.bo.Colaborador;
-
-public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
+public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPagamento> {
 
     @Override
-    public void create(Colaborador objeto) {
+    public void create(CondicaoPagamento objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO colaborador (nome, fone1, fone2, complementoEndereco, email, dtCadastro, observacao, status, login, senha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sqlExecutar = "INSERT INTO condicaopgto (descricaoCondicao, numeroParcelas, diasPrimeiraParcela, diasEntreParcela\n"
+                + "status) VALUES (?,?,?,?,?)";
         PreparedStatement pstm = null; // interagir com o banco de dados
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(1, objeto.getNome()); // o índice do parâmetro começa em 1, não em 0
-            pstm.setString(2, objeto.getFone1());
-            pstm.setString(3, objeto.getFone2());
-            pstm.setString(4, objeto.getComplementoEndereco());
-            pstm.setString(5, objeto.getEmail());
-            pstm.setObject(6, objeto.getDtCadastro());
-            pstm.setString(7, objeto.getObservacao());
+            pstm.setString(1, objeto.getDescricaoCondicao()); // atributo que estao no banco
+            pstm.setInt(2, objeto.getNumeroParcelas());
+            pstm.setInt(0, objeto.getDiasEntreParcela());
+            pstm.setInt(0, objeto.getDiasEntreParcela());
             pstm.setInt(8, objeto.getStatus());
-            pstm.setString(9, objeto.getLogin());
-            pstm.setString(10, objeto.getSenha());
 
             pstm.executeUpdate();
         } catch (SQLException ex) {
@@ -41,28 +36,30 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
     }
 
     @Override
-    public Colaborador retrieve(int codigo) {
+    public CondicaoPagamento retrieve(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT colaborador.id, colaborador.nome, colaborador.login, colaborador.status from colaborador where colaborador.id = ?";
+        String sqlExecutar = "SELECT condicaopgto.id, condicaopgto.descricaoCondicao from condicaopgto where condicaopgto.id = ?";
 
         PreparedStatement pstm = null;
         ResultSet rst = null;
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(0, codigo);
+            pstm.setInt(1, codigo);
             rst = pstm.executeQuery();
-            Colaborador colaborador = new Colaborador();
+            CondicaoPagamento condicaoPagamento = new CondicaoPagamento();
 
             while (rst.next()) {
-                colaborador.setId(rst.getInt("id"));
-                colaborador.setNome(rst.getString("nome"));
-                colaborador.setLogin(rst.getString("login"));
-                colaborador.setStatus(rst.getString("status").charAt(0));
+                condicaoPagamento.setId(rst.getInt("id"));
+                condicaoPagamento.setDescricaoCondicao(rst.getString("descricao"));
+                condicaoPagamento.setNumeroParcelas(rst.getInt("numeroParcelas"));
+                condicaoPagamento.setDiasPrimeiraParcela(rst.getInt("diasPrimeiraParcela"));
+                condicaoPagamento.setDiasEntreParcela(rst.getInt("diasEntreParcela"));
+                condicaoPagamento.setStatus((char) rst.getInt("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return colaborador;
+            return condicaoPagamento;
 
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -72,10 +69,10 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
     }
 
     @Override
-    public Colaborador retrieve(String descricao) {
+    public CondicaoPagamento retrieve(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT colaborador.id, colaborador.nome, colaborador.login, colaborador.status from colaborador where colaborador.nome = ?";
+        String sqlExecutar = "SELECT condicaopgto.id, condicaopgto.descricaoCondicao from condicaopgto where condicaopgto.descricaoCondicao = ?";
 
         PreparedStatement pstm = null;
         ResultSet rst = null;
@@ -84,16 +81,15 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setString(0, descricao);
             rst = pstm.executeQuery();
-            Colaborador colaborador = new Colaborador();
+            CondicaoPagamento condicaoPagamento = new CondicaoPagamento();
 
             while (rst.next()) {
-                colaborador.setId(rst.getInt("id"));
-                colaborador.setNome(rst.getString("nome"));
-                colaborador.setLogin(rst.getString("login"));
-                colaborador.setStatus(rst.getString("status").charAt(0));
+                condicaoPagamento.setId(rst.getInt("id"));
+                condicaoPagamento.setDescricaoCondicao(rst.getString("descricao"));
+                condicaoPagamento.setStatus((char) rst.getInt("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return colaborador;
+            return condicaoPagamento;
 
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -104,30 +100,29 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
     }
 
     @Override
-    public List<Colaborador> retrieve() {
+    public List<CondicaoPagamento> retrieve() {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT colaborador.id, colaborador.nome, colaborador.login, colaborador.status from colaborador";
+        String sqlExecutar = "SELECT condicaopgto.id, condicaopgto.descricaoCondicao, condicaopgto.status  from condicaopgto";
 
         PreparedStatement pstm = null;
         ResultSet rst = null;
 
-        List<Colaborador> listaColaborador = new ArrayList<>();
+        List<CondicaoPagamento> listaCondicaoPagamento = new ArrayList<>();
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             rst = pstm.executeQuery();
 
             while (rst.next()) {
-                Colaborador colaborador = new Colaborador();
-                colaborador.setId(rst.getInt("id"));
-                colaborador.setNome(rst.getString("nome"));
-                colaborador.setLogin(rst.getString("login"));
-                colaborador.setStatus(rst.getString("status").charAt(0));
-                listaColaborador.add(colaborador);
+                CondicaoPagamento condicaoPagamento = new CondicaoPagamento();
+                condicaoPagamento.setId(rst.getInt("id"));
+                condicaoPagamento.setDescricaoCondicao(rst.getString("descricao"));
+                condicaoPagamento.setStatus((char) rst.getInt("status"));
+                listaCondicaoPagamento.add(condicaoPagamento);
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return listaColaborador;
+            return listaCondicaoPagamento;
 
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -138,16 +133,16 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
     }
 
     @Override
-    public void update(Colaborador objeto) {
+    public void update(CondicaoPagamento objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "UPDATE colaborador set colaborador.descricao = ? where colaborador.id = ?";
+        String sqlExecutar = "UPDATE condicaopgto set condicaopgto.descricao = ? where condicaopgto.id = ?";
         PreparedStatement pstm = null;
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, objeto.getNome());
-            pstm.setInt(1, objeto.getId());
+            pstm.setString(1, objeto.getDescricaoCondicao());
+            pstm.setInt(2, objeto.getId());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {
@@ -159,15 +154,15 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
     }
 
     @Override
-    public void delete(Colaborador objeto) {
+    public void delete(CondicaoPagamento objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "DELETE FROM colaborador WHERE colaborador.id = ?";
+        String sqlExecutar = "DELETE FROM condicaopgto WHERE condicaopgto.id = ?";
         PreparedStatement pstm = null;
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(0, objeto.getId());
+            pstm.setInt(1, objeto.getId());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {

@@ -1,117 +1,162 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.DAO;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.sql.Connection;
 import model.bo.Bairro;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
-public class BairroDAO implements InterfaceDAO<model.bo.Bairro> {
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class BairroDAO implements InterfaceDAO<Bairro> {
 
     @Override
-    public Bairro create(Bairro t) {
+    public void create(Bairro objeto) {
+
         Connection conexao = ConnectionFactory.getConnection();
-        var sqlExecutar = "INSERT INTO bairro (descricao) VALUES(?)";
-        PreparedStatement pstm = null;
+        String sqlExecutar = "INSERT INTO bairro (descricao) VALUES (?)";
+        PreparedStatement pstm = null; // interagir com o banco de dados
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getDescricao());
+            pstm.setString(1, objeto.getDescricao()); // atributo que estao no banco
             pstm.executeUpdate();
-
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        ConnectionFactory.closeConnection(conexao, pstm);
 
-        return t;
+        ConnectionFactory.closeConnection(conexao, pstm);
     }
 
     @Override
-    public Bairro update(Bairro t) {
+    public Bairro retrieve(int codigo) {
         Connection conexao = ConnectionFactory.getConnection();
-        var sqlExecutar = "UPDATE bairro SET descricao= (?) WHERE bairro.id = "+t.getId();
-        PreparedStatement pstm = null;
+        String sqlExecutar = "SELECT bairro.id, bairro.descricao from bairro where bairro.id = ?";
 
-        try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getDescricao());
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        ConnectionFactory.closeConnection(conexao, pstm);
-        return t;
-    }
-
-    public Bairro search(int t) {
-        Connection conexao = ConnectionFactory.getConnection();
-        var sqlExecutar = "SELECT id, descricao from bairro where bairro.id = "+ t;
-        var bairro = new Bairro();
         PreparedStatement pstm = null;
         ResultSet rst = null;
-        
+
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setInt(1, codigo);
             rst = pstm.executeQuery();
+            Bairro bairro = new Bairro();
+
             while (rst.next()) {
                 bairro.setId(rst.getInt("id"));
                 bairro.setDescricao(rst.getString("descricao"));
             }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return bairro;
+
         } catch (SQLException ex) {
             ex.printStackTrace();
-                 
-        }finally{
-            ConnectionFactory.closeConnection(conexao, pstm, rst); 
-            return bairro;
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
         }
-        
+
     }
 
     @Override
-    public List<Bairro> search() {
-    	Connection conexao = ConnectionFactory.getConnection();
-        var sqlExecutar = "SELECT id,descricao from bairro";
+    public Bairro retrieve(String descricao) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "SELECT bairro.id, bairro.descricao from bairro where bairro.descricao = ?";
+
         PreparedStatement pstm = null;
         ResultSet rst = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(1, descricao);
+            rst = pstm.executeQuery();
+            Bairro bairro = new Bairro();
+
+            while (rst.next()) {
+                bairro.setId(rst.getInt("id"));
+                bairro.setDescricao(rst.getString("descricao"));
+            }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return bairro;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
+        }
+
+    }
+
+    @Override   // nao usar "*" por conta do desempenho, ele faz duas pesquisas no banco de dados 
+    public List<Bairro> retrieve() {
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "SELECT bairro.id, bairro.descricao from bairro";
+
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+
         List<Bairro> listaBairro = new ArrayList<>();
-		try {
-			pstm = conexao.prepareStatement(sqlExecutar);
-			rst = pstm.executeQuery();
-			
-			while (rst.next()) {
-				var bairro = new Bairro();
-				bairro.setId(rst.getInt("id"));
-				bairro.setDescricao(rst.getString("descricao"));
-			}
-		} catch (SQLException ex) {
-			 ex.printStackTrace();
-	         ConnectionFactory.closeConnection(conexao, pstm, rst);      
-		}
-		return listaBairro;
-        
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            rst = pstm.executeQuery();
+
+            while (rst.next()) {
+                Bairro bairro = new Bairro();
+                bairro.setId(rst.getInt("id"));
+                bairro.setDescricao(rst.getString("descricao"));
+                listaBairro.add(bairro);
+            }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return listaBairro;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
+        }
+
     }
 
     @Override
-    public void remove(Bairro t) {
+    public void update(Bairro objeto) {
         Connection conexao = ConnectionFactory.getConnection();
-        var sqlExecutar = "DELETE FROM bairro WHERE bairro.id = ?";
+        String sqlExecutar = "UPDATE bairro set bairro.descricao = ? where bairro.id = ?";
         PreparedStatement pstm = null;
+
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(0, t.getId());
+            pstm.setString(1, objeto.getDescricao());
+            pstm.setInt(2, objeto.getId());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+
         ConnectionFactory.closeConnection(conexao, pstm);
+
+    }
+
+    @Override
+    public void delete(Bairro objeto) {
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "DELETE FROM bairro WHERE bairro.id = ?";
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setInt(0, objeto.getId());
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        ConnectionFactory.closeConnection(conexao, pstm);
+
     }
 }

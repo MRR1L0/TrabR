@@ -1,112 +1,201 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.DAO;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import model.bo.Fornecedor;
 
-/**
- *
- * @author aluno
- */
-public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor>{
+public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor> {
 
     @Override
-    public Fornecedor create(Fornecedor t) {
-        
+    public void create(Fornecedor objeto) {
+
         Connection conexao = ConnectionFactory.getConnection();
-        
-        var sqlExecutar = "INSERT INTO pagar ("+t.sqlConection()+") values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-  
-        try {
-            
-            PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getNome());
-            pstm.setString(1, t.getFone1());
-            pstm.setString(2, t.getFone2());
-            pstm.setString(3, t.getEmail());
-            pstm.setString(4, String.valueOf(t.getDtCadastro()));
-            pstm.setString(5, t.getComplementoEndereco());
-            pstm.setString(6, t.getObservacao());
-            pstm.setString(7, String.valueOf(t.getStatus()));
-            pstm.setString(8, String.valueOf(t.getEndereco().toString()));
-            pstm.setString(9, t.getCnpj());
-            pstm.setString(10, t.getInscEstadual());
-            pstm.setString(11, t.getContato());
-            pstm.setString(12, t.getRazaoSocial());
-            pstm.setString(13, t.getCpf());
-            pstm.setString(14, t.getRg());
-
-        }catch(SQLException ex){
-            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return t;
-    }
-
-    @Override
-    public Fornecedor update(Fornecedor t) {
-    	Connection conexao = ConnectionFactory.getConnection();
-        var sqlExecutar = "UPDATE fornecedor SET nome = (?), fone1 = (?), fone2 = (?), email = (?),"
-        		+ "complemento_endereco = (?), observacao = (?), status = (?), endereco = (?), "
-        		+ "cnpj = (?), inscricao_estadual = (?), contato = (?), razao_social = (?)"
-        		+ ", cpf = (?), rg = (?) WHERE id = "+t.getId();
-        PreparedStatement pstm = null;
+        String sqlExecutar = "INSERT INTO fornecedor (nome, fone1, fone2, complementoEndereco, email, dtCadastro, observacao, status, cnpj, inscEstadual, contato, razaoSocial, cpf, rg) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        PreparedStatement pstm = null; // interagir com o banco de dados
 
         try {
-        	 pstm = conexao.prepareStatement(sqlExecutar);
-             pstm.setString(0, t.getNome());
-             pstm.setString(1, t.getFone1());
-             pstm.setString(2, t.getFone2());
-             pstm.setString(3, t.getEmail());
-             pstm.setString(4, String.valueOf(t.getDtCadastro()));
-             pstm.setString(5, t.getComplementoEndereco());
-             pstm.setString(6, t.getObservacao());
-             pstm.setString(7, String.valueOf(t.getStatus()));
-             pstm.setString(8, String.valueOf(t.getEndereco().toString()));
-             pstm.setString(9, t.getCnpj());
-             pstm.setString(10, t.getInscEstadual());
-             pstm.setString(11, t.getContato());
-             pstm.setString(12, t.getRazaoSocial());
-             pstm.setString(13, t.getCpf());
-             pstm.setString(14, t.getRg());
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(1, objeto.getNome()); // atributo que estao no banco
+            pstm.setString(2, objeto.getFone1());
+            pstm.setString(3, objeto.getFone2());
+            pstm.setString(4, objeto.getComplementoEndereco());
+            pstm.setString(5, objeto.getEmail());
+            pstm.setObject(6, objeto.getDtCadastro());
+            pstm.setString(7, objeto.getObservacao());
+            pstm.setInt(8, objeto.getStatus());
+            pstm.setString(5, objeto.getCnpj());
+            pstm.setString(5, objeto.getInscEstadual());
+            pstm.setString(0, objeto.getContato());
+            pstm.setString(0, objeto.getRazaoSocial());
+            pstm.setString(9, objeto.getCpf());
+            pstm.setString(10, objeto.getRg());
 
+            pstm.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+
         ConnectionFactory.closeConnection(conexao, pstm);
-        return t;
+
     }
 
     @Override
-    public Fornecedor search(Fornecedor t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public Fornecedor retrieve(int codigo) {
 
-    @Override
-    public List<Fornecedor> search() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "SELECT fornecedor.id, fornecedor.nome from fornecedor where fornecedor.id = ?";
 
-    @Override
-    public void remove(Fornecedor t) {
-    	Connection conexao = ConnectionFactory.getConnection();
-        var sqlExecutar = "DELETE FROM fornecedor WHERE id = "+t.getId();
         PreparedStatement pstm = null;
+        ResultSet rst = null;
+
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setInt(0, codigo);
+            rst = pstm.executeQuery();
+            Fornecedor fornecedor = new Fornecedor();
+
+            while (rst.next()) {
+                fornecedor.setId(rst.getInt("id"));
+                fornecedor.setNome(rst.getString("nome"));
+                fornecedor.setFone1(rst.getString("fone1"));
+                fornecedor.setFone2(rst.getString("fone2"));
+                fornecedor.setComplementoEndereco(rst.getString("complementoEndereco"));
+                fornecedor.setEmail(rst.getString("email"));
+                fornecedor.setDtCadastro(rst.getDate("dtCadastro"));
+                fornecedor.setObservacao(rst.getString("observacao"));
+                fornecedor.setStatus((char) rst.getInt("status"));
+                fornecedor.setCnpj(rst.getString("cnpj"));
+                fornecedor.setInscEstadual(rst.getString("Inscricao Estadual"));
+                fornecedor.setContato(rst.getString("Contato"));
+                fornecedor.setRazaoSocial(rst.getString("Razao Social"));
+                fornecedor.setCpf(rst.getString("CPF"));
+                fornecedor.setRg(rst.getString("RG"));
+
+            }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return fornecedor;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
+        }
+
+    }
+
+    @Override
+    public Fornecedor retrieve(String descricao) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "SELECT fornecedor.id, fornecedor.cnpj, fornecedor.razaoSocial, fornecedor.inscricaoEstadual, fornecedor.status from fornecedor where fornecedor.cnpj = ?";
+
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(0, descricao);
+            rst = pstm.executeQuery();
+            Fornecedor fornecedor = new Fornecedor();
+
+            while (rst.next()) {
+                fornecedor.setId(rst.getInt("id"));
+                fornecedor.setCnpj(rst.getString("nome"));
+                fornecedor.setRazaoSocial(rst.getString("Razao Social"));
+                fornecedor.setInscEstadual(rst.getString("Inscricao Estadual"));
+                fornecedor.setStatus(rst.getString("status").charAt(0));
+
+            }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return fornecedor;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
+        }
+
+    }
+
+    @Override
+    public List<Fornecedor> retrieve() {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "SELECT fornecedor.id, fornecedor.cnpj, fornecedor.razaoSocial, fornecedor.inscricaoEstadual, fornecedor.status from fornecedor where fornecedor";
+
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+
+        List<Fornecedor> listaFornecedor = new ArrayList<>();
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            rst = pstm.executeQuery();
+
+            while (rst.next()) {
+                Fornecedor fornecedor = new Fornecedor();
+                fornecedor.setId(rst.getInt("id"));
+                fornecedor.setCnpj(rst.getString("nome"));
+                fornecedor.setRazaoSocial(rst.getString("Razao Social"));
+                fornecedor.setInscEstadual(rst.getString("Inscricao Estadual"));
+                fornecedor.setStatus(rst.getString("status").charAt(0));
+                listaFornecedor.add(fornecedor);
+            }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return listaFornecedor;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
+        }
+
+    }
+
+    @Override
+    public void update(Fornecedor objeto) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "UPDATE fornecedor set fornecedor.nome = ? where fornecedor.id = ?";
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(0, objeto.getNome());
+            pstm.setInt(1, objeto.getId());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+
         ConnectionFactory.closeConnection(conexao, pstm);
+
     }
-    
+
+    @Override
+    public void delete(Fornecedor objeto) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "DELETE FROM fornecedor WHERE fornecedor.id = ?";
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setInt(0, objeto.getId());
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        ConnectionFactory.closeConnection(conexao, pstm);
+
+    }
+
 }

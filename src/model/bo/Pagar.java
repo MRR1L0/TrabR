@@ -1,13 +1,13 @@
 package model.bo;
 
 import java.util.Date;
-import java.util.Timer;
+import java.sql.Time;
 
 public class Pagar {
     
     private int id;
     private Date dataEmissao;
-    private Timer horaEmissao;
+    private Time horaEmissao;
     private Date dataVencimento;
     private float valorPagar;
     private char status;
@@ -16,7 +16,7 @@ public class Pagar {
     public Pagar() {
     }
 
-    public Pagar(int id, Date dataEmissao, Timer horaEmissao, Date dataVencimento, float valorPagar, char status) {
+    public Pagar(int id, Date dataEmissao, Time horaEmissao, Date dataVencimento, float valorPagar, char status) {
         this.id = id;
         this.dataEmissao = dataEmissao;
         this.horaEmissao = horaEmissao;
@@ -41,11 +41,11 @@ public class Pagar {
         this.dataEmissao = dataEmissao;
     }
 
-    public Timer getHoraEmissao() {
+    public Time getHoraEmissao() {
         return horaEmissao;
     }
 
-    public void setHoraEmissao(Timer horaEmissao) {
+    public void setHoraEmissao(Time horaEmissao) {
         this.horaEmissao = horaEmissao;
     }
 

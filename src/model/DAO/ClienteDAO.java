@@ -1,107 +1,203 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.DAO;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.bo.Cliente;
 
-/**
- *
- * @author aluno
- */
-public class ClienteDAO implements InterfaceDAO<model.bo.Cliente>{
+public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
 
     @Override
-    public Cliente create(Cliente t) {
-                Connection conexao = ConnectionFactory.getConnection();
-        
-        var sqlExecutar = "INSERT INTO cliente ("+t.sqlConection()+") values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
-  
+    public void create(Cliente objeto) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "INSERT INTO cliente (nome, fone1, fone2, complementoEndereco, email, dtCadastro, observacao, status, cpf, rg, dtNascimento, sexo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        PreparedStatement pstm = null; // interagir com o banco de dados
+
         try {
-            
-            PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getNome());
-            pstm.setString(1, t.getFone1());
-            pstm.setString(2, t.getFone2());
-            pstm.setString(3, t.getEmail());
-            pstm.setString(4, String.valueOf(t.getDtCadastro()));
-            pstm.setString(5, t.getComplementoEndereco());
-            pstm.setString(6, t.getObservacao());
-            pstm.setString(7, String.valueOf(t.getStatus()));
-            pstm.setString(8, String.valueOf(t.getEndereco().toString()));
-            pstm.setString(9, t.getCpf());
-            pstm.setString(10, t.getRg());
-            pstm.setString(11, String.valueOf(t.getDtNascimento()));
-            pstm.setString(12, String.valueOf(t.getSexo()));
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(1, objeto.getNome()); // atributo que estao no banco
+            pstm.setString(2, objeto.getFone1());
+            pstm.setString(3, objeto.getFone2());
+            pstm.setString(4, objeto.getComplementoEndereco());
+            pstm.setString(5, objeto.getEmail());
+            pstm.setObject(6, objeto.getDtCadastro());
+            pstm.setString(7, objeto.getObservacao());
+            pstm.setInt(8, objeto.getStatus());
+            pstm.setString(9, objeto.getCpf());
+            pstm.setString(10, objeto.getRg());
+            pstm.setObject(11, objeto.getDtNascimento());
+            pstm.setString(12, Character.toString(objeto.getSexo()));
+
             pstm.executeUpdate();
-        
         } catch (SQLException ex) {
-            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
-        return t;
+
+        ConnectionFactory.closeConnection(conexao, pstm);
     }
 
     @Override
-    public Cliente update(Cliente t) {
-    	Connection conexao = ConnectionFactory.getConnection();
-        var sqlExecutar = "UPDATE cliente SET nome = (?), fone1 = (?), fone2 = (?), email = (?),"
-        		+ "complemento_endereco = (?), observacao = (?), status = (?), endereco = (?), cpf = (?),"
-        		+ "rg = (?), data_nascimento = (?), sexo = (?) WHERE id = "+t.getId();
+    public Cliente retrieve(int codigo) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "SELECT cliente.id, cliente.nome from cliente where cliente.id = ?";
+//Para corrigir isso, você deve atualizar a consulta SQL para selecionar todas as colunas necessárias. Por exemplo, se quiser selecionar todas as colunas da tabela cliente, a consulta deve ser:
+
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setInt(1, codigo);
+            rst = pstm.executeQuery();
+            Cliente cliente = new Cliente();
+
+            while (rst.next()) {
+                cliente.setId(rst.getInt("id"));
+                cliente.setNome(rst.getString("nome"));
+                cliente.setFone1(rst.getString("fone1"));
+                cliente.setFone2(rst.getString("fone2"));
+                cliente.setComplementoEndereco(rst.getString("complementoEndereco"));
+                cliente.setEmail(rst.getString("email"));
+                cliente.setDtCadastro(rst.getDate("dtCadastro"));
+                cliente.setObservacao(rst.getString("observacao"));
+                cliente.setStatus((char) rst.getInt("status"));
+                cliente.setCpf(rst.getString("cpf"));
+                cliente.setRg(rst.getString("rg"));
+                cliente.setDtNascimento(rst.getDate("dtNascimento"));
+                cliente.setSexo((char) rst.getInt("sexo"));
+            }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return cliente;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
+        }
+    }
+
+    @Override
+    public Cliente retrieve(String descricao) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "SELECT cliente.id, cliente.nome, cliente.cpf, cliente.telefone, cliente.status from cliente where cliente.nome = ?";
+
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(1, descricao);
+            rst = pstm.executeQuery();
+            Cliente cliente = new Cliente();
+
+            while (rst.next()) {
+                cliente.setId(rst.getInt("id"));
+                cliente.setNome(rst.getString("nome"));
+                cliente.setCpf(rst.getString("cpf"));
+                cliente.setFone1(rst.getString("telefone"));
+                cliente.setStatus(rst.getString("status").charAt(0));                  //o valor do campo status é retornado como uma String e o primeiro caractere é obtido utilizando o método charAt(0), convertendo-o em um char.
+            }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return cliente;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
+        }
+
+    }
+
+    @Override
+    public List<Cliente> retrieve() {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "SELECT cliente.id, cliente.nome, cliente.cpf, cliente.telefone, cliente.status from cliente";
+
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+
+        List<Cliente> listaCliente = new ArrayList<>();
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            rst = pstm.executeQuery();
+
+            while (rst.next()) {
+                Cliente cliente = new Cliente();
+                cliente.setId(rst.getInt("id"));
+                cliente.setNome(rst.getString("nome"));
+                cliente.setCpf(rst.getString("cpf"));
+                cliente.setFone1(rst.getString("telefone"));
+                cliente.setStatus(rst.getString("status").charAt(0));
+                listaCliente.add(cliente);
+            }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return listaCliente;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
+        }
+
+    }
+
+    @Override
+    public void update(Cliente objeto) {
+//// (nome, fone1, fone2, complementoEndereco, email, dtCadastro, observacao, status, cpf, rg, dtNascimento, sexo
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "UPDATE cliente set cliente.nome, cliente.fone1, cliente.fone2, cliente.complementoEndereco, cliente.email, cliente.dtCadastro, cliente.observacao, cliente.status, cliente.cpf, cliente.rg, cliente.dtNascimento, cliente.sexo= ? where cliente.id = ?";   //descrição do cliente e o ID do cliente estão sendo utilizados para atualizar o registro no banco de dados.
         PreparedStatement pstm = null;
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getNome());
-            pstm.setString(1, t.getFone1());
-            pstm.setString(2, t.getFone2());
-            pstm.setString(3, t.getEmail());
-            pstm.setString(5, t.getComplementoEndereco());
-            pstm.setString(6, t.getObservacao());
-            pstm.setString(7, String.valueOf(t.getStatus()));
-            pstm.setString(8, String.valueOf(t.getEndereco().toString()));
-            pstm.setString(9, t.getCpf());
-            pstm.setString(10, t.getRg());
-            pstm.setString(11, String.valueOf(t.getDtNascimento()));
-            pstm.setString(12, String.valueOf(t.getSexo()));
+            pstm.setString(1, objeto.getNome());
+            pstm.setString(2, objeto.getFone1());
+            pstm.setString(3, objeto.getFone2());
+            pstm.setString(4, objeto.getComplementoEndereco());
+            pstm.setString(5, objeto.getEmail());
+            pstm.setObject(6, objeto.getDtCadastro());           ///object - desde que o tipo de dados do campo dtCadastro no banco de dados seja DATETIME, TIMESTAMP ou similar.
+            pstm.setString(7, objeto.getObservacao());
+            pstm.setInt(8, objeto.getStatus());
+            pstm.setString(9, objeto.getCpf());
+            pstm.setString(10, objeto.getRg());
+            pstm.setObject(11, objeto.getDtNascimento());
+            pstm.setString(12, Character.toString(objeto.getSexo()));   ///// convertendo char para string
+            pstm.setInt(13, objeto.getId());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+
         ConnectionFactory.closeConnection(conexao, pstm);
-        return t;
     }
 
     @Override
-    public Cliente search(Cliente t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void delete(Cliente objeto) {
 
-    @Override
-    public List<Cliente> search() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void remove(Cliente t) {
-    	Connection conexao = ConnectionFactory.getConnection();
-        var sqlExecutar = "DELETE FROM cliente WHERE id = "+t.getId();
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "DELETE FROM cliente WHERE cliente.id = ?";   //ID do cliente está sendo utilizado para identificar o registro a ser excluído.
         PreparedStatement pstm = null;
+
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setInt(0, objeto.getId());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+
         ConnectionFactory.closeConnection(conexao, pstm);
+
     }
-    
+
 }

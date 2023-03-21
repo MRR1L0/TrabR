@@ -1,94 +1,196 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.DAO;
+
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.bo.Pagamento;
 
-/**
- *
- * @author aluno
- */
-public class PagamentoDAO implements InterfaceDAO<model.bo.Pagamento>{
+public class PagamentoDAO implements InterfaceDAO<Pagamento> {
 
     @Override
-    public Pagamento create(Pagamento t) {
-                Connection conexao = ConnectionFactory.getConnection();
-        
-        var sqlExecutar = "INSERT INTO pagamento ("+t.sqlConection()+") values(?,?,?,?,?,?)";
-  
-        try {
-            
-            PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, String.valueOf(t.getDataPagamento()));
-            pstm.setString(1, String.valueOf(t.getHoraPagamento()));
-            pstm.setString(2, String.valueOf(t.getValorDesconto()));
-            pstm.setString(3, String.valueOf(t.getValorAcrescimo()));
-            pstm.setString(4, String.valueOf(t.getValorPago()));
-            pstm.setString(5, String.valueOf(t.getStatus()));
-            pstm.executeUpdate();
-        
-        } catch (SQLException ex) {
-            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return t;
-    }
+    public void create(Pagamento objeto) {
 
-    @Override
-    public Pagamento update(Pagamento t) {
         Connection conexao = ConnectionFactory.getConnection();
-        var sqlExecutar = "UPDATE pagamento SET data_pagamento= (?), hora_pagamento = (?)"
-        		+ ", valor_desconto = (?), valor_acrescimo = (?), valor_pago = (?), status = (?)"
-        		+ " WHERE id = "+t.getId();
+
+        String sqlExecutar = "INSERT INTO pagamento (dataPagamento, horaPagamento, valorDesconto, valorAcrescimo, valorPago, status) VALUES (?, ?, ?, ?, ?, ?)";
+///  String sqlExecutar = "INSERT INTO pagamento (dataPagamento, horaPagamento, valorDesconto, valorAcrescimo, valorPago, status) VALUES (?)";
+        PreparedStatement pstm = null; // interagir com o banco de dados
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setDate(1, new java.sql.Date(objeto.getDataPagamento().getTime()));
+            pstm.setTime(2, new java.sql.Time(objeto.getHoraPagamento().getTime()));
+            pstm.setFloat(3, objeto.getValorDesconto());
+            pstm.setFloat(4, objeto.getValorAcrescimo());
+            pstm.setFloat(5, objeto.getValorPago());
+            pstm.setString(6, String.valueOf(objeto.getStatus()));
+            pstm.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        ConnectionFactory.closeConnection(conexao, pstm);
+
+    }
+
+    @Override
+    public Pagamento retrieve(int codigo) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        // String sqlExecutar = "SELECT pagamento.id, pagamento.descricao from pagamento where pagamento.id = ?";
+        String sqlExecutar = "SELECT pagamento.id, pagamento.dataPagamento, pagamento.horaPagamento, pagamento.valorDesconto, pagamento.valorAcrescimo, pagamento.valorPago, pagamento.status from pagamento where pagamento.id = ?";
+
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setInt(0, codigo);
+            rst = pstm.executeQuery();
+            Pagamento pagamento = new Pagamento();
+
+            while (rst.next()) {
+                pagamento.setId(rst.getInt("id"));
+                pagamento.setDataPagamento(rst.getDate("dataPagamento"));
+                pagamento.setHoraPagamento(rst.getTime("horaPagamento"));
+                pagamento.setValorDesconto(rst.getFloat("valorDesconto"));
+                pagamento.setValorAcrescimo(rst.getFloat("valorAcrescimo"));
+                pagamento.setValorPago(rst.getFloat("valorPago"));
+                pagamento.setStatus(rst.getString("status").charAt(0));
+            }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return pagamento;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
+        }
+
+    }
+
+    @Override
+    public Pagamento retrieve(String descricao) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        /// String sqlExecutar = "SELECT pagamento.id, pagamento.descricao from pagamento where pagamento.descricao = ?";
+        String sqlExecutar = "SELECT pagamento.id, pagamento.dataPagamento, pagamento.horaPagamento, pagamento.valorDesconto, pagamento.valorAcrescimo, pagamento.valorPago, pagamento.status FROM pagamento WHERE descricao = ?";
+
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(0, descricao);
+            rst = pstm.executeQuery();
+            Pagamento pagamento = new Pagamento();
+
+            while (rst.next()) {
+                pagamento.setId(rst.getInt("id"));
+                pagamento.setDataPagamento(rst.getDate("dataPagamento"));
+                pagamento.setHoraPagamento(rst.getTime("horaPagamento"));
+                pagamento.setValorDesconto(rst.getFloat("valorDesconto"));
+                pagamento.setValorAcrescimo(rst.getFloat("valorAcrescimo"));
+                pagamento.setValorPago(rst.getFloat("valorPago"));
+                pagamento.setStatus(rst.getString("status").charAt(0));
+            }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return pagamento;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
+        }
+
+    }
+
+    @Override
+    public List<Pagamento> retrieve() {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        /// String sqlExecutar = "SELECT pagamento.id, pagamento.descricao from pagamento";
+        String sqlExecutar = "SELECT pagamento.id, pagamento.dataPagamento, pagamento.horaPagamento, pagamento.valorDesconto, pagamento.valorAcrescimo, pagamento.valorPago, status FROM pagamento";
+
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+
+        List<Pagamento> listaPagamento = new ArrayList<>();
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            rst = pstm.executeQuery();
+
+            while (rst.next()) {
+                Pagamento pagamento = new Pagamento();
+                pagamento.setId(rst.getInt("id"));
+                pagamento.setDataPagamento(rst.getDate("dataPagamento"));
+                pagamento.setHoraPagamento(rst.getTime("horaPagamento"));
+                pagamento.setValorDesconto(rst.getFloat("valorDesconto"));
+                pagamento.setValorAcrescimo(rst.getFloat("valorAcrescimo"));
+                pagamento.setValorPago(rst.getFloat("valorPago"));
+                pagamento.setStatus(rst.getString("status").charAt(0));
+                listaPagamento.add(pagamento);
+            }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return listaPagamento;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
+        }
+    }
+
+    @Override
+    public void update(Pagamento objeto) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "UPDATE pagamento SET  dataPagamento = ?, horaPagamento = ?, valorDesconto = ?, valorAcrescimo = ?, valorPago = ?, status = ? WHERE id = ?";
+        /// String sqlExecutar = "UPDATE pagamento set pagamento.descricao = ? where pagamento.id = ?";
         PreparedStatement pstm = null;
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, String.valueOf(t.getDataPagamento()));
-            pstm.setString(1, String.valueOf(t.getHoraPagamento()));
-            pstm.setString(2, String.valueOf(t.getValorDesconto()));
-            pstm.setString(3, String.valueOf(t.getValorAcrescimo()));
-            pstm.setString(4, String.valueOf(t.getValorPago()));
-            pstm.setString(5, String.valueOf(t.getStatus()));
+            pstm.setDate(2, (Date) objeto.getDataPagamento());
+            pstm.setTime(3, objeto.getHoraPagamento());
+            pstm.setFloat(4, objeto.getValorDesconto());
+            pstm.setFloat(5, objeto.getValorAcrescimo());
+            pstm.setFloat(6, objeto.getValorPago());
+            pstm.setString(7, String.valueOf(objeto.getStatus()));
+            pstm.setInt(8, objeto.getId());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+
         ConnectionFactory.closeConnection(conexao, pstm);
-        return t;
+
     }
 
     @Override
-    public Pagamento search(Pagamento t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void delete(Pagamento objeto) {
 
-    @Override
-    public List<Pagamento> search() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void remove(Pagamento t) {
-    	Connection conexao = ConnectionFactory.getConnection();
-        var sqlExecutar = "DELETE FROM pagamento WHERE id = "+t.getId();
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "DELETE FROM pagamento WHERE pagamento.id = ?";
         PreparedStatement pstm = null;
+
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setInt(0, objeto.getId());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+
         ConnectionFactory.closeConnection(conexao, pstm);
+
     }
-    
+
 }

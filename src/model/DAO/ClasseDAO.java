@@ -1,81 +1,165 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.DAO;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.bo.Classe;
 
-/**
- *
- * @author aluno
- */
-public class ClasseDAO implements InterfaceDAO<model.bo.Classe>{
+public class ClasseDAO implements InterfaceDAO<model.bo.Classe> {
 
     @Override
-    public Classe create(Classe t) {
-                Connection conexao = ConnectionFactory.getConnection();
-        
-        var sqlExecutar = "INSERT INTO classe ("+t.sqlConection()+") values(?)";
-  
+    public void create(Classe objeto) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "INSERT INTO classe (descricao) VALUES (?)";
+        PreparedStatement pstm = null; // interagir com o banco de dados
+
         try {
-            
-            PreparedStatement pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getDescricao());
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(0, objeto.getDescricao()); // atributo que estao no banco
             pstm.executeUpdate();
-        
         } catch (SQLException ex) {
-            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        ConnectionFactory.closeConnection(conexao, pstm);
+
     }
 
     @Override
-    public Classe update(Classe t) {
-    	Connection conexao = ConnectionFactory.getConnection();
-        var sqlExecutar = "UPDATE classe SET descricao = (?) WHERE id = "+t.getId();
+    public Classe retrieve(int codigo) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "SELECT classe.id, classe.descricao from classe where classe.id = ?";
+
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setInt(0, codigo);
+            rst = pstm.executeQuery();
+            Classe classe = new Classe();
+
+            while (rst.next()) {
+                classe.setId(rst.getInt("id"));
+                classe.setDescricao(rst.getString("descricao"));
+            }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return classe;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
+        }
+
+    }
+
+    @Override
+    public Classe retrieve(String descricao) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "SELECT classe.id, classe.descricao from classe where classe.descricao = ?";
+
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(0, descricao);
+            rst = pstm.executeQuery();
+            Classe classe = new Classe();
+
+            while (rst.next()) {
+                classe.setId(rst.getInt("id"));
+                classe.setDescricao(rst.getString("descricao"));
+            }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return classe;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
+        }
+
+    }
+
+    @Override
+    public List<Classe> retrieve() {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "SELECT classe.id, classe.descricao from classe";
+
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+
+        List<Classe> listaClasse = new ArrayList<>();
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            rst = pstm.executeQuery();
+
+            while (rst.next()) {
+                Classe classe = new Classe();
+                classe.setId(rst.getInt("id"));
+                classe.setDescricao(rst.getString("descricao"));
+                listaClasse.add(classe);
+            }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return listaClasse;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
+        }
+
+    }
+
+    @Override
+    public void update(Classe objeto) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "UPDATE classe set classe.descricao = ? where classe.id = ?";
         PreparedStatement pstm = null;
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, t.getDescricao());
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        ConnectionFactory.closeConnection(conexao, pstm);
-        return t;
-    }
-
-    @Override
-    public Classe search(Classe t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Classe> search() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void remove(Classe t) {
-    	Connection conexao = ConnectionFactory.getConnection();
-        var sqlExecutar = "DELETE FROM classe WHERE id = "+t.getId();
-        PreparedStatement pstm = null;
-        try {
-            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(0, objeto.getDescricao());
+            pstm.setInt(1, objeto.getId());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+
         ConnectionFactory.closeConnection(conexao, pstm);
+
     }
-    
+
+    @Override
+    public void delete(Classe objeto) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "DELETE FROM classe WHERE classe.id = ?";
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setInt(0, objeto.getId());
+            pstm.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        ConnectionFactory.closeConnection(conexao, pstm);
+
+    }
+
 }
