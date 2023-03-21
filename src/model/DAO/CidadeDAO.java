@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.bo.Bairro;
 import model.bo.Cidade;
 
 public class CidadeDAO implements InterfaceDAO<Cidade> {
@@ -29,33 +32,27 @@ public class CidadeDAO implements InterfaceDAO<Cidade> {
     }
 
     @Override
-    public Cidade retrieve(int codigo) {
-
+    public Cidade search(int t) {
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT cidade.id, cidade.descricao from cidade where cidade.id = ?";
-
+        var sqlExecutar = "SELECT id, descricao from cidade where cidade.id = "+ t;
+        var cidade = new Cidade();
         PreparedStatement pstm = null;
         ResultSet rst = null;
-
+        
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(0, codigo);
             rst = pstm.executeQuery();
-            Cidade cidade = new Cidade();
-
             while (rst.next()) {
                 cidade.setId(rst.getInt("id"));
                 cidade.setDescricao(rst.getString("descricao"));
             }
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return cidade;
-
         } catch (SQLException ex) {
             ex.printStackTrace();
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return null;
+                 
+        }finally{
+            ConnectionFactory.closeConnection(conexao, pstm, rst); 
+            return cidade;
         }
-
     }
 
     @Override

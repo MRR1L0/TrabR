@@ -32,7 +32,7 @@ public class BairroDAO implements InterfaceDAO<Bairro> {
     }
 
     @Override
-    public Bairro retrieve(int codigo) {
+    public Bairro search(int codigo) {
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT bairro.id, bairro.descricao from bairro where bairro.id = ?";
 
@@ -61,7 +61,7 @@ public class BairroDAO implements InterfaceDAO<Bairro> {
     }
 
     @Override
-    public Bairro retrieve(String descricao) {
+    public Bairro search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT bairro.id, bairro.descricao from bairro where bairro.descricao = ?";
@@ -91,7 +91,7 @@ public class BairroDAO implements InterfaceDAO<Bairro> {
     }
 
     @Override   // nao usar "*" por conta do desempenho, ele faz duas pesquisas no banco de dados 
-    public List<Bairro> retrieve() {
+    public List<Bairro> search() {
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT bairro.id, bairro.descricao from bairro";
 

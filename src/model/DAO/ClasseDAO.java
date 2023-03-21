@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.bo.Classe;
 
-public class ClasseDAO implements InterfaceDAO<model.bo.Classe> {
+public class ClasseDAO implements InterfaceDAO<Classe> {
 
     @Override
     public void create(Classe objeto) {
@@ -30,37 +30,31 @@ public class ClasseDAO implements InterfaceDAO<model.bo.Classe> {
     }
 
     @Override
-    public Classe retrieve(int codigo) {
-
+    public Classe search(int t) {
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT classe.id, classe.descricao from classe where classe.id = ?";
-
+        var sqlExecutar = "SELECT id, descricao from classe where classe.id = "+ t;
+        var classe = new Classe();
         PreparedStatement pstm = null;
         ResultSet rst = null;
-
+        
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(0, codigo);
             rst = pstm.executeQuery();
-            Classe classe = new Classe();
-
             while (rst.next()) {
                 classe.setId(rst.getInt("id"));
                 classe.setDescricao(rst.getString("descricao"));
             }
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return classe;
-
         } catch (SQLException ex) {
             ex.printStackTrace();
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return null;
+                 
+        }finally{
+            ConnectionFactory.closeConnection(conexao, pstm, rst); 
+            return classe;
         }
-
     }
 
     @Override
-    public Classe retrieve(String descricao) {
+    public Classe search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT classe.id, classe.descricao from classe where classe.descricao = ?";
@@ -90,7 +84,7 @@ public class ClasseDAO implements InterfaceDAO<model.bo.Classe> {
     }
 
     @Override
-    public List<Classe> retrieve() {
+    public List<Classe> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT classe.id, classe.descricao from classe";

@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.bo.Bairro;
 import model.bo.Marca;
 
 public class MarcaDAO implements InterfaceDAO<Marca> {
@@ -30,33 +33,27 @@ public class MarcaDAO implements InterfaceDAO<Marca> {
     }
 
     @Override
-    public Marca retrieve(int codigo) {
-
+    public Marca search(int t) {
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT marca.id, marca.descricao from marca where marca.id = ?";
-
+        var sqlExecutar = "SELECT id, descricao from marca where marca.id = "+ t;
+        var marca = new Marca();
         PreparedStatement pstm = null;
         ResultSet rst = null;
-
+        
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(0, codigo);
             rst = pstm.executeQuery();
-            Marca marca = new Marca();
-
             while (rst.next()) {
                 marca.setId(rst.getInt("id"));
                 marca.setDescricao(rst.getString("descricao"));
             }
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return marca;
-
         } catch (SQLException ex) {
             ex.printStackTrace();
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return null;
+                 
+        }finally{
+            ConnectionFactory.closeConnection(conexao, pstm, rst); 
+            return marca;
         }
-
     }
 
     @Override
