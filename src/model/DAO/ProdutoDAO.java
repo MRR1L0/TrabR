@@ -41,7 +41,7 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto> {
     }
 
     @Override
-    public Produto retrieve(int codigo) {
+    public Produto search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT produto.id, produto.descricao from produto where produto.id = ?";
@@ -82,7 +82,7 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto> {
     }
 
     @Override
-    public Produto retrieve(String descricao) {
+    public Produto search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT produto.id, produto.descricao from produto where produto.descricao = ?";
@@ -124,7 +124,7 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto> {
     }
 
     @Override
-    public List<Produto> retrieve() {
+    public List<Produto> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT produto.id, produto.descricao from produto";

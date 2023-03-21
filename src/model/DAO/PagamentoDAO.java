@@ -38,7 +38,7 @@ public class PagamentoDAO implements InterfaceDAO<Pagamento> {
     }
 
     @Override
-    public Pagamento retrieve(int codigo) {
+    public Pagamento search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
         // String sqlExecutar = "SELECT pagamento.id, pagamento.descricao from pagamento where pagamento.id = ?";
@@ -74,7 +74,7 @@ public class PagamentoDAO implements InterfaceDAO<Pagamento> {
     }
 
     @Override
-    public Pagamento retrieve(String descricao) {
+    public Pagamento search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         /// String sqlExecutar = "SELECT pagamento.id, pagamento.descricao from pagamento where pagamento.descricao = ?";
@@ -110,7 +110,7 @@ public class PagamentoDAO implements InterfaceDAO<Pagamento> {
     }
 
     @Override
-    public List<Pagamento> retrieve() {
+    public List<Pagamento> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         /// String sqlExecutar = "SELECT pagamento.id, pagamento.descricao from pagamento";

@@ -41,7 +41,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
     }
 
     @Override
-    public Cliente retrieve(int codigo) {
+    public Cliente search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT cliente.id, cliente.nome from cliente where cliente.id = ?";
@@ -82,7 +82,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
     }
 
     @Override
-    public Cliente retrieve(String descricao) {
+    public Cliente search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT cliente.id, cliente.nome, cliente.cpf, cliente.telefone, cliente.status from cliente where cliente.nome = ?";
@@ -115,7 +115,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
     }
 
     @Override
-    public List<Cliente> retrieve() {
+    public List<Cliente> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT cliente.id, cliente.nome, cliente.cpf, cliente.telefone, cliente.status from cliente";

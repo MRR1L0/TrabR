@@ -37,7 +37,7 @@ public class PagarDAO implements InterfaceDAO<Pagar> {
     }
 
     @Override
-    public Pagar retrieve(int codigo) {
+    public Pagar search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
 //        String sqlExecutar = "SELECT pagar.id, pagar.dataEmissao from pagar where pagar.id = ?";
@@ -73,7 +73,7 @@ public class PagarDAO implements InterfaceDAO<Pagar> {
     }
 
     @Override
-    public Pagar retrieve(String descricao) {
+    public Pagar search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT pagar.id, pagar.descricao from pagar where pagar.descricao = ?";
@@ -108,7 +108,7 @@ public class PagarDAO implements InterfaceDAO<Pagar> {
     }
 
     @Override
-    public List<Pagar> retrieve() {
+    public List<Pagar> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT pagar.id, pagar.descricao from pagar";

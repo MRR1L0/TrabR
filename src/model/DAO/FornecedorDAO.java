@@ -45,7 +45,7 @@ public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor> {
     }
 
     @Override
-    public Fornecedor retrieve(int codigo) {
+    public Fornecedor search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT fornecedor.id, fornecedor.nome from fornecedor where fornecedor.id = ?";
@@ -89,7 +89,7 @@ public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor> {
     }
 
     @Override
-    public Fornecedor retrieve(String descricao) {
+    public Fornecedor search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT fornecedor.id, fornecedor.cnpj, fornecedor.razaoSocial, fornecedor.inscricaoEstadual, fornecedor.status from fornecedor where fornecedor.cnpj = ?";
@@ -123,7 +123,7 @@ public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor> {
     }
 
     @Override
-    public List<Fornecedor> retrieve() {
+    public List<Fornecedor> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT fornecedor.id, fornecedor.cnpj, fornecedor.razaoSocial, fornecedor.inscricaoEstadual, fornecedor.status from fornecedor where fornecedor";

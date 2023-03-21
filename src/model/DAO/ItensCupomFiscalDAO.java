@@ -33,7 +33,7 @@ public class ItensCupomFiscalDAO implements InterfaceDAO<ItensCupomFiscal> {
     }
 
     @Override
-    public ItensCupomFiscal retrieve(int codigo) {
+    public ItensCupomFiscal search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT ItensCupomFiscal.id, ItensCupomFiscal.qtdProduto, ItensCupomFiscal.valorUnitarioProduto, ItensCupomFiscal.status from ItensCupomFiscal where ItensCupomFiscal.id = ?";
@@ -65,7 +65,7 @@ public class ItensCupomFiscalDAO implements InterfaceDAO<ItensCupomFiscal> {
     }
 
     @Override
-    public ItensCupomFiscal retrieve(String descricao) {
+    public ItensCupomFiscal search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT ItensCupomFiscal.id, ItensCupomFiscal.qtdProduto, ItensCupomFiscal.valorUnitarioProduto, ItensCupomFiscal.status from ItensCupomFiscal where ItensCupomFiscal.descricao = ?";
@@ -97,7 +97,7 @@ public class ItensCupomFiscalDAO implements InterfaceDAO<ItensCupomFiscal> {
     }
 
     @Override
-    public List<ItensCupomFiscal> retrieve() {
+    public List<ItensCupomFiscal> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT ItensCupomFiscal.id, ItensCupomFiscal.qtdProduto, ItensCupomFiscal.valorUnitarioProduto, ItensCupomFiscal.status from ItensCupomFiscal";

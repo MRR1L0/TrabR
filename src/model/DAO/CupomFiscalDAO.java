@@ -36,7 +36,7 @@ public class CupomFiscalDAO implements InterfaceDAO<CupomFiscal> {
     }
 
     @Override
-    public CupomFiscal retrieve(int codigo) {
+    public CupomFiscal search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
         // String sqlExecutar = "SELECT cupomFiscal.id, cupomFiscal.descricao from cupomFiscal where cupomFiscal.id = ?";
@@ -72,7 +72,7 @@ public class CupomFiscalDAO implements InterfaceDAO<CupomFiscal> {
     }
 
     @Override
-    public CupomFiscal retrieve(String descricao) {
+    public CupomFiscal search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT cupomFiscal.id, cupomFiscal.dataVenda, cupomFiscal.horaVenda, cupomFiscal.valorDesconto, cupomFiscal.valorAcrescimo, cupomFiscal.totalCupom, cupomFiscal.status FROM cupom_fiscal where cupomFiscal.id = ?";
@@ -107,7 +107,7 @@ public class CupomFiscalDAO implements InterfaceDAO<CupomFiscal> {
     }
 
     @Override
-    public List<CupomFiscal> retrieve() {
+    public List<CupomFiscal> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT cupomFiscal.id, cupomFiscal.dataVenda, cupomFiscal.horaVenda, cupomFiscal.valorDesconto, cupomFiscal.ValorAcrescimo, cupomFiscal.totalCupom, cupomFiscal.status from cupomFiscal";

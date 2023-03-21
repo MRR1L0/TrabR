@@ -33,7 +33,7 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
     }
 
     @Override
-    public Endereco retrieve(int codigo) {
+    public Endereco search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT endereco.id, endereco.logradouro, endereco.cep from endereco where endereco.id = ?";
@@ -64,7 +64,7 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
     }
 
     @Override
-    public Endereco retrieve(String descricao) {
+    public Endereco search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT endereco.id, endereco.cep, endereco.logradouro from endereco where endereco.cep = ?";
@@ -95,7 +95,7 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
     }
 
     @Override
-    public List<Endereco> retrieve() {
+    public List<Endereco> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT endereco.id, endereco.cep, endereco.logradouro from endereco";

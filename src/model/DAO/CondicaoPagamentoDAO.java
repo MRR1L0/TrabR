@@ -36,7 +36,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPagamento> {
     }
 
     @Override
-    public CondicaoPagamento retrieve(int codigo) {
+    public CondicaoPagamento search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT condicaopgto.id, condicaopgto.descricaoCondicao from condicaopgto where condicaopgto.id = ?";
@@ -69,7 +69,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPagamento> {
     }
 
     @Override
-    public CondicaoPagamento retrieve(String descricao) {
+    public CondicaoPagamento search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT condicaopgto.id, condicaopgto.descricaoCondicao from condicaopgto where condicaopgto.descricaoCondicao = ?";
@@ -100,7 +100,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPagamento> {
     }
 
     @Override
-    public List<CondicaoPagamento> retrieve() {
+    public List<CondicaoPagamento> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT condicaopgto.id, condicaopgto.descricaoCondicao, condicaopgto.status  from condicaopgto";

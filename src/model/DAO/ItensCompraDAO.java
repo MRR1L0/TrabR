@@ -34,7 +34,7 @@ public class ItensCompraDAO implements InterfaceDAO<ItensCompra> {
     }
 
     @Override
-    public ItensCompra retrieve(int codigo) {
+    public ItensCompra search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT itenscompra.id, itenscompra.qtdProduto, itenscompra.valorUnitarioProduto, itenscompra.status FROM itenscompra WHERE itenscompra.id = ?";
@@ -66,7 +66,7 @@ public class ItensCompraDAO implements InterfaceDAO<ItensCompra> {
     }
 
     @Override
-    public ItensCompra retrieve(String descricao) {
+    public ItensCompra search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT itensCompra.id, itensCompra.qtdProduto, itensCompra.valorUnitarioProduto, itensCompra.status  from itensCompra where itensCompra.id = ?";
@@ -98,7 +98,7 @@ public class ItensCompraDAO implements InterfaceDAO<ItensCompra> {
     }
 
     @Override
-    public List<ItensCompra> retrieve() {
+    public List<ItensCompra> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT itensCompra.id, itensCompra.qtdProduto, itensCompra.valorUnitarioProduto , itensCompra.status from itensCompra";

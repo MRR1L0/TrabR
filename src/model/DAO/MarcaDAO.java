@@ -57,7 +57,7 @@ public class MarcaDAO implements InterfaceDAO<Marca> {
     }
 
     @Override
-    public Marca retrieve(String descricao) {
+    public Marca search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT marca.id, marca.descricao from marca where marca.descricao = ?";
@@ -87,7 +87,7 @@ public class MarcaDAO implements InterfaceDAO<Marca> {
     }
 
     @Override
-    public List<Marca> retrieve() {
+    public List<Marca> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT marca.id, marca.descricao from marca";

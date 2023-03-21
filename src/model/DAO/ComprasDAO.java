@@ -6,13 +6,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import model.bo.Compra;
 
-import model.bo.Compras;
 
-public class ComprasDAO implements InterfaceDAO<Compras> {
+
+public class ComprasDAO implements InterfaceDAO<Compra> {
 
     @Override
-    public void create(Compras objeto) {
+    public void create(Compra objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO compras (dataCompra, horaCompra, numeroNF, tipoNF, valorDesconto, valorAcrescimo, totalNF, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -40,7 +41,7 @@ public class ComprasDAO implements InterfaceDAO<Compras> {
     }
 
     @Override
-    public Compras retrieve(int codigo) {
+    public Compras search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
         // String sqlExecutar = "SELECT compras.id, compras.descricao from compras where compras.id = ?";
@@ -80,7 +81,7 @@ public class ComprasDAO implements InterfaceDAO<Compras> {
     }
 
     @Override
-    public Compras retrieve(String descricao) {
+    public Compras search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT compras.id, compras.dataCompra, compras.horaCompra, compras.numeroNF, compras.tipoNF, compras.valorDesconto, compras.valorAcrescimo, compras.totalNF, compras.status  from compras where compras.id = ?";
@@ -117,7 +118,7 @@ public class ComprasDAO implements InterfaceDAO<Compras> {
     }
 
     @Override
-    public List<Compras> retrieve() {
+    public List<Compras> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         ///String sqlExecutar = "SELECT compras.id, compras.descricao from compras";

@@ -56,7 +56,7 @@ public class CidadeDAO implements InterfaceDAO<Cidade> {
     }
 
     @Override
-    public Cidade retrieve(String descricao) {
+    public Cidade search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT cidade.id, cidade.descricao from cidade where cidade.descricao = ?";
@@ -86,7 +86,7 @@ public class CidadeDAO implements InterfaceDAO<Cidade> {
     }
 
     @Override
-    public List<Cidade> retrieve() {
+    public List<Cidade> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT cidade.id, cidade.descricao from cidade";

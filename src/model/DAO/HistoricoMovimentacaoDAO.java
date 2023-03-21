@@ -35,7 +35,7 @@ public class HistoricoMovimentacaoDAO implements InterfaceDAO<HistoricoMovimenta
     }
 
     @Override
-    public HistoricoMovimentacao retrieve(int codigo) {
+    public HistoricoMovimentacao search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT HistoricoMovimentacao.id, HistoricoMovimentacao.data HistoricoMovimentacao.hora, HistoricoMovimentacao.tipo, HistoricoMovimentacao.qtd, HistoricoMovimentacao.status from HistoricoMovimentacao where HistoricoMovimentacao.id = ?";
@@ -69,7 +69,7 @@ public class HistoricoMovimentacaoDAO implements InterfaceDAO<HistoricoMovimenta
     }
 
     @Override
-    public HistoricoMovimentacao retrieve(String descricao) {
+    public HistoricoMovimentacao search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT HistoricoMovimentacao.id, HistoricoMovimentacao.data HistoricoMovimentacao.hora, HistoricoMovimentacao.tipo, HistoricoMovimentacao.qtd, HistoricoMovimentacao.status from HistoricoMovimentacao where HistoricoMovimentacao.id = ?";
@@ -102,7 +102,7 @@ public class HistoricoMovimentacaoDAO implements InterfaceDAO<HistoricoMovimenta
     }
 
     @Override
-    public List<HistoricoMovimentacao> retrieve() {
+    public List<HistoricoMovimentacao> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT HistoricoMovimentacao.id, HistoricoMovimentacao.data HistoricoMovimentacao.hora, HistoricoMovimentacao.tipo, HistoricoMovimentacao.qtd, HistoricoMovimentacao.status from HistoricoMovimentacao";

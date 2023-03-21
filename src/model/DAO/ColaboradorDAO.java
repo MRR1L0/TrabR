@@ -41,7 +41,7 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
     }
 
     @Override
-    public Colaborador retrieve(int codigo) {
+    public Colaborador search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT colaborador.id, colaborador.nome, colaborador.login, colaborador.status from colaborador where colaborador.id = ?";
@@ -72,7 +72,7 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
     }
 
     @Override
-    public Colaborador retrieve(String descricao) {
+    public Colaborador search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT colaborador.id, colaborador.nome, colaborador.login, colaborador.status from colaborador where colaborador.nome = ?";
@@ -104,7 +104,7 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
     }
 
     @Override
-    public List<Colaborador> retrieve() {
+    public List<Colaborador> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT colaborador.id, colaborador.nome, colaborador.login, colaborador.status from colaborador";
