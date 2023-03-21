@@ -80,7 +80,7 @@ public class ControlerCadastroBairro implements ActionListener {
             if (this.codigo != 0){
                 Bairro bairro = new Bairro();
                 BairroDAO bairroDAO = new BairroDAO();
-                bairro = bairroDAO.retrieve(codigo);
+                bairro = bairroDAO.search(codigo);
                 
                 telaCadBairro.ativa(false);
                 telaCadBairro.ligaDesliga(true);

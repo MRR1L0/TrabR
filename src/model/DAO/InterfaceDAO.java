@@ -14,7 +14,7 @@ public interface InterfaceDAO<T> {
     
      public T create(T t);
      public T update(T t);
-     public T search(T t);
+     public T search(int t);
      public List<T> search();
      public void remove(T t);
 }

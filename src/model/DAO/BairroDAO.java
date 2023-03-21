@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.Connection;
 import model.bo.Bairro;
-import model.bo.Produto;
-
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
@@ -53,22 +51,28 @@ public class BairroDAO implements InterfaceDAO<model.bo.Bairro> {
         return t;
     }
 
-    @Override
-    public Bairro search(Bairro t) {
+    public Bairro search(int t) {
         Connection conexao = ConnectionFactory.getConnection();
-        var sqlExecutar = "SELECT id, descricao from bairro where bairro.id = "+t.getId();
-
+        var sqlExecutar = "SELECT id, descricao from bairro where bairro.id = "+ t;
+        var bairro = new Bairro();
         PreparedStatement pstm = null;
         ResultSet rst = null;
         
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             rst = pstm.executeQuery();
+            while (rst.next()) {
+                bairro.setId(rst.getInt("id"));
+                bairro.setDescricao(rst.getString("descricao"));
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
-            ConnectionFactory.closeConnection(conexao, pstm, rst);      
+                 
+        }finally{
+            ConnectionFactory.closeConnection(conexao, pstm, rst); 
+            return bairro;
         }
-        return t;
+        
     }
 
     @Override
