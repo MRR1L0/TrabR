@@ -81,7 +81,7 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
     }
 
     @Override
-    public Compras search(String descricao) {
+    public Compra search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT compras.id, compras.dataCompra, compras.horaCompra, compras.numeroNF, compras.tipoNF, compras.valorDesconto, compras.valorAcrescimo, compras.totalNF, compras.status  from compras where compras.id = ?";
@@ -93,7 +93,7 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setString(0, descricao);
             rst = pstm.executeQuery();
-            Compras compras = new Compras();
+            Compra compras = new Compra();
 
             while (rst.next()) {
                 compras.setId(rst.getInt("id"));
