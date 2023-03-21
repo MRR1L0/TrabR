@@ -3,7 +3,6 @@ package controler;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import model.bo.CondicaoPagamento;
 import view.CondicaoPgto;
 import view.FormBusCondPgto;
 
@@ -44,7 +43,7 @@ public class ControlerCadastroCondicaoPagamento implements ActionListener {
 
             } else {
 
-                CondicaoPagamento condicaoPagamento = new CondicaoPagamento();
+                var condicaoPagamento = new model.bo.CondicaoPgto();
                 condicaoPagamento.setDescricaoCondicao(telaCondicaoPgto.getjTextDescricao().getText());
 
                 telaCondicaoPgto.ativa(true);
