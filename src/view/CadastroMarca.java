@@ -1,92 +1,117 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
-/**
- *
- * @author DEPAUL
- */
+import java.awt.Component;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 public class CadastroMarca extends javax.swing.JFrame {
 
-    /**
-     * @return the BtnCadastrar
-     */
-    public javax.swing.JButton getBtnCadastrar() {
-        return BtnCadastrar;
-    }
-
-    /**
-     * @return the BtnCancelar
-     */
-    public javax.swing.JButton getBtnCancelar() {
-        return BtnCancelar;
-    }
-
-    /**
-     * @return the TxtDescricao
-     */
-    public javax.swing.JTextField getTxtDescricao() {
-        return TxtDescricao;
-    }
-
-    /**
-     * @return the TxtId
-     */
-    public javax.swing.JTextField getTxtId() {
-        return TxtId;
-    }
-
-    /**
-     * @return the TxtMarca
-     */
-    public javax.swing.JTextField getTxtMarca() {
-        return TxtMarca;
-    }
-
-    /**
-     * @return the jLabel1
-     */
-    public javax.swing.JLabel getjLabel1() {
-        return jLabel1;
-    }
-
-    /**
-     * @return the jLabel3
-     */
-    public javax.swing.JLabel getjLabel3() {
-        return jLabel3;
-    }
-
-    /**
-     * @return the jLabel4
-     */
-    public javax.swing.JLabel getjLabel4() {
-        return jLabel4;
-    }
-
-    /**
-     * @return the jLabelMarca
-     */
-    public javax.swing.JLabel getjLabelMarca() {
-        return jLabelMarca;
-    }
-
-    /**
-     * @return the jPanel1
-     */
-    public javax.swing.JPanel getjPanel1() {
-        return jPanel1;
-    }
-
-    /**
-     * Creates new form CadastroMarca
-     */
     public CadastroMarca() {
+        
         initComponents();
     }
 
+    public JButton getjButtonBuscar() {
+        return jButtonBuscar;
+    }
+
+    public void setjButtonBuscar(JButton jButtonBuscar) {
+        this.jButtonBuscar = jButtonBuscar;
+    }
+
+    public JButton getjButtonCancelar() {
+        return jButtonCancelar;
+    }
+
+    public void setjButtonCancelar(JButton jButtonCancelar) {
+        this.jButtonCancelar = jButtonCancelar;
+    }
+
+    public JButton getjButtonGravar() {
+        return jButtonGravar;
+    }
+
+    public void setjButtonGravar(JButton jButtonGravar) {
+        this.jButtonGravar = jButtonGravar;
+    }
+
+    public JButton getjButtonNovo() {
+        return jButtonNovo;
+    }
+
+    public void setjButtonNovo(JButton jButtonNovo) {
+        this.jButtonNovo = jButtonNovo;
+    }
+
+    public JButton getjButtonSair() {
+        return jButtonSair;
+    }
+
+    public void setjButtonSair(JButton jButtonSair) {
+        this.jButtonSair = jButtonSair;
+    }
+
+    public JPanel getjPanelDados() {
+        return jPanelDados;
+    }
+
+    public void setjPanelDados(JPanel jPanelDados) {
+        this.jPanelDados = jPanelDados;
+    }
+
+    public JTextField getjTextDescricao() {
+        return jTextDescricao;
+    }
+
+    public void setjTextDescricao(JTextField jTextDescricao) {
+        this.jTextDescricao = jTextDescricao;
+    }
+
+    public JTextField getjTextId() {
+        return jTextId;
+    }
+
+    public void setjTextId(JTextField jTextId) {
+        this.jTextId = jTextId;
+    }
+        
+    
+    public void ativa(boolean estadoComponente){
+        jButtonNovo.setEnabled(estadoComponente);
+        jButtonCancelar.setEnabled(!estadoComponente);
+        jButtonGravar.setEnabled(!estadoComponente);
+        jButtonBuscar.setEnabled(estadoComponente);
+        jButtonSair.setEnabled(estadoComponente);  
+    }
+    
+    
+    public void ligaDesliga (boolean estadoComponente){
+        
+        Component[] componentes = jPanelDados.getComponents();
+                for (Component componente : componentes){
+                   if (componente instanceof JTextField){
+                    ((JTextField) componente).setText ("");
+                   }else if (componente instanceof JFormattedTextField){
+                           ((JFormattedTextField) componente).setText("");
+                   }else if (componente instanceof JTextArea){
+                       ((JTextArea) componente).setText ("");
+                           }else if (componente instanceof JComboBox){
+                            ((JComboBox) componente).setSelectedIndex (0);
+                   }else if (componente instanceof JScrollPane){
+                           //((JScrollPane) componente).getClass();
+                         
+                           }   
+                           componente.setEnabled(estadoComponente);
+                   }
+                }
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -96,157 +121,157 @@ public class CadastroMarca extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        TxtId = new javax.swing.JTextField();
-        jLabelMarca = new javax.swing.JLabel();
-        TxtMarca = new javax.swing.JTextField();
-        BtnCancelar = new javax.swing.JButton();
-        BtnCadastrar = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        TxtDescricao = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        jPanelTitulo = new javax.swing.JPanel();
+        jLabeltitulo = new javax.swing.JLabel();
+        jPanelDados = new javax.swing.JPanel();
+        jLabelId = new javax.swing.JLabel();
+        jTextId = new javax.swing.JTextField();
+        jLabelDescricao = new javax.swing.JLabel();
+        jTextDescricao = new javax.swing.JTextField();
+        jPanelBotoes = new javax.swing.JPanel();
+        jButtonNovo = new javax.swing.JButton();
+        jButtonCancelar = new javax.swing.JButton();
+        jButtonGravar = new javax.swing.JButton();
+        jButtonBuscar = new javax.swing.JButton();
+        jButtonSair = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de Marca");
+        setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 0));
-        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanelTitulo.setBackground(new java.awt.Color(102, 255, 51));
+        jPanelTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jPanelTitulo.setForeground(new java.awt.Color(102, 255, 51));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("Cadastro de Marca");
+        jLabeltitulo.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabeltitulo.setForeground(new java.awt.Color(0, 0, 255));
+        jLabeltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabeltitulo.setText("Marca");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanelTituloLayout = new javax.swing.GroupLayout(jPanelTitulo);
+        jPanelTitulo.setLayout(jPanelTituloLayout);
+        jPanelTituloLayout.setHorizontalGroup(
+            jPanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabeltitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jLabel1)
-                .addContainerGap(45, Short.MAX_VALUE))
+        jPanelTituloLayout.setVerticalGroup(
+            jPanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabeltitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
-        TxtId.addActionListener(new java.awt.event.ActionListener() {
+        jPanelDados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        jLabelId.setText("CÃ³digo");
+
+        jTextId.setEditable(false);
+
+        jLabelDescricao.setText("DescriÃ§Ã£o*");
+
+        javax.swing.GroupLayout jPanelDadosLayout = new javax.swing.GroupLayout(jPanelDados);
+        jPanelDados.setLayout(jPanelDadosLayout);
+        jPanelDadosLayout.setHorizontalGroup(
+            jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelDadosLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jTextId, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                        .addComponent(jLabelDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelId, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50))
+        );
+        jPanelDadosLayout.setVerticalGroup(
+            jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelDadosLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabelId)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabelDescricao)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
+        jPanelBotoes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        jButtonNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Create.png"))); // NOI18N
+        jButtonNovo.setText("Novo");
+        jButtonNovo.setPreferredSize(new java.awt.Dimension(95, 30));
+        jButtonNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtIdActionPerformed(evt);
+                jButtonNovoActionPerformed(evt);
             }
         });
+        jPanelBotoes.add(jButtonNovo);
 
-        jLabelMarca.setText("Marca");
-
-        TxtMarca.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Cancel.png"))); // NOI18N
+        jButtonCancelar.setText("Cancelar");
+        jButtonCancelar.setEnabled(false);
+        jButtonCancelar.setPreferredSize(new java.awt.Dimension(95, 30));
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtMarcaActionPerformed(evt);
+                jButtonCancelarActionPerformed(evt);
             }
         });
+        jPanelBotoes.add(jButtonCancelar);
 
-        BtnCancelar.setText("Cancelar");
-        BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        jButtonGravar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/OK.png"))); // NOI18N
+        jButtonGravar.setText("Gravar");
+        jButtonGravar.setEnabled(false);
+        jButtonGravar.setPreferredSize(new java.awt.Dimension(95, 30));
+        jButtonGravar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnCancelarActionPerformed(evt);
+                jButtonGravarActionPerformed(evt);
             }
         });
+        jPanelBotoes.add(jButtonGravar);
 
-        BtnCadastrar.setText("Cadastrar");
-        BtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnCadastrarActionPerformed(evt);
-            }
-        });
+        jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
+        jButtonBuscar.setText("Buscar");
+        jButtonBuscar.setPreferredSize(new java.awt.Dimension(95, 30));
+        jPanelBotoes.add(jButtonBuscar);
 
-        jLabel3.setText("Descrição*");
-
-        TxtDescricao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtDescricaoActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setText("Id");
+        jButtonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
+        jButtonSair.setText("Sair");
+        jButtonSair.setPreferredSize(new java.awt.Dimension(95, 30));
+        jPanelBotoes.add(jButtonSair);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TxtId, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(BtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelMarca)
-                                    .addComponent(TxtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(52, 52, 52)))))
-                .addContainerGap(32, Short.MAX_VALUE))
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelBotoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TxtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TxtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnCadastrar)
-                    .addComponent(BtnCancelar))
-                .addGap(14, 14, 14))
+                .addComponent(jPanelDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
+    private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
+      
+    }//GEN-LAST:event_jButtonNovoActionPerformed
 
-    }//GEN-LAST:event_BtnCancelarActionPerformed
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+       
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
 
-    private void TxtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtIdActionPerformed
-
-    private void BtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCadastrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnCadastrarActionPerformed
-
-    private void TxtMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtMarcaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtMarcaActionPerformed
-
-    private void TxtDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtDescricaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtDescricaoActionPerformed
+    private void jButtonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGravarActionPerformed
+      
+    }//GEN-LAST:event_jButtonGravarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,34 +290,37 @@ public class CadastroMarca extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ObjetoCadastros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ObjetoCadastros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ObjetoCadastros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ObjetoCadastros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroMarca().setVisible(true);
+                new ObjetoCadastros().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnCadastrar;
-    private javax.swing.JButton BtnCancelar;
-    private javax.swing.JTextField TxtDescricao;
-    private javax.swing.JTextField TxtId;
-    private javax.swing.JTextField TxtMarca;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabelMarca;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jButtonBuscar;
+    private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonGravar;
+    private javax.swing.JButton jButtonNovo;
+    private javax.swing.JButton jButtonSair;
+    private javax.swing.JLabel jLabelDescricao;
+    private javax.swing.JLabel jLabelId;
+    private javax.swing.JLabel jLabeltitulo;
+    private javax.swing.JPanel jPanelBotoes;
+    private javax.swing.JPanel jPanelDados;
+    private javax.swing.JPanel jPanelTitulo;
+    private javax.swing.JTextField jTextDescricao;
+    private javax.swing.JTextField jTextId;
     // End of variables declaration//GEN-END:variables
 }

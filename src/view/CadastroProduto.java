@@ -1,287 +1,103 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
-/**
- *
- * @author DEPAUL
- */
+import java.awt.Component;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 public class CadastroProduto extends javax.swing.JFrame {
 
-    /**
-     * @return the BtnCadastrar
-     */
-    public javax.swing.JButton getBtnCadastrar() {
-        return BtnCadastrar;
-    }
-
-    /**
-     * @return the BtnCancelar
-     */
-    public javax.swing.JButton getBtnCancelar() {
-        return BtnCancelar;
-    }
-
-    /**
-     * @return the TxtBarraEntrada
-     */
-    public javax.swing.JTextField getTxtBarraEntrada() {
-        return TxtBarraEntrada;
-    }
-
-    /**
-     * @return the TxtBarraSaida
-     */
-    public javax.swing.JTextField getTxtBarraSaida() {
-        return TxtBarraSaida;
-    }
-
-    /**
-     * @return the TxtDescricao
-     */
-    public javax.swing.JTextField getTxtDescricao() {
-        return TxtDescricao;
-    }
-
-    /**
-     * @return the TxtEstoqueMinimo
-     */
-    public javax.swing.JTextField getTxtEstoqueMinimo() {
-        return TxtEstoqueMinimo;
-    }
-
-    /**
-     * @return the TxtId
-     */
-    public javax.swing.JTextField getTxtId() {
-        return TxtId;
-    }
-
-    /**
-     * @return the TxtValorCompra
-     */
-    public javax.swing.JTextField getTxtValorCompra() {
-        return TxtValorCompra;
-    }
-
-    /**
-     * @return the TxtValorVenda
-     */
-    public javax.swing.JTextField getTxtValorVenda() {
-        return TxtValorVenda;
-    }
-
-    /**
-     * @return the btBuscar
-     */
-    public javax.swing.JButton getBtBuscar() {
-        return btBuscar;
-    }
-
-    /**
-     * @return the btCancelar
-     */
-    public javax.swing.JButton getBtCancelar() {
-        return btCancelar;
-    }
-
-    /**
-     * @return the btNovo
-     */
-    public javax.swing.JButton getBtNovo() {
-        return btNovo;
-    }
-
-    /**
-     * @return the btSair
-     */
-    public javax.swing.JButton getBtSair() {
-        return btSair;
-    }
-
-    /**
-     * @return the btSalvar
-     */
-    public javax.swing.JButton getBtSalvar() {
-        return btSalvar;
-    }
-
-    /**
-     * @return the jLabel2
-     */
-
-    /**
-     * @return the jLabel3
-     */
-    public javax.swing.JLabel getjLabel3() {
-        return jLabel3;
-    }
-
-    /**
-     * @return the jLabelBarraEntrada
-     */
-    public javax.swing.JLabel getjLabelBarraEntrada() {
-        return jLabelBarraEntrada;
-    }
-
-    /**
-     * @return the jLabelBarraSaida
-     */
-    public javax.swing.JLabel getjLabelBarraSaida() {
-        return jLabelBarraSaida;
-    }
-
-    /**
-     * @return the jLabelDataCadastro
-     */
-    public javax.swing.JLabel getjLabelDataCadastro() {
-        return jLabelDataCadastro;
-    }
-
-    /**
-     * @return the jLabelDescri
-     */
-    public javax.swing.JLabel getjLabelDescri() {
-        return jLabelDescri;
-    }
-
-    /**
-     * @return the jLabelEstoqMaximo
-     */
-    public javax.swing.JLabel getjLabelEstoqMaximo() {
-        return jLabelEstoqMaximo;
-    }
-
-    /**
-     * @return the jLabelEstoqMinimo
-     */
-    public javax.swing.JLabel getjLabelEstoqMinimo() {
-        return jLabelEstoqMinimo;
-    }
-
-    /**
-     * @return the jLabelFatorConversao
-     */
-    public javax.swing.JLabel getjLabelFatorConversao() {
-        return jLabelFatorConversao;
-    }
-
-    /**
-     * @return the jLabelId
-     */
-    public javax.swing.JLabel getjLabelId() {
-        return jLabelId;
-    }
-
-    /**
-     * @return the jLabelStatus
-     */
-    public javax.swing.JLabel getjLabelStatus() {
-        return jLabelStatus;
-    }
-
-    /**
-     * @return the jLabelUnidadeCompra
-     */
-    public javax.swing.JLabel getjLabelUnidadeCompra() {
-        return jLabelUnidadeCompra;
-    }
-
-    /**
-     * @return the jLabelUnidadeVenda
-     */
-    public javax.swing.JLabel getjLabelUnidadeVenda() {
-        return jLabelUnidadeVenda;
-    }
-
-    /**
-     * @return the jLabelValorCompra
-     */
-    public javax.swing.JLabel getjLabelValorCompra() {
-        return jLabelValorCompra;
-    }
-
-    /**
-     * @return the jLabelValorVenda
-     */
-    public javax.swing.JLabel getjLabelValorVenda() {
-        return jLabelValorVenda;
-    }
-
-    /**
-     * @return the jPanel2
-     */
-
-    /**
-     * @return the jPanel3
-     */
-    public javax.swing.JPanel getjPanel3() {
-        return jPanel3;
-    }
-
-    /**
-     * @return the jPanel4
-     */
-    public javax.swing.JPanel getjPanel4() {
-        return jPanel4;
-    }
-
-    /**
-     * @return the jTextField1
-     */
-    public javax.swing.JTextField getjTextField1() {
-        return jTextField1;
-    }
-
-    /**
-     * @return the jTextFieldBarraSaida
-     */
-    public javax.swing.JTextField getjTextFieldBarraSaida() {
-        return jTextFieldBarraSaida;
-    }
-
-    /**
-     * @return the jTextFieldStatus
-     */
-    public javax.swing.JTextField getjTextFieldStatus() {
-        return jTextFieldStatus;
-    }
-
-    /**
-     * @return the jTextFieldStatus1
-     */
-    public javax.swing.JTextField getjTextFieldStatus1() {
-        return jTextFieldStatus1;
-    }
-
-    /**
-     * @return the jTextFieldUnidadeCompra2
-     */
-    public javax.swing.JTextField getjTextFieldUnidadeCompra2() {
-        return jTextFieldUnidadeCompra2;
-    }
-
-    /**
-     * @return the jTextFieldUnidadeVenda
-     */
-    public javax.swing.JTextField getjTextFieldUnidadeVenda() {
-        return jTextFieldUnidadeVenda;
-    }
-
-    /**
-     * @return the jTextFieldValorVenda
-     */
-    public javax.swing.JTextField getjTextFieldValorVenda() {
-        return jTextFieldValorVenda;
-    }
-
-    /**
-     * Creates new form CadastroProduto
-     */
     public CadastroProduto() {
+
         initComponents();
+    }
+
+    public JButton getjButtonBuscar() {
+        return jButtonBuscar;
+    }
+
+    public void setjButtonBuscar(JButton jButtonBuscar) {
+        this.jButtonBuscar = jButtonBuscar;
+    }
+
+    public JButton getjButtonCancelar() {
+        return jButtonCancelar;
+    }
+
+    public void setjButtonCancelar(JButton jButtonCancelar) {
+        this.jButtonCancelar = jButtonCancelar;
+    }
+
+    public JButton getjButtonGravar() {
+        return jButtonGravar;
+    }
+
+    public void setjButtonGravar(JButton jButtonGravar) {
+        this.jButtonGravar = jButtonGravar;
+    }
+
+    public JButton getjButtonNovo() {
+        return jButtonNovo;
+    }
+
+    public void setjButtonNovo(JButton jButtonNovo) {
+        this.jButtonNovo = jButtonNovo;
+    }
+
+    public JButton getjButtonSair() {
+        return jButtonSair;
+    }
+
+    public void setjButtonSair(JButton jButtonSair) {
+        this.jButtonSair = jButtonSair;
+    }
+
+    public JTextField getjTextId() {
+        return jTextId;
+    }
+
+    public void setjTextId(JTextField jTextId) {
+        this.jTextId = jTextId;
+    }
+
+    public JTextField getjTextDescricao() {
+        return jTextDescricao;
+    }
+
+    public void setjTextDescricao(JTextField jTextDescricao) {
+        this.jTextDescricao = jTextDescricao;
+    }
+
+
+
+    public void ativa(boolean estadoComponente) {
+        jButtonNovo.setEnabled(estadoComponente);
+        jButtonCancelar.setEnabled(!estadoComponente);
+        jButtonGravar.setEnabled(!estadoComponente);
+        jButtonBuscar.setEnabled(estadoComponente);
+        jButtonSair.setEnabled(estadoComponente);
+    }
+
+    public void ligaDesliga(boolean estadoComponente) {
+
+        Component[] componentes = jPanelDados.getComponents();
+        for (Component componente : componentes) {
+            if (componente instanceof JTextField) {
+                ((JTextField) componente).setText("");
+            } else if (componente instanceof JFormattedTextField) {
+                ((JFormattedTextField) componente).setText("");
+            } else if (componente instanceof JTextArea) {
+                ((JTextArea) componente).setText("");
+            } else if (componente instanceof JComboBox) {
+                ((JComboBox) componente).setSelectedIndex(0);
+            } else if (componente instanceof JScrollPane) {
+                //((JScrollPane) componente).getClass().
+            }
+            componente.setEnabled(estadoComponente);
+        }
     }
 
     /**
@@ -293,428 +109,322 @@ public class CadastroProduto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextFieldUnidadeCompra2 = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
-        btNovo = new javax.swing.JButton();
-        btSalvar = new javax.swing.JButton();
-        btCancelar = new javax.swing.JButton();
-        btBuscar = new javax.swing.JButton();
-        btSair = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        TxtDescricao = new javax.swing.JTextField();
-        jLabelEstoqMinimo = new javax.swing.JLabel();
-        jLabelEstoqMaximo = new javax.swing.JLabel();
-        jLabelBarraEntrada = new javax.swing.JLabel();
-        jLabelBarraSaida = new javax.swing.JLabel();
-        jLabelStatus = new javax.swing.JLabel();
-        jLabelUnidadeCompra = new javax.swing.JLabel();
-        TxtEstoqueMinimo = new javax.swing.JTextField();
-        jTextFieldBarraSaida = new javax.swing.JTextField();
-        jLabelFatorConversao = new javax.swing.JLabel();
-        TxtValorVenda = new javax.swing.JTextField();
-        TxtBarraEntrada = new javax.swing.JTextField();
+        jPanelTitulo = new javax.swing.JPanel();
+        jLabeltitulo = new javax.swing.JLabel();
+        jPanelDados = new javax.swing.JPanel();
         jLabelId = new javax.swing.JLabel();
-        TxtId = new javax.swing.JTextField();
-        jLabelDataCadastro = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabelDescri = new javax.swing.JLabel();
-        jTextFieldStatus = new javax.swing.JTextField();
-        TxtValorCompra = new javax.swing.JTextField();
-        jLabelUnidadeVenda = new javax.swing.JLabel();
-        jTextFieldUnidadeVenda = new javax.swing.JTextField();
+        jTextId = new javax.swing.JTextField();
+        jLabelDescricao = new javax.swing.JLabel();
+        jTextDescricao = new javax.swing.JTextField();
+        jLabelStatus = new javax.swing.JLabel();
+        jComboStatus = new javax.swing.JComboBox<>();
+        jLabelEstoqueMin = new javax.swing.JLabel();
+        jLabelEstoqueMax = new javax.swing.JLabel();
+        jLabelDatCadastro = new javax.swing.JLabel();
+        jLabelCodEntra = new javax.swing.JLabel();
+        jLabelCodSaida = new javax.swing.JLabel();
+        jLabelUnVenda = new javax.swing.JLabel();
+        jLabel1UnCompra = new javax.swing.JLabel();
+        jTextUnVenda = new javax.swing.JTextField();
+        jTextCodSaida = new javax.swing.JTextField();
+        jTextUnCompra = new javax.swing.JTextField();
+        jTextCodEntrada = new javax.swing.JTextField();
+        jTextEstoqueMax = new javax.swing.JTextField();
+        jTextEstoqueMin = new javax.swing.JTextField();
         jLabelValorCompra = new javax.swing.JLabel();
         jLabelValorVenda = new javax.swing.JLabel();
-        jTextFieldValorVenda = new javax.swing.JTextField();
-        TxtBarraSaida = new javax.swing.JTextField();
-        jTextFieldStatus1 = new javax.swing.JTextField();
-        BtnCadastrar = new javax.swing.JButton();
-        BtnCancelar = new javax.swing.JButton();
+        jLabelFator = new javax.swing.JLabel();
+        jTextValorVenda = new javax.swing.JTextField();
+        jTextValorCompra = new javax.swing.JTextField();
+        jTextFator = new javax.swing.JTextField();
+        jTextFieldDatCadastro = new javax.swing.JTextField();
+        jLabelMarcaProduto = new javax.swing.JLabel();
+        jTextFieldMarcaProduto = new javax.swing.JTextField();
+        jButtonMarcaProduto = new javax.swing.JButton();
+        jLabelClasse = new javax.swing.JLabel();
+        jTextFieldClasse = new javax.swing.JTextField();
+        jButtonClassse = new javax.swing.JButton();
+        jPanelBotoes = new javax.swing.JPanel();
+        jButtonNovo = new javax.swing.JButton();
+        jButtonCancelar = new javax.swing.JButton();
+        jButtonGravar = new javax.swing.JButton();
+        jButtonBuscar = new javax.swing.JButton();
+        jButtonSair = new javax.swing.JButton();
 
-        jTextFieldUnidadeCompra2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldUnidadeCompra2ActionPerformed(evt);
-            }
-        });
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de Produto");
+        setResizable(false);
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanelTitulo.setBackground(new java.awt.Color(102, 255, 51));
+        jPanelTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jPanelTitulo.setForeground(new java.awt.Color(102, 255, 51));
 
-        btNovo.setText("Novo");
-        btNovo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btNovoActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btNovo);
+        jLabeltitulo.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabeltitulo.setForeground(new java.awt.Color(0, 0, 255));
+        jLabeltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabeltitulo.setText("Produto");
 
-        btSalvar.setText("Salvar");
-        btSalvar.setEnabled(false);
-        btSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSalvarActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btSalvar);
-
-        btCancelar.setText("Cancelar");
-        btCancelar.setEnabled(false);
-        btCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCancelarActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btCancelar);
-
-        btBuscar.setText("Buscar");
-        btBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btBuscarActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btBuscar);
-
-        btSair.setText("Sair");
-        btSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSairActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btSair);
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 0));
-        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setText("Cadastro de Produto");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(202, 202, 202)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanelTituloLayout = new javax.swing.GroupLayout(jPanelTitulo);
+        jPanelTitulo.setLayout(jPanelTituloLayout);
+        jPanelTituloLayout.setHorizontalGroup(
+            jPanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabeltitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel3)
-                .addContainerGap(48, Short.MAX_VALUE))
+        jPanelTituloLayout.setVerticalGroup(
+            jPanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabeltitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
-        TxtDescricao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtDescricaoActionPerformed(evt);
-            }
-        });
+        jPanelDados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        jLabelEstoqMinimo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabelEstoqMinimo.setText("Estoque Mínimo ");
+        jLabelId.setText("CÃ³digo");
 
-        jLabelEstoqMaximo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabelEstoqMaximo.setText("Estoque Máximo");
+        jTextId.setEditable(false);
 
-        jLabelBarraEntrada.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabelBarraEntrada.setText("Barra Entrada");
+        jLabelDescricao.setText("DescriÃ§Ã£o*");
 
-        jLabelBarraSaida.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabelBarraSaida.setText("Barra Saída");
-
-        jLabelStatus.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabelStatus.setText("Status");
 
-        jLabelUnidadeCompra.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabelUnidadeCompra.setText("Unidade Compra");
+        jComboStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ativo", "Inativo" }));
 
-        jTextFieldBarraSaida.addActionListener(new java.awt.event.ActionListener() {
+        jLabelEstoqueMin.setText("Estoque Min");
+
+        jLabelEstoqueMax.setText("Estoque Max");
+
+        jLabelDatCadastro.setText("Data de Cadastro");
+
+        jLabelCodEntra.setText("Cod. Entrada");
+
+        jLabelCodSaida.setText("Cod. SaÃ­da");
+
+        jLabelUnVenda.setText("Un. Venda");
+
+        jLabel1UnCompra.setText("Un. Compra");
+
+        jLabelValorCompra.setText("Valor de Compra");
+
+        jLabelValorVenda.setText("Valor de Venda");
+
+        jLabelFator.setText("Fator");
+
+        jLabelMarcaProduto.setText("Marca do Produto");
+
+        jTextFieldMarcaProduto.setEditable(false);
+
+        jButtonMarcaProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
+
+        jLabelClasse.setText("Classe");
+
+        jTextFieldClasse.setEditable(false);
+
+        jButtonClassse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanelDadosLayout = new javax.swing.GroupLayout(jPanelDados);
+        jPanelDados.setLayout(jPanelDadosLayout);
+        jPanelDadosLayout.setHorizontalGroup(
+            jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelDadosLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelUnVenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextUnVenda, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(jLabelFator, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextUnCompra)
+                    .addComponent(jLabel1UnCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFator)
+                    .addComponent(jLabelId, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelDadosLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanelDadosLayout.createSequentialGroup()
+                                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(20, 20, 20)
+                                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelDadosLayout.createSequentialGroup()
+                                        .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(35, 35, 35))
+                                    .addComponent(jComboStatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanelDadosLayout.createSequentialGroup()
+                                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDadosLayout.createSequentialGroup()
+                                        .addGap(280, 280, 280)
+                                        .addComponent(jButtonMarcaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanelDadosLayout.createSequentialGroup()
+                                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabelCodSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextCodSaida)
+                                            .addComponent(jLabelCodEntra)
+                                            .addComponent(jTextCodEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE))
+                                        .addGap(20, 20, 20)
+                                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabelEstoqueMax, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabelEstoqueMin, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                                            .addComponent(jTextEstoqueMax)
+                                            .addComponent(jTextEstoqueMin)))
+                                    .addGroup(jPanelDadosLayout.createSequentialGroup()
+                                        .addComponent(jLabelDatCadastro)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabelMarcaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(20, 20, 20)
+                                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextValorVenda)
+                                    .addComponent(jTextValorCompra)
+                                    .addGroup(jPanelDadosLayout.createSequentialGroup()
+                                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabelValorVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabelValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabelClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(jPanelDadosLayout.createSequentialGroup()
+                                        .addComponent(jTextFieldClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(20, 20, 20)
+                                        .addComponent(jButtonClassse, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))))))
+                    .addGroup(jPanelDadosLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldDatCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldMarcaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        jPanelDadosLayout.setVerticalGroup(
+            jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelDadosLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextFieldClasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonClassse))
+                    .addGroup(jPanelDadosLayout.createSequentialGroup()
+                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelId)
+                            .addComponent(jLabelDescricao)
+                            .addComponent(jLabelStatus))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelUnVenda)
+                            .addComponent(jLabelCodSaida)
+                            .addComponent(jLabelEstoqueMax)
+                            .addComponent(jLabelValorVenda))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextUnVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextCodSaida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextEstoqueMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextValorVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1UnCompra)
+                            .addComponent(jLabelCodEntra)
+                            .addComponent(jLabelEstoqueMin)
+                            .addComponent(jLabelValorCompra))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextUnCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextCodEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextEstoqueMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelFator)
+                            .addComponent(jLabelDatCadastro)
+                            .addComponent(jLabelMarcaProduto)
+                            .addComponent(jLabelClasse))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonMarcaProduto, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextFator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldDatCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldMarcaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jPanelBotoes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        jButtonNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Create.png"))); // NOI18N
+        jButtonNovo.setText("Novo");
+        jButtonNovo.setPreferredSize(new java.awt.Dimension(95, 30));
+        jButtonNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBarraSaidaActionPerformed(evt);
+                jButtonNovoActionPerformed(evt);
             }
         });
+        jPanelBotoes.add(jButtonNovo);
 
-        jLabelFatorConversao.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabelFatorConversao.setText("Fator Conversão");
-
-        TxtValorVenda.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Cancel.png"))); // NOI18N
+        jButtonCancelar.setText("Cancelar");
+        jButtonCancelar.setEnabled(false);
+        jButtonCancelar.setPreferredSize(new java.awt.Dimension(95, 30));
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtValorVendaActionPerformed(evt);
+                jButtonCancelarActionPerformed(evt);
             }
         });
+        jPanelBotoes.add(jButtonCancelar);
 
-        TxtBarraEntrada.addActionListener(new java.awt.event.ActionListener() {
+        jButtonGravar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/OK.png"))); // NOI18N
+        jButtonGravar.setText("Gravar");
+        jButtonGravar.setEnabled(false);
+        jButtonGravar.setPreferredSize(new java.awt.Dimension(95, 30));
+        jButtonGravar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtBarraEntradaActionPerformed(evt);
+                jButtonGravarActionPerformed(evt);
             }
         });
+        jPanelBotoes.add(jButtonGravar);
 
-        jLabelId.setText("Id");
+        jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
+        jButtonBuscar.setText("Buscar");
+        jButtonBuscar.setPreferredSize(new java.awt.Dimension(95, 30));
+        jPanelBotoes.add(jButtonBuscar);
 
-        TxtId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtIdActionPerformed(evt);
-            }
-        });
-
-        jLabelDataCadastro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabelDataCadastro.setText("Data Cadastro");
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jLabelDescri.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabelDescri.setText("Descrição* ");
-
-        jTextFieldStatus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldStatusActionPerformed(evt);
-            }
-        });
-
-        TxtValorCompra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtValorCompraActionPerformed(evt);
-            }
-        });
-
-        jLabelUnidadeVenda.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabelUnidadeVenda.setText("Unidade Venda");
-
-        jLabelValorCompra.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabelValorCompra.setText("Valor Compra* ");
-
-        jLabelValorVenda.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabelValorVenda.setText("Valor Venda* ");
-
-        jTextFieldValorVenda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldValorVendaActionPerformed(evt);
-            }
-        });
-
-        TxtBarraSaida.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtBarraSaidaActionPerformed(evt);
-            }
-        });
-
-        jTextFieldStatus1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldStatus1ActionPerformed(evt);
-            }
-        });
-
-        BtnCadastrar.setText("Cadastrar");
-        BtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnCadastrarActionPerformed(evt);
-            }
-        });
-
-        BtnCancelar.setText("Cancelar");
-        BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnCancelarActionPerformed(evt);
-            }
-        });
+        jButtonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
+        jButtonSair.setText("Sair");
+        jButtonSair.setPreferredSize(new java.awt.Dimension(95, 30));
+        jPanelBotoes.add(jButtonSair);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(TxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelDescri)
-                            .addComponent(jLabelBarraSaida)
-                            .addComponent(jLabelValorVenda)
-                            .addComponent(jLabelBarraEntrada)
-                            .addComponent(jLabelEstoqMinimo)
-                            .addComponent(jLabelId)
-                            .addComponent(TxtId, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelValorCompra)
-                            .addComponent(TxtEstoqueMinimo, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                            .addComponent(TxtBarraEntrada)
-                            .addComponent(TxtBarraSaida)
-                            .addComponent(TxtValorCompra)
-                            .addComponent(TxtValorVenda))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelStatus)
-                            .addComponent(jLabelEstoqMaximo)
-                            .addComponent(jLabelUnidadeCompra)
-                            .addComponent(jLabelUnidadeVenda)
-                            .addComponent(jLabelFatorConversao)
-                            .addComponent(jLabelDataCadastro)
-                            .addComponent(jTextFieldStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                            .addComponent(jTextFieldStatus1)
-                            .addComponent(jTextFieldBarraSaida)
-                            .addComponent(jTextFieldValorVenda)
-                            .addComponent(jTextFieldUnidadeVenda)
-                            .addComponent(jTextField1))
-                        .addGap(106, 106, 106))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(BtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
-            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelBotoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelDados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelId)
-                        .addGap(13, 13, 13)
-                        .addComponent(TxtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelEstoqMinimo)
-                        .addGap(7, 7, 7)
-                        .addComponent(TxtEstoqueMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelBarraEntrada)
-                        .addGap(11, 11, 11)
-                        .addComponent(TxtBarraEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabelBarraSaida)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TxtBarraSaida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabelValorCompra)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TxtValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelValorVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TxtValorVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelStatus)
-                        .addGap(13, 13, 13)
-                        .addComponent(jTextFieldStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelEstoqMaximo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldStatus1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelUnidadeCompra)
-                        .addGap(7, 7, 7)
-                        .addComponent(jTextFieldBarraSaida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelUnidadeVenda)
-                        .addGap(11, 11, 11)
-                        .addComponent(jTextFieldValorVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabelFatorConversao)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldUnidadeVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabelDataCadastro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(36, 36, 36)
-                .addComponent(jLabelDescri)
-                .addGap(18, 18, 18)
-                .addComponent(TxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnCadastrar)
-                    .addComponent(BtnCancelar))
-                .addGap(27, 27, 27))
+                .addComponent(jPanelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TxtDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtDescricaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtDescricaoActionPerformed
+    private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
+        
+    }//GEN-LAST:event_jButtonNovoActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+        
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
 
-    private void jTextFieldStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldStatusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldStatusActionPerformed
-
-    private void TxtValorCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtValorCompraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtValorCompraActionPerformed
-
-    private void TxtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtIdActionPerformed
-
-    private void jTextFieldBarraSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraSaidaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBarraSaidaActionPerformed
-
-    private void TxtBarraSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtBarraSaidaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtBarraSaidaActionPerformed
-
-    private void TxtValorVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtValorVendaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtValorVendaActionPerformed
-
-    private void jTextFieldUnidadeCompra2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUnidadeCompra2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldUnidadeCompra2ActionPerformed
-
-    private void jTextFieldStatus1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldStatus1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldStatus1ActionPerformed
-
-    private void TxtBarraEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtBarraEntradaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtBarraEntradaActionPerformed
-
-    private void jTextFieldValorVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValorVendaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldValorVendaActionPerformed
-
-    private void BtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCadastrarActionPerformed
-
-    }//GEN-LAST:event_BtnCadastrarActionPerformed
-
-    private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnCancelarActionPerformed
-
-    private void btNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovoActionPerformed
-
-    }//GEN-LAST:event_btNovoActionPerformed
-
-    private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
-
-    }//GEN-LAST:event_btSalvarActionPerformed
-
-    private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
-
-    }//GEN-LAST:event_btCancelarActionPerformed
-
-    private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
-   
-    }//GEN-LAST:event_btBuscarActionPerformed
-
-    private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
-    
-    }//GEN-LAST:event_btSairActionPerformed
+    private void jButtonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGravarActionPerformed
+       
+    }//GEN-LAST:event_jButtonGravarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -733,61 +443,65 @@ public class CadastroProduto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ObjetoCadastros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ObjetoCadastros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ObjetoCadastros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ObjetoCadastros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroProduto().setVisible(true);
+                new ObjetoCadastros().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnCadastrar;
-    private javax.swing.JButton BtnCancelar;
-    private javax.swing.JTextField TxtBarraEntrada;
-    private javax.swing.JTextField TxtBarraSaida;
-    private javax.swing.JTextField TxtDescricao;
-    private javax.swing.JTextField TxtEstoqueMinimo;
-    private javax.swing.JTextField TxtId;
-    private javax.swing.JTextField TxtValorCompra;
-    private javax.swing.JTextField TxtValorVenda;
-    private javax.swing.JButton btBuscar;
-    private javax.swing.JButton btCancelar;
-    private javax.swing.JButton btNovo;
-    private javax.swing.JButton btSair;
-    private javax.swing.JButton btSalvar;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabelBarraEntrada;
-    private javax.swing.JLabel jLabelBarraSaida;
-    private javax.swing.JLabel jLabelDataCadastro;
-    private javax.swing.JLabel jLabelDescri;
-    private javax.swing.JLabel jLabelEstoqMaximo;
-    private javax.swing.JLabel jLabelEstoqMinimo;
-    private javax.swing.JLabel jLabelFatorConversao;
+    private javax.swing.JButton jButtonBuscar;
+    private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonClassse;
+    private javax.swing.JButton jButtonGravar;
+    private javax.swing.JButton jButtonMarcaProduto;
+    private javax.swing.JButton jButtonNovo;
+    private javax.swing.JButton jButtonSair;
+    private javax.swing.JComboBox<String> jComboStatus;
+    private javax.swing.JLabel jLabel1UnCompra;
+    private javax.swing.JLabel jLabelClasse;
+    private javax.swing.JLabel jLabelCodEntra;
+    private javax.swing.JLabel jLabelCodSaida;
+    private javax.swing.JLabel jLabelDatCadastro;
+    private javax.swing.JLabel jLabelDescricao;
+    private javax.swing.JLabel jLabelEstoqueMax;
+    private javax.swing.JLabel jLabelEstoqueMin;
+    private javax.swing.JLabel jLabelFator;
     private javax.swing.JLabel jLabelId;
+    private javax.swing.JLabel jLabelMarcaProduto;
     private javax.swing.JLabel jLabelStatus;
-    private javax.swing.JLabel jLabelUnidadeCompra;
-    private javax.swing.JLabel jLabelUnidadeVenda;
+    private javax.swing.JLabel jLabelUnVenda;
     private javax.swing.JLabel jLabelValorCompra;
     private javax.swing.JLabel jLabelValorVenda;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextFieldBarraSaida;
-    private javax.swing.JTextField jTextFieldStatus;
-    private javax.swing.JTextField jTextFieldStatus1;
-    private javax.swing.JTextField jTextFieldUnidadeCompra2;
-    private javax.swing.JTextField jTextFieldUnidadeVenda;
-    private javax.swing.JTextField jTextFieldValorVenda;
+    private javax.swing.JLabel jLabeltitulo;
+    private javax.swing.JPanel jPanelBotoes;
+    private javax.swing.JPanel jPanelDados;
+    private javax.swing.JPanel jPanelTitulo;
+    private javax.swing.JTextField jTextCodEntrada;
+    private javax.swing.JTextField jTextCodSaida;
+    private javax.swing.JTextField jTextDescricao;
+    private javax.swing.JTextField jTextEstoqueMax;
+    private javax.swing.JTextField jTextEstoqueMin;
+    private javax.swing.JTextField jTextFator;
+    private javax.swing.JTextField jTextFieldClasse;
+    private javax.swing.JTextField jTextFieldDatCadastro;
+    private javax.swing.JTextField jTextFieldMarcaProduto;
+    private javax.swing.JTextField jTextId;
+    private javax.swing.JTextField jTextUnCompra;
+    private javax.swing.JTextField jTextUnVenda;
+    private javax.swing.JTextField jTextValorCompra;
+    private javax.swing.JTextField jTextValorVenda;
     // End of variables declaration//GEN-END:variables
 }

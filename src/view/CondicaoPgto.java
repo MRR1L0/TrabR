@@ -1,3 +1,4 @@
+
 package view;
 
 import java.awt.Component;
@@ -9,10 +10,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class CadastroClasse extends javax.swing.JFrame {
 
-    public CadastroClasse() {
+public class CondicaoPgto extends javax.swing.JFrame {
 
+ 
+    public CondicaoPgto() {
+        
         initComponents();
     }
 
@@ -48,6 +51,22 @@ public class CadastroClasse extends javax.swing.JFrame {
         this.jButtonNovo = jButtonNovo;
     }
 
+    public JButton getjButtonSair() {
+        return jButtonSair;
+    }
+
+    public void setjButtonSair(JButton jButtonSair) {
+        this.jButtonSair = jButtonSair;
+    }
+
+    public JComboBox<String> getjComboStatus() {
+        return jComboStatus;
+    }
+
+    public void setjComboStatus(JComboBox<String> jComboStatus) {
+        this.jComboStatus = jComboStatus;
+    }
+
     public JPanel getjPanelDados() {
         return jPanelDados;
     }
@@ -71,43 +90,40 @@ public class CadastroClasse extends javax.swing.JFrame {
     public void setjTextId(JTextField jTextId) {
         this.jTextId = jTextId;
     }
+    
+  
 
-    public JButton getjButtonSair() {
-        return jButtonSair;
-    }
-
-    public void setjButtonSair(JButton jButtonSair) {
-        this.jButtonSair = jButtonSair;
-    }
-
-    public void ativa(boolean estadoComponente) {
+    public void ativa(boolean estadoComponente){
         jButtonNovo.setEnabled(estadoComponente);
         jButtonCancelar.setEnabled(!estadoComponente);
         jButtonGravar.setEnabled(!estadoComponente);
         jButtonBuscar.setEnabled(estadoComponente);
-        jButtonSair.setEnabled(estadoComponente);
+        jButtonSair.setEnabled(estadoComponente);  
     }
-
-    public void ligaDesliga(boolean estadoComponente) {
-
+    
+    
+    
+        public void ligaDesliga (boolean estadoComponente){
+        
         Component[] componentes = jPanelDados.getComponents();
-        for (Component componente : componentes) {
-            if (componente instanceof JTextField) {
-                ((JTextField) componente).setText("");
-            } else if (componente instanceof JFormattedTextField) {
-                ((JFormattedTextField) componente).setText("");
-            } else if (componente instanceof JTextArea) {
-                ((JTextArea) componente).setText("");
-            } else if (componente instanceof JComboBox) {
-                ((JComboBox) componente).setSelectedIndex(0);
-            } else if (componente instanceof JScrollPane) {
-                //((JScrollPane) componente).getClass();
-
-            }
-            componente.setEnabled(estadoComponente);
-        }
-    }
-
+                for (Component componente : componentes){
+                   if (componente instanceof JTextField){
+                    ((JTextField) componente).setText ("");
+                   }else if (componente instanceof JFormattedTextField){
+                           ((JFormattedTextField) componente).setText("");
+                   }else if (componente instanceof JTextArea){
+                       ((JTextArea) componente).setText ("");
+                           }else if (componente instanceof JComboBox){
+                            ((JComboBox) componente).setSelectedIndex (0);
+                   }else if (componente instanceof JScrollPane){
+                           //((JScrollPane) componente).getClass();
+                         
+                           }   
+                           componente.setEnabled(estadoComponente);
+           
+                   }
+                }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -124,6 +140,8 @@ public class CadastroClasse extends javax.swing.JFrame {
         jTextId = new javax.swing.JTextField();
         jLabelDescricao = new javax.swing.JLabel();
         jTextDescricao = new javax.swing.JTextField();
+        jLabelStatus = new javax.swing.JLabel();
+        jComboStatus = new javax.swing.JComboBox<>();
         jPanelBotoes = new javax.swing.JPanel();
         jButtonNovo = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
@@ -132,7 +150,7 @@ public class CadastroClasse extends javax.swing.JFrame {
         jButtonSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro de Classe");
+        setTitle("Cadastro de Condição de Pagamento");
         setResizable(false);
 
         jPanelTitulo.setBackground(new java.awt.Color(102, 255, 51));
@@ -142,7 +160,7 @@ public class CadastroClasse extends javax.swing.JFrame {
         jLabeltitulo.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabeltitulo.setForeground(new java.awt.Color(0, 0, 255));
         jLabeltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabeltitulo.setText("Classe");
+        jLabeltitulo.setText("Condição de Pagamento");
 
         javax.swing.GroupLayout jPanelTituloLayout = new javax.swing.GroupLayout(jPanelTitulo);
         jPanelTitulo.setLayout(jPanelTituloLayout);
@@ -163,27 +181,42 @@ public class CadastroClasse extends javax.swing.JFrame {
 
         jLabelDescricao.setText("Descrição*");
 
+        jLabelStatus.setText("Status");
+
+        jComboStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ativo", "Inativo" }));
+
         javax.swing.GroupLayout jPanelDadosLayout = new javax.swing.GroupLayout(jPanelDados);
         jPanelDados.setLayout(jPanelDadosLayout);
         jPanelDadosLayout.setHorizontalGroup(
             jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelDadosLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextId, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
-                        .addComponent(jLabelDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabelId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jTextDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDadosLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextDescricao)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelDadosLayout.createSequentialGroup()
+                        .addComponent(jLabelDescricao)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanelDadosLayout.createSequentialGroup()
+                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelId, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(45, 45, 45))
         );
         jPanelDadosLayout.setVerticalGroup(
             jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDadosLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jLabelId)
+                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelId)
+                    .addComponent(jLabelStatus))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(5, 5, 5)
                 .addComponent(jLabelDescricao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -233,11 +266,6 @@ public class CadastroClasse extends javax.swing.JFrame {
         jButtonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
         jButtonSair.setText("Sair");
         jButtonSair.setPreferredSize(new java.awt.Dimension(95, 30));
-        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSairActionPerformed(evt);
-            }
-        });
         jPanelBotoes.add(jButtonSair);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -246,7 +274,7 @@ public class CadastroClasse extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanelDados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanelBotoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelBotoes, javax.swing.GroupLayout.DEFAULT_SIZE, 626, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,16 +295,12 @@ public class CadastroClasse extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonNovoActionPerformed
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-        
+       
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jButtonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGravarActionPerformed
-        
+      
     }//GEN-LAST:event_jButtonGravarActionPerformed
-
-    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,7 +332,7 @@ public class CadastroClasse extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroClasse().setVisible(true);
+                new ObjetoCadastros().setVisible(true);
             }
         });
     }
@@ -319,8 +343,10 @@ public class CadastroClasse extends javax.swing.JFrame {
     private javax.swing.JButton jButtonGravar;
     private javax.swing.JButton jButtonNovo;
     private javax.swing.JButton jButtonSair;
+    private javax.swing.JComboBox<String> jComboStatus;
     private javax.swing.JLabel jLabelDescricao;
     private javax.swing.JLabel jLabelId;
+    private javax.swing.JLabel jLabelStatus;
     private javax.swing.JLabel jLabeltitulo;
     private javax.swing.JPanel jPanelBotoes;
     private javax.swing.JPanel jPanelDados;
@@ -328,5 +354,4 @@ public class CadastroClasse extends javax.swing.JFrame {
     private javax.swing.JTextField jTextDescricao;
     private javax.swing.JTextField jTextId;
     // End of variables declaration//GEN-END:variables
-
 }

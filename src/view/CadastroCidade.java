@@ -9,11 +9,19 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class CadastroClasse extends javax.swing.JFrame {
+public class CadastroCidade extends javax.swing.JFrame {
 
-    public CadastroClasse() {
+    public CadastroCidade() {
 
         initComponents();
+    }
+
+    public JPanel getjPanelDados() {
+        return jPanelDados;
+    }
+
+    public void setjPanelDados(JPanel jPanelDados) {
+        this.jPanelDados = jPanelDados;
     }
 
     public JButton getjButtonBuscar() {
@@ -48,12 +56,12 @@ public class CadastroClasse extends javax.swing.JFrame {
         this.jButtonNovo = jButtonNovo;
     }
 
-    public JPanel getjPanelDados() {
-        return jPanelDados;
+    public JButton getjButtonSair() {
+        return jButtonSair;
     }
 
-    public void setjPanelDados(JPanel jPanelDados) {
-        this.jPanelDados = jPanelDados;
+    public void setjButtonSair(JButton jButtonSair) {
+        this.jButtonSair = jButtonSair;
     }
 
     public JTextField getjTextDescricao() {
@@ -70,14 +78,6 @@ public class CadastroClasse extends javax.swing.JFrame {
 
     public void setjTextId(JTextField jTextId) {
         this.jTextId = jTextId;
-    }
-
-    public JButton getjButtonSair() {
-        return jButtonSair;
-    }
-
-    public void setjButtonSair(JButton jButtonSair) {
-        this.jButtonSair = jButtonSair;
     }
 
     public void ativa(boolean estadoComponente) {
@@ -132,7 +132,7 @@ public class CadastroClasse extends javax.swing.JFrame {
         jButtonSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro de Classe");
+        setTitle("Cadastro de Cidade");
         setResizable(false);
 
         jPanelTitulo.setBackground(new java.awt.Color(102, 255, 51));
@@ -142,7 +142,7 @@ public class CadastroClasse extends javax.swing.JFrame {
         jLabeltitulo.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabeltitulo.setForeground(new java.awt.Color(0, 0, 255));
         jLabeltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabeltitulo.setText("Classe");
+        jLabeltitulo.setText("Cidade");
 
         javax.swing.GroupLayout jPanelTituloLayout = new javax.swing.GroupLayout(jPanelTitulo);
         jPanelTitulo.setLayout(jPanelTituloLayout);
@@ -156,6 +156,7 @@ public class CadastroClasse extends javax.swing.JFrame {
         );
 
         jPanelDados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jPanelDados.setPreferredSize(new java.awt.Dimension(590, 190));
 
         jLabelId.setText("Código");
 
@@ -170,11 +171,11 @@ public class CadastroClasse extends javax.swing.JFrame {
             .addGroup(jPanelDadosLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextId, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
-                        .addComponent(jLabelDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabelId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jTextDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabelId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)))
                 .addGap(50, 50, 50))
         );
         jPanelDadosLayout.setVerticalGroup(
@@ -188,7 +189,7 @@ public class CadastroClasse extends javax.swing.JFrame {
                 .addComponent(jLabelDescricao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addGap(37, 37, 37))
         );
 
         jPanelBotoes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -233,11 +234,6 @@ public class CadastroClasse extends javax.swing.JFrame {
         jButtonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
         jButtonSair.setText("Sair");
         jButtonSair.setPreferredSize(new java.awt.Dimension(95, 30));
-        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSairActionPerformed(evt);
-            }
-        });
         jPanelBotoes.add(jButtonSair);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -245,17 +241,18 @@ public class CadastroClasse extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanelDados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanelBotoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelDados, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanelDados, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -263,7 +260,7 @@ public class CadastroClasse extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
-        
+
     }//GEN-LAST:event_jButtonNovoActionPerformed
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
@@ -273,10 +270,6 @@ public class CadastroClasse extends javax.swing.JFrame {
     private void jButtonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGravarActionPerformed
         
     }//GEN-LAST:event_jButtonGravarActionPerformed
-
-    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,7 +301,7 @@ public class CadastroClasse extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroClasse().setVisible(true);
+                new ObjetoCadastros().setVisible(true);
             }
         });
     }
@@ -328,5 +321,4 @@ public class CadastroClasse extends javax.swing.JFrame {
     private javax.swing.JTextField jTextDescricao;
     private javax.swing.JTextField jTextId;
     // End of variables declaration//GEN-END:variables
-
 }
