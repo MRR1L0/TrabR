@@ -150,17 +150,17 @@ public class CondicaoPgto extends javax.swing.JFrame {
         jButtonSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro de CondiÃ§Ã£o de Pagamento");
+        setTitle("Cadastro de Condição de Pagamento");
         setResizable(false);
 
-        jPanelTitulo.setBackground(new java.awt.Color(102, 255, 51));
+        jPanelTitulo.setBackground(new java.awt.Color(204, 51, 0));
         jPanelTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanelTitulo.setForeground(new java.awt.Color(102, 255, 51));
 
         jLabeltitulo.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabeltitulo.setForeground(new java.awt.Color(0, 0, 255));
+        jLabeltitulo.setForeground(new java.awt.Color(255, 255, 0));
         jLabeltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabeltitulo.setText("CondiÃ§Ã£o de Pagamento");
+        jLabeltitulo.setText("Condição de Pagamento");
 
         javax.swing.GroupLayout jPanelTituloLayout = new javax.swing.GroupLayout(jPanelTitulo);
         jPanelTitulo.setLayout(jPanelTituloLayout);
@@ -175,11 +175,11 @@ public class CondicaoPgto extends javax.swing.JFrame {
 
         jPanelDados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        jLabelId.setText("CÃ³digo");
+        jLabelId.setText("Código");
 
         jTextId.setEditable(false);
 
-        jLabelDescricao.setText("DescriÃ§Ã£o*");
+        jLabelDescricao.setText("Descrição*");
 
         jLabelStatus.setText("Status");
 

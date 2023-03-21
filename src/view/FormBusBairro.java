@@ -56,12 +56,12 @@ public class FormBusBairro extends javax.swing.JDialog {
         setTitle("Busca de Bairro");
         setResizable(false);
 
-        jPanelTitulo.setBackground(new java.awt.Color(102, 255, 51));
+        jPanelTitulo.setBackground(new java.awt.Color(204, 51, 0));
         jPanelTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanelTitulo.setForeground(new java.awt.Color(102, 255, 51));
 
         jLabelTitulo.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabelTitulo.setForeground(new java.awt.Color(0, 0, 255));
+        jLabelTitulo.setForeground(new java.awt.Color(255, 255, 0));
         jLabelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTitulo.setText("Bairro");
 
@@ -89,7 +89,7 @@ public class FormBusBairro extends javax.swing.JDialog {
 
             },
             new String [] {
-                "CÃ³digo", "DescriÃ§Ã£o"
+                "Código", "Descrição"
             }
         ) {
             boolean[] canEdit = new boolean [] {

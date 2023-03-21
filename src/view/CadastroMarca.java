@@ -139,12 +139,12 @@ public class CadastroMarca extends javax.swing.JFrame {
         setTitle("Cadastro de Marca");
         setResizable(false);
 
-        jPanelTitulo.setBackground(new java.awt.Color(102, 255, 51));
+        jPanelTitulo.setBackground(new java.awt.Color(204, 51, 0));
         jPanelTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanelTitulo.setForeground(new java.awt.Color(102, 255, 51));
 
         jLabeltitulo.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabeltitulo.setForeground(new java.awt.Color(0, 0, 255));
+        jLabeltitulo.setForeground(new java.awt.Color(255, 255, 0));
         jLabeltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabeltitulo.setText("Marca");
 
@@ -161,11 +161,11 @@ public class CadastroMarca extends javax.swing.JFrame {
 
         jPanelDados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        jLabelId.setText("CÃ³digo");
+        jLabelId.setText("Código");
 
         jTextId.setEditable(false);
 
-        jLabelDescricao.setText("DescriÃ§Ã£o*");
+        jLabelDescricao.setText("Descrição*");
 
         javax.swing.GroupLayout jPanelDadosLayout = new javax.swing.GroupLayout(jPanelDados);
         jPanelDados.setLayout(jPanelDadosLayout);

@@ -53,16 +53,16 @@ public class FormBusEndereco extends javax.swing.JFrame {
         jButtonSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Busca de EndereÃ§o");
+        setTitle("Busca de Endereço");
         setResizable(false);
 
-        jPanelTitulo.setBackground(new java.awt.Color(102, 255, 51));
+        jPanelTitulo.setBackground(new java.awt.Color(204, 51, 0));
         jPanelTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanelTitulo.setForeground(new java.awt.Color(102, 255, 51));
 
         jLabelTitulo.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabelTitulo.setForeground(new java.awt.Color(0, 0, 255));
-        jLabelTitulo.setText("EndereÃ§o");
+        jLabelTitulo.setForeground(new java.awt.Color(255, 255, 0));
+        jLabelTitulo.setText("Endereço");
 
         javax.swing.GroupLayout jPanelTituloLayout = new javax.swing.GroupLayout(jPanelTitulo);
         jPanelTitulo.setLayout(jPanelTituloLayout);
@@ -88,7 +88,7 @@ public class FormBusEndereco extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "CÃ³digo", "CEP", "Logradouro"
+                "Código", "CEP", "Logradouro"
             }
         ) {
             boolean[] canEdit = new boolean [] {
