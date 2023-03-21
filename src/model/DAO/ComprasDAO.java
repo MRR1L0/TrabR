@@ -24,13 +24,13 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setDate(1, new java.sql.Date(objeto.getDataCompra().getTime()));
-            pstm.setTime(2, new java.sql.Time(objeto.getHoraCompra().getTime()));
+            pstm.setTime(2, objeto.getHoraCompra());
             pstm.setString(3, objeto.getNumeroNF());
             pstm.setString(4, objeto.getTipoNF());
             pstm.setDouble(5, objeto.getValorDesconto());
             pstm.setDouble(6, objeto.getValorAcrescimo());
             pstm.setDouble(7, objeto.getTotalNF());
-            pstm.setString(8, objeto.getStatus());
+            pstm.setString(8, String.valueOf(objeto.getStatus()));
             pstm.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -41,7 +41,7 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
     }
 
     @Override
-    public Compras search(int codigo) {
+    public Compra search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
         // String sqlExecutar = "SELECT compras.id, compras.descricao from compras where compras.id = ?";
@@ -54,7 +54,7 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setInt(0, codigo);
             rst = pstm.executeQuery();
-            Compras compras = new Compras() {
+            Compra compras = new Compra() {
             };
 
             while (rst.next()) {
@@ -118,7 +118,7 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
     }
 
     @Override
-    public List<Compras> search() {
+    public List<Compra> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
         ///String sqlExecutar = "SELECT compras.id, compras.descricao from compras";
@@ -127,14 +127,14 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
         PreparedStatement pstm = null;
         ResultSet rst = null;
 
-        List<Compras> listaCompras = new ArrayList<>();
+        List<Compra> listaCompras = new ArrayList<>();
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             rst = pstm.executeQuery();
 
             while (rst.next()) {
-                Compras compras = new Compras();
+                Compra compras = new Compra();
                 compras.setId(rst.getInt("id"));
                 compras.setDataCompra(rst.getDate("dataCompra"));
                 compras.setHoraCompra(rst.getTime("horaCompra"));
@@ -158,7 +158,7 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
     }
 
     @Override
-    public void update(Compras objeto) {
+    public void update(Compra objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "UPDATE compras SET dataCompra = ?, horaCompra = ?, numeroNF = ?, tipoNF = ?, valorDesconto = ?, valorAcrescimo = ?, totalNF = ?, status = ? WHERE id = ?";
@@ -188,7 +188,7 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
     }
 
     @Override
-    public void delete(Compras objeto) {
+    public void delete(Compra objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "DELETE FROM compras WHERE compras.id = ?";

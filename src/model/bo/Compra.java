@@ -1,13 +1,12 @@
 package model.bo;
 
 import java.util.Date;
-import java.util.Timer;
 
 public class Compra {
     
     private int id;
     private Date dataCompra;
-    private Timer horaCompra;
+    private Time horaCompra;
     private String numeroNF;
     private String tipoNF;
     private float valorDesconto;
@@ -21,7 +20,7 @@ public class Compra {
     public Compra() {
     }
 
-    public Compra(int id, Date dataCompra, Timer horaCompra, String numeroNF, String tipoNF, float valorDesconto, float valorAcrescimo, float totalNF, char status, Fornecedor fornecedor) {
+    public Compra(int id, Date dataCompra, Time horaCompra, String numeroNF, String tipoNF, float valorDesconto, float valorAcrescimo, float totalNF, char status, Fornecedor fornecedor) {
         this.id = id;
         this.dataCompra = dataCompra;
         this.horaCompra = horaCompra;
@@ -50,11 +49,11 @@ public class Compra {
         this.dataCompra = dataCompra;
     }
 
-    public Timer getHoraCompra() {
+    public Time getHoraCompra() {
         return horaCompra;
     }
 
-    public void setHoraCompra(Timer horaCompra) {
+    public void setHoraCompra(Time horaCompra) {
         this.horaCompra = horaCompra;
     }
 
