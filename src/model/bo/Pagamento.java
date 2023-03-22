@@ -10,12 +10,12 @@ public class Pagamento {
     private float valorDesconto;
     private float valorAcrescimo;
     private float valorPago;
-    private char status;
+    private String status;
 
     public Pagamento() {
     }
 
-    public Pagamento(int id, Date dataPagamento, String horaPagamento, float valorDesconto, float valorAcrescimo, float valorPago, char status) {
+    public Pagamento(int id, Date dataPagamento, String horaPagamento, float valorDesconto, float valorAcrescimo, float valorPago, String status) {
         this.id = id;
         this.dataPagamento = dataPagamento;
         this.horaPagamento = horaPagamento;
@@ -73,11 +73,11 @@ public class Pagamento {
         this.valorPago = valorPago;
     }
 
-    public char getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(char status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

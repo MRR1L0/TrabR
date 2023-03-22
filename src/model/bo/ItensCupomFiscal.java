@@ -7,14 +7,14 @@ public class ItensCupomFiscal {
    private UUID id;
    private float qtdProduto;
    private float valorUnitarioProduto;
-   private char status;
+   private String status;
    private CupomFiscal cupomFiscal;
    private HistoricoMovimentacao historicoMovimentacao;
 
     public ItensCupomFiscal() {
     }
 
-    public ItensCupomFiscal(UUID id, float qtdProduto, float valorUnitarioProduto, char status, CupomFiscal cupomFiscal, HistoricoMovimentacao historicoMovimentacao) {
+    public ItensCupomFiscal(UUID id, float qtdProduto, float valorUnitarioProduto, String status, CupomFiscal cupomFiscal, HistoricoMovimentacao historicoMovimentacao) {
         this.id = id;
         this.qtdProduto = qtdProduto;
         this.valorUnitarioProduto = valorUnitarioProduto;
@@ -48,7 +48,7 @@ public class ItensCupomFiscal {
         this.valorUnitarioProduto = valorUnitarioProduto;
     }
 
-    public char getStatus() {
+    public String getStatus() {
         return status;
     }
 
@@ -56,7 +56,7 @@ public class ItensCupomFiscal {
         return historicoMovimentacao;
     }
 
-    public void setStatus(char status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

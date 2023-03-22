@@ -9,15 +9,15 @@ public class HistoricoMovimentacao {
     
     private UUID id;
     private Date data;
-    private  Timer hora;
-    private char tipo;
+    private  String hora;
+    private String tipo;
     private float qtd;
-    private char status;
+    private String status;
 
     public HistoricoMovimentacao() {
     }
 
-    public HistoricoMovimentacao(UUID id, Date data, Timer hora, char tipo, float qtd, char status) {
+    public HistoricoMovimentacao(UUID id, Date data, String hora, String tipo, float qtd, String status) {
         this.id = id;
         this.data = data;
         this.hora = hora;
@@ -26,7 +26,7 @@ public class HistoricoMovimentacao {
         this.status = status;
     }
 
-    public HistoricoMovimentacao(Date data, Timer hora, char tipo, float qtd, char status) {
+    public HistoricoMovimentacao(Date data, String hora, String tipo, float qtd, String status) {
         this.data = data;
         this.hora = hora;
         this.tipo = tipo;
@@ -51,19 +51,19 @@ public class HistoricoMovimentacao {
         this.data = data;
     }
 
-    public Timer getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(Timer hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 
-    public char getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(char tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
@@ -75,11 +75,11 @@ public class HistoricoMovimentacao {
         this.qtd = qtd;
     }
 
-    public char getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(char status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

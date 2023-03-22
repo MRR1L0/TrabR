@@ -4,14 +4,14 @@ public class ItensCompra {
     private int id;
     private float qtdProduto;
     private float valorUnitarioProduto;
-    private char status;
+    private String status;
     private HistoricoMovimentacao historicoMovimentacao;
     private Compra compra;
 
     public ItensCompra() {
     }
 
-    public ItensCompra(int id, float qtdProduto, float valorUnitarioProduto, char status, HistoricoMovimentacao historicoMovimentacao, Compra compra) {
+    public ItensCompra(int id, float qtdProduto, float valorUnitarioProduto, String status, HistoricoMovimentacao historicoMovimentacao, Compra compra) {
         this.id = id;
         this.qtdProduto = qtdProduto;
         this.valorUnitarioProduto = valorUnitarioProduto;
@@ -55,11 +55,11 @@ public class ItensCompra {
         this.valorUnitarioProduto = valorUnitarioProduto;
     }
 
-    public char getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(char status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
