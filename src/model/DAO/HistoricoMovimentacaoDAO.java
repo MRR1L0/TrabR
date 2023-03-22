@@ -21,8 +21,8 @@ public class HistoricoMovimentacaoDAO implements InterfaceDAO<HistoricoMovimenta
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setObject(1, objeto.getData());
-            pstm.setTime(2, objeto.getHora());
-            pstm.setString(3, objeto.getTipo());
+            pstm.setString(2, String.valueOf(objeto.getHora()));
+            pstm.setString(3, String.valueOf(objeto.getTipo()));
             pstm.setFloat(4, objeto.getQtde());
             pstm.setString(5, String.valueOf(objeto.getStatus()));    /// convertido o char em String.
             pstm.executeUpdate();
