@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import model.bo.HistoricoMovimentacao;
 
@@ -23,7 +24,7 @@ public class HistoricoMovimentacaoDAO implements InterfaceDAO<HistoricoMovimenta
             pstm.setObject(1, objeto.getData());
             pstm.setString(2, String.valueOf(objeto.getHora()));
             pstm.setString(3, String.valueOf(objeto.getTipo()));
-            pstm.setFloat(4, objeto.getQtde());
+            pstm.setFloat(4, objeto.getQtd());
             pstm.setString(5, String.valueOf(objeto.getStatus()));    /// convertido o char em String.
             pstm.executeUpdate();
         } catch (SQLException ex) {
@@ -50,11 +51,11 @@ public class HistoricoMovimentacaoDAO implements InterfaceDAO<HistoricoMovimenta
             HistoricoMovimentacao historicoMovimentacao = new HistoricoMovimentacao();
 
             while (rst.next()) {
-                historicoMovimentacao.setId(rst.getInt("id"));
+                historicoMovimentacao.setId(rst.getObject("id", UUID.class));
                 historicoMovimentacao.setData(rst.getDate("data"));
-                historicoMovimentacao.setHora(rst.getTime("hora"));
+                historicoMovimentacao.setHora(rst.getString("hora"));
                 historicoMovimentacao.setTipo(rst.getString("tipo"));
-                historicoMovimentacao.setQtde(rst.getInt("qtd"));
+                historicoMovimentacao.setQtd(rst.getInt("qtd"));
                 historicoMovimentacao.setStatus(rst.getString("status"));       ///itensCupomFiscal.setStatus(rst.getString("status"));
 
             }
@@ -84,11 +85,11 @@ public class HistoricoMovimentacaoDAO implements InterfaceDAO<HistoricoMovimenta
             HistoricoMovimentacao historicoMovimentacao = new HistoricoMovimentacao();
 
             while (rst.next()) {
-                historicoMovimentacao.setId(rst.getInt("id"));
+                historicoMovimentacao.setId(rst.getObject("id", UUID.class));
                 historicoMovimentacao.setData(rst.getDate("data"));
-                historicoMovimentacao.setHora(rst.getTime("hora"));
+                historicoMovimentacao.setHora(rst.getString("hora"));
                 historicoMovimentacao.setTipo(rst.getString("tipo"));
-                historicoMovimentacao.setQtde(rst.getInt("qtd"));
+                historicoMovimentacao.setQtd(rst.getInt("qtd"));
                 historicoMovimentacao.setStatus(rst.getString("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
@@ -118,11 +119,11 @@ public class HistoricoMovimentacaoDAO implements InterfaceDAO<HistoricoMovimenta
 
             while (rst.next()) {
                 HistoricoMovimentacao historicoMovimentacao = new HistoricoMovimentacao();
-                historicoMovimentacao.setId(rst.getInt("id"));
+                historicoMovimentacao.setId(rst.getObject("id", UUID.class));
                 historicoMovimentacao.setData(rst.getDate("data"));
-                historicoMovimentacao.setHora(rst.getTime("hora"));
+                historicoMovimentacao.setHora(rst.getString("hora"));
                 historicoMovimentacao.setTipo(rst.getString("tipo"));
-                historicoMovimentacao.setQtde(rst.getFloat("qtd"));
+                historicoMovimentacao.setQtd(rst.getFloat("qtd"));
                 historicoMovimentacao.setStatus(rst.getString("status"));
                 listaHistoricoMovimentacao.add(historicoMovimentacao);
             }
@@ -148,9 +149,9 @@ public class HistoricoMovimentacaoDAO implements InterfaceDAO<HistoricoMovimenta
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setObject(1, objeto.getData());
-            pstm.setTime(2, objeto.getHora());
+            pstm.setString(2, objeto.getHora());
             pstm.setString(3, objeto.getTipo());
-            pstm.setFloat(4, objeto.getQtde());
+            pstm.setFloat(4, objeto.getQtd());
             pstm.setString(5, objeto.getStatus());
             pstm.executeUpdate();
 
@@ -171,7 +172,7 @@ public class HistoricoMovimentacaoDAO implements InterfaceDAO<HistoricoMovimenta
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(0, objeto.getId());
+            pstm.setString(0, objeto.getId().toString());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {

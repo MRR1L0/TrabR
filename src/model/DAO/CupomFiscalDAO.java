@@ -89,9 +89,9 @@ public class CupomFiscalDAO implements InterfaceDAO<CupomFiscal> {
             CupomFiscal cupomFiscal = new CupomFiscal();
 
             while (rst.next()) {
-                cupomFiscal.setId(rst.getInt("id"));
+                cupomFiscal.setId(rst.getObject("id", UUID.class));
                 cupomFiscal.setDataVenda(rst.getDate("dataVenda"));
-                //cupomFiscal.setHoraVenda(rst.getTime("horaVenda"));
+                cupomFiscal.setHoraVenda(rst.getString("horaVenda"));
                 cupomFiscal.setValorDesconto(rst.getFloat("valorDesconto"));
                 cupomFiscal.setValorAcrescimo(rst.getFloat("valorAcrescimo"));
                 cupomFiscal.setTotalCupom(rst.getFloat("totalCupom"));
@@ -125,7 +125,7 @@ public class CupomFiscalDAO implements InterfaceDAO<CupomFiscal> {
 
             while (rst.next()) {
                 CupomFiscal cupomFiscal = new CupomFiscal();
-                cupomFiscal.setId(rst.getInt("id"));
+                cupomFiscal.setId(rst.getObject("id",UUID.class));
                 cupomFiscal.setDataVenda(rst.getDate("dataVenda"));
                // cupomFiscal.setHoraVenda(rst.getTime("horaVenda"));
                 cupomFiscal.setValorDesconto(rst.getFloat("valorDesconto"));
@@ -155,7 +155,7 @@ public class CupomFiscalDAO implements InterfaceDAO<CupomFiscal> {
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             ///pstm.setString(0, objeto.getDataVenda());
-            pstm.setInt(1, objeto.getId());
+            pstm.setString(1, objeto.getId().toString());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {
@@ -175,7 +175,7 @@ public class CupomFiscalDAO implements InterfaceDAO<CupomFiscal> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(0, objeto.getId());
+            pstm.setString(0, objeto.getId().toString());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {

@@ -23,7 +23,7 @@ public class PagamentoDAO implements InterfaceDAO<Pagamento> {
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setDate(1, new java.sql.Date(objeto.getDataPagamento().getTime()));
-            pstm.setTime(2, new java.sql.Time(objeto.getHoraPagamento().getTime()));
+            pstm.setString(2, objeto.getHoraPagamento());
             pstm.setFloat(3, objeto.getValorDesconto());
             pstm.setFloat(4, objeto.getValorAcrescimo());
             pstm.setFloat(5, objeto.getValorPago());
@@ -60,7 +60,7 @@ public class PagamentoDAO implements InterfaceDAO<Pagamento> {
                 pagamento.setValorDesconto(rst.getFloat("valorDesconto"));
                 pagamento.setValorAcrescimo(rst.getFloat("valorAcrescimo"));
                 pagamento.setValorPago(rst.getFloat("valorPago"));
-                pagamento.setStatus(rst.getString("status").charAt(0));
+                pagamento.setStatus(rst.getString("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
             return pagamento;
@@ -96,7 +96,7 @@ public class PagamentoDAO implements InterfaceDAO<Pagamento> {
                 pagamento.setValorDesconto(rst.getFloat("valorDesconto"));
                 pagamento.setValorAcrescimo(rst.getFloat("valorAcrescimo"));
                 pagamento.setValorPago(rst.getFloat("valorPago"));
-                pagamento.setStatus(rst.getString("status").charAt(0));
+                pagamento.setStatus(rst.getString("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
             return pagamento;
@@ -133,7 +133,7 @@ public class PagamentoDAO implements InterfaceDAO<Pagamento> {
                 pagamento.setValorDesconto(rst.getFloat("valorDesconto"));
                 pagamento.setValorAcrescimo(rst.getFloat("valorAcrescimo"));
                 pagamento.setValorPago(rst.getFloat("valorPago"));
-                pagamento.setStatus(rst.getString("status").charAt(0));
+              pagamento.setStatus(rst.getString("status"));
                 listaPagamento.add(pagamento);
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
@@ -157,7 +157,7 @@ public class PagamentoDAO implements InterfaceDAO<Pagamento> {
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setDate(2, (Date) objeto.getDataPagamento());
-            pstm.setTime(3, objeto.getHoraPagamento());
+            pstm.setString(3, objeto.getHoraPagamento());
             pstm.setFloat(4, objeto.getValorDesconto());
             pstm.setFloat(5, objeto.getValorAcrescimo());
             pstm.setFloat(6, objeto.getValorPago());

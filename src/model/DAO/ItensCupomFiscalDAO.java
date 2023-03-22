@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import model.bo.ItensCupomFiscal;
 
@@ -20,8 +21,8 @@ public class ItensCupomFiscalDAO implements InterfaceDAO<ItensCupomFiscal> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(1, objeto.getQtdProduto());
-            pstm.setFloat(2, objeto.getValorUnitario());
+            pstm.setFloat(1, objeto.getQtdProduto());
+            pstm.setFloat(2, objeto.getValorUnitarioProduto());
             pstm.setString(3, objeto.getStatus());
             pstm.executeUpdate();
         } catch (SQLException ex) {
@@ -48,9 +49,9 @@ public class ItensCupomFiscalDAO implements InterfaceDAO<ItensCupomFiscal> {
             ItensCupomFiscal itensCupomFiscal = new ItensCupomFiscal();
 
             while (rst.next()) {
-                itensCupomFiscal.setId(rst.getInt("id"));
+                itensCupomFiscal.setId(rst.getObject("id", UUID.class));
                 itensCupomFiscal.setQtdProduto(rst.getInt("qtdProduto"));
-                itensCupomFiscal.setValorUnitario(rst.getFloat("valorUnitarioProduto"));
+                itensCupomFiscal.setValorUnitarioProduto(rst.getFloat("valorUnitarioProduto"));
                 itensCupomFiscal.setStatus(rst.getString("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
@@ -80,9 +81,9 @@ public class ItensCupomFiscalDAO implements InterfaceDAO<ItensCupomFiscal> {
             ItensCupomFiscal itensCupomFiscal = new ItensCupomFiscal();
 
             while (rst.next()) {
-                itensCupomFiscal.setId(rst.getInt("id"));
+               itensCupomFiscal.setId(rst.getObject("id", UUID.class));
                 itensCupomFiscal.setQtdProduto(rst.getInt("qtdProduto"));
-                itensCupomFiscal.setValorUnitario(rst.getFloat("valorUnitarioProduto"));
+                itensCupomFiscal.setValorUnitarioProduto(rst.getFloat("valorUnitarioProduto"));
                 itensCupomFiscal.setStatus(rst.getString("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
@@ -113,9 +114,9 @@ public class ItensCupomFiscalDAO implements InterfaceDAO<ItensCupomFiscal> {
 
             while (rst.next()) {
                 ItensCupomFiscal itensCupomFiscal = new ItensCupomFiscal();
-                itensCupomFiscal.setId(rst.getInt("id"));
+               itensCupomFiscal.setId(rst.getObject("id", UUID.class));
                 itensCupomFiscal.setQtdProduto(rst.getInt("qtdProduto"));
-                itensCupomFiscal.setValorUnitario(rst.getFloat("valorUnitarioProduto"));
+                itensCupomFiscal.setValorUnitarioProduto(rst.getFloat("valorUnitarioProduto"));
                 itensCupomFiscal.setStatus(rst.getString("status"));
                 listaCupomFiscal.add(itensCupomFiscal);
             }
@@ -141,10 +142,10 @@ public class ItensCupomFiscalDAO implements InterfaceDAO<ItensCupomFiscal> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(1, objeto.getQtdProduto());
-            pstm.setFloat(2, objeto.getValorUnitario());
+            pstm.setFloat(1, objeto.getQtdProduto());
+            pstm.setFloat(2, objeto.getValorUnitarioProduto());
             pstm.setString(3, objeto.getStatus());
-            pstm.setInt(4, objeto.getId());
+            pstm.setString(4, objeto.getId().toString());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {
@@ -164,7 +165,7 @@ public class ItensCupomFiscalDAO implements InterfaceDAO<ItensCupomFiscal> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(0, objeto.getId());
+            pstm.setString(0, objeto.getId().toString());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {
