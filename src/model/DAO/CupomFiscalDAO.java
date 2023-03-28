@@ -16,7 +16,7 @@ public class CupomFiscalDAO implements InterfaceDAO<CupomFiscal> {
     public void create(CupomFiscal objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO cupomFiscal (dataVenda, horaVenda, valorDesconto, valorAcrescimo, totalCupom, status) VALUES (?, ?, ?, ?, ?, ?)";
+        String sqlExecutar = "INSERT INTO cupomFiscal (dataVenda, horaVenda, valorDesconto, valorAcrescimo, totalCupom, status, cliente_id, colaborador_id) VALUES (?,?,?, ?, ?, ?, ?, ?)";
         PreparedStatement pstm = null; // interagir com o banco de dados
 
         /// pstm.setString(12, Character.toString(objeto.getSexo()));
@@ -28,6 +28,8 @@ public class CupomFiscalDAO implements InterfaceDAO<CupomFiscal> {
             pstm.setFloat(4, objeto.getValorAcrescimo());
             pstm.setFloat(5, objeto.getTotalCupom());
             pstm.setInt(8, objeto.getStatus());
+             pstm.setInt(1, objeto.getCliente().getId());
+            pstm.setInt(2, objeto.getColaborador().getId());
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

@@ -16,7 +16,7 @@ public class ItensCupomFiscalDAO implements InterfaceDAO<ItensCupomFiscal> {
     public void create(ItensCupomFiscal objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO ItensCupomFiscal (qtdProduto, valorUnitarioProduto, status) VALUES (?, ?, ?)";
+        String sqlExecutar = "INSERT INTO ItensCupomFiscal (qtdProduto, valorUnitarioProduto, status, cupomFiscal_id, produto_id) VALUES (?, ?, ?, ?, ?)";
         PreparedStatement pstm = null; // interagir com o banco de dados
 
         try {
@@ -24,6 +24,8 @@ public class ItensCupomFiscalDAO implements InterfaceDAO<ItensCupomFiscal> {
             pstm.setFloat(1, objeto.getQtdProduto());
             pstm.setFloat(2, objeto.getValorUnitarioProduto());
             pstm.setString(3, objeto.getStatus());
+            pstm.setObject(4, objeto.getCupomFiscal().getId());
+            pstm.setInt(5, objeto.getProduto().getId());
             pstm.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();

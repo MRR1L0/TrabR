@@ -15,7 +15,7 @@ public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor> {
     public void create(Fornecedor objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO fornecedor (nome, fone1, fone2, complementoEndereco, email, dtCadastro, observacao, status, cnpj, inscEstadual, contato, razaoSocial, cpf, rg) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sqlExecutar = "INSERT INTO fornecedor (nome, fone1, fone2, complementoEndereco, email, dtCadastro, observacao, status, cnpj, inscEstadual, contato, razaoSocial, cpf, rg, endereco_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement pstm = null; // interagir com o banco de dados
 
         try {
@@ -34,6 +34,7 @@ public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor> {
             pstm.setString(0, objeto.getRazaoSocial());
             pstm.setString(9, objeto.getCpf());
             pstm.setString(10, objeto.getRg());
+            pstm.setInt(11, objeto.getEndereco().getId());
 
             pstm.executeUpdate();
         } catch (SQLException ex) {

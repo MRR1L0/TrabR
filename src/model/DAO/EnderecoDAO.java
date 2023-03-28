@@ -15,13 +15,15 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
     public void create(Endereco objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO endereco (logradouro, cep) VALUES (?,?)";
+        String sqlExecutar = "INSERT INTO endereco (logradouro, cep, bairro_id, cidade_id) VALUES (?,?,?,?)";
         PreparedStatement pstm = null; // interagir com o banco de dados
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setString(1, objeto.getLogradouro()); // atributo que estao no banco
             pstm.setString(2, objeto.getCep());
+            pstm.setInt(3, objeto.getBairro().getId());
+            pstm.setInt(4, objeto.getCidade().getId());
 
             pstm.executeUpdate();
         } catch (SQLException ex) {

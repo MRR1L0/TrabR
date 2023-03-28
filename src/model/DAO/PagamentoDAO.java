@@ -16,7 +16,7 @@ public class PagamentoDAO implements InterfaceDAO<Pagamento> {
 
         Connection conexao = ConnectionFactory.getConnection();
 
-        String sqlExecutar = "INSERT INTO pagamento (dataPagamento, horaPagamento, valorDesconto, valorAcrescimo, valorPago, status) VALUES (?, ?, ?, ?, ?, ?)";
+        String sqlExecutar = "INSERT INTO pagamento (dataPagamento, horaPagamento, valorDesconto, valorAcrescimo, valorPago, status, pagar_id) VALUES (?,?, ?, ?, ?, ?, ?)";
 ///  String sqlExecutar = "INSERT INTO pagamento (dataPagamento, horaPagamento, valorDesconto, valorAcrescimo, valorPago, status) VALUES (?)";
         PreparedStatement pstm = null; // interagir com o banco de dados
 
@@ -28,6 +28,7 @@ public class PagamentoDAO implements InterfaceDAO<Pagamento> {
             pstm.setFloat(4, objeto.getValorAcrescimo());
             pstm.setFloat(5, objeto.getValorPago());
             pstm.setString(6, String.valueOf(objeto.getStatus()));
+            pstm.setInt(7, objeto.getPagar().getId());
             pstm.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();

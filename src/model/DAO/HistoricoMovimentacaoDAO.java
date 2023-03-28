@@ -16,7 +16,7 @@ public class HistoricoMovimentacaoDAO implements InterfaceDAO<HistoricoMovimenta
     public void create(HistoricoMovimentacao objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO HistoricoMovimentacao (data, hora, tipo, qtd, status) VALUES (?,?,?,?,?)";
+        String sqlExecutar = "INSERT INTO HistoricoMovimentacao (data, hora, tipo, qtd, status, produto_id, itensCompra_id, itensCumpomFiscal_id) VALUES (?,?,?,?,?,?,?,?)";
         PreparedStatement pstm = null; // interagir com o banco de dados
 
         try {
@@ -26,6 +26,9 @@ public class HistoricoMovimentacaoDAO implements InterfaceDAO<HistoricoMovimenta
             pstm.setString(3, String.valueOf(objeto.getTipo()));
             pstm.setFloat(4, objeto.getQtd());
             pstm.setString(5, String.valueOf(objeto.getStatus()));    /// convertido o char em String.
+            pstm.setInt(6, objeto.getProduto().getId());
+            pstm.setInt(7, objeto.getItensCompra().getId());
+            pstm.setObject(8, objeto.getItensCupomFiscal().getId());
             pstm.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();

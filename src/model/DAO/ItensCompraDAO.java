@@ -15,7 +15,7 @@ public class ItensCompraDAO implements InterfaceDAO<ItensCompra> {
     public void create(ItensCompra objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO itensCompra (qtdProduto, valorUnitario, status) VALUES (?, ?, ?)";
+        String sqlExecutar = "INSERT INTO itensCompra (qtdProduto, valorUnitarioProduto, status, produto_id, compra_id) VALUES (?, ?, ?, ?, ?)";
 
         PreparedStatement pstm = null; // interagir com o banco de dados
 
@@ -24,6 +24,8 @@ public class ItensCompraDAO implements InterfaceDAO<ItensCompra> {
             pstm.setFloat(1, objeto.getQtdProduto());
             pstm.setFloat(2, objeto.getValorUnitarioProduto());
             pstm.setString(3, objeto.getStatus());
+            pstm.setInt(4, objeto.getProduto().getId());
+            pstm.setInt(5, objeto.getCompra().getId());
             pstm.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();

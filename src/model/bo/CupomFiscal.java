@@ -12,11 +12,13 @@ public class CupomFiscal {
     private float valorAcrescimo;
     private float totalCupom;
     private char status;
+    private Cliente cliente;
+    private Colaborador colaborador;
 
     public CupomFiscal() {
     }
 
-    public CupomFiscal(UUID id, Date dataVenda, String horaVenda, float valorDesconto, float valorAcrescimo, float totalCupom, char status) {
+    public CupomFiscal(UUID id, Date dataVenda, String horaVenda, float valorDesconto, float valorAcrescimo, float totalCupom, char status, Cliente cliente, Colaborador colaborador) {
         this.id = id;
         this.dataVenda = dataVenda;
         this.horaVenda = horaVenda;
@@ -24,6 +26,22 @@ public class CupomFiscal {
         this.valorAcrescimo = valorAcrescimo;
         this.totalCupom = totalCupom;
         this.status = status;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Colaborador getColaborador() {
+        return colaborador;
+    }
+
+    public void setColaborador(Colaborador colaborador) {
+        this.colaborador = colaborador;
     }
 
     public UUID getId() {

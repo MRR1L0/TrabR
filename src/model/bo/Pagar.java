@@ -12,19 +12,30 @@ public class Pagar {
     private float valorPagar;
     private char status;
     private Pagamento pagamento;
+    private Compra compra;
 
     public Pagar() {
     }
 
-    public Pagar(int id, Date dataEmissao, Time horaEmissao, Date dataVencimento, float valorPagar, char status) {
+    public Pagar(int id, Date dataEmissao, Time horaEmissao, Date dataVencimento, float valorPagar, char status, Pagamento pagamento, Compra compra) {
         this.id = id;
         this.dataEmissao = dataEmissao;
         this.horaEmissao = horaEmissao;
         this.dataVencimento = dataVencimento;
         this.valorPagar = valorPagar;
         this.status = status;
+        this.pagamento = pagamento;
+        this.compra = compra;
     }
 
+    public Compra getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Compra compra) {
+        this.compra = compra;
+    }
+    
     public int getId() {
         return id;
     }

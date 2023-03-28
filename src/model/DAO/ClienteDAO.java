@@ -14,7 +14,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
     public void create(Cliente objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO cliente (nome, fone1, fone2, complementoEndereco, email, dtCadastro, observacao, status, cpf, rg, dtNascimento, sexo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sqlExecutar = "INSERT INTO cliente (nome, fone1, fone2, complementoEndereco, email, dtCadastro, observacao, status, cpf, rg, dtNascimento, sexo, endereco_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement pstm = null; // interagir com o banco de dados
 
         try {
@@ -31,6 +31,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
             pstm.setString(10, objeto.getRg());
             pstm.setObject(11, objeto.getDtNascimento());
             pstm.setString(12, Character.toString(objeto.getSexo()));
+            pstm.setInt(13, objeto.getEndereco().getId());
 
             pstm.executeUpdate();
         } catch (SQLException ex) {

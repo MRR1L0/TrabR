@@ -14,7 +14,7 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto> {
     public void create(Produto objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO produto (descricao, valorCompra, valorVenda, undCompra, undVenda, fatorConversao, status, dataCadastro, barraEntrada, barraSaida, estoqueMinimo, estoqueMaximo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sqlExecutar = "INSERT INTO produto (descricao, valorCompra, valorVenda, undCompra, undVenda, fatorConversao, status, dataCadastro, barraEntrada, barraSaida, estoqueMinimo, estoqueMaximo, marca_id, classe_id) VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement pstm = null; // interagir com o banco de dados
 
         try {
@@ -31,6 +31,8 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto> {
             pstm.setString(10, objeto.getBarraSaida());
             pstm.setFloat(11, objeto.getEstoqueMinino());
             pstm.setFloat(12, objeto.getEstoqueMaximo());
+            pstm.setInt(11, objeto.getMarca().getId());
+            pstm.setInt(12, objeto.getClasse().getId());
             pstm.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();

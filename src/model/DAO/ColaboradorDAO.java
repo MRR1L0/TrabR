@@ -15,7 +15,7 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
     public void create(Colaborador objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO colaborador (nome, fone1, fone2, complementoEndereco, email, dtCadastro, observacao, status, login, senha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sqlExecutar = "INSERT INTO colaborador (nome, fone1, fone2, complementoEndereco, email, dtCadastro, observacao, status, login, senha, endereco_id) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement pstm = null; // interagir com o banco de dados
 
         try {
@@ -30,6 +30,7 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
             pstm.setInt(8, objeto.getStatus());
             pstm.setString(9, objeto.getLogin());
             pstm.setString(10, objeto.getSenha());
+             pstm.setInt(11, objeto.getEndereco().getId());
 
             pstm.executeUpdate();
         } catch (SQLException ex) {

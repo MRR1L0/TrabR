@@ -7,21 +7,28 @@ public class ItensCompra {
     private String status;
     private HistoricoMovimentacao historicoMovimentacao;
     private Compra compra;
+    private Produto produto;
 
     public ItensCompra() {
     }
 
-    public ItensCompra(int id, float qtdProduto, float valorUnitarioProduto, String status, HistoricoMovimentacao historicoMovimentacao, Compra compra) {
+    public ItensCompra(int id, float qtdProduto, float valorUnitarioProduto, String status, HistoricoMovimentacao historicoMovimentacao, Compra compra, Produto produto) {
         this.id = id;
         this.qtdProduto = qtdProduto;
         this.valorUnitarioProduto = valorUnitarioProduto;
         this.status = status;
         this.historicoMovimentacao = historicoMovimentacao;
         this.compra = compra;
+        this.produto = produto;
     }
 
-    
+    public Produto getProduto() {
+        return produto;
+    }
 
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
 
     public int getId() {
         return id;

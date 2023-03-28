@@ -2,16 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/aluno/trabalhoRoberval/TrabR/src/controler/ControlerBuscaCidade.java</file>
-            <file>file:/C:/Users/aluno/trabalhoRoberval/TrabR/src/controler/ControlerCadastroFornecedor.java</file>
-            <file>file:/C:/Users/aluno/trabalhoRoberval/TrabR/src/model/DAO/ClasseDAO.java</file>
-            <file>file:/C:/Users/aluno/trabalhoRoberval/TrabR/src/model/DAO/BairroDAO.java</file>
-            <file>file:/C:/Users/aluno/trabalhoRoberval/TrabR/src/controler/ControlerBuscaCondicaoPagamento.java</file>
-            <file>file:/C:/Users/aluno/trabalhoRoberval/TrabR/src/controler/ControlerCadastroCondicaoPagamento.java</file>
-            <file>file:/C:/Users/aluno/trabalhoRoberval/TrabR/src/model/DAO/InterfaceDAO.java</file>
-            <file>file:/C:/Users/aluno/trabalhoRoberval/TrabR/src/controler/ControlerBuscaBairro.java</file>
-            <file>file:/C:/Users/aluno/trabalhoRoberval/TrabR/src/controler/ControlerBuscaMarca.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

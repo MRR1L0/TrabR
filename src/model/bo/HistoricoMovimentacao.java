@@ -13,27 +13,53 @@ public class HistoricoMovimentacao {
     private String tipo;
     private float qtd;
     private String status;
+    private Produto produto;
+    private ItensCupomFiscal ItensCupomFiscal;
+    private ItensCompra itensCompra;
 
     public HistoricoMovimentacao() {
     }
 
-    public HistoricoMovimentacao(UUID id, Date data, String hora, String tipo, float qtd, String status) {
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public ItensCupomFiscal getItensCupomFiscal() {
+        return ItensCupomFiscal;
+    }
+
+    public void setItensCupomFiscal(ItensCupomFiscal ItensCupomFiscal) {
+        this.ItensCupomFiscal = ItensCupomFiscal;
+    }
+
+    public HistoricoMovimentacao(UUID id, Date data, String hora, String tipo, float qtd, String status, Produto produto, ItensCupomFiscal ItensCupomFiscal, ItensCompra itensCompra) {
         this.id = id;
         this.data = data;
         this.hora = hora;
         this.tipo = tipo;
         this.qtd = qtd;
         this.status = status;
+        this.produto = produto;
+        this.ItensCupomFiscal = ItensCupomFiscal;
+        this.itensCompra = itensCompra;
     }
 
-    public HistoricoMovimentacao(Date data, String hora, String tipo, float qtd, String status) {
-        this.data = data;
-        this.hora = hora;
-        this.tipo = tipo;
-        this.qtd = qtd;
-        this.status = status;
-        this.id = UUID.randomUUID();
+
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
     }
+
+
+    public ItensCompra getItensCompra() {
+        return itensCompra;
+    }
+
+    public void setItensCompra(ItensCompra itensCompra) {
+        this.itensCompra = itensCompra;
+    }
+
+
 
     public UUID getId() {
         return id;

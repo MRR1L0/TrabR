@@ -16,7 +16,7 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
     public void create(Compra objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO compras (dataCompra, horaCompra, numeroNF, tipoNF, valorDesconto, valorAcrescimo, totalNF, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sqlExecutar = "INSERT INTO compras (dataCompra, horaCompra, numeroNF, tipoNF, valorDesconto, valorAcrescimo, totalNF, status, fonecedor,_id, condicaoPgto_id) VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?)";
 
         //String sqlExecutar = "INSERT INTO compras (dataCompra, horaCompra, numeroNF, tipoNF, valorDesconto, valorAcrescimo, totalNF, status) VALUES (?)";
         PreparedStatement pstm = null; // interagir com o banco de dados
@@ -31,6 +31,8 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
             pstm.setDouble(6, objeto.getValorAcrescimo());
             pstm.setDouble(7, objeto.getTotalNF());
             pstm.setString(8, String.valueOf(objeto.getStatus()));
+            pstm.setInt(9, objeto.getFornecedor().getId());
+            pstm.setInt(10, objeto.getCondicaoPgto().getId());
             pstm.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
