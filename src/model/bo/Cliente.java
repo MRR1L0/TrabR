@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Cliente extends Pessoa {
     
+    private int id;
     private String cpf;
     private String rg;
     private Date dtNascimento;
@@ -16,15 +17,24 @@ public class Cliente extends Pessoa {
         this.sexo = sexo;
     }
 
-    public Cliente(String cpf, String rg, Date dtNascimento, char sexo, int id, String nome, String fone1, String fone2,
+    public Cliente(String cpf, String rg, Date dtNascimento, char sexo,  String nome, String fone1, String fone2,
      String email, Date dtCadastro, String complementoEndereco, String observacao, char status, Endereco endereco) {
-        super(id, nome, fone1, fone2, email, dtCadastro, complementoEndereco, observacao, status, endereco);
+        super(nome, fone1, fone2, email, dtCadastro, complementoEndereco, observacao, status, endereco);
         this.cpf = cpf;
         this.rg = rg;
         this.dtNascimento = dtNascimento;
         this.sexo = sexo;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
     public Cliente() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

@@ -6,16 +6,26 @@ public class Colaborador extends Pessoa {
     
     private String login;
     private String senha;
+    private int id;
 
     public Colaborador() {
     }
 
 
     public Colaborador(String login, String senha, int id, String nome, String fone1, String fone2, String email, Date dtCadastro, String complementoEndereco, String observacao, char status, Endereco endereco) {
-        super(id, nome, fone1, fone2, email, dtCadastro, complementoEndereco, observacao, status, endereco);
+        super( nome, fone1, fone2, email, dtCadastro, complementoEndereco, observacao, status, endereco);
         this.login = login;
         this.senha = senha;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
 
     public String getLogin() {
         return login;

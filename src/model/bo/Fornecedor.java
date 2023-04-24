@@ -10,6 +10,7 @@ public class Fornecedor extends Pessoa {
     private String razaoSocial;
     private String cpf;
     private String rg;
+    private int id;
 
     public Fornecedor(String cnpj, String inscEstadual, String contato, String razaoSocial, String cpf, String rg) {
         this.cnpj = cnpj;
@@ -21,7 +22,7 @@ public class Fornecedor extends Pessoa {
     }
 
     public Fornecedor(String cnpj, String inscEstadual, String contato, String razaoSocial, String cpf, String rg, int id, String nome, String fone1, String fone2, String email, Date dtCadastro, String complementoEndereco, String observacao, char status, Endereco endereco) {
-        super(id, nome, fone1, fone2, email, dtCadastro, complementoEndereco, observacao, status, endereco);
+        super( nome, fone1, fone2, email, dtCadastro, complementoEndereco, observacao, status, endereco);
         this.cnpj = cnpj;
         this.inscEstadual = inscEstadual;
         this.contato = contato;
@@ -33,6 +34,16 @@ public class Fornecedor extends Pessoa {
     public Fornecedor() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
     
     public String getCnpj() {
         return cnpj;
