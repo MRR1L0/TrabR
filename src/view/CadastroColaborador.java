@@ -463,7 +463,6 @@ public class CadastroColaborador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Colaborador");
-        setResizable(false);
 
         jPanelTitulo.setBackground(new java.awt.Color(204, 51, 0));
         jPanelTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));

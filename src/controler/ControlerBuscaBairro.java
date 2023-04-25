@@ -29,20 +29,17 @@ public class ControlerBuscaBairro implements ActionListener {
     }
 
     @Override
-    //evento                        //falta fazer a acao do botao
+
     public void actionPerformed(ActionEvent evento) {
 
         if (evento.getSource() == this.formBusBairro.getjButtonCarregar()) {
-            if(this.formBusBairro.getjTableBuscas().getValueAt(this.formBusBairro.getjTableBuscas().getSelectedRow(), 0) != null){
-                    ControlerCadastroBairro.codigo = (int) this.formBusBairro.getjTableBuscas().getValueAt(this.formBusBairro.getjTableBuscas().getSelectedRow(),0);
-                    formBusBairro.dispose();
-                    
+            if (this.formBusBairro.getjTableBuscas().getValueAt(this.formBusBairro.getjTableBuscas().getSelectedRow(), 0) != null) {
+                ControlerCadastroBairro.codigo = (int) this.formBusBairro.getjTableBuscas().getValueAt(this.formBusBairro.getjTableBuscas().getSelectedRow(), 0);
+                formBusBairro.dispose();
 
-        } else if (evento.getSource() == formBusBairro.getjButtonSair()) {
-            formBusBairro.dispose();
+            } else if (evento.getSource() == formBusBairro.getjButtonSair()) {
+                formBusBairro.dispose();
+            }
         }
-
-        }
-
     }
 }

@@ -29,13 +29,14 @@ public class ControlerBuscaCondicaoPagamento implements ActionListener {
 
     @Override
 
-    public void actionPerformed(ActionEvent acao) {
-
-        if (acao.getSource() == this.formBusCondPgto.getjButtonCarregar()) {
-
-        } else if (acao.getSource() == this.formBusCondPgto.getjButtonSair()) {
-
+    public void actionPerformed(ActionEvent evento) {
+        if (evento.getSource() == this.formBusCondPgto.getjButtonCarregar()) {
+            if (this.formBusCondPgto.getjTableBuscas().getValueAt(this.formBusCondPgto.getjTableBuscas().getSelectedRow(), 0) != null) {
+                ControlerCadastroBairro.codigo = (int) this.formBusCondPgto.getjTableBuscas().getValueAt(this.formBusCondPgto.getjTableBuscas().getSelectedRow(), 0);
+                formBusCondPgto.dispose();
+            } else if (evento.getSource() == formBusCondPgto.getjButtonSair()) {
+                formBusCondPgto.dispose();
+            }
         }
-
     }
 }

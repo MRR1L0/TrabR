@@ -26,6 +26,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu1 = new javax.swing.JMenu();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastros = new javax.swing.JMenu();
         jMenuItemBairro = new javax.swing.JMenuItem();
@@ -46,6 +47,8 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         jMenuMovimentos = new javax.swing.JMenu();
         jMenuRelatorios = new javax.swing.JMenu();
         jMenuAjuda = new javax.swing.JMenu();
+
+        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Super Mercado Java ");
@@ -74,7 +77,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
 
         jMenuItemEndereco.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItemEndereco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/mapa.png"))); // NOI18N
-        jMenuItemEndereco.setText("EndereÃ§o...");
+        jMenuItemEndereco.setText("Endereço...");
         jMenuItemEndereco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemEnderecoActionPerformed(evt);
@@ -140,7 +143,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         jMenuCadastros.add(jSeparator3);
 
         jMenuItemCondPagamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Dollar.png"))); // NOI18N
-        jMenuItemCondPagamento.setText("CondiÃ§Ã£o de Pagamento...");
+        jMenuItemCondPagamento.setText("Condição de Pagamento...");
         jMenuItemCondPagamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemCondPagamentoActionPerformed(evt);
@@ -304,6 +307,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenuAjuda;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastros;

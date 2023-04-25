@@ -30,13 +30,14 @@ public class ControlerBuscaCidade implements ActionListener {
 
     @Override
 
-    public void actionPerformed(ActionEvent acao) {
-
-        if (acao.getSource() == this.formBusCidade.getjButtonCarregar()) {
-
-        } else if (acao.getSource() == this.formBusCidade.getjButtonSair()) {
-
+    public void actionPerformed(ActionEvent evento) {
+        if (evento.getSource() == this.formBusCidade.getjButtonCarregar()) {
+            if (this.formBusCidade.getjTableBuscas().getValueAt(this.formBusCidade.getjTableBuscas().getSelectedRow(), 0) != null) {
+                ControlerCadastroBairro.codigo = (int) this.formBusCidade.getjTableBuscas().getValueAt(this.formBusCidade.getjTableBuscas().getSelectedRow(), 0);
+                formBusCidade.dispose();
+            } else if (evento.getSource() == formBusCidade.getjButtonSair()) {
+                formBusCidade.dispose();
+            }
         }
-
     }
 }

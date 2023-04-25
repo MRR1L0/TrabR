@@ -18,14 +18,14 @@ public class ControlerBuscaColaborador implements ActionListener {
 
     @Override
 
-    public void actionPerformed(ActionEvent acao) {
-
-        if (acao.getSource() == this.formBusColaborador.getjButtonCarregar()) {
-
-        } else if (acao.getSource() == this.formBusColaborador.getjButtonSair()) {
-
+    public void actionPerformed(ActionEvent evento) {
+        if (evento.getSource() == this.formBusColaborador.getjButtonCarregar()) {
+            if (this.formBusColaborador.getjTableBuscas().getValueAt(this.formBusColaborador.getjTableBuscas().getSelectedRow(), 0) != null) {
+                ControlerCadastroBairro.codigo = (int) this.formBusColaborador.getjTableBuscas().getValueAt(this.formBusColaborador.getjTableBuscas().getSelectedRow(), 0);
+                formBusColaborador.dispose();
+            } else if (evento.getSource() == formBusColaborador.getjButtonSair()) {
+                formBusColaborador.dispose();
+            }
         }
-
     }
-
 }
