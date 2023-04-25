@@ -13,7 +13,7 @@ import model.bo.CupomFiscal;
 public class CupomFiscalDAO implements InterfaceDAO<CupomFiscal> {
 
     @Override
-    public void create(CupomFiscal objeto) {
+    public CupomFiscal create(CupomFiscal objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO cupomFiscal (dataVenda, horaVenda, valorDesconto, valorAcrescimo, totalCupom, status, cliente_id, colaborador_id) VALUES (?,?,?, ?, ?, ?, ?, ?)";
@@ -35,7 +35,7 @@ public class CupomFiscalDAO implements InterfaceDAO<CupomFiscal> {
         }
 
         ConnectionFactory.closeConnection(conexao, pstm);
-
+        return objeto;
     }
 
     @Override

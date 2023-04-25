@@ -11,7 +11,7 @@ import model.bo.CondicaoPgto;
 public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
 
     @Override
-    public void create(CondicaoPgto objeto) {
+    public CondicaoPgto create(CondicaoPgto objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO condicaopgto (descricaoCondicao, numeroParcelas, diasPrimeiraParcela, diasEntreParcela\n"
@@ -32,7 +32,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
         }
 
         ConnectionFactory.closeConnection(conexao, pstm);
-
+        return objeto;
     }
 
     @Override

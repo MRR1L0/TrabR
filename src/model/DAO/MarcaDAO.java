@@ -14,7 +14,7 @@ import model.bo.Marca;
 public class MarcaDAO implements InterfaceDAO<Marca> {
 
     @Override
-    public void create(Marca objeto) {
+    public Marca create(Marca objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO marca (descricao) VALUES (?)";
@@ -29,7 +29,7 @@ public class MarcaDAO implements InterfaceDAO<Marca> {
         }
 
         ConnectionFactory.closeConnection(conexao, pstm);
-
+        return objeto;
     }
 
     @Override

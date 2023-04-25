@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class BairroDAO implements InterfaceDAO<Bairro> {
 
     @Override
-    public void create(Bairro objeto) {
+    public Bairro create(Bairro objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO bairro (descricao) VALUES (?)";
@@ -29,6 +29,7 @@ public class BairroDAO implements InterfaceDAO<Bairro> {
         }
 
         ConnectionFactory.closeConnection(conexao, pstm);
+        return objeto;
     }
 
     @Override

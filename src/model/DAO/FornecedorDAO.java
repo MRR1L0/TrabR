@@ -12,7 +12,7 @@ import model.bo.Fornecedor;
 public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor> {
 
     @Override
-    public void create(Fornecedor objeto) {
+    public Fornecedor create(Fornecedor objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO fornecedor (nome, fone1, fone2, complementoEndereco, email, dtCadastro, observacao, status, cnpj, inscEstadual, contato, razaoSocial, cpf, rg, endereco_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -42,7 +42,7 @@ public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor> {
         }
 
         ConnectionFactory.closeConnection(conexao, pstm);
-
+        return objeto;
     }
 
     @Override

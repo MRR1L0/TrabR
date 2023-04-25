@@ -12,7 +12,7 @@ import model.bo.Pagamento;
 public class PagamentoDAO implements InterfaceDAO<Pagamento> {
 
     @Override
-    public void create(Pagamento objeto) {
+    public Pagamento create(Pagamento objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
 
@@ -35,7 +35,7 @@ public class PagamentoDAO implements InterfaceDAO<Pagamento> {
         }
 
         ConnectionFactory.closeConnection(conexao, pstm);
-
+        return objeto;
     }
 
     @Override

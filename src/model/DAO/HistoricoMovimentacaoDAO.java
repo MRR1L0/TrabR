@@ -13,7 +13,7 @@ import model.bo.HistoricoMovimentacao;
 public class HistoricoMovimentacaoDAO implements InterfaceDAO<HistoricoMovimentacao> {
 
     @Override
-    public void create(HistoricoMovimentacao objeto) {
+    public HistoricoMovimentacao create(HistoricoMovimentacao objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO HistoricoMovimentacao (data, hora, tipo, qtd, status, produto_id, itensCompra_id, itensCumpomFiscal_id) VALUES (?,?,?,?,?,?,?,?)";
@@ -35,7 +35,7 @@ public class HistoricoMovimentacaoDAO implements InterfaceDAO<HistoricoMovimenta
         }
 
         ConnectionFactory.closeConnection(conexao, pstm);
-
+        return objeto;
     }
 
     @Override
