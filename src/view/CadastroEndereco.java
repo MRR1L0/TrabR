@@ -1,13 +1,11 @@
 package view;
 
 import java.awt.Component;
-import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRootPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -17,134 +15,6 @@ public class CadastroEndereco extends javax.swing.JFrame {
     public CadastroEndereco() {
 
         initComponents();
-    }
-
-    public JComboBox<String> getjComboBoxBairro() {
-        return jComboBoxBairro;
-    }
-
-    public void setjComboBoxBairro(JComboBox<String> jComboBoxBairro) {
-        this.jComboBoxBairro = jComboBoxBairro;
-    }
-
-    public JComboBox<String> getjComboBoxCidade() {
-        return jComboBoxCidade;
-    }
-
-    public void setjComboBoxCidade(JComboBox<String> jComboBoxCidade) {
-        this.jComboBoxCidade = jComboBoxCidade;
-    }
-
-    public JLabel getjLabelBairro() {
-        return jLabelBairro;
-    }
-
-    public void setjLabelBairro(JLabel jLabelBairro) {
-        this.jLabelBairro = jLabelBairro;
-    }
-
-    public JLabel getjLabelCep() {
-        return jLabelCep;
-    }
-
-    public void setjLabelCep(JLabel jLabelCep) {
-        this.jLabelCep = jLabelCep;
-    }
-
-    public JLabel getjLabelCidade() {
-        return jLabelCidade;
-    }
-
-    public void setjLabelCidade(JLabel jLabelCidade) {
-        this.jLabelCidade = jLabelCidade;
-    }
-
-    public JLabel getjLabelId() {
-        return jLabelId;
-    }
-
-    public void setjLabelId(JLabel jLabelId) {
-        this.jLabelId = jLabelId;
-    }
-
-    public JLabel getjLabelLogradouro() {
-        return jLabelLogradouro;
-    }
-
-    public void setjLabelLogradouro(JLabel jLabelLogradouro) {
-        this.jLabelLogradouro = jLabelLogradouro;
-    }
-
-    public JLabel getjLabeltitulo() {
-        return jLabeltitulo;
-    }
-
-    public void setjLabeltitulo(JLabel jLabeltitulo) {
-        this.jLabeltitulo = jLabeltitulo;
-    }
-
-    public JLabel getjLabeltitulo1() {
-        return jLabeltitulo1;
-    }
-
-    public void setjLabeltitulo1(JLabel jLabeltitulo1) {
-        this.jLabeltitulo1 = jLabeltitulo1;
-    }
-
-    public JPanel getjPanelBotoes() {
-        return jPanelBotoes;
-    }
-
-    public void setjPanelBotoes(JPanel jPanelBotoes) {
-        this.jPanelBotoes = jPanelBotoes;
-    }
-
-    public JPanel getjPanelTitulo() {
-        return jPanelTitulo;
-    }
-
-    public void setjPanelTitulo(JPanel jPanelTitulo) {
-        this.jPanelTitulo = jPanelTitulo;
-    }
-
-    public JPanel getjPanelTitulo1() {
-        return jPanelTitulo1;
-    }
-
-    public void setjPanelTitulo1(JPanel jPanelTitulo1) {
-        this.jPanelTitulo1 = jPanelTitulo1;
-    }
-
-    public JRootPane getRootPane() {
-        return rootPane;
-    }
-
-    public void setRootPane(JRootPane rootPane) {
-        this.rootPane = rootPane;
-    }
-
-    public boolean isRootPaneCheckingEnabled() {
-        return rootPaneCheckingEnabled;
-    }
-
-    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
-        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
-    }
-
-    public AccessibleContext getAccessibleContext() {
-        return accessibleContext;
-    }
-
-    public void setAccessibleContext(AccessibleContext accessibleContext) {
-        this.accessibleContext = accessibleContext;
-    }
-
-    public JPanel getjPanelDados() {
-        return jPanelDados;
-    }
-
-    public void setjPanelDados(JPanel jPanelDados) {
-        this.jPanelDados = jPanelDados;
     }
 
     public JButton getjButtonBuscar() {
@@ -187,12 +57,100 @@ public class CadastroEndereco extends javax.swing.JFrame {
         this.jButtonSair = jButtonSair;
     }
 
+    public JComboBox<String> getjComboBoxBairro() {
+        return jComboBoxBairro;
+    }
+
+    public void setjComboBoxBairro(JComboBox<String> jComboBoxBairro) {
+        this.jComboBoxBairro = jComboBoxBairro;
+    }
+
+    public JComboBox<String> getjComboBoxCidade() {
+        return jComboBoxCidade;
+    }
+
+    public void setjComboBoxCidade(JComboBox<String> jComboBoxCidade) {
+        this.jComboBoxCidade = jComboBoxCidade;
+    }
+
     public JFormattedTextField getjFormattedTextCep() {
         return jFormattedTextCep;
     }
 
     public void setjFormattedTextCep(JFormattedTextField jFormattedTextCep) {
         this.jFormattedTextCep = jFormattedTextCep;
+    }
+
+    public JLabel getjLabelBairro() {
+        return jLabelBairro;
+    }
+
+    public void setjLabelBairro(JLabel jLabelBairro) {
+        this.jLabelBairro = jLabelBairro;
+    }
+
+    public JLabel getjLabelCep() {
+        return jLabelCep;
+    }
+
+    public void setjLabelCep(JLabel jLabelCep) {
+        this.jLabelCep = jLabelCep;
+    }
+
+    public JLabel getjLabelCidade() {
+        return jLabelCidade;
+    }
+
+    public void setjLabelCidade(JLabel jLabelCidade) {
+        this.jLabelCidade = jLabelCidade;
+    }
+
+    public JLabel getjLabelId() {
+        return jLabelId;
+    }
+
+    public void setjLabelId(JLabel jLabelId) {
+        this.jLabelId = jLabelId;
+    }
+
+    public JLabel getjLabelLogradouro() {
+        return jLabelLogradouro;
+    }
+
+    public void setjLabelLogradouro(JLabel jLabelLogradouro) {
+        this.jLabelLogradouro = jLabelLogradouro;
+    }
+
+    public JLabel getjLabeltitulo1() {
+        return jLabeltitulo1;
+    }
+
+    public void setjLabeltitulo1(JLabel jLabeltitulo1) {
+        this.jLabeltitulo1 = jLabeltitulo1;
+    }
+
+    public JPanel getjPanelBotoes() {
+        return jPanelBotoes;
+    }
+
+    public void setjPanelBotoes(JPanel jPanelBotoes) {
+        this.jPanelBotoes = jPanelBotoes;
+    }
+
+    public JPanel getjPanelDados() {
+        return jPanelDados;
+    }
+
+    public void setjPanelDados(JPanel jPanelDados) {
+        this.jPanelDados = jPanelDados;
+    }
+
+    public JPanel getjPanelTitulo1() {
+        return jPanelTitulo1;
+    }
+
+    public void setjPanelTitulo1(JPanel jPanelTitulo1) {
+        this.jPanelTitulo1 = jPanelTitulo1;
     }
 
     public JTextField getjTextId() {
@@ -248,8 +206,6 @@ public class CadastroEndereco extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelTitulo = new javax.swing.JPanel();
-        jLabeltitulo = new javax.swing.JLabel();
         jPanelDados = new javax.swing.JPanel();
         jLabelId = new javax.swing.JLabel();
         jTextId = new javax.swing.JTextField();
@@ -273,26 +229,6 @@ public class CadastroEndereco extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Endereço");
         setResizable(false);
-
-        jPanelTitulo.setBackground(new java.awt.Color(204, 51, 0));
-        jPanelTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        jPanelTitulo.setForeground(new java.awt.Color(102, 255, 51));
-
-        jLabeltitulo.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabeltitulo.setForeground(new java.awt.Color(255, 255, 0));
-        jLabeltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabeltitulo.setText("Endereço");
-
-        javax.swing.GroupLayout jPanelTituloLayout = new javax.swing.GroupLayout(jPanelTitulo);
-        jPanelTitulo.setLayout(jPanelTituloLayout);
-        jPanelTituloLayout.setHorizontalGroup(
-            jPanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabeltitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanelTituloLayout.setVerticalGroup(
-            jPanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabeltitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
-        );
 
         jPanelDados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanelDados.setPreferredSize(new java.awt.Dimension(590, 190));
@@ -442,7 +378,6 @@ public class CadastroEndereco extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanelBotoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanelDados, javax.swing.GroupLayout.DEFAULT_SIZE, 703, Short.MAX_VALUE)
             .addComponent(jPanelTitulo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -450,11 +385,10 @@ public class CadastroEndereco extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(3, 3, 3)
                 .addComponent(jPanelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelDados, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
+                .addComponent(jPanelDados, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -529,11 +463,9 @@ public class CadastroEndereco extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelCidade;
     private javax.swing.JLabel jLabelId;
     private javax.swing.JLabel jLabelLogradouro;
-    private javax.swing.JLabel jLabeltitulo;
     private javax.swing.JLabel jLabeltitulo1;
     private javax.swing.JPanel jPanelBotoes;
     private javax.swing.JPanel jPanelDados;
-    private javax.swing.JPanel jPanelTitulo;
     private javax.swing.JPanel jPanelTitulo1;
     private javax.swing.JTextField jTextId;
     private javax.swing.JTextField jTextLogradouro;

@@ -7,7 +7,6 @@ import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRootPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -17,10 +16,6 @@ public class CadastroCliente extends javax.swing.JFrame {
     public CadastroCliente() {
 
         initComponents();
-    }
-
-    public JButton getjButtonBuscar() {
-        return jButtonBuscar;
     }
 
     public JButton getjButton1() {
@@ -39,12 +34,100 @@ public class CadastroCliente extends javax.swing.JFrame {
         this.jButton2 = jButton2;
     }
 
+    public JButton getjButtonBuscar() {
+        return jButtonBuscar;
+    }
+
+    public void setjButtonBuscar(JButton jButtonBuscar) {
+        this.jButtonBuscar = jButtonBuscar;
+    }
+
+    public JButton getjButtonCancelar() {
+        return jButtonCancelar;
+    }
+
+    public void setjButtonCancelar(JButton jButtonCancelar) {
+        this.jButtonCancelar = jButtonCancelar;
+    }
+
+    public JButton getjButtonGravar() {
+        return jButtonGravar;
+    }
+
+    public void setjButtonGravar(JButton jButtonGravar) {
+        this.jButtonGravar = jButtonGravar;
+    }
+
+    public JButton getjButtonNovo() {
+        return jButtonNovo;
+    }
+
+    public void setjButtonNovo(JButton jButtonNovo) {
+        this.jButtonNovo = jButtonNovo;
+    }
+
+    public JButton getjButtonSair() {
+        return jButtonSair;
+    }
+
+    public void setjButtonSair(JButton jButtonSair) {
+        this.jButtonSair = jButtonSair;
+    }
+
+    public JComboBox<String> getjComboBoxSexo() {
+        return jComboBoxSexo;
+    }
+
+    public void setjComboBoxSexo(JComboBox<String> jComboBoxSexo) {
+        this.jComboBoxSexo = jComboBoxSexo;
+    }
+
     public JComboBox<String> getjComboBoxStatus() {
         return jComboBoxStatus;
     }
 
     public void setjComboBoxStatus(JComboBox<String> jComboBoxStatus) {
         this.jComboBoxStatus = jComboBoxStatus;
+    }
+
+    public JFormattedTextField getjFormattedCpf() {
+        return jFormattedCpf;
+    }
+
+    public void setjFormattedCpf(JFormattedTextField jFormattedCpf) {
+        this.jFormattedCpf = jFormattedCpf;
+    }
+
+    public JFormattedTextField getjFormattedDatNasci() {
+        return jFormattedDatNasci;
+    }
+
+    public void setjFormattedDatNasci(JFormattedTextField jFormattedDatNasci) {
+        this.jFormattedDatNasci = jFormattedDatNasci;
+    }
+
+    public JFormattedTextField getjFormattedRg() {
+        return jFormattedRg;
+    }
+
+    public void setjFormattedRg(JFormattedTextField jFormattedRg) {
+        this.jFormattedRg = jFormattedRg;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldCep() {
+        return jFormattedTextFieldCep;
+    }
+
+    public void setjFormattedTextFieldCep(JFormattedTextField jFormattedTextFieldCep) {
+        this.jFormattedTextFieldCep = jFormattedTextFieldCep;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldFone1() {
+        return jFormattedTextFieldFone1;
+    }
+
+    public void setjFormattedTextFieldFone1(JFormattedTextField jFormattedTextFieldFone1) {
+        this.jFormattedTextFieldFone1 = jFormattedTextFieldFone1;
     }
 
     public JFormattedTextField getjFormattedTextFieldFone2() {
@@ -207,6 +290,14 @@ public class CadastroCliente extends javax.swing.JFrame {
         this.jPanelBotoes = jPanelBotoes;
     }
 
+    public JPanel getjPanelDados() {
+        return jPanelDados;
+    }
+
+    public void setjPanelDados(JPanel jPanelDados) {
+        this.jPanelDados = jPanelDados;
+    }
+
     public JPanel getjPanelTitulo() {
         return jPanelTitulo;
     }
@@ -287,106 +378,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         this.jTextFieldLogradouro = jTextFieldLogradouro;
     }
 
-    public JRootPane getRootPane() {
-        return rootPane;
-    }
-
-    public void setRootPane(JRootPane rootPane) {
-        this.rootPane = rootPane;
-    }
-
-    public boolean isRootPaneCheckingEnabled() {
-        return rootPaneCheckingEnabled;
-    }
-
-    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
-        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
-    }
-
-    public AccessibleContext getAccessibleContext() {
-        return accessibleContext;
-    }
-
-    public void setAccessibleContext(AccessibleContext accessibleContext) {
-        this.accessibleContext = accessibleContext;
-    }
-
-    public void setjButtonBuscar(JButton jButtonBuscar) {
-        this.jButtonBuscar = jButtonBuscar;
-    }
-
-    public JButton getjButtonCancelar() {
-        return jButtonCancelar;
-    }
-
-    public void setjButtonCancelar(JButton jButtonCancelar) {
-        this.jButtonCancelar = jButtonCancelar;
-    }
-
-    public JButton getjButtonGravar() {
-        return jButtonGravar;
-    }
-
-    public void setjButtonGravar(JButton jButtonGravar) {
-        this.jButtonGravar = jButtonGravar;
-    }
-
-    public JButton getjButtonNovo() {
-        return jButtonNovo;
-    }
-
-    public void setjButtonNovo(JButton jButtonNovo) {
-        this.jButtonNovo = jButtonNovo;
-    }
-
-    public JButton getjButtonSair() {
-        return jButtonSair;
-    }
-
-    public void setjButtonSair(JButton jButtonSair) {
-        this.jButtonSair = jButtonSair;
-    }
-
-    public JComboBox<String> getjComboBoxSexo() {
-        return jComboBoxSexo;
-    }
-
-    public void setjComboBoxSexo(JComboBox<String> jComboBoxSexo) {
-        this.jComboBoxSexo = jComboBoxSexo;
-    }
-
-    public JFormattedTextField getjFormattedCpf() {
-        return jFormattedCpf;
-    }
-
-    public void setjFormattedCpf(JFormattedTextField jFormattedCpf) {
-        this.jFormattedCpf = jFormattedCpf;
-    }
-
-    public JFormattedTextField getjFormattedDatNasci() {
-        return jFormattedDatNasci;
-    }
-
-    public void setjFormattedDatNasci(JFormattedTextField jFormattedDatNasci) {
-        this.jFormattedDatNasci = jFormattedDatNasci;
-    }
-
-    public JFormattedTextField getjFormattedRg() {
-        return jFormattedRg;
-    }
-
-    public void setjFormattedRg(JFormattedTextField jFormattedRg) {
-        this.jFormattedRg = jFormattedRg;
-    }
-
-    public JPanel getjPanelDados() {
-        return jPanelDados;
-    }
-
-    public void setjPanelDados(JPanel jPanelDados) {
-        this.jPanelDados = jPanelDados;
-    }
-
     public JTextField getjTextFieldNome() {
         return jTextFieldNome;
     }
@@ -394,24 +385,6 @@ public class CadastroCliente extends javax.swing.JFrame {
     public void setjTextFieldNome(JTextField jTextFieldNome) {
         this.jTextFieldNome = jTextFieldNome;
     }
-
-    public JFormattedTextField getjFormattedTextFieldCep() {
-        return jFormattedTextFieldCep;
-    }
-
-    public void setjFormattedTextFieldCep(JFormattedTextField jFormattedTextFieldCep) {
-        this.jFormattedTextFieldCep = jFormattedTextFieldCep;
-    }
-
-    public JFormattedTextField getjFormattedTextFieldFone1() {
-        return jFormattedTextFieldFone1;
-    }
-
-    public void setjFormattedTextFieldFone1(JFormattedTextField jFormattedTextFieldFone1) {
-        this.jFormattedTextFieldFone1 = jFormattedTextFieldFone1;
-    }
-    
-
 
     public void ativa(boolean estadoComponente) {
         jButtonNovo.setEnabled(estadoComponente);
