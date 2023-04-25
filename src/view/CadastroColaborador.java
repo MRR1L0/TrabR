@@ -1,10 +1,13 @@
 package view;
 
 import java.awt.Component;
+import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRootPane;
 //import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -15,6 +18,278 @@ public class CadastroColaborador extends javax.swing.JFrame {
     public CadastroColaborador() {
 
         initComponents();
+    }
+
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+    public void setjButton1(JButton jButton1) {
+        this.jButton1 = jButton1;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
+
+    public void setjButton2(JButton jButton2) {
+        this.jButton2 = jButton2;
+    }
+
+    public JComboBox<String> getjComboBoxStatus() {
+        return jComboBoxStatus;
+    }
+
+    public void setjComboBoxStatus(JComboBox<String> jComboBoxStatus) {
+        this.jComboBoxStatus = jComboBoxStatus;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldDatCadastro() {
+        return jFormattedTextFieldDatCadastro;
+    }
+
+    public void setjFormattedTextFieldDatCadastro(JFormattedTextField jFormattedTextFieldDatCadastro) {
+        this.jFormattedTextFieldDatCadastro = jFormattedTextFieldDatCadastro;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldFone1() {
+        return jFormattedTextFieldFone1;
+    }
+
+    public void setjFormattedTextFieldFone1(JFormattedTextField jFormattedTextFieldFone1) {
+        this.jFormattedTextFieldFone1 = jFormattedTextFieldFone1;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldFone2() {
+        return jFormattedTextFieldFone2;
+    }
+
+    public void setjFormattedTextFieldFone2(JFormattedTextField jFormattedTextFieldFone2) {
+        this.jFormattedTextFieldFone2 = jFormattedTextFieldFone2;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabelBairro() {
+        return jLabelBairro;
+    }
+
+    public void setjLabelBairro(JLabel jLabelBairro) {
+        this.jLabelBairro = jLabelBairro;
+    }
+
+    public JLabel getjLabelCep() {
+        return jLabelCep;
+    }
+
+    public void setjLabelCep(JLabel jLabelCep) {
+        this.jLabelCep = jLabelCep;
+    }
+
+    public JLabel getjLabelComplemento() {
+        return jLabelComplemento;
+    }
+
+    public void setjLabelComplemento(JLabel jLabelComplemento) {
+        this.jLabelComplemento = jLabelComplemento;
+    }
+
+    public JLabel getjLabelDatCadastro() {
+        return jLabelDatCadastro;
+    }
+
+    public void setjLabelDatCadastro(JLabel jLabelDatCadastro) {
+        this.jLabelDatCadastro = jLabelDatCadastro;
+    }
+
+    public JLabel getjLabelEmail() {
+        return jLabelEmail;
+    }
+
+    public void setjLabelEmail(JLabel jLabelEmail) {
+        this.jLabelEmail = jLabelEmail;
+    }
+
+    public JLabel getjLabelFone1() {
+        return jLabelFone1;
+    }
+
+    public void setjLabelFone1(JLabel jLabelFone1) {
+        this.jLabelFone1 = jLabelFone1;
+    }
+
+    public JLabel getjLabelFone2() {
+        return jLabelFone2;
+    }
+
+    public void setjLabelFone2(JLabel jLabelFone2) {
+        this.jLabelFone2 = jLabelFone2;
+    }
+
+    public JLabel getjLabelId() {
+        return jLabelId;
+    }
+
+    public void setjLabelId(JLabel jLabelId) {
+        this.jLabelId = jLabelId;
+    }
+
+    public JLabel getjLabelLogin() {
+        return jLabelLogin;
+    }
+
+    public void setjLabelLogin(JLabel jLabelLogin) {
+        this.jLabelLogin = jLabelLogin;
+    }
+
+    public JLabel getjLabelLogradouro() {
+        return jLabelLogradouro;
+    }
+
+    public void setjLabelLogradouro(JLabel jLabelLogradouro) {
+        this.jLabelLogradouro = jLabelLogradouro;
+    }
+
+    public JLabel getjLabelNome() {
+        return jLabelNome;
+    }
+
+    public void setjLabelNome(JLabel jLabelNome) {
+        this.jLabelNome = jLabelNome;
+    }
+
+    public JLabel getjLabelObserv() {
+        return jLabelObserv;
+    }
+
+    public void setjLabelObserv(JLabel jLabelObserv) {
+        this.jLabelObserv = jLabelObserv;
+    }
+
+    public JLabel getjLabelSenha() {
+        return jLabelSenha;
+    }
+
+    public void setjLabelSenha(JLabel jLabelSenha) {
+        this.jLabelSenha = jLabelSenha;
+    }
+
+    public JLabel getjLabelStatus() {
+        return jLabelStatus;
+    }
+
+    public void setjLabelStatus(JLabel jLabelStatus) {
+        this.jLabelStatus = jLabelStatus;
+    }
+
+    public JLabel getjLabeltitulo() {
+        return jLabeltitulo;
+    }
+
+    public void setjLabeltitulo(JLabel jLabeltitulo) {
+        this.jLabeltitulo = jLabeltitulo;
+    }
+
+    public JPanel getjPanelBotoes() {
+        return jPanelBotoes;
+    }
+
+    public void setjPanelBotoes(JPanel jPanelBotoes) {
+        this.jPanelBotoes = jPanelBotoes;
+    }
+
+    public JPanel getjPanelTitulo() {
+        return jPanelTitulo;
+    }
+
+    public void setjPanelTitulo(JPanel jPanelTitulo) {
+        this.jPanelTitulo = jPanelTitulo;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTextArea getjTextAreaObserv() {
+        return jTextAreaObserv;
+    }
+
+    public void setjTextAreaObserv(JTextArea jTextAreaObserv) {
+        this.jTextAreaObserv = jTextAreaObserv;
+    }
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public void setjTextField1(JTextField jTextField1) {
+        this.jTextField1 = jTextField1;
+    }
+
+    public JTextField getjTextFieldBairro() {
+        return jTextFieldBairro;
+    }
+
+    public void setjTextFieldBairro(JTextField jTextFieldBairro) {
+        this.jTextFieldBairro = jTextFieldBairro;
+    }
+
+    public JTextField getjTextFieldComplemento() {
+        return jTextFieldComplemento;
+    }
+
+    public void setjTextFieldComplemento(JTextField jTextFieldComplemento) {
+        this.jTextFieldComplemento = jTextFieldComplemento;
+    }
+
+    public JTextField getjTextFieldEmail() {
+        return jTextFieldEmail;
+    }
+
+    public void setjTextFieldEmail(JTextField jTextFieldEmail) {
+        this.jTextFieldEmail = jTextFieldEmail;
+    }
+
+    public JTextField getjTextFieldLogradouro() {
+        return jTextFieldLogradouro;
+    }
+
+    public void setjTextFieldLogradouro(JTextField jTextFieldLogradouro) {
+        this.jTextFieldLogradouro = jTextFieldLogradouro;
+    }
+
+    public JRootPane getRootPane() {
+        return rootPane;
+    }
+
+    public void setRootPane(JRootPane rootPane) {
+        this.rootPane = rootPane;
+    }
+
+    public boolean isRootPaneCheckingEnabled() {
+        return rootPaneCheckingEnabled;
+    }
+
+    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
+        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
+    }
+
+    public AccessibleContext getAccessibleContext() {
+        return accessibleContext;
+    }
+
+    public void setAccessibleContext(AccessibleContext accessibleContext) {
+        this.accessibleContext = accessibleContext;
     }
 
     public JFormattedTextField getjFormattedTextFieldCep() {

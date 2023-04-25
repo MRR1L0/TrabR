@@ -1,10 +1,13 @@
 package view;
 
 import java.awt.Component;
+import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRootPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -14,6 +17,70 @@ public class CadastroMarca extends javax.swing.JFrame {
     public CadastroMarca() {
         
         initComponents();
+    }
+
+    public JLabel getjLabelDescricao() {
+        return jLabelDescricao;
+    }
+
+    public void setjLabelDescricao(JLabel jLabelDescricao) {
+        this.jLabelDescricao = jLabelDescricao;
+    }
+
+    public JLabel getjLabelId() {
+        return jLabelId;
+    }
+
+    public void setjLabelId(JLabel jLabelId) {
+        this.jLabelId = jLabelId;
+    }
+
+    public JLabel getjLabeltitulo() {
+        return jLabeltitulo;
+    }
+
+    public void setjLabeltitulo(JLabel jLabeltitulo) {
+        this.jLabeltitulo = jLabeltitulo;
+    }
+
+    public JPanel getjPanelBotoes() {
+        return jPanelBotoes;
+    }
+
+    public void setjPanelBotoes(JPanel jPanelBotoes) {
+        this.jPanelBotoes = jPanelBotoes;
+    }
+
+    public JPanel getjPanelTitulo() {
+        return jPanelTitulo;
+    }
+
+    public void setjPanelTitulo(JPanel jPanelTitulo) {
+        this.jPanelTitulo = jPanelTitulo;
+    }
+
+    public JRootPane getRootPane() {
+        return rootPane;
+    }
+
+    public void setRootPane(JRootPane rootPane) {
+        this.rootPane = rootPane;
+    }
+
+    public boolean isRootPaneCheckingEnabled() {
+        return rootPaneCheckingEnabled;
+    }
+
+    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
+        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
+    }
+
+    public AccessibleContext getAccessibleContext() {
+        return accessibleContext;
+    }
+
+    public void setAccessibleContext(AccessibleContext accessibleContext) {
+        this.accessibleContext = accessibleContext;
     }
 
     public JButton getjButtonBuscar() {

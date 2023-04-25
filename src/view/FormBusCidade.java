@@ -1,6 +1,11 @@
 package view;
 
+import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRootPane;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 public class FormBusCidade extends javax.swing.JDialog {
@@ -12,6 +17,70 @@ public class FormBusCidade extends javax.swing.JDialog {
 
     public JButton getjButtonCarregar() {
         return jButtonCarregar;
+    }
+
+    public JLabel getjLabelTitulo() {
+        return jLabelTitulo;
+    }
+
+    public void setjLabelTitulo(JLabel jLabelTitulo) {
+        this.jLabelTitulo = jLabelTitulo;
+    }
+
+    public JPanel getjPanelBotoes() {
+        return jPanelBotoes;
+    }
+
+    public void setjPanelBotoes(JPanel jPanelBotoes) {
+        this.jPanelBotoes = jPanelBotoes;
+    }
+
+    public JPanel getjPanelDados() {
+        return jPanelDados;
+    }
+
+    public void setjPanelDados(JPanel jPanelDados) {
+        this.jPanelDados = jPanelDados;
+    }
+
+    public JPanel getjPanelTitulo() {
+        return jPanelTitulo;
+    }
+
+    public void setjPanelTitulo(JPanel jPanelTitulo) {
+        this.jPanelTitulo = jPanelTitulo;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JRootPane getRootPane() {
+        return rootPane;
+    }
+
+    public void setRootPane(JRootPane rootPane) {
+        this.rootPane = rootPane;
+    }
+
+    public boolean isRootPaneCheckingEnabled() {
+        return rootPaneCheckingEnabled;
+    }
+
+    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
+        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
+    }
+
+    public AccessibleContext getAccessibleContext() {
+        return accessibleContext;
+    }
+
+    public void setAccessibleContext(AccessibleContext accessibleContext) {
+        this.accessibleContext = accessibleContext;
     }
 
     public void setjButtonCarregar(JButton jButtonCarregar) {

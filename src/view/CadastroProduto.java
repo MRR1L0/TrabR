@@ -1,9 +1,13 @@
 package view;
 
 import java.awt.Component;
+import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRootPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -13,6 +17,302 @@ public class CadastroProduto extends javax.swing.JFrame {
     public CadastroProduto() {
 
         initComponents();
+    }
+
+    public JButton getjButtonClassse() {
+        return jButtonClassse;
+    }
+
+    public void setjButtonClassse(JButton jButtonClassse) {
+        this.jButtonClassse = jButtonClassse;
+    }
+
+    public JButton getjButtonMarcaProduto() {
+        return jButtonMarcaProduto;
+    }
+
+    public void setjButtonMarcaProduto(JButton jButtonMarcaProduto) {
+        this.jButtonMarcaProduto = jButtonMarcaProduto;
+    }
+
+    public JComboBox<String> getjComboStatus() {
+        return jComboStatus;
+    }
+
+    public void setjComboStatus(JComboBox<String> jComboStatus) {
+        this.jComboStatus = jComboStatus;
+    }
+
+    public JLabel getjLabel1UnCompra() {
+        return jLabel1UnCompra;
+    }
+
+    public void setjLabel1UnCompra(JLabel jLabel1UnCompra) {
+        this.jLabel1UnCompra = jLabel1UnCompra;
+    }
+
+    public JLabel getjLabelClasse() {
+        return jLabelClasse;
+    }
+
+    public void setjLabelClasse(JLabel jLabelClasse) {
+        this.jLabelClasse = jLabelClasse;
+    }
+
+    public JLabel getjLabelCodEntra() {
+        return jLabelCodEntra;
+    }
+
+    public void setjLabelCodEntra(JLabel jLabelCodEntra) {
+        this.jLabelCodEntra = jLabelCodEntra;
+    }
+
+    public JLabel getjLabelCodSaida() {
+        return jLabelCodSaida;
+    }
+
+    public void setjLabelCodSaida(JLabel jLabelCodSaida) {
+        this.jLabelCodSaida = jLabelCodSaida;
+    }
+
+    public JLabel getjLabelDatCadastro() {
+        return jLabelDatCadastro;
+    }
+
+    public void setjLabelDatCadastro(JLabel jLabelDatCadastro) {
+        this.jLabelDatCadastro = jLabelDatCadastro;
+    }
+
+    public JLabel getjLabelDescricao() {
+        return jLabelDescricao;
+    }
+
+    public void setjLabelDescricao(JLabel jLabelDescricao) {
+        this.jLabelDescricao = jLabelDescricao;
+    }
+
+    public JLabel getjLabelEstoqueMax() {
+        return jLabelEstoqueMax;
+    }
+
+    public void setjLabelEstoqueMax(JLabel jLabelEstoqueMax) {
+        this.jLabelEstoqueMax = jLabelEstoqueMax;
+    }
+
+    public JLabel getjLabelEstoqueMin() {
+        return jLabelEstoqueMin;
+    }
+
+    public void setjLabelEstoqueMin(JLabel jLabelEstoqueMin) {
+        this.jLabelEstoqueMin = jLabelEstoqueMin;
+    }
+
+    public JLabel getjLabelFator() {
+        return jLabelFator;
+    }
+
+    public void setjLabelFator(JLabel jLabelFator) {
+        this.jLabelFator = jLabelFator;
+    }
+
+    public JLabel getjLabelId() {
+        return jLabelId;
+    }
+
+    public void setjLabelId(JLabel jLabelId) {
+        this.jLabelId = jLabelId;
+    }
+
+    public JLabel getjLabelMarcaProduto() {
+        return jLabelMarcaProduto;
+    }
+
+    public void setjLabelMarcaProduto(JLabel jLabelMarcaProduto) {
+        this.jLabelMarcaProduto = jLabelMarcaProduto;
+    }
+
+    public JLabel getjLabelStatus() {
+        return jLabelStatus;
+    }
+
+    public void setjLabelStatus(JLabel jLabelStatus) {
+        this.jLabelStatus = jLabelStatus;
+    }
+
+    public JLabel getjLabelUnVenda() {
+        return jLabelUnVenda;
+    }
+
+    public void setjLabelUnVenda(JLabel jLabelUnVenda) {
+        this.jLabelUnVenda = jLabelUnVenda;
+    }
+
+    public JLabel getjLabelValorCompra() {
+        return jLabelValorCompra;
+    }
+
+    public void setjLabelValorCompra(JLabel jLabelValorCompra) {
+        this.jLabelValorCompra = jLabelValorCompra;
+    }
+
+    public JLabel getjLabelValorVenda() {
+        return jLabelValorVenda;
+    }
+
+    public void setjLabelValorVenda(JLabel jLabelValorVenda) {
+        this.jLabelValorVenda = jLabelValorVenda;
+    }
+
+    public JLabel getjLabeltitulo() {
+        return jLabeltitulo;
+    }
+
+    public void setjLabeltitulo(JLabel jLabeltitulo) {
+        this.jLabeltitulo = jLabeltitulo;
+    }
+
+    public JPanel getjPanelBotoes() {
+        return jPanelBotoes;
+    }
+
+    public void setjPanelBotoes(JPanel jPanelBotoes) {
+        this.jPanelBotoes = jPanelBotoes;
+    }
+
+    public JPanel getjPanelDados() {
+        return jPanelDados;
+    }
+
+    public void setjPanelDados(JPanel jPanelDados) {
+        this.jPanelDados = jPanelDados;
+    }
+
+    public JPanel getjPanelTitulo() {
+        return jPanelTitulo;
+    }
+
+    public void setjPanelTitulo(JPanel jPanelTitulo) {
+        this.jPanelTitulo = jPanelTitulo;
+    }
+
+    public JTextField getjTextCodEntrada() {
+        return jTextCodEntrada;
+    }
+
+    public void setjTextCodEntrada(JTextField jTextCodEntrada) {
+        this.jTextCodEntrada = jTextCodEntrada;
+    }
+
+    public JTextField getjTextCodSaida() {
+        return jTextCodSaida;
+    }
+
+    public void setjTextCodSaida(JTextField jTextCodSaida) {
+        this.jTextCodSaida = jTextCodSaida;
+    }
+
+    public JTextField getjTextEstoqueMax() {
+        return jTextEstoqueMax;
+    }
+
+    public void setjTextEstoqueMax(JTextField jTextEstoqueMax) {
+        this.jTextEstoqueMax = jTextEstoqueMax;
+    }
+
+    public JTextField getjTextEstoqueMin() {
+        return jTextEstoqueMin;
+    }
+
+    public void setjTextEstoqueMin(JTextField jTextEstoqueMin) {
+        this.jTextEstoqueMin = jTextEstoqueMin;
+    }
+
+    public JTextField getjTextFator() {
+        return jTextFator;
+    }
+
+    public void setjTextFator(JTextField jTextFator) {
+        this.jTextFator = jTextFator;
+    }
+
+    public JTextField getjTextFieldClasse() {
+        return jTextFieldClasse;
+    }
+
+    public void setjTextFieldClasse(JTextField jTextFieldClasse) {
+        this.jTextFieldClasse = jTextFieldClasse;
+    }
+
+    public JTextField getjTextFieldDatCadastro() {
+        return jTextFieldDatCadastro;
+    }
+
+    public void setjTextFieldDatCadastro(JTextField jTextFieldDatCadastro) {
+        this.jTextFieldDatCadastro = jTextFieldDatCadastro;
+    }
+
+    public JTextField getjTextFieldMarcaProduto() {
+        return jTextFieldMarcaProduto;
+    }
+
+    public void setjTextFieldMarcaProduto(JTextField jTextFieldMarcaProduto) {
+        this.jTextFieldMarcaProduto = jTextFieldMarcaProduto;
+    }
+
+    public JTextField getjTextUnCompra() {
+        return jTextUnCompra;
+    }
+
+    public void setjTextUnCompra(JTextField jTextUnCompra) {
+        this.jTextUnCompra = jTextUnCompra;
+    }
+
+    public JTextField getjTextUnVenda() {
+        return jTextUnVenda;
+    }
+
+    public void setjTextUnVenda(JTextField jTextUnVenda) {
+        this.jTextUnVenda = jTextUnVenda;
+    }
+
+    public JTextField getjTextValorCompra() {
+        return jTextValorCompra;
+    }
+
+    public void setjTextValorCompra(JTextField jTextValorCompra) {
+        this.jTextValorCompra = jTextValorCompra;
+    }
+
+    public JTextField getjTextValorVenda() {
+        return jTextValorVenda;
+    }
+
+    public void setjTextValorVenda(JTextField jTextValorVenda) {
+        this.jTextValorVenda = jTextValorVenda;
+    }
+
+    public JRootPane getRootPane() {
+        return rootPane;
+    }
+
+    public void setRootPane(JRootPane rootPane) {
+        this.rootPane = rootPane;
+    }
+
+    public boolean isRootPaneCheckingEnabled() {
+        return rootPaneCheckingEnabled;
+    }
+
+    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
+        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
+    }
+
+    public AccessibleContext getAccessibleContext() {
+        return accessibleContext;
+    }
+
+    public void setAccessibleContext(AccessibleContext accessibleContext) {
+        this.accessibleContext = accessibleContext;
     }
 
     public JButton getjButtonBuscar() {
