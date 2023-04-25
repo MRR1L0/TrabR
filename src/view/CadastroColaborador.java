@@ -15,11 +15,6 @@ import javax.swing.JTextField;
 
 public class CadastroColaborador extends javax.swing.JFrame {
 
-    public CadastroColaborador() {
-
-        initComponents();
-    }
-
     public JButton getjButton1() {
         return jButton1;
     }
@@ -36,12 +31,60 @@ public class CadastroColaborador extends javax.swing.JFrame {
         this.jButton2 = jButton2;
     }
 
+    public JButton getjButtonBuscar() {
+        return jButtonBuscar;
+    }
+
+    public void setjButtonBuscar(JButton jButtonBuscar) {
+        this.jButtonBuscar = jButtonBuscar;
+    }
+
+    public JButton getjButtonCancelar() {
+        return jButtonCancelar;
+    }
+
+    public void setjButtonCancelar(JButton jButtonCancelar) {
+        this.jButtonCancelar = jButtonCancelar;
+    }
+
+    public JButton getjButtonGravar() {
+        return jButtonGravar;
+    }
+
+    public void setjButtonGravar(JButton jButtonGravar) {
+        this.jButtonGravar = jButtonGravar;
+    }
+
+    public JButton getjButtonNovo() {
+        return jButtonNovo;
+    }
+
+    public void setjButtonNovo(JButton jButtonNovo) {
+        this.jButtonNovo = jButtonNovo;
+    }
+
+    public JButton getjButtonSair() {
+        return jButtonSair;
+    }
+
+    public void setjButtonSair(JButton jButtonSair) {
+        this.jButtonSair = jButtonSair;
+    }
+
     public JComboBox<String> getjComboBoxStatus() {
         return jComboBoxStatus;
     }
 
     public void setjComboBoxStatus(JComboBox<String> jComboBoxStatus) {
         this.jComboBoxStatus = jComboBoxStatus;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldCep() {
+        return jFormattedTextFieldCep;
+    }
+
+    public void setjFormattedTextFieldCep(JFormattedTextField jFormattedTextFieldCep) {
+        this.jFormattedTextFieldCep = jFormattedTextFieldCep;
     }
 
     public JFormattedTextField getjFormattedTextFieldDatCadastro() {
@@ -66,6 +109,14 @@ public class CadastroColaborador extends javax.swing.JFrame {
 
     public void setjFormattedTextFieldFone2(JFormattedTextField jFormattedTextFieldFone2) {
         this.jFormattedTextFieldFone2 = jFormattedTextFieldFone2;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldSenha() {
+        return jFormattedTextFieldSenha;
+    }
+
+    public void setjFormattedTextFieldSenha(JFormattedTextField jFormattedTextFieldSenha) {
+        this.jFormattedTextFieldSenha = jFormattedTextFieldSenha;
     }
 
     public JLabel getjLabel2() {
@@ -204,6 +255,14 @@ public class CadastroColaborador extends javax.swing.JFrame {
         this.jPanelBotoes = jPanelBotoes;
     }
 
+    public JPanel getjPanelDados() {
+        return jPanelDados;
+    }
+
+    public void setjPanelDados(JPanel jPanelDados) {
+        this.jPanelDados = jPanelDados;
+    }
+
     public JPanel getjPanelTitulo() {
         return jPanelTitulo;
     }
@@ -260,102 +319,6 @@ public class CadastroColaborador extends javax.swing.JFrame {
         this.jTextFieldEmail = jTextFieldEmail;
     }
 
-    public JTextField getjTextFieldLogradouro() {
-        return jTextFieldLogradouro;
-    }
-
-    public void setjTextFieldLogradouro(JTextField jTextFieldLogradouro) {
-        this.jTextFieldLogradouro = jTextFieldLogradouro;
-    }
-
-    public JRootPane getRootPane() {
-        return rootPane;
-    }
-
-    public void setRootPane(JRootPane rootPane) {
-        this.rootPane = rootPane;
-    }
-
-    public boolean isRootPaneCheckingEnabled() {
-        return rootPaneCheckingEnabled;
-    }
-
-    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
-        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
-    }
-
-    public AccessibleContext getAccessibleContext() {
-        return accessibleContext;
-    }
-
-    public void setAccessibleContext(AccessibleContext accessibleContext) {
-        this.accessibleContext = accessibleContext;
-    }
-
-    public JFormattedTextField getjFormattedTextFieldCep() {
-        return jFormattedTextFieldCep;
-    }
-
-    public void setjFormattedTextFieldCep(JFormattedTextField jFormattedTextFieldCep) {
-        this.jFormattedTextFieldCep = jFormattedTextFieldCep;
-    }
-
-    public JButton getjButtonBuscar() {
-        return jButtonBuscar;
-    }
-
-    public void setjButtonBuscar(JButton jButtonBuscar) {
-        this.jButtonBuscar = jButtonBuscar;
-    }
-
-    public JButton getjButtonCancelar() {
-        return jButtonCancelar;
-    }
-
-    public void setjButtonCancelar(JButton jButtonCancelar) {
-        this.jButtonCancelar = jButtonCancelar;
-    }
-
-    public JButton getjButtonGravar() {
-        return jButtonGravar;
-    }
-
-    public void setjButtonGravar(JButton jButtonGravar) {
-        this.jButtonGravar = jButtonGravar;
-    }
-
-    public JButton getjButtonNovo() {
-        return jButtonNovo;
-    }
-
-    public void setjButtonNovo(JButton jButtonNovo) {
-        this.jButtonNovo = jButtonNovo;
-    }
-
-    public JButton getjButtonSair() {
-        return jButtonSair;
-    }
-
-    public void setjButtonSair(JButton jButtonSair) {
-        this.jButtonSair = jButtonSair;
-    }
-
-    public JFormattedTextField getjFormattedTextFieldSenha() {
-        return jFormattedTextFieldSenha;
-    }
-
-    public void setjFormattedTextFieldSenha(JFormattedTextField jFormattedTextFieldSenha) {
-        this.jFormattedTextFieldSenha = jFormattedTextFieldSenha;
-    }
-
-    public JPanel getjPanelDados() {
-        return jPanelDados;
-    }
-
-    public void setjPanelDados(JPanel jPanelDados) {
-        this.jPanelDados = jPanelDados;
-    }
-
     public JTextField getjTextFieldId() {
         return jTextFieldId;
     }
@@ -372,6 +335,14 @@ public class CadastroColaborador extends javax.swing.JFrame {
         this.jTextFieldLogin = jTextFieldLogin;
     }
 
+    public JTextField getjTextFieldLogradouro() {
+        return jTextFieldLogradouro;
+    }
+
+    public void setjTextFieldLogradouro(JTextField jTextFieldLogradouro) {
+        this.jTextFieldLogradouro = jTextFieldLogradouro;
+    }
+
     public JTextField getjTextFieldNome() {
         return jTextFieldNome;
     }
@@ -379,6 +350,8 @@ public class CadastroColaborador extends javax.swing.JFrame {
     public void setjTextFieldNome(JTextField jTextFieldNome) {
         this.jTextFieldNome = jTextFieldNome;
     }
+
+   
 
     public void ativa(boolean estadoComponente) {
         jButtonNovo.setEnabled(estadoComponente);

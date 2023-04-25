@@ -14,13 +14,44 @@ import javax.swing.JTextField;
 
 public class CadastroClasse extends javax.swing.JFrame {
 
-    public CadastroClasse() {
-
-        initComponents();
-    }
-
     public JButton getjButtonBuscar() {
         return jButtonBuscar;
+    }
+
+    public void setjButtonBuscar(JButton jButtonBuscar) {
+        this.jButtonBuscar = jButtonBuscar;
+    }
+
+    public JButton getjButtonCancelar() {
+        return jButtonCancelar;
+    }
+
+    public void setjButtonCancelar(JButton jButtonCancelar) {
+        this.jButtonCancelar = jButtonCancelar;
+    }
+
+    public JButton getjButtonGravar() {
+        return jButtonGravar;
+    }
+
+    public void setjButtonGravar(JButton jButtonGravar) {
+        this.jButtonGravar = jButtonGravar;
+    }
+
+    public JButton getjButtonNovo() {
+        return jButtonNovo;
+    }
+
+    public void setjButtonNovo(JButton jButtonNovo) {
+        this.jButtonNovo = jButtonNovo;
+    }
+
+    public JButton getjButtonSair() {
+        return jButtonSair;
+    }
+
+    public void setjButtonSair(JButton jButtonSair) {
+        this.jButtonSair = jButtonSair;
     }
 
     public JLabel getjLabelDescricao() {
@@ -55,72 +86,20 @@ public class CadastroClasse extends javax.swing.JFrame {
         this.jPanelBotoes = jPanelBotoes;
     }
 
-    public JPanel getjPanelTitulo() {
-        return jPanelTitulo;
-    }
-
-    public void setjPanelTitulo(JPanel jPanelTitulo) {
-        this.jPanelTitulo = jPanelTitulo;
-    }
-
-    public JRootPane getRootPane() {
-        return rootPane;
-    }
-
-    public void setRootPane(JRootPane rootPane) {
-        this.rootPane = rootPane;
-    }
-
-    public boolean isRootPaneCheckingEnabled() {
-        return rootPaneCheckingEnabled;
-    }
-
-    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
-        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
-    }
-
-    public AccessibleContext getAccessibleContext() {
-        return accessibleContext;
-    }
-
-    public void setAccessibleContext(AccessibleContext accessibleContext) {
-        this.accessibleContext = accessibleContext;
-    }
-
-    public void setjButtonBuscar(JButton jButtonBuscar) {
-        this.jButtonBuscar = jButtonBuscar;
-    }
-
-    public JButton getjButtonCancelar() {
-        return jButtonCancelar;
-    }
-
-    public void setjButtonCancelar(JButton jButtonCancelar) {
-        this.jButtonCancelar = jButtonCancelar;
-    }
-
-    public JButton getjButtonGravar() {
-        return jButtonGravar;
-    }
-
-    public void setjButtonGravar(JButton jButtonGravar) {
-        this.jButtonGravar = jButtonGravar;
-    }
-
-    public JButton getjButtonNovo() {
-        return jButtonNovo;
-    }
-
-    public void setjButtonNovo(JButton jButtonNovo) {
-        this.jButtonNovo = jButtonNovo;
-    }
-
     public JPanel getjPanelDados() {
         return jPanelDados;
     }
 
     public void setjPanelDados(JPanel jPanelDados) {
         this.jPanelDados = jPanelDados;
+    }
+
+    public JPanel getjPanelTitulo() {
+        return jPanelTitulo;
+    }
+
+    public void setjPanelTitulo(JPanel jPanelTitulo) {
+        this.jPanelTitulo = jPanelTitulo;
     }
 
     public JTextField getjTextDescricao() {
@@ -139,13 +118,7 @@ public class CadastroClasse extends javax.swing.JFrame {
         this.jTextId = jTextId;
     }
 
-    public JButton getjButtonSair() {
-        return jButtonSair;
-    }
-
-    public void setjButtonSair(JButton jButtonSair) {
-        this.jButtonSair = jButtonSair;
-    }
+    
 
     public void ativa(boolean estadoComponente) {
         jButtonNovo.setEnabled(estadoComponente);

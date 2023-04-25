@@ -123,8 +123,6 @@ public class CadastroBairro extends javax.swing.JFrame {
     public void setjTextId(JTextField jTextId) {
         this.jTextId = jTextId;
     }
-    
-    
 
     public void ativa(boolean estadoComponente) {
         jButtonNovo.setEnabled(estadoComponente);

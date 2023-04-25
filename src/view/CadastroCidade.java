@@ -14,83 +14,6 @@ import javax.swing.JTextField;
 
 public class CadastroCidade extends javax.swing.JFrame {
 
-    public CadastroCidade() {
-
-        initComponents();
-    }
-
-    public JLabel getjLabelDescricao() {
-        return jLabelDescricao;
-    }
-
-    public void setjLabelDescricao(JLabel jLabelDescricao) {
-        this.jLabelDescricao = jLabelDescricao;
-    }
-
-    public JLabel getjLabelId() {
-        return jLabelId;
-    }
-
-    public void setjLabelId(JLabel jLabelId) {
-        this.jLabelId = jLabelId;
-    }
-
-    public JLabel getjLabeltitulo() {
-        return jLabeltitulo;
-    }
-
-    public void setjLabeltitulo(JLabel jLabeltitulo) {
-        this.jLabeltitulo = jLabeltitulo;
-    }
-
-    public JPanel getjPanelBotoes() {
-        return jPanelBotoes;
-    }
-
-    public void setjPanelBotoes(JPanel jPanelBotoes) {
-        this.jPanelBotoes = jPanelBotoes;
-    }
-
-    public JPanel getjPanelTitulo() {
-        return jPanelTitulo;
-    }
-
-    public void setjPanelTitulo(JPanel jPanelTitulo) {
-        this.jPanelTitulo = jPanelTitulo;
-    }
-
-    public JRootPane getRootPane() {
-        return rootPane;
-    }
-
-    public void setRootPane(JRootPane rootPane) {
-        this.rootPane = rootPane;
-    }
-
-    public boolean isRootPaneCheckingEnabled() {
-        return rootPaneCheckingEnabled;
-    }
-
-    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
-        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
-    }
-
-    public AccessibleContext getAccessibleContext() {
-        return accessibleContext;
-    }
-
-    public void setAccessibleContext(AccessibleContext accessibleContext) {
-        this.accessibleContext = accessibleContext;
-    }
-
-    public JPanel getjPanelDados() {
-        return jPanelDados;
-    }
-
-    public void setjPanelDados(JPanel jPanelDados) {
-        this.jPanelDados = jPanelDados;
-    }
-
     public JButton getjButtonBuscar() {
         return jButtonBuscar;
     }
@@ -131,6 +54,54 @@ public class CadastroCidade extends javax.swing.JFrame {
         this.jButtonSair = jButtonSair;
     }
 
+    public JLabel getjLabelDescricao() {
+        return jLabelDescricao;
+    }
+
+    public void setjLabelDescricao(JLabel jLabelDescricao) {
+        this.jLabelDescricao = jLabelDescricao;
+    }
+
+    public JLabel getjLabelId() {
+        return jLabelId;
+    }
+
+    public void setjLabelId(JLabel jLabelId) {
+        this.jLabelId = jLabelId;
+    }
+
+    public JLabel getjLabeltitulo() {
+        return jLabeltitulo;
+    }
+
+    public void setjLabeltitulo(JLabel jLabeltitulo) {
+        this.jLabeltitulo = jLabeltitulo;
+    }
+
+    public JPanel getjPanelBotoes() {
+        return jPanelBotoes;
+    }
+
+    public void setjPanelBotoes(JPanel jPanelBotoes) {
+        this.jPanelBotoes = jPanelBotoes;
+    }
+
+    public JPanel getjPanelDados() {
+        return jPanelDados;
+    }
+
+    public void setjPanelDados(JPanel jPanelDados) {
+        this.jPanelDados = jPanelDados;
+    }
+
+    public JPanel getjPanelTitulo() {
+        return jPanelTitulo;
+    }
+
+    public void setjPanelTitulo(JPanel jPanelTitulo) {
+        this.jPanelTitulo = jPanelTitulo;
+    }
+
     public JTextField getjTextDescricao() {
         return jTextDescricao;
     }
@@ -146,6 +117,8 @@ public class CadastroCidade extends javax.swing.JFrame {
     public void setjTextId(JTextField jTextId) {
         this.jTextId = jTextId;
     }
+
+    
 
     public void ativa(boolean estadoComponente) {
         jButtonNovo.setEnabled(estadoComponente);

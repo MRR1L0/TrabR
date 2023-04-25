@@ -13,11 +13,6 @@ import javax.swing.JTextField;
 
 public class CadastroMarca extends javax.swing.JFrame {
 
-    public CadastroMarca() {
-        
-        initComponents();
-    }   
-
     public JButton getjButtonBuscar() {
         return jButtonBuscar;
     }
@@ -121,6 +116,7 @@ public class CadastroMarca extends javax.swing.JFrame {
     public void setjTextId(JTextField jTextId) {
         this.jTextId = jTextId;
     }
+
     
     public void ativa(boolean estadoComponente){
         jButtonNovo.setEnabled(estadoComponente);

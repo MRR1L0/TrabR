@@ -12,11 +12,6 @@ import javax.swing.JTextField;
 
 public class CadastroEndereco extends javax.swing.JFrame {
 
-    public CadastroEndereco() {
-
-        initComponents();
-    }
-
     public JButton getjButtonBuscar() {
         return jButtonBuscar;
     }
