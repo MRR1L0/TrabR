@@ -12,7 +12,7 @@ import model.bo.Colaborador;
 public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
 
     @Override
-    public void create(Colaborador objeto) {
+    public Colaborador create(Colaborador objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO colaborador (nome, fone1, fone2, complementoEndereco, email, dtCadastro, observacao, status, login, senha, endereco_id) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -38,7 +38,7 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
         }
 
         ConnectionFactory.closeConnection(conexao, pstm);
-
+        return objeto;
     }
 
     @Override

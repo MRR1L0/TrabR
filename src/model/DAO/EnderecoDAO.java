@@ -11,8 +11,9 @@ import model.bo.Endereco;
 
 public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
 
+ 
     @Override
-    public void create(Endereco objeto) {
+    public Endereco create(Endereco objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO endereco (logradouro, cep, bairro_id, cidade_id) VALUES (?,?,?,?)";
@@ -31,7 +32,7 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
         }
 
         ConnectionFactory.closeConnection(conexao, pstm);
-
+        return objeto;
     }
 
     @Override
@@ -95,6 +96,37 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
         }
 
     }
+    
+    public Endereco search(String cidade, String bairro) {
+
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "SELECT endereco.id, endereco.cep, endereco.logradouro from endereco where endereco.cidade = ? and endereco.bairro = ?";
+
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(0, cidade);
+            pstm.setString(1, bairro);
+            rst = pstm.executeQuery();
+            Endereco endereco = new Endereco();
+
+            while (rst.next()) {
+                endereco.setId(rst.getInt("id"));
+                endereco.setLogradouro(rst.getString("Logradouro"));
+                endereco.setCep(rst.getString("CEP"));
+            }
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return endereco;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return null;
+        }
+
+    } 
 
     @Override
     public List<Endereco> search() {

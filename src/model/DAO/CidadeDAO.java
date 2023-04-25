@@ -14,7 +14,7 @@ import model.bo.Cidade;
 public class CidadeDAO implements InterfaceDAO<Cidade> {
 
     @Override
-    public void create(Cidade objeto) {
+    public Cidade create(Cidade objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO cidade (descricao) VALUES (?)";
@@ -27,8 +27,9 @@ public class CidadeDAO implements InterfaceDAO<Cidade> {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-
+        
         ConnectionFactory.closeConnection(conexao, pstm);
+        return objeto;
     }
 
     @Override

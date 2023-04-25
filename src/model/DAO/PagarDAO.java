@@ -13,7 +13,7 @@ import model.bo.Pagar;
 public class PagarDAO implements InterfaceDAO<Pagar> {
 
     @Override
-    public void create(Pagar objeto) {
+    public Pagar create(Pagar objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO pagar (dataEmissao, horaEmissao, dataVencimento, valorPagar, status, compra_id) VALUES (?,?,?,?,?,?)";
@@ -34,7 +34,7 @@ public class PagarDAO implements InterfaceDAO<Pagar> {
         }
 
         ConnectionFactory.closeConnection(conexao, pstm);
-
+        return objeto;
     }
 
     @Override

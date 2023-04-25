@@ -7,7 +7,6 @@ import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRootPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -17,71 +16,7 @@ public class CadastroMarca extends javax.swing.JFrame {
     public CadastroMarca() {
         
         initComponents();
-    }
-
-    public JLabel getjLabelDescricao() {
-        return jLabelDescricao;
-    }
-
-    public void setjLabelDescricao(JLabel jLabelDescricao) {
-        this.jLabelDescricao = jLabelDescricao;
-    }
-
-    public JLabel getjLabelId() {
-        return jLabelId;
-    }
-
-    public void setjLabelId(JLabel jLabelId) {
-        this.jLabelId = jLabelId;
-    }
-
-    public JLabel getjLabeltitulo() {
-        return jLabeltitulo;
-    }
-
-    public void setjLabeltitulo(JLabel jLabeltitulo) {
-        this.jLabeltitulo = jLabeltitulo;
-    }
-
-    public JPanel getjPanelBotoes() {
-        return jPanelBotoes;
-    }
-
-    public void setjPanelBotoes(JPanel jPanelBotoes) {
-        this.jPanelBotoes = jPanelBotoes;
-    }
-
-    public JPanel getjPanelTitulo() {
-        return jPanelTitulo;
-    }
-
-    public void setjPanelTitulo(JPanel jPanelTitulo) {
-        this.jPanelTitulo = jPanelTitulo;
-    }
-
-    public JRootPane getRootPane() {
-        return rootPane;
-    }
-
-    public void setRootPane(JRootPane rootPane) {
-        this.rootPane = rootPane;
-    }
-
-    public boolean isRootPaneCheckingEnabled() {
-        return rootPaneCheckingEnabled;
-    }
-
-    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
-        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
-    }
-
-    public AccessibleContext getAccessibleContext() {
-        return accessibleContext;
-    }
-
-    public void setAccessibleContext(AccessibleContext accessibleContext) {
-        this.accessibleContext = accessibleContext;
-    }
+    }   
 
     public JButton getjButtonBuscar() {
         return jButtonBuscar;
@@ -123,12 +58,52 @@ public class CadastroMarca extends javax.swing.JFrame {
         this.jButtonSair = jButtonSair;
     }
 
+    public JLabel getjLabelDescricao() {
+        return jLabelDescricao;
+    }
+
+    public void setjLabelDescricao(JLabel jLabelDescricao) {
+        this.jLabelDescricao = jLabelDescricao;
+    }
+
+    public JLabel getjLabelId() {
+        return jLabelId;
+    }
+
+    public void setjLabelId(JLabel jLabelId) {
+        this.jLabelId = jLabelId;
+    }
+
+    public JLabel getjLabeltitulo() {
+        return jLabeltitulo;
+    }
+
+    public void setjLabeltitulo(JLabel jLabeltitulo) {
+        this.jLabeltitulo = jLabeltitulo;
+    }
+
+    public JPanel getjPanelBotoes() {
+        return jPanelBotoes;
+    }
+
+    public void setjPanelBotoes(JPanel jPanelBotoes) {
+        this.jPanelBotoes = jPanelBotoes;
+    }
+
     public JPanel getjPanelDados() {
         return jPanelDados;
     }
 
     public void setjPanelDados(JPanel jPanelDados) {
         this.jPanelDados = jPanelDados;
+    }
+
+    public JPanel getjPanelTitulo() {
+        return jPanelTitulo;
+    }
+
+    public void setjPanelTitulo(JPanel jPanelTitulo) {
+        this.jPanelTitulo = jPanelTitulo;
     }
 
     public JTextField getjTextDescricao() {
@@ -146,7 +121,6 @@ public class CadastroMarca extends javax.swing.JFrame {
     public void setjTextId(JTextField jTextId) {
         this.jTextId = jTextId;
     }
-        
     
     public void ativa(boolean estadoComponente){
         jButtonNovo.setEnabled(estadoComponente);
@@ -223,7 +197,7 @@ public class CadastroMarca extends javax.swing.JFrame {
         );
         jPanelTituloLayout.setVerticalGroup(
             jPanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabeltitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+            .addComponent(jLabeltitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         jPanelDados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -233,6 +207,12 @@ public class CadastroMarca extends javax.swing.JFrame {
         jTextId.setEditable(false);
 
         jLabelDescricao.setText("Descrição*");
+
+        jTextDescricao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextDescricaoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelDadosLayout = new javax.swing.GroupLayout(jPanelDados);
         jPanelDados.setLayout(jPanelDadosLayout);
@@ -339,6 +319,10 @@ public class CadastroMarca extends javax.swing.JFrame {
     private void jButtonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGravarActionPerformed
       
     }//GEN-LAST:event_jButtonGravarActionPerformed
+
+    private void jTextDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextDescricaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextDescricaoActionPerformed
 
     /**
      * @param args the command line arguments

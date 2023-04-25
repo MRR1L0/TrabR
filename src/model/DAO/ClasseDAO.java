@@ -11,7 +11,7 @@ import model.bo.Classe;
 public class ClasseDAO implements InterfaceDAO<Classe> {
 
     @Override
-    public void create(Classe objeto) {
+    public Classe create(Classe objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO classe (descricao) VALUES (?)";
@@ -26,7 +26,7 @@ public class ClasseDAO implements InterfaceDAO<Classe> {
         }
 
         ConnectionFactory.closeConnection(conexao, pstm);
-
+        return objeto;
     }
 
     @Override

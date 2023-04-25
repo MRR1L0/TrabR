@@ -13,7 +13,7 @@ import model.bo.Compra;
 public class ComprasDAO implements InterfaceDAO<Compra> {
 
     @Override
-    public void create(Compra objeto) {
+    public Compra create(Compra objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO compras (dataCompra, horaCompra, numeroNF, tipoNF, valorDesconto, valorAcrescimo, totalNF, status, fonecedor,_id, condicaoPgto_id) VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?)";
@@ -39,7 +39,7 @@ public class ComprasDAO implements InterfaceDAO<Compra> {
         }
 
         ConnectionFactory.closeConnection(conexao, pstm);
-
+        return objeto;
     }
 
     @Override

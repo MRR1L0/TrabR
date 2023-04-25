@@ -11,7 +11,7 @@ import model.bo.Cliente;
 public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
 
     @Override
-    public void create(Cliente objeto) {
+    public Cliente create(Cliente objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO cliente (nome, fone1, fone2, complementoEndereco, email, dtCadastro, observacao, status, cpf, rg, dtNascimento, sexo, endereco_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -39,6 +39,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
         }
 
         ConnectionFactory.closeConnection(conexao, pstm);
+        return objeto;
     }
 
     @Override

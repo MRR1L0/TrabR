@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface InterfaceDAO<T> {
 
-    public abstract void create(T objeto);
+    public abstract T create(T objeto);
     public abstract T search(int codigo);
     public abstract T search (String descricao);
     public abstract List <T> search();

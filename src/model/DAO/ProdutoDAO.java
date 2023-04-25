@@ -11,7 +11,7 @@ import model.bo.Produto;
 public class ProdutoDAO implements InterfaceDAO<model.bo.Produto> {
 
     @Override
-    public void create(Produto objeto) {
+    public Produto create(Produto objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO produto (descricao, valorCompra, valorVenda, undCompra, undVenda, fatorConversao, status, dataCadastro, barraEntrada, barraSaida, estoqueMinimo, estoqueMaximo, marca_id, classe_id) VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -39,7 +39,7 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto> {
         }
 
         ConnectionFactory.closeConnection(conexao, pstm);
-
+        return objeto;
     }
 
     @Override
