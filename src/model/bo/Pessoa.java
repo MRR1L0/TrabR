@@ -12,14 +12,14 @@ public abstract class Pessoa {
     private Date dtCadastro;
     private String complementoEndereco;
     private String observacao;
-    private char status;
+    private String status;
     private Endereco endereco;
 
     public Pessoa() {
     }
 
     public Pessoa( String nome, String fone1, String fone2, String email, Date dtCadastro, String complementoEndereco, 
-            String observacao, char status, Endereco endereco) {
+            String observacao, String status, Endereco endereco) {
         this.nome = nome;
         this.fone1 = fone1;
         this.fone2 = fone2;
@@ -88,11 +88,11 @@ public abstract class Pessoa {
         this.observacao = observacao;
     }
 
-    public char getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(char status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

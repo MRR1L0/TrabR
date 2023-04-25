@@ -8,17 +8,17 @@ public class Cliente extends Pessoa {
     private String cpf;
     private String rg;
     private Date dtNascimento;
-    private char sexo;
+    private String sexo;
 
-    public Cliente(String cpf, String rg, Date dtNascimento, char sexo) {
+    public Cliente(String cpf, String rg, Date dtNascimento, String sexo) {
         this.cpf = cpf;
         this.rg = rg;
         this.dtNascimento = dtNascimento;
         this.sexo = sexo;
     }
 
-    public Cliente(String cpf, String rg, Date dtNascimento, char sexo,  String nome, String fone1, String fone2,
-     String email, Date dtCadastro, String complementoEndereco, String observacao, char status, Endereco endereco) {
+    public Cliente(String cpf, String rg, Date dtNascimento, String sexo,  String nome, String fone1, String fone2,
+     String email, Date dtCadastro, String complementoEndereco, String observacao, String status, Endereco endereco) {
         super(nome, fone1, fone2, email, dtCadastro, complementoEndereco, observacao, status, endereco);
         this.cpf = cpf;
         this.rg = rg;
@@ -36,7 +36,7 @@ public class Cliente extends Pessoa {
     
     
     public Cliente() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      
     }
     
     public String getCpf() {
@@ -63,11 +63,11 @@ public class Cliente extends Pessoa {
         this.dtNascimento = dtNascimento;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 

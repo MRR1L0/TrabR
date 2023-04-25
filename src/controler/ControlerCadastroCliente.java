@@ -42,21 +42,35 @@ public class ControlerCadastroCliente implements ActionListener {
         } else if (acao.getSource() == telaCadCliente.getjButtonGravar()) {
             //verificar espa莽os em branco
             if (telaCadCliente.getjTextFieldNome().getText().trim().equalsIgnoreCase("")) {
-                JOptionPane.showMessageDialog(null, "Nome: Campo com preenchimento obrigat贸rio");
+                JOptionPane.showMessageDialog(null, "Nome: Campo com preenchimento obrigat髍io");
 
             } else if (telaCadCliente.getjFormattedCpf().getText().trim().length() < 14) {
-                JOptionPane.showMessageDialog(null, "CPF: Campo com preenchimento obrigat贸rio");
+                JOptionPane.showMessageDialog(null, "CPF: Campo com preenchimento obrigat髍io");
 
             } else if (telaCadCliente.getjFormattedTextFieldFone1().getText().trim().length() < 14) {
-                JOptionPane.showMessageDialog(null, "Fone 1: Campo com preenchimento obrigat贸rio");
+                JOptionPane.showMessageDialog(null, "Fone 1: Campo com preenchimento obrigat髍io");
 
             } else if (telaCadCliente.getjFormattedTextFieldCep().getText().trim().length() < 9) {
-                JOptionPane.showMessageDialog(null, "CEP: Campo com preenchimento obrigat贸rio");
+                JOptionPane.showMessageDialog(null, "CEP: Campo com preenchimento obrigat髍io");
 
             } else {
 
                 Cliente cliente = new Cliente();
                 cliente.setCpf(telaCadCliente.getjFormattedCpf().getText());
+                cliente.setRg(rg);
+                cliente.setDtNascimento(dtNascimento);
+                cliente.setSexo(sexo);
+                cliente.setNome(nome);
+                cliente.setFone1(fone1);
+                cliente.setFone2(fone2);
+                cliente.setEmail(email);
+                cliente.setDtCadastro(dtCadastro);
+                cliente.setComplementoEndereco(complementoEndereco);
+                cliente.setObservacao(observacao);
+                cliente.setStatus(0);
+                cliente.setEndereco(endereco);
+                
+                
 
                 //persistir o obj de bairro criado
                 telaCadCliente.ativa(true);

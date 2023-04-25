@@ -42,7 +42,7 @@ public class ControlerCadastroClasse implements ActionListener {
         } else if (acao.getSource() == telaCadClasse.getjButtonGravar()) {
             //verificar espa√ßos em branco
             if (telaCadClasse.getjTextDescricao().getText().trim().equalsIgnoreCase("")) {
-                JOptionPane.showMessageDialog(null, "Descri√ß√£o: Campo com preenchimento obrigat√≥rio");
+                JOptionPane.showMessageDialog(null, "DescriÁ„o: Campo com preenchimento obrigatÛrio");
 
             } else {
 

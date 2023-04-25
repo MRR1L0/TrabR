@@ -27,7 +27,7 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
             pstm.setString(5, objeto.getEmail());
             pstm.setObject(6, objeto.getDtCadastro());
             pstm.setString(7, objeto.getObservacao());
-            pstm.setInt(8, objeto.getStatus());
+            pstm.setString(8, objeto.getStatus());
             pstm.setString(9, objeto.getLogin());
             pstm.setString(10, objeto.getSenha());
              pstm.setInt(11, objeto.getEndereco().getId());
@@ -60,7 +60,7 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
                 colaborador.setId(rst.getInt("id"));
                 colaborador.setNome(rst.getString("nome"));
                 colaborador.setLogin(rst.getString("login"));
-                colaborador.setStatus(rst.getString("status").charAt(0));
+                colaborador.setStatus(rst.getString("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
             return colaborador;
@@ -91,7 +91,7 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
                 colaborador.setId(rst.getInt("id"));
                 colaborador.setNome(rst.getString("nome"));
                 colaborador.setLogin(rst.getString("login"));
-                colaborador.setStatus(rst.getString("status").charAt(0));
+                colaborador.setStatus(rst.getString("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
             return colaborador;
@@ -124,7 +124,7 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
                 colaborador.setId(rst.getInt("id"));
                 colaborador.setNome(rst.getString("nome"));
                 colaborador.setLogin(rst.getString("login"));
-                colaborador.setStatus(rst.getString("status").charAt(0));
+                colaborador.setStatus(rst.getString("status"));
                 listaColaborador.add(colaborador);
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);

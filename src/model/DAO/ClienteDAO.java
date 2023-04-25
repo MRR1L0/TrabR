@@ -26,11 +26,11 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
             pstm.setString(5, objeto.getEmail());
             pstm.setObject(6, objeto.getDtCadastro());
             pstm.setString(7, objeto.getObservacao());
-            pstm.setInt(8, objeto.getStatus());
+            pstm.setString(8, objeto.getStatus());
             pstm.setString(9, objeto.getCpf());
             pstm.setString(10, objeto.getRg());
             pstm.setObject(11, objeto.getDtNascimento());
-            pstm.setString(12, Character.toString(objeto.getSexo()));
+            pstm.setString(12, objeto.getSexo());
             pstm.setInt(13, objeto.getEndereco().getId());
 
             pstm.executeUpdate();
@@ -66,11 +66,11 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
                 cliente.setEmail(rst.getString("email"));
                 cliente.setDtCadastro(rst.getDate("dtCadastro"));
                 cliente.setObservacao(rst.getString("observacao"));
-                cliente.setStatus((char) rst.getInt("status"));
+                cliente.setStatus(rst.getString("status"));
                 cliente.setCpf(rst.getString("cpf"));
                 cliente.setRg(rst.getString("rg"));
                 cliente.setDtNascimento(rst.getDate("dtNascimento"));
-                cliente.setSexo((char) rst.getInt("sexo"));
+                cliente.setSexo(rst.getString("sexo"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
             return cliente;
@@ -102,7 +102,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
                 cliente.setNome(rst.getString("nome"));
                 cliente.setCpf(rst.getString("cpf"));
                 cliente.setFone1(rst.getString("telefone"));
-                cliente.setStatus(rst.getString("status").charAt(0));                  //o valor do campo status é retornado como uma String e o primeiro caractere é obtido utilizando o método charAt(0), convertendo-o em um char.
+                cliente.setStatus(rst.getString("status"));                  //o valor do campo status é retornado como uma String e o primeiro caractere é obtido utilizando o método charAt(0), convertendo-o em um char.
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
             return cliente;
@@ -136,7 +136,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
                 cliente.setNome(rst.getString("nome"));
                 cliente.setCpf(rst.getString("cpf"));
                 cliente.setFone1(rst.getString("telefone"));
-                cliente.setStatus(rst.getString("status").charAt(0));
+                cliente.setStatus(rst.getString("status"));
                 listaCliente.add(cliente);
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
@@ -166,11 +166,11 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
             pstm.setString(5, objeto.getEmail());
             pstm.setObject(6, objeto.getDtCadastro());           ///object - desde que o tipo de dados do campo dtCadastro no banco de dados seja DATETIME, TIMESTAMP ou similar.
             pstm.setString(7, objeto.getObservacao());
-            pstm.setInt(8, objeto.getStatus());
+            pstm.setString(8, objeto.getStatus());
             pstm.setString(9, objeto.getCpf());
             pstm.setString(10, objeto.getRg());
             pstm.setObject(11, objeto.getDtNascimento());
-            pstm.setString(12, Character.toString(objeto.getSexo()));   ///// convertendo char para string
+            pstm.setString(12, objeto.getSexo());   ///// convertendo char para string
             pstm.setInt(13, objeto.getId());
             pstm.executeUpdate();
 

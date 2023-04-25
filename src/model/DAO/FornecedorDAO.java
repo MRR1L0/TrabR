@@ -27,7 +27,7 @@ public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor> {
             pstm.setString(5, objeto.getEmail());
             pstm.setObject(6, objeto.getDtCadastro());
             pstm.setString(7, objeto.getObservacao());
-            pstm.setInt(8, objeto.getStatus());
+            pstm.setString(8, objeto.getStatus());
             pstm.setString(5, objeto.getCnpj());
             pstm.setString(5, objeto.getInscEstadual());
             pstm.setString(0, objeto.getContato());
@@ -69,7 +69,7 @@ public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor> {
                 fornecedor.setEmail(rst.getString("email"));
                 fornecedor.setDtCadastro(rst.getDate("dtCadastro"));
                 fornecedor.setObservacao(rst.getString("observacao"));
-                fornecedor.setStatus((char) rst.getInt("status"));
+                fornecedor.setStatus(rst.getString("status"));
                 fornecedor.setCnpj(rst.getString("cnpj"));
                 fornecedor.setInscEstadual(rst.getString("Inscricao Estadual"));
                 fornecedor.setContato(rst.getString("Contato"));
@@ -109,7 +109,7 @@ public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor> {
                 fornecedor.setCnpj(rst.getString("nome"));
                 fornecedor.setRazaoSocial(rst.getString("Razao Social"));
                 fornecedor.setInscEstadual(rst.getString("Inscricao Estadual"));
-                fornecedor.setStatus(rst.getString("status").charAt(0));
+                fornecedor.setStatus(rst.getString("status"));
 
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
@@ -144,7 +144,7 @@ public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor> {
                 fornecedor.setCnpj(rst.getString("nome"));
                 fornecedor.setRazaoSocial(rst.getString("Razao Social"));
                 fornecedor.setInscEstadual(rst.getString("Inscricao Estadual"));
-                fornecedor.setStatus(rst.getString("status").charAt(0));
+                fornecedor.setStatus(rst.getString("status"));
                 listaFornecedor.add(fornecedor);
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
