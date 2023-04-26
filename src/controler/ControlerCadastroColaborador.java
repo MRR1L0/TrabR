@@ -62,7 +62,7 @@ public class ControlerCadastroColaborador implements ActionListener {
                 Colaborador colaborador = new Colaborador();
                 colaborador.setLogin(telaCadColaborador.getjTextFieldLogin().getText());
                 colaborador.setSenha(telaCadColaborador.getjLabelSenha().getText());
-                colaborador.setDtCadastro(new Date(telaCadColaborador.getjLabelDatCadastro().getText()));
+                colaborador.setDtCadastro(telaCadColaborador.getjLabelDatCadastro().getText());
                 colaborador.setComplementoEndereco(telaCadColaborador.getjLabelComplemento().getText());
                 colaborador.setEmail(telaCadColaborador.getjTextFieldEmail().getText());
                 colaborador.setFone1(telaCadColaborador.getjLabelFone1().getText());

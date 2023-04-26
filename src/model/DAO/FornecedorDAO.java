@@ -67,7 +67,7 @@ public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor> {
                 fornecedor.setFone2(rst.getString("fone2"));
                 fornecedor.setComplementoEndereco(rst.getString("complementoEndereco"));
                 fornecedor.setEmail(rst.getString("email"));
-                fornecedor.setDtCadastro(rst.getDate("dtCadastro"));
+                fornecedor.setDtCadastro(rst.getString("dtCadastro"));
                 fornecedor.setObservacao(rst.getString("observacao"));
                 fornecedor.setStatus(rst.getString("status"));
                 fornecedor.setCnpj(rst.getString("cnpj"));

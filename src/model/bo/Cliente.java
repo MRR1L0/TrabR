@@ -18,7 +18,7 @@ public class Cliente extends Pessoa {
     }
 
     public Cliente(String cpf, String rg, String dtNascimento, String sexo,  String nome, String fone1, String fone2,
-     String email, Date dtCadastro, String complementoEndereco, String observacao, String status, Endereco endereco) {
+     String email, String dtCadastro, String complementoEndereco, String observacao, String status, Endereco endereco) {
         super(nome, fone1, fone2, email, dtCadastro, complementoEndereco, observacao, status, endereco);
         this.cpf = cpf;
         this.rg = rg;

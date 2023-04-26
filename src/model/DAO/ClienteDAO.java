@@ -65,7 +65,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
                 cliente.setFone2(rst.getString("fone2"));
                 cliente.setComplementoEndereco(rst.getString("complementoEndereco"));
                 cliente.setEmail(rst.getString("email"));
-                cliente.setDtCadastro(rst.getDate("dtCadastro"));
+                cliente.setDtCadastro(rst.getString("dtCadastro"));
                 cliente.setObservacao(rst.getString("observacao"));
                 cliente.setStatus(rst.getString("status"));
                 cliente.setCpf(rst.getString("cpf"));
