@@ -22,7 +22,6 @@ public class ControlerBuscaMarca implements ActionListener {
         DefaultTableModel tabela = (DefaultTableModel) this.formBusMarca.getjTableBuscas().getModel();
         MarcaDAO marcaDAO = new MarcaDAO();
         for (Marca objetoAtualDaLista : marcaDAO.search()) {
-
             tabela.addRow(new Object[]{objetoAtualDaLista.getId(),
                 objetoAtualDaLista.getDescricao()});
         }
