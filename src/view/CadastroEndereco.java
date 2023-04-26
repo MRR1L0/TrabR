@@ -12,6 +12,10 @@ import javax.swing.JTextField;
 
 public class CadastroEndereco extends javax.swing.JFrame {
 
+    public CadastroEndereco() {
+         initComponents();
+    }
+
     public JButton getjButtonBuscar() {
         return jButtonBuscar;
     }
@@ -222,13 +226,13 @@ public class CadastroEndereco extends javax.swing.JFrame {
         jLabeltitulo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro de Endereï¿½o");
+        setTitle("Cadastro de Endereço");
         setResizable(false);
 
         jPanelDados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanelDados.setPreferredSize(new java.awt.Dimension(590, 190));
 
-        jLabelId.setText("Cï¿½digo");
+        jLabelId.setText("Código");
 
         jTextId.setEditable(false);
 
@@ -356,7 +360,7 @@ public class CadastroEndereco extends javax.swing.JFrame {
         jLabeltitulo1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabeltitulo1.setForeground(new java.awt.Color(255, 255, 0));
         jLabeltitulo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabeltitulo1.setText("Endereï¿½o");
+        jLabeltitulo1.setText("Endereço");
 
         javax.swing.GroupLayout jPanelTitulo1Layout = new javax.swing.GroupLayout(jPanelTitulo1);
         jPanelTitulo1.setLayout(jPanelTitulo1Layout);
@@ -387,10 +391,6 @@ public class CadastroEndereco extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelDados, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
                 .addGap(3, 3, 3)
-                .addComponent(jPanelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelDados, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );

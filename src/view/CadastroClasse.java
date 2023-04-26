@@ -14,6 +14,11 @@ import javax.swing.JTextField;
 
 public class CadastroClasse extends javax.swing.JFrame {
 
+    public CadastroClasse() {
+         initComponents();
+    }
+
+    
     public JButton getjButtonBuscar() {
         return jButtonBuscar;
     }

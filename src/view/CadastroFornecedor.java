@@ -14,6 +14,10 @@ import javax.swing.JTextField;
 
 public class CadastroFornecedor extends javax.swing.JFrame {
 
+    public CadastroFornecedor() {
+        initComponents();
+    }
+
     public JButton getjButton3() {
         return jButton3;
     }
@@ -413,7 +417,6 @@ public class CadastroFornecedor extends javax.swing.JFrame {
     public void setjTextFieldRazaoSocial(JTextField jTextFieldRazaoSocial) {
         this.jTextFieldRazaoSocial = jTextFieldRazaoSocial;
     }
-
 
     public void ativa(boolean estadoComponente) {
         jButtonNovo.setEnabled(estadoComponente);

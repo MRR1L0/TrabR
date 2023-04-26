@@ -15,6 +15,10 @@ import javax.swing.JTextField;
 
 public class CadastroColaborador extends javax.swing.JFrame {
 
+    public CadastroColaborador() {
+         initComponents();
+    }
+
     public JButton getjButton1() {
         return jButton1;
     }

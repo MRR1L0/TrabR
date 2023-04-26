@@ -14,6 +14,10 @@ import javax.swing.JTextField;
 
 public class CadastroProduto extends javax.swing.JFrame {
 
+    public CadastroProduto() {
+        initComponents();
+    }
+
     public JButton getjButtonBuscar() {
         return jButtonBuscar;
     }
@@ -341,7 +345,6 @@ public class CadastroProduto extends javax.swing.JFrame {
     public void setjTextValorVenda(JTextField jTextValorVenda) {
         this.jTextValorVenda = jTextValorVenda;
     }
-
 
     public void ativa(boolean estadoComponente) {
         jButtonNovo.setEnabled(estadoComponente);
@@ -685,15 +688,15 @@ public class CadastroProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
-        
+
     }//GEN-LAST:event_jButtonNovoActionPerformed
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-        
+
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jButtonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGravarActionPerformed
-       
+
     }//GEN-LAST:event_jButtonGravarActionPerformed
 
     /**

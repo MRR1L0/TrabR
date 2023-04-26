@@ -13,6 +13,10 @@ import javax.swing.JTextField;
 
 public class CadastroCliente extends javax.swing.JFrame {
 
+    public CadastroCliente() {
+        initComponents();
+    }
+
     public JButton getjButton1() {
         return jButton1;
     }
