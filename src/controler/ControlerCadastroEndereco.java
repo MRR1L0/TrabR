@@ -3,6 +3,10 @@ package controler;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import model.DAO.BairroDAO;
+import model.DAO.CidadeDAO;
+import model.bo.Bairro;
+import model.bo.Cidade;
 import model.bo.Endereco;
 import view.CadastroEndereco;
 import view.FormBusEndereco;
@@ -10,6 +14,8 @@ import view.FormBusEndereco;
 public class ControlerCadastroEndereco implements ActionListener {
 
     CadastroEndereco telaCadEndereco;
+    BairroDAO bairroDao;
+    CidadeDAO cidadeDAO;
 
     public ControlerCadastroEndereco(CadastroEndereco parTelaCadEndereco) {
 
@@ -49,7 +55,11 @@ public class ControlerCadastroEndereco implements ActionListener {
 
                 Endereco endereco = new Endereco();
                 endereco.setLogradouro(telaCadEndereco.getjTextLogradouro().getText());
-
+                var bairro = telaCadEndereco.getjTextBairro().getText();
+                var cidade = telaCadEndereco.getjTextCidade().getText();
+                endereco.setBairro(buscaBairro(bairro));
+                endereco.setCidade(buscaCidade(cidade));
+                endereco.setLogradouro(telaCadEndereco.getjTextLogradouro().getText());
                 telaCadEndereco.ativa(true);
                 telaCadEndereco.ligaDesliga(false);
             }
@@ -63,5 +73,23 @@ public class ControlerCadastroEndereco implements ActionListener {
 
             telaCadEndereco.dispose();
         }
+    }
+
+    private Bairro buscaBairro(String DescricaoBairro) {
+        var bairro = bairroDao.search(DescricaoBairro);
+        
+        if(bairro != null){
+            return bairro;
+        }
+        return bairroDao.create(new Bairro(DescricaoBairro));
+    }
+
+    private Cidade buscaCidade(String DescricaoCidade) {
+        var cidade = cidadeDAO.search(DescricaoCidade);
+        
+        if(cidade != null){
+            return cidade;
+        }
+        return cidadeDAO.create(new Cidade(DescricaoCidade));
     }
 }

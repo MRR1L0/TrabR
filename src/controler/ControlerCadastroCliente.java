@@ -68,7 +68,7 @@ public class ControlerCadastroCliente implements ActionListener {
                 cliente.setCpf(telaCadCliente.getjFormattedCpf().getText());
                 
                 cliente.setRg(telaCadCliente.getjFormattedRg().getText());
-                cliente.setDtNascimento(new Date(telaCadCliente.getjLabelDatNasc().getText()));
+                cliente.setDtNascimento(telaCadCliente.getjLabelDatNasc().getText());
                 cliente.setSexo(telaCadCliente.getjComboBoxSexo().getSelectedItem().toString());
                 cliente.setNome(telaCadCliente.getjLabelNome().getText());
                 cliente.setFone1(telaCadCliente.getjLabelFone1().getText());

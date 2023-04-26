@@ -63,9 +63,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jComboBoxBairro" min="-2" pref="639" max="-2" attributes="0"/>
                       <Component id="jLabelCidade" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBoxCidade" alignment="0" min="-2" pref="639" max="-2" attributes="0"/>
                       <Component id="jTextId" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                       <Component id="jLabelId" alignment="0" min="-2" pref="56" max="-2" attributes="0"/>
                       <Component id="jLabelBairro" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -77,9 +75,11 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabelLogradouro" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextLogradouro" max="32767" attributes="0"/>
+                              <Component id="jTextLogradouro" pref="511" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <Component id="jTextCidade" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jTextBairro" alignment="0" pref="639" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
@@ -104,13 +104,13 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabelCidade" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jComboBoxCidade" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jTextCidade" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   <Component id="jLabelBairro" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jTextBairro" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jComboBoxBairro" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -158,29 +158,9 @@
             <Property name="text" type="java.lang.String" value="Bairro"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBoxCidade">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="1">
-                <StringItem index="0" value="Teste"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
+        <Component class="javax.swing.JTextField" name="jTextCidade">
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBoxBairro">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="1">
-                <StringItem index="0" value="Teste"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
+        <Component class="javax.swing.JTextField" name="jTextBairro">
         </Component>
       </SubComponents>
     </Container>

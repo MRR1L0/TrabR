@@ -56,21 +56,22 @@ public class CadastroEndereco extends javax.swing.JFrame {
         this.jButtonSair = jButtonSair;
     }
 
-    public JComboBox<String> getjComboBoxBairro() {
-        return jComboBoxBairro;
+    public JTextField getjTextBairro() {
+        return jTextBairro;
     }
 
-    public void setjComboBoxBairro(JComboBox<String> jComboBoxBairro) {
-        this.jComboBoxBairro = jComboBoxBairro;
+    public void setjTextBairro(JTextField jTextBairro) {
+        this.jTextBairro = jTextBairro;
     }
 
-    public JComboBox<String> getjComboBoxCidade() {
-        return jComboBoxCidade;
+    public JTextField getjTextCidade() {
+        return jTextCidade;
     }
 
-    public void setjComboBoxCidade(JComboBox<String> jComboBoxCidade) {
-        this.jComboBoxCidade = jComboBoxCidade;
+    public void setjTextCidade(JTextField jTextCidade) {
+        this.jTextCidade = jTextCidade;
     }
+    
 
     public JFormattedTextField getjFormattedTextCep() {
         return jFormattedTextCep;
@@ -214,8 +215,8 @@ public class CadastroEndereco extends javax.swing.JFrame {
         jFormattedTextCep = new javax.swing.JFormattedTextField();
         jLabelCidade = new javax.swing.JLabel();
         jLabelBairro = new javax.swing.JLabel();
-        jComboBoxCidade = new javax.swing.JComboBox<>();
-        jComboBoxBairro = new javax.swing.JComboBox<>();
+        jTextCidade = new javax.swing.JTextField();
+        jTextBairro = new javax.swing.JTextField();
         jPanelBotoes = new javax.swing.JPanel();
         jButtonNovo = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
@@ -251,10 +252,6 @@ public class CadastroEndereco extends javax.swing.JFrame {
 
         jLabelBairro.setText("Bairro");
 
-        jComboBoxCidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teste" }));
-
-        jComboBoxBairro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teste" }));
-
         javax.swing.GroupLayout jPanelDadosLayout = new javax.swing.GroupLayout(jPanelDados);
         jPanelDados.setLayout(jPanelDadosLayout);
         jPanelDadosLayout.setHorizontalGroup(
@@ -262,9 +259,7 @@ public class CadastroEndereco extends javax.swing.JFrame {
             .addGroup(jPanelDadosLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBoxBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 639, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelCidade)
-                    .addComponent(jComboBoxCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 639, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelId, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelBairro)
@@ -275,7 +270,9 @@ public class CadastroEndereco extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelLogradouro)
-                            .addComponent(jTextLogradouro))))
+                            .addComponent(jTextLogradouro, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)))
+                    .addComponent(jTextCidade)
+                    .addComponent(jTextBairro, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE))
                 .addGap(30, 30, 30))
         );
         jPanelDadosLayout.setVerticalGroup(
@@ -295,13 +292,13 @@ public class CadastroEndereco extends javax.swing.JFrame {
                     .addComponent(jTextLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelCidade)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBoxCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
                 .addComponent(jLabelBairro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBoxBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanelBotoes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -456,8 +453,6 @@ public class CadastroEndereco extends javax.swing.JFrame {
     private javax.swing.JButton jButtonGravar;
     private javax.swing.JButton jButtonNovo;
     private javax.swing.JButton jButtonSair;
-    private javax.swing.JComboBox<String> jComboBoxBairro;
-    private javax.swing.JComboBox<String> jComboBoxCidade;
     private javax.swing.JFormattedTextField jFormattedTextCep;
     private javax.swing.JLabel jLabelBairro;
     private javax.swing.JLabel jLabelCep;
@@ -468,6 +463,8 @@ public class CadastroEndereco extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelBotoes;
     private javax.swing.JPanel jPanelDados;
     private javax.swing.JPanel jPanelTitulo1;
+    private javax.swing.JTextField jTextBairro;
+    private javax.swing.JTextField jTextCidade;
     private javax.swing.JTextField jTextId;
     private javax.swing.JTextField jTextLogradouro;
     // End of variables declaration//GEN-END:variables

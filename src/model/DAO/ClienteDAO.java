@@ -70,7 +70,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
                 cliente.setStatus(rst.getString("status"));
                 cliente.setCpf(rst.getString("cpf"));
                 cliente.setRg(rst.getString("rg"));
-                cliente.setDtNascimento(rst.getDate("dtNascimento"));
+                cliente.setDtNascimento(rst.getString("dtNascimento"));
                 cliente.setSexo(rst.getString("sexo"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);

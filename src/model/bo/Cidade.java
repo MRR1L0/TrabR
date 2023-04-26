@@ -16,6 +16,10 @@ public class Cidade {
         return id;
     }
 
+    public Cidade(String descricao) {
+        this.descricao = descricao;
+    }
+
     public void setId(int id) {
         this.id = id;
     }

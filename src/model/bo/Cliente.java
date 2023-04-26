@@ -7,17 +7,17 @@ public class Cliente extends Pessoa {
     private int id;
     private String cpf;
     private String rg;
-    private Date dtNascimento;
+    private String dtNascimento;
     private String sexo;
 
-    public Cliente(String cpf, String rg, Date dtNascimento, String sexo) {
+    public Cliente(String cpf, String rg, String dtNascimento, String sexo) {
         this.cpf = cpf;
         this.rg = rg;
         this.dtNascimento = dtNascimento;
         this.sexo = sexo;
     }
 
-    public Cliente(String cpf, String rg, Date dtNascimento, String sexo,  String nome, String fone1, String fone2,
+    public Cliente(String cpf, String rg, String dtNascimento, String sexo,  String nome, String fone1, String fone2,
      String email, Date dtCadastro, String complementoEndereco, String observacao, String status, Endereco endereco) {
         super(nome, fone1, fone2, email, dtCadastro, complementoEndereco, observacao, status, endereco);
         this.cpf = cpf;
@@ -55,11 +55,11 @@ public class Cliente extends Pessoa {
         this.rg = rg;
     }
 
-    public Date getDtNascimento() {
+    public String getDtNascimento() {
         return dtNascimento;
     }
 
-    public void setDtNascimento(Date dtNascimento) {
+    public void setDtNascimento(String dtNascimento) {
         this.dtNascimento = dtNascimento;
     }
 

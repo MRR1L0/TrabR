@@ -45,7 +45,9 @@ public class ControlerCadastroCondicaoPagamento implements ActionListener {
 
                 var condicaoPagamento = new model.bo.CondicaoPgto();
                 condicaoPagamento.setDescricaoCondicao(telaCondicaoPgto.getjTextDescricao().getText());
-
+                condicaoPagamento.setDiasEntreParcela(0);
+                condicaoPagamento.setDiasPrimeiraParcela(0);
+                condicaoPagamento.setStatus(telaCondicaoPgto.getjComboStatus().getSelectedItem().toString());
                 telaCondicaoPgto.ativa(true);
                 telaCondicaoPgto.ligaDesliga(false);
 

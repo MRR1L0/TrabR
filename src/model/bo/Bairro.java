@@ -11,6 +11,10 @@ public class Bairro {
         this.descricao = descricao;
     }
 
+    public Bairro(String descricao) {
+        this.descricao = descricao;
+    }
+
     public int getId() {
         return id;
     }

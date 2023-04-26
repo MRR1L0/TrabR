@@ -24,7 +24,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
             pstm.setInt(2, objeto.getNumeroParcelas());
             pstm.setInt(0, objeto.getDiasEntreParcela());
             pstm.setInt(0, objeto.getDiasEntreParcela());
-            pstm.setInt(8, objeto.getStatus());
+            pstm.setString(8, objeto.getStatus());
 
             pstm.executeUpdate();
         } catch (SQLException ex) {
@@ -56,7 +56,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
                 condicaoPagamento.setNumeroParcelas(rst.getInt("numeroParcelas"));
                 condicaoPagamento.setDiasPrimeiraParcela(rst.getInt("diasPrimeiraParcela"));
                 condicaoPagamento.setDiasEntreParcela(rst.getInt("diasEntreParcela"));
-                condicaoPagamento.setStatus((char) rst.getInt("status"));
+                condicaoPagamento.setStatus(rst.getString("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
             return condicaoPagamento;
@@ -86,7 +86,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
             while (rst.next()) {
                 condicaoPagamento.setId(rst.getInt("id"));
                 condicaoPagamento.setDescricaoCondicao(rst.getString("descricao"));
-                condicaoPagamento.setStatus((char) rst.getInt("status"));
+                condicaoPagamento.setStatus(rst.getString("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
             return condicaoPagamento;
@@ -118,7 +118,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
                 CondicaoPgto condicaoPagamento = new CondicaoPgto();
                 condicaoPagamento.setId(rst.getInt("id"));
                 condicaoPagamento.setDescricaoCondicao(rst.getString("descricao"));
-                condicaoPagamento.setStatus((char) rst.getInt("status"));
+                condicaoPagamento.setStatus(rst.getString("status"));
                 listaCondicaoPagamento.add(condicaoPagamento);
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);

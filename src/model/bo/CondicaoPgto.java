@@ -6,12 +6,12 @@ public class CondicaoPgto {
     private int numeroParcelas;
     private int diasPrimeiraParcela;
     private int diasEntreParcela;
-    private char status;
+    private String status;
 
     public CondicaoPgto() {
     }
 
-    public CondicaoPgto(int id, String descricaoCondicao, int numeroParcelas, int diasPrimeiraParcela, int diasEntreParcela, char status) {
+    public CondicaoPgto(int id, String descricaoCondicao, int numeroParcelas, int diasPrimeiraParcela, int diasEntreParcela, String status) {
         this.id = id;
         this.descricaoCondicao = descricaoCondicao;
         this.numeroParcelas = numeroParcelas;
@@ -60,11 +60,11 @@ public class CondicaoPgto {
         this.diasEntreParcela = diasEntreParcela;
     }
 
-    public char getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(char status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
