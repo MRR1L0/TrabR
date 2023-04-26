@@ -18,14 +18,14 @@ public class ControlerBuscaProduto implements ActionListener {
 
     @Override
 
-    public void actionPerformed(ActionEvent acao) {
-
-        if (acao.getSource() == this.formBusProduto.getjButtonCarregar()) {
-
-        } else if (acao.getSource() == this.formBusProduto.getjButtonSair()) {
-
+    public void actionPerformed(ActionEvent evento) {
+        if (evento.getSource() == this.formBusProduto.getjButtonCarregar()) {
+            if (this.formBusProduto.getjTableBuscas().getValueAt(this.formBusProduto.getjTableBuscas().getSelectedRow(), 0) != null) {
+                ControlerCadastroBairro.codigo = (int) this.formBusProduto.getjTableBuscas().getValueAt(this.formBusProduto.getjTableBuscas().getSelectedRow(), 0);
+                formBusProduto.dispose();
+            } else if (evento.getSource() == formBusProduto.getjButtonSair()) {
+                formBusProduto.dispose();
+            }
         }
-
     }
-
 }

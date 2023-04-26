@@ -14,9 +14,8 @@ import javax.swing.JTextField;
 public class CadastroMarca extends javax.swing.JFrame {
 
     public CadastroMarca() {
-        
         initComponents();
-    }   
+    }
 
     public JButton getjButtonBuscar() {
         return jButtonBuscar;
@@ -121,38 +120,35 @@ public class CadastroMarca extends javax.swing.JFrame {
     public void setjTextId(JTextField jTextId) {
         this.jTextId = jTextId;
     }
-    
-    public void ativa(boolean estadoComponente){
+
+    public void ativa(boolean estadoComponente) {
         jButtonNovo.setEnabled(estadoComponente);
         jButtonCancelar.setEnabled(!estadoComponente);
         jButtonGravar.setEnabled(!estadoComponente);
         jButtonBuscar.setEnabled(estadoComponente);
-        jButtonSair.setEnabled(estadoComponente);  
+        jButtonSair.setEnabled(estadoComponente);
     }
-    
-    
-    public void ligaDesliga (boolean estadoComponente){
-        
+
+    public void ligaDesliga(boolean estadoComponente) {
+
         Component[] componentes = jPanelDados.getComponents();
-                for (Component componente : componentes){
-                   if (componente instanceof JTextField){
-                    ((JTextField) componente).setText ("");
-                   }else if (componente instanceof JFormattedTextField){
-                           ((JFormattedTextField) componente).setText("");
-                   }else if (componente instanceof JTextArea){
-                       ((JTextArea) componente).setText ("");
-                           }else if (componente instanceof JComboBox){
-                            ((JComboBox) componente).setSelectedIndex (0);
-                   }else if (componente instanceof JScrollPane){
-                           //((JScrollPane) componente).getClass();
-                         
-                           }   
-                           componente.setEnabled(estadoComponente);
-                   }
-                }
-    
-    
-    
+        for (Component componente : componentes) {
+            if (componente instanceof JTextField) {
+                ((JTextField) componente).setText("");
+            } else if (componente instanceof JFormattedTextField) {
+                ((JFormattedTextField) componente).setText("");
+            } else if (componente instanceof JTextArea) {
+                ((JTextArea) componente).setText("");
+            } else if (componente instanceof JComboBox) {
+                ((JComboBox) componente).setSelectedIndex(0);
+            } else if (componente instanceof JScrollPane) {
+                //((JScrollPane) componente).getClass();
+
+            }
+            componente.setEnabled(estadoComponente);
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -309,15 +305,15 @@ public class CadastroMarca extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
-      
+
     }//GEN-LAST:event_jButtonNovoActionPerformed
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-       
+
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jButtonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGravarActionPerformed
-      
+
     }//GEN-LAST:event_jButtonGravarActionPerformed
 
     private void jTextDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextDescricaoActionPerformed

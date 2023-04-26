@@ -14,6 +14,22 @@ public class FormBusEndereco extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getjButtonCarregar() {
+        return jButtonCarregar;
+    }
+
+    public void setjButtonCarregar(JButton jButtonCarregar) {
+        this.jButtonCarregar = jButtonCarregar;
+    }
+
+    public JButton getjButtonSair() {
+        return jButtonSair;
+    }
+
+    public void setjButtonSair(JButton jButtonSair) {
+        this.jButtonSair = jButtonSair;
+    }
+
     public JLabel getjLabelTitulo() {
         return jLabelTitulo;
     }
@@ -54,46 +70,6 @@ public class FormBusEndereco extends javax.swing.JFrame {
         this.jScrollPane1 = jScrollPane1;
     }
 
-    public JRootPane getRootPane() {
-        return rootPane;
-    }
-
-    public void setRootPane(JRootPane rootPane) {
-        this.rootPane = rootPane;
-    }
-
-    public boolean isRootPaneCheckingEnabled() {
-        return rootPaneCheckingEnabled;
-    }
-
-    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
-        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
-    }
-
-    public AccessibleContext getAccessibleContext() {
-        return accessibleContext;
-    }
-
-    public void setAccessibleContext(AccessibleContext accessibleContext) {
-        this.accessibleContext = accessibleContext;
-    }
-
-    public JButton getjButtonCarregar() {
-        return jButtonCarregar;
-    }
-
-    public void setjButtonCarregar(JButton jButtonCarregar) {
-        this.jButtonCarregar = jButtonCarregar;
-    }
-
-    public JButton getjButtonSair() {
-        return jButtonSair;
-    }
-
-    public void setjButtonSair(JButton jButtonSair) {
-        this.jButtonSair = jButtonSair;
-    }
-
     public JTable getjTableBuscas() {
         return jTableBuscas;
     }
@@ -101,8 +77,8 @@ public class FormBusEndereco extends javax.swing.JFrame {
     public void setjTableBuscas(JTable jTableBuscas) {
         this.jTableBuscas = jTableBuscas;
     }
-    
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

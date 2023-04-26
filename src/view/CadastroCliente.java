@@ -13,7 +13,6 @@ import javax.swing.JTextField;
 public class CadastroCliente extends javax.swing.JFrame {
 
     public CadastroCliente() {
-
         initComponents();
     }
 
@@ -384,6 +383,8 @@ public class CadastroCliente extends javax.swing.JFrame {
     public void setjTextFieldNome(JTextField jTextFieldNome) {
         this.jTextFieldNome = jTextFieldNome;
     }
+
+    
 
     public void ativa(boolean estadoComponente) {
         jButtonNovo.setEnabled(estadoComponente);
