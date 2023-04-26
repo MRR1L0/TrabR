@@ -20,6 +20,14 @@ public class CadastroColaborador extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JTextField getjTextFieldCidade() {
+        return jTextFieldCidade;
+    }
+
+    public void setjTextFieldCidade(JTextField jTextFieldCidade) {
+        this.jTextFieldCidade = jTextFieldCidade;
+    }
+
     public JButton getjButton1() {
         return jButton1;
     }
@@ -229,11 +237,11 @@ public class CadastroColaborador extends javax.swing.JFrame {
     }
 
     public JTextField getjTextField1() {
-        return jTextField1;
+        return jTextFieldCidade;
     }
 
     public void setjTextField1(JTextField jTextField1) {
-        this.jTextField1 = jTextField1;
+        this.jTextFieldCidade = jTextField1;
     }
 
     public JTextField getjTextFieldBairro() {
@@ -447,7 +455,7 @@ public class CadastroColaborador extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldCidade = new javax.swing.JTextField();
         jLabelBairro = new javax.swing.JLabel();
         jTextFieldBairro = new javax.swing.JTextField();
         jLabelComplemento = new javax.swing.JLabel();
@@ -541,7 +549,7 @@ public class CadastroColaborador extends javax.swing.JFrame {
 
         jLabel2.setText("Cidade");
 
-        jTextField1.setEditable(false);
+        jTextFieldCidade.setEditable(false);
 
         jLabelBairro.setText("Bairro");
 
@@ -599,7 +607,7 @@ public class CadastroColaborador extends javax.swing.JFrame {
                                     .addGap(20, 20, 20)
                                     .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField1)))
+                                        .addComponent(jTextFieldCidade)))
                                 .addComponent(jLabelLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jTextFieldLogradouro))
                             .addGap(20, 20, 20)
@@ -662,7 +670,7 @@ public class CadastroColaborador extends javax.swing.JFrame {
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jFormattedTextFieldCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextFieldBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -827,8 +835,8 @@ public class CadastroColaborador extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelTitulo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaObserv;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextFieldBairro;
+    private javax.swing.JTextField jTextFieldCidade;
     private javax.swing.JTextField jTextFieldComplemento;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldId;

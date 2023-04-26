@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.Component;
-import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;

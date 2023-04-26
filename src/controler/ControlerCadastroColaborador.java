@@ -2,14 +2,22 @@ package controler;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 import javax.swing.JOptionPane;
+import model.DAO.BairroDAO;
+import model.DAO.CidadeDAO;
+import model.DAO.EnderecoDAO;
 import model.bo.Colaborador;
+import model.bo.Endereco;
 import view.CadastroColaborador;
 import view.FormBusColaborador;
 
 public class ControlerCadastroColaborador implements ActionListener {
 
     CadastroColaborador telaCadColaborador;
+    CidadeDAO cidadeDAO;
+    BairroDAO bairroDAO;
+    EnderecoDAO enderecoDAO;
 
     public ControlerCadastroColaborador(CadastroColaborador parTelaCadColaborador) {
 
@@ -53,7 +61,19 @@ public class ControlerCadastroColaborador implements ActionListener {
 
                 Colaborador colaborador = new Colaborador();
                 colaborador.setLogin(telaCadColaborador.getjTextFieldLogin().getText());
-
+                colaborador.setSenha(telaCadColaborador.getjLabelSenha().getText());
+                colaborador.setDtCadastro(new Date(telaCadColaborador.getjLabelDatCadastro().getText()));
+                colaborador.setComplementoEndereco(telaCadColaborador.getjLabelComplemento().getText());
+                colaborador.setEmail(telaCadColaborador.getjTextFieldEmail().getText());
+                colaborador.setFone1(telaCadColaborador.getjLabelFone1().getText());
+                colaborador.setFone2(telaCadColaborador.getjLabelFone2().getText());
+                colaborador.setNome(telaCadColaborador.getjLabelNome().getText());
+                colaborador.setObservacao(telaCadColaborador.getjLabelObserv().getText());
+                colaborador.setStatus(telaCadColaborador.getjComboBoxStatus().getSelectedItem().toString());
+                var cidade = telaCadColaborador.getjTextFieldCidade().getText();
+                var bairro = telaCadColaborador.getjLabelBairro().getText();
+                var cep = telaCadColaborador.getjFormattedTextFieldCep().getText();
+                colaborador.setEndereco(buscaEndereco(cidade, bairro, cep));
                 telaCadColaborador.ativa(true);
                 telaCadColaborador.ligaDesliga(false);
             }
@@ -68,5 +88,13 @@ public class ControlerCadastroColaborador implements ActionListener {
             telaCadColaborador.dispose();
 
         }
+    }
+     private Endereco buscaEndereco(String DescricaoCidade, String DescricaoBairro, String cep) {
+        var cidade = cidadeDAO.search(DescricaoCidade);
+        var bairro = bairroDAO.search(DescricaoBairro);
+        if(cidade != null && bairro != null){
+            return enderecoDAO.search(DescricaoCidade, DescricaoBairro);
+        }
+        return enderecoDAO.create(new Endereco(telaCadColaborador.getjLabelLogradouro().getText(), telaCadColaborador.getjLabelCep().getText(), bairro, cidade));
     }
 }

@@ -148,7 +148,7 @@
                                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel2" min="-2" pref="58" max="-2" attributes="0"/>
-                                          <Component id="jTextField1" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldCidade" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Component id="jLabelLogradouro" alignment="0" min="-2" pref="143" max="-2" attributes="0"/>
@@ -229,7 +229,7 @@
                       <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jFormattedTextFieldCep" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldCidade" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextFieldBairro" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -387,7 +387,7 @@
             <Property name="text" type="java.lang.String" value="Cidade"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="jTextFieldCidade">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
