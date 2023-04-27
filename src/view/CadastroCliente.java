@@ -581,13 +581,9 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         jLabelCidade.setText("Cidade");
 
-        jTextFieldCidade.setEditable(false);
-
         jLabelLogradouro.setText("Logradouro ");
 
         jLabelBairro.setText("Bairro");
-
-        jTextFieldBairro.setEditable(false);
 
         jTextFieldLogradouro.setEditable(false);
 

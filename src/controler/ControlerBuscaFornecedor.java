@@ -21,7 +21,7 @@ public class ControlerBuscaFornecedor implements ActionListener {
     public void actionPerformed(ActionEvent evento) {
         if (evento.getSource() == this.formBusFornecedor.getjButtonCarregar()) {
             if (this.formBusFornecedor.getjTableBuscas().getValueAt(this.formBusFornecedor.getjTableBuscas().getSelectedRow(), 0) != null) {
-                ControlerCadastroBairro.codigo = (int) this.formBusFornecedor.getjTableBuscas().getValueAt(this.formBusFornecedor.getjTableBuscas().getSelectedRow(), 0);
+                ControlerCadastroFornecedor.codigo = (int) this.formBusFornecedor.getjTableBuscas().getValueAt(this.formBusFornecedor.getjTableBuscas().getSelectedRow(), 0);
                 formBusFornecedor.dispose();
             } else if (evento.getSource() == formBusFornecedor.getjButtonSair()) {
                 formBusFornecedor.dispose();

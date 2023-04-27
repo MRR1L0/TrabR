@@ -14,6 +14,7 @@ public class ControlerCadastroBairro implements ActionListener {
     CadastroBairro telaCadBairro;
     public static int codigo = 0;
 
+
     public ControlerCadastroBairro(CadastroBairro parTelaCadBairro) {
 
         this.telaCadBairro = parTelaCadBairro;

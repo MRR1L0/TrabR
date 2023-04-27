@@ -32,7 +32,7 @@ public class ControlerBuscaCondicaoPagamento implements ActionListener {
     public void actionPerformed(ActionEvent evento) {
         if (evento.getSource() == this.formBusCondPgto.getjButtonCarregar()) {
             if (this.formBusCondPgto.getjTableBuscas().getValueAt(this.formBusCondPgto.getjTableBuscas().getSelectedRow(), 0) != null) {
-                ControlerCadastroBairro.codigo = (int) this.formBusCondPgto.getjTableBuscas().getValueAt(this.formBusCondPgto.getjTableBuscas().getSelectedRow(), 0);
+                ControlerCadastroCondicaoPagamento.codigo = (int) this.formBusCondPgto.getjTableBuscas().getValueAt(this.formBusCondPgto.getjTableBuscas().getSelectedRow(), 0);
                 formBusCondPgto.dispose();
             } else if (evento.getSource() == formBusCondPgto.getjButtonSair()) {
                 formBusCondPgto.dispose();
