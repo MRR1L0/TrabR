@@ -538,10 +538,7 @@ public class CadastroProduto extends javax.swing.JFrame {
                                             .addComponent(jLabelEstoqueMin, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
                                             .addComponent(jTextEstoqueMax)
                                             .addComponent(jTextEstoqueMin)))
-                                    .addGroup(jPanelDadosLayout.createSequentialGroup()
-                                        .addComponent(jLabelDatCadastro)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabelMarcaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabelDatCadastro))
                                 .addGap(20, 20, 20)
                                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextValorVenda)
@@ -560,7 +557,9 @@ public class CadastroProduto extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jTextFieldDatCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextFieldMarcaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelMarcaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldMarcaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanelDadosLayout.setVerticalGroup(

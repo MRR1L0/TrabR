@@ -12,7 +12,7 @@ import view.FormBusBairro;
 public class ControlerCadastroBairro implements ActionListener {
 
     CadastroBairro telaCadBairro;
-    public static int codigo;
+    public static int codigo = 0;
 
     public ControlerCadastroBairro(CadastroBairro parTelaCadBairro) {
 
@@ -47,13 +47,11 @@ public class ControlerCadastroBairro implements ActionListener {
             if (telaCadBairro.getjTextDescricao().getText().trim().equalsIgnoreCase("")) {
                 JOptionPane.showMessageDialog(null, "Descrição: Campo com preenchimento obrigatório");
 
-            } else {
+            } else if(codigo == 0){
 
                 Bairro bairro = new Bairro();
                 
                 bairro.setDescricao(telaCadBairro.getjTextDescricao().getText());
-
-                //persistir o obj de bairro criado
                 
                 BairroDAO bairroDAO = new BairroDAO();
                 if (this.telaCadBairro.getjTextId().getText().equalsIgnoreCase("")){

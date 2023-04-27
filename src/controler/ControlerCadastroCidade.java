@@ -3,6 +3,7 @@ package controler;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import model.DAO.CidadeDAO;
 import model.bo.Cidade;
 import view.CadastroCidade;
 import view.FormBusCidade;
@@ -10,6 +11,8 @@ import view.FormBusCidade;
 public class ControlerCadastroCidade implements ActionListener {
 
     CadastroCidade telaCadCidade;
+    CidadeDAO cidadeDAO;
+    public static int codigo;
 
     public ControlerCadastroCidade(CadastroCidade parTelaCadCidade) {
 
@@ -48,7 +51,7 @@ public class ControlerCadastroCidade implements ActionListener {
 
                 Cidade cidade = new Cidade();
                 cidade.setDescricao(telaCadCidade.getjTextDescricao().getText());
-
+                cidadeDAO.create(cidade);
                 telaCadCidade.ativa(true);
                 telaCadCidade.ligaDesliga(false);
 

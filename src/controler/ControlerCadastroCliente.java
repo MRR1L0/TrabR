@@ -2,10 +2,12 @@ package controler;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 import model.DAO.BairroDAO;
 import model.DAO.CidadeDAO;
+import model.DAO.ClienteDAO;
 import model.DAO.EnderecoDAO;
 import model.bo.Cliente;
 import model.bo.Endereco;
@@ -18,6 +20,8 @@ public class ControlerCadastroCliente implements ActionListener {
     CidadeDAO cidadeDAO;
     BairroDAO bairroDAO;
     EnderecoDAO enderecoDAO;
+    ClienteDAO clienteDAO;
+    public static int codigo;
     
 
     public ControlerCadastroCliente(CadastroCliente parTelaCadCliente) {
@@ -74,7 +78,7 @@ public class ControlerCadastroCliente implements ActionListener {
                 cliente.setFone1(telaCadCliente.getjLabelFone1().getText());
                 cliente.setFone2(telaCadCliente.getjLabelFone2().getText());
                 cliente.setEmail(telaCadCliente.getjLabelEmail().getText());
-                cliente.setDtCadastro(telaCadCliente.getjLabelDatCadastro().getText());
+                cliente.setDtCadastro(getDataCadastro());
                 cliente.setComplementoEndereco(telaCadCliente.getjTextFieldEmail().getText());
                 cliente.setObservacao(telaCadCliente.getjLabelObserv().getText());
                 cliente.setStatus(telaCadCliente.getjComboBoxSexo().getSelectedItem().toString());
@@ -82,7 +86,8 @@ public class ControlerCadastroCliente implements ActionListener {
                 var bairro = telaCadCliente.getjLabelBairro().getText();
                 var cep = telaCadCliente.getjFormattedTextFieldCep().getText();
                 cliente.setEndereco(buscaEndereco(cidade, bairro, cep));
-
+                
+                clienteDAO.create(cliente);
                 //persistir o obj de bairro criado
                 telaCadCliente.ativa(true);
                 telaCadCliente.ligaDesliga(false);
@@ -107,5 +112,13 @@ public class ControlerCadastroCliente implements ActionListener {
             return enderecoDAO.search(DescricaoCidade, DescricaoBairro);
         }
         return enderecoDAO.create(new Endereco(telaCadCliente.getjLabelLogradouro().getText(), telaCadCliente.getjLabelCep().getText(), bairro, cidade));
+    }
+
+    private String getDataCadastro() {
+       LocalDateTime currentLocalDateTime = LocalDateTime.now();
+
+       DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+ 
+       return currentLocalDateTime.format(dateTimeFormatter);
     }
 }

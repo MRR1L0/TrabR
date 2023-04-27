@@ -1,5 +1,7 @@
 package model.bo;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public abstract class Pessoa {
@@ -16,15 +18,16 @@ public abstract class Pessoa {
     private Endereco endereco;
 
     public Pessoa() {
+        this.dtCadastro = getDataCastroAtual();
     }
 
-    public Pessoa( String nome, String fone1, String fone2, String email, String dtCadastro, String complementoEndereco, 
+    public Pessoa( String nome, String fone1, String fone2, String email, String complementoEndereco, 
             String observacao, String status, Endereco endereco) {
         this.nome = nome;
         this.fone1 = fone1;
         this.fone2 = fone2;
         this.email = email;
-        this.dtCadastro = dtCadastro;
+         this.dtCadastro = getDataCastroAtual();
         this.complementoEndereco = complementoEndereco;
         this.observacao = observacao;
         this.status = status;
@@ -114,5 +117,13 @@ public abstract class Pessoa {
      
     public String sqlConection() {
         return "nome, fone1, fone2, email, dtCadastro, complementoEndereco, observacao, status, endereco ,";    }
+
+    private String getDataCastroAtual() {
+        LocalDateTime currentLocalDateTime = LocalDateTime.now();
+
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+ 
+        return currentLocalDateTime.format(dateTimeFormatter);
+    }
     
 }

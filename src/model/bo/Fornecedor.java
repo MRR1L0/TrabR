@@ -1,6 +1,5 @@
 package model.bo;
 
-import java.util.Date;
 
 public class Fornecedor extends Pessoa {
     
@@ -22,7 +21,7 @@ public class Fornecedor extends Pessoa {
     }
 
     public Fornecedor(String cnpj, String inscEstadual, String contato, String razaoSocial, String cpf, String rg, int id, String nome, String fone1, String fone2, String email, String dtCadastro, String complementoEndereco, String observacao, String status, Endereco endereco) {
-        super( nome, fone1, fone2, email, dtCadastro, complementoEndereco, observacao, status, endereco);
+        super( nome, fone1, fone2, email, complementoEndereco, observacao, status, endereco);
         this.cnpj = cnpj;
         this.inscEstadual = inscEstadual;
         this.contato = contato;

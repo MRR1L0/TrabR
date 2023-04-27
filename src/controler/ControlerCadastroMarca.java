@@ -3,13 +3,16 @@ package controler;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import model.DAO.MarcaDAO;
 import model.bo.Marca;
 import view.CadastroMarca;
 import view.FormBusMarca;
 
 public class ControlerCadastroMarca implements ActionListener {
-
+    
+    MarcaDAO marcaDAO;
     CadastroMarca telaCadMarca;
+    public static int codigo;
 
     public ControlerCadastroMarca(CadastroMarca parTelaCadMarca) {
 
@@ -46,7 +49,7 @@ public class ControlerCadastroMarca implements ActionListener {
 
                 Marca marca = new Marca();
                 marca.setDescricao(telaCadMarca.getjTextDescricao().getText());
-
+                marcaDAO.create(marca);
                 telaCadMarca.ativa(true);
                 telaCadMarca.ligaDesliga(false);
 

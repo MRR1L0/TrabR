@@ -33,7 +33,7 @@ public class ControlerBuscaCliente implements ActionListener {
         //
         if (evento.getSource() == this.formBusCliente.getjButtonCarregar()) {
             if (this.formBusCliente.getjTableBuscas().getValueAt(this.formBusCliente.getjTableBuscas().getSelectedRow(), 0) != null) {
-                ControlerCadastroBairro.codigo = (int) this.formBusCliente.getjTableBuscas().getValueAt(this.formBusCliente.getjTableBuscas().getSelectedRow(), 0);
+                ControlerCadastroCliente.codigo = (int) this.formBusCliente.getjTableBuscas().getValueAt(this.formBusCliente.getjTableBuscas().getSelectedRow(), 0);
                 formBusCliente.dispose();
 
             } else if (evento.getSource() == formBusCliente.getjButtonSair()) {

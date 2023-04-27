@@ -3,12 +3,15 @@ package controler;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import model.DAO.CondicaoPagamentoDAO;
 import view.CondicaoPgto;
 import view.FormBusCondPgto;
 
 public class ControlerCadastroCondicaoPagamento implements ActionListener {
 
     CondicaoPgto telaCondicaoPgto;
+    CondicaoPagamentoDAO condicaoPgtoDAO;
+    public static int codigo;
 
     public ControlerCadastroCondicaoPagamento(CondicaoPgto parTelaCadCondicaoPgto) {
 
@@ -48,6 +51,7 @@ public class ControlerCadastroCondicaoPagamento implements ActionListener {
                 condicaoPagamento.setDiasEntreParcela(0);
                 condicaoPagamento.setDiasPrimeiraParcela(0);
                 condicaoPagamento.setStatus(telaCondicaoPgto.getjComboStatus().getSelectedItem().toString());
+                condicaoPgtoDAO.create(condicaoPagamento);
                 telaCondicaoPgto.ativa(true);
                 telaCondicaoPgto.ligaDesliga(false);
 

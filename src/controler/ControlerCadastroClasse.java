@@ -3,6 +3,7 @@ package controler;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import model.DAO.ClasseDAO;
 import model.bo.Classe;
 import view.CadastroClasse;
 import view.FormBusClasse;
@@ -10,7 +11,9 @@ import view.FormBusClasse;
 public class ControlerCadastroClasse implements ActionListener {
 
     CadastroClasse telaCadClasse;
-
+    ClasseDAO classeDAO;
+    public static int codigo;
+    
     public ControlerCadastroClasse(CadastroClasse parTelaCadClasse) {
 
         this.telaCadClasse = parTelaCadClasse;
@@ -48,6 +51,7 @@ public class ControlerCadastroClasse implements ActionListener {
 
                 Classe classe = new Classe();
                 classe.setDescricao(telaCadClasse.getjTextDescricao().getText());
+                classeDAO.create(classe);
 
                 telaCadClasse.ativa(true);
                 telaCadClasse.ligaDesliga(false);

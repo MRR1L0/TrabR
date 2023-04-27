@@ -10,6 +10,7 @@ import view.FormBusCidade;
 public class ControlerBuscaCidade implements ActionListener {
 
     FormBusCidade formBusCidade;
+    
 
     public ControlerBuscaCidade(FormBusCidade formBusCidade) {
 
@@ -33,7 +34,7 @@ public class ControlerBuscaCidade implements ActionListener {
     public void actionPerformed(ActionEvent evento) {
         if (evento.getSource() == this.formBusCidade.getjButtonCarregar()) {
             if (this.formBusCidade.getjTableBuscas().getValueAt(this.formBusCidade.getjTableBuscas().getSelectedRow(), 0) != null) {
-                ControlerCadastroBairro.codigo = (int) this.formBusCidade.getjTableBuscas().getValueAt(this.formBusCidade.getjTableBuscas().getSelectedRow(), 0);
+                ControlerCadastroCidade.codigo = (int) this.formBusCidade.getjTableBuscas().getValueAt(this.formBusCidade.getjTableBuscas().getSelectedRow(), 0);
                 formBusCidade.dispose();
             } else if (evento.getSource() == formBusCidade.getjButtonSair()) {
                 formBusCidade.dispose();

@@ -12,8 +12,8 @@ public class Produto {
     private String undCompra;
     private String undVanda;
     private int fatorConversao;
-    private char status;
-    private Date dataCadastro;
+    private String status;
+    private String dataCadastro;
     private String barraEntrada;
     private String barraSaida;
     private float estoqueMinino;
@@ -24,7 +24,7 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(int id, String descricao, float valorCompra, float valorVenda, String undCompra, String undVanda, int fatorConversao, char status, Date dataCadastro, String barraEntrada, String barraSaida, float estoqueMinino, float estoqueMaximo) {
+    public Produto(int id, String descricao, float valorCompra, float valorVenda, String undCompra, String undVanda, int fatorConversao, String status, String dataCadastro, String barraEntrada, String barraSaida, float estoqueMinino, float estoqueMaximo) {
         this.id = id;
         this.descricao = descricao;
         this.valorCompra = valorCompra;
@@ -114,19 +114,19 @@ public class Produto {
         this.fatorConversao = fatorConversao;
     }
 
-    public char getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(char status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
-    public Date getDataCadastro() {
+    public String getDataCadastro() {
         return dataCadastro;
     }
 
-    public void setDataCadastro(Date dataCadastro) {
+    public void setDataCadastro(String dataCadastro) {
         this.dataCadastro = dataCadastro;
     }
 

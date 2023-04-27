@@ -13,7 +13,7 @@ public class Colaborador extends Pessoa {
 
 
     public Colaborador(String login, String senha, int id, String nome, String fone1, String fone2, String email, String dtCadastro, String complementoEndereco, String observacao, String status, Endereco endereco) {
-        super( nome, fone1, fone2, email, dtCadastro, complementoEndereco, observacao, status, endereco);
+        super( nome, fone1, fone2, email, complementoEndereco, observacao, status, endereco);
         this.login = login;
         this.senha = senha;
     }

@@ -2,10 +2,13 @@ package controler;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import model.DAO.BairroDAO;
 import model.DAO.CidadeDAO;
+import model.DAO.ColaboradorDAO;
 import model.DAO.EnderecoDAO;
 import model.bo.Colaborador;
 import model.bo.Endereco;
@@ -18,6 +21,8 @@ public class ControlerCadastroColaborador implements ActionListener {
     CidadeDAO cidadeDAO;
     BairroDAO bairroDAO;
     EnderecoDAO enderecoDAO;
+    ColaboradorDAO colaboradorDAO;
+    public static int codigo;
 
     public ControlerCadastroColaborador(CadastroColaborador parTelaCadColaborador) {
 
@@ -62,7 +67,7 @@ public class ControlerCadastroColaborador implements ActionListener {
                 Colaborador colaborador = new Colaborador();
                 colaborador.setLogin(telaCadColaborador.getjTextFieldLogin().getText());
                 colaborador.setSenha(telaCadColaborador.getjLabelSenha().getText());
-                colaborador.setDtCadastro(telaCadColaborador.getjLabelDatCadastro().getText());
+                colaborador.setDtCadastro(getDataCadastro());
                 colaborador.setComplementoEndereco(telaCadColaborador.getjLabelComplemento().getText());
                 colaborador.setEmail(telaCadColaborador.getjTextFieldEmail().getText());
                 colaborador.setFone1(telaCadColaborador.getjLabelFone1().getText());
@@ -74,6 +79,9 @@ public class ControlerCadastroColaborador implements ActionListener {
                 var bairro = telaCadColaborador.getjLabelBairro().getText();
                 var cep = telaCadColaborador.getjFormattedTextFieldCep().getText();
                 colaborador.setEndereco(buscaEndereco(cidade, bairro, cep));
+                
+                colaboradorDAO.create(colaborador);
+                
                 telaCadColaborador.ativa(true);
                 telaCadColaborador.ligaDesliga(false);
             }
@@ -96,5 +104,13 @@ public class ControlerCadastroColaborador implements ActionListener {
             return enderecoDAO.search(DescricaoCidade, DescricaoBairro);
         }
         return enderecoDAO.create(new Endereco(telaCadColaborador.getjLabelLogradouro().getText(), telaCadColaborador.getjLabelCep().getText(), bairro, cidade));
+    }
+
+    private String getDataCadastro() {
+       LocalDateTime currentLocalDateTime = LocalDateTime.now();
+
+       DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+ 
+       return currentLocalDateTime.format(dateTimeFormatter);
     }
 }

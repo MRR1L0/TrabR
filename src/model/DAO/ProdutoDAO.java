@@ -25,7 +25,7 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto> {
             pstm.setString(4, objeto.getUndCompra());
             pstm.setString(5, objeto.getUndVanda());
             pstm.setDouble(6, objeto.getFatorConversao());
-            pstm.setString(7, Character.toString(objeto.getStatus()));
+            pstm.setString(7, objeto.getStatus());
             pstm.setObject(8, objeto.getDataCadastro());
             pstm.setString(9, objeto.getBarraEntrada());
             pstm.setString(10, objeto.getBarraSaida());
@@ -65,8 +65,8 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto> {
                 produto.setUndCompra(rst.getString("undCompra"));
                 produto.setUndVanda(rst.getString("undVenda"));
                 produto.setFatorConversao(rst.getInt("fatorConversao"));
-                produto.setStatus((char) rst.getInt("status"));
-                produto.setDataCadastro(rst.getDate("dataCadastro"));
+                produto.setStatus(rst.getString("status"));
+                produto.setDataCadastro(rst.getString("dataCadastro"));
                 produto.setBarraEntrada(rst.getString("barraEntrada"));
                 produto.setBarraSaida(rst.getString("barraSaida"));
                 produto.setEstoqueMinino(rst.getInt("estoqueMinimo"));
@@ -107,8 +107,8 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto> {
                 produto.setUndCompra(rst.getString("undCompra"));
                 produto.setUndVanda(rst.getString("undVenda"));
                 produto.setFatorConversao(rst.getInt("fatorConversao"));
-                produto.setStatus((char) rst.getInt("status"));
-                produto.setDataCadastro(rst.getDate("dataCadastro"));
+                produto.setStatus(rst.getString("status"));
+                produto.setDataCadastro(rst.getString("dataCadastro"));
                 produto.setBarraEntrada(rst.getString("barraEntrada"));
                 produto.setBarraSaida(rst.getString("barraSaida"));
                 produto.setEstoqueMinino(rst.getInt("estoqueMinimo"));
@@ -149,8 +149,8 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto> {
                 produto.setUndCompra(rst.getString("undCompra"));
                 produto.setUndVanda(rst.getString("undVenda"));
                 produto.setFatorConversao(rst.getInt("fatorConversao"));
-                produto.setStatus((char) rst.getInt("status"));
-                produto.setDataCadastro(rst.getDate("dataCadastro"));
+                produto.setStatus(rst.getString("status"));
+                produto.setDataCadastro(rst.getString("dataCadastro"));
                 produto.setBarraEntrada(rst.getString("barraEntrada"));
                 produto.setBarraSaida(rst.getString("barraSaida"));
                 produto.setEstoqueMinino(rst.getInt("estoqueMinimo"));

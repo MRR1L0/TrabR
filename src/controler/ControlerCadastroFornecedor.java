@@ -2,7 +2,14 @@ package controler;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
+import model.DAO.BairroDAO;
+import model.DAO.CidadeDAO;
+import model.DAO.EnderecoDAO;
+import model.DAO.FornecedorDAO;
+import model.bo.Endereco;
 import model.bo.Fornecedor;
 import view.CadastroFornecedor;
 import view.FormBusFornecedor;
@@ -10,6 +17,11 @@ import view.FormBusFornecedor;
 public class ControlerCadastroFornecedor implements ActionListener {
 
     CadastroFornecedor telaCadFornecedor;
+    CidadeDAO cidadeDAO;
+    BairroDAO bairroDAO;
+    EnderecoDAO enderecoDAO;
+    FornecedorDAO fornecedorDAO;
+    public static int codigo;
 
     public ControlerCadastroFornecedor(CadastroFornecedor parTelaCadFornecedor) {
 
@@ -63,9 +75,29 @@ public class ControlerCadastroFornecedor implements ActionListener {
 
                 var fornecedor = new Fornecedor();
                 fornecedor.setCnpj(telaCadFornecedor.getjFormattedTextFieldCnpj().getText());
-
+                fornecedor.setInscEstadual(telaCadFornecedor.getjFormattedTextFieldInscricaoEstadual().getText());
+                fornecedor.setContato(telaCadFornecedor.getjTextFieldContato().getText());
+                fornecedor.setRazaoSocial(telaCadFornecedor.getjTextFieldRazaoSocial().getText());
+                fornecedor.setRg(telaCadFornecedor.getjFormattedTextFieldRg().getText());
+                fornecedor.setNome(telaCadFornecedor.getjTextFieldNome().getText());
+                fornecedor.setFone1(telaCadFornecedor.getjFormattedTextFieldFone1().getText());
+                fornecedor.setFone2(telaCadFornecedor.getjFormattedTextFieldFone2().getText());
+                fornecedor.setEmail(telaCadFornecedor.getjTextFieldEmail().getText());
+                fornecedor.setComplementoEndereco(telaCadFornecedor.getjTextFieldComplemento().getText());
+                fornecedor.setObservacao(telaCadFornecedor.getjTextAreaObserv().getText());
+                fornecedor.setStatus(telaCadFornecedor.getjComboBoxStatus().getSelectedItem().toString());          
+                fornecedor.setDtCadastro(LocalDateTime.now().toString());
+                var cidade = telaCadFornecedor.getjLabelCidade().getText();
+                var bairro = telaCadFornecedor.getjLabelBairro().getText();
+                var cep = telaCadFornecedor.getjFormattedTextFieldCep().getText();
+                fornecedor.setEndereco(buscaEndereco(cidade, bairro, cep));
+                
+                fornecedorDAO.create(fornecedor);
+                
                 telaCadFornecedor.ativa(true);
                 telaCadFornecedor.ligaDesliga(false);
+                
+                
 
             }
 
@@ -79,5 +111,14 @@ public class ControlerCadastroFornecedor implements ActionListener {
             telaCadFornecedor.dispose();
 
         }
+    }
+    
+    private Endereco buscaEndereco(String DescricaoCidade, String DescricaoBairro, String cep) {
+        var cidade = cidadeDAO.search(DescricaoCidade);
+        var bairro = bairroDAO.search(DescricaoBairro);
+        if(cidade != null && bairro != null){
+            return enderecoDAO.search(DescricaoCidade, DescricaoBairro);
+        }
+        return enderecoDAO.create(new Endereco(telaCadFornecedor.getjLabelLogradouro().getText(), telaCadFornecedor.getjLabelCep().getText(), bairro, cidade));
     }
 }
