@@ -59,7 +59,7 @@ public class ControlerCadastroEndereco implements ActionListener {
                 var cidade = telaCadEndereco.getjTextCidade().getText();
                 endereco.setBairro(buscaBairro(bairro));
                 endereco.setCidade(buscaCidade(cidade));
-                endereco.setLogradouro(telaCadEndereco.getjTextLogradouro().getText());
+                endereco.setCep(telaCadEndereco.getjFormattedTextCep().getText());
                 
                 EnderecoDAO enderecoDAO = new EnderecoDAO();
                 enderecoDAO.create(endereco);

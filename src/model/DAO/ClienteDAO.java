@@ -24,12 +24,12 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
             pstm.setString(3, objeto.getFone2());
             pstm.setString(4, objeto.getComplementoEndereco());
             pstm.setString(5, objeto.getEmail());
-            pstm.setObject(6, objeto.getDtCadastro());
+            pstm.setString(6, objeto.getDtCadastro());
             pstm.setString(7, objeto.getObservacao());
             pstm.setString(8, objeto.getStatus());
             pstm.setString(9, objeto.getCpf());
             pstm.setString(10, objeto.getRg());
-            pstm.setObject(11, objeto.getDtNascimento());
+            pstm.setString(11, objeto.getDtNascimento());
             pstm.setString(12, objeto.getSexo());
             pstm.setInt(13, objeto.getEndereco().getId());
 

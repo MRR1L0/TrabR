@@ -525,11 +525,7 @@ public class CadastroColaborador extends javax.swing.JFrame {
 
         jLabel2.setText("Cidade");
 
-        jTextFieldCidade.setEditable(false);
-
         jLabelBairro.setText("Bairro");
-
-        jTextFieldBairro.setEditable(false);
 
         jLabelComplemento.setText("Complemento");
 

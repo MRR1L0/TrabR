@@ -101,14 +101,18 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT endereco.id, endereco.cep, endereco.logradouro from endereco where endereco.cidade = ? and endereco.bairro = ?";
-
+        String sql = "SELECT endereco.id, endereco.cep, endereco.logradouro, cidade.descricao, bairro.descricao\n" +
+                    "FROM endereco\n" +
+                    "INNER JOIN cidade ON cidade.id = endereco.cidade_id\n" +
+                    "INNER JOIN bairro ON bairro.id = endereco.bairro_id\n" +
+                    "WHERE cidade.descricao = ? AND bairro.descricao = ?";
         PreparedStatement pstm = null;
         ResultSet rst = null;
 
         try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, cidade);
-            pstm.setString(1, bairro);
+            pstm = conexao.prepareStatement(sql);
+            pstm.setString(1, cidade);
+            pstm.setString(2, bairro);
             rst = pstm.executeQuery();
             Endereco endereco = new Endereco();
 

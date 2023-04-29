@@ -64,7 +64,7 @@ public class CidadeDAO implements InterfaceDAO<Cidade> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, descricao);
+            pstm.setString(1, descricao);
             rst = pstm.executeQuery();
             Cidade cidade = new Cidade();
 
