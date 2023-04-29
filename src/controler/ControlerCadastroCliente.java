@@ -68,18 +68,18 @@ public class ControlerCadastroCliente implements ActionListener {
                 cliente.setCpf(telaCadCliente.getjFormattedCpf().getText());
                 
                 cliente.setRg(telaCadCliente.getjFormattedRg().getText());
-                cliente.setDtNascimento(telaCadCliente.getjLabelDatNasc().getText());
+                cliente.setDtNascimento(telaCadCliente.getjFormattedDatNasci().getText());
                 cliente.setSexo(telaCadCliente.getjComboBoxSexo().getSelectedItem().toString());
-                cliente.setNome(telaCadCliente.getjLabelNome().getText());
-                cliente.setFone1(telaCadCliente.getjLabelFone1().getText());
-                cliente.setFone2(telaCadCliente.getjLabelFone2().getText());
-                cliente.setEmail(telaCadCliente.getjLabelEmail().getText());
+                cliente.setNome(telaCadCliente.getjTextFieldNome().getText());
+                cliente.setFone1(telaCadCliente.getjFormattedTextFieldFone1().getText());
+                cliente.setFone2(telaCadCliente.getjFormattedTextFieldFone2().getText());
+                cliente.setEmail(telaCadCliente.getjTextFieldEmail().getText());
                 cliente.setDtCadastro(getDataCadastro());
                 cliente.setComplementoEndereco(telaCadCliente.getjTextFieldEmail().getText());
-                cliente.setObservacao(telaCadCliente.getjLabelObserv().getText());
+                cliente.setObservacao(telaCadCliente.getjTextAreaObserv().getText());
                 cliente.setStatus(telaCadCliente.getjComboBoxSexo().getSelectedItem().toString());
-                var cidade = telaCadCliente.getjLabelCidade().getText();
-                var bairro = telaCadCliente.getjLabelBairro().getText();
+                var cidade = telaCadCliente.getjTextFieldCidade().getText();
+                var bairro = telaCadCliente.getjTextFieldBairro().getText();
                 var cep = telaCadCliente.getjFormattedTextFieldCep().getText();
                 cliente.setEndereco(buscaEndereco(cidade, bairro, cep));
                 
@@ -112,7 +112,7 @@ public class ControlerCadastroCliente implements ActionListener {
         if(cidade != null && bairro != null){
             return enderecoDAO.search(DescricaoCidade, DescricaoBairro);
         }
-        return enderecoDAO.create(new Endereco(telaCadCliente.getjLabelLogradouro().getText(), telaCadCliente.getjLabelCep().getText(), bairro, cidade));
+        return enderecoDAO.create(new Endereco(telaCadCliente.getjTextFieldLogradouro().getText(), telaCadCliente.getjFormattedTextFieldCep().getText(), bairro, cidade));
     }
 
     private String getDataCadastro() {

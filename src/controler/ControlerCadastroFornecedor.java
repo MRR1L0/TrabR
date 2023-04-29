@@ -82,8 +82,8 @@ public class ControlerCadastroFornecedor implements ActionListener {
                 fornecedor.setObservacao(telaCadFornecedor.getjTextAreaObserv().getText());
                 fornecedor.setStatus(telaCadFornecedor.getjComboBoxStatus().getSelectedItem().toString());          
                 fornecedor.setDtCadastro(LocalDateTime.now().toString());
-                var cidade = telaCadFornecedor.getjLabelCidade().getText();
-                var bairro = telaCadFornecedor.getjLabelBairro().getText();
+                var cidade = telaCadFornecedor.getjTextFieldCidade().getText();
+                var bairro = telaCadFornecedor.getjTextFieldBairro().getText();
                 var cep = telaCadFornecedor.getjFormattedTextFieldCep().getText();
                 fornecedor.setEndereco(buscaEndereco(cidade, bairro, cep));
                 
@@ -118,6 +118,6 @@ public class ControlerCadastroFornecedor implements ActionListener {
         if(cidade != null && bairro != null){
             return enderecoDAO.search(DescricaoCidade, DescricaoBairro);
         }
-        return enderecoDAO.create(new Endereco(telaCadFornecedor.getjLabelLogradouro().getText(), telaCadFornecedor.getjLabelCep().getText(), bairro, cidade));
+        return enderecoDAO.create(new Endereco(telaCadFornecedor.getjTextFieldLogradouro().getText(), telaCadFornecedor.getjFormattedTextFieldCep().getText(), bairro, cidade));
     }
 }

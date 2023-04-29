@@ -61,17 +61,17 @@ public class ControlerCadastroColaborador implements ActionListener {
 
                 Colaborador colaborador = new Colaborador();
                 colaborador.setLogin(telaCadColaborador.getjTextFieldLogin().getText());
-                colaborador.setSenha(telaCadColaborador.getjLabelSenha().getText());
+                colaborador.setSenha(telaCadColaborador.getjFormattedTextFieldSenha().getText());
                 colaborador.setDtCadastro(getDataCadastro());
-                colaborador.setComplementoEndereco(telaCadColaborador.getjLabelComplemento().getText());
+                colaborador.setComplementoEndereco(telaCadColaborador.getjTextFieldComplemento().getText());
                 colaborador.setEmail(telaCadColaborador.getjTextFieldEmail().getText());
-                colaborador.setFone1(telaCadColaborador.getjLabelFone1().getText());
-                colaborador.setFone2(telaCadColaborador.getjLabelFone2().getText());
-                colaborador.setNome(telaCadColaborador.getjLabelNome().getText());
-                colaborador.setObservacao(telaCadColaborador.getjLabelObserv().getText());
+                colaborador.setFone1(telaCadColaborador.getjFormattedTextFieldFone1().getText());
+                colaborador.setFone2(telaCadColaborador.getjFormattedTextFieldFone2().getText());
+                colaborador.setNome(telaCadColaborador.getjTextFieldNome().getText());
+                colaborador.setObservacao(telaCadColaborador.getjTextAreaObserv().getText());
                 colaborador.setStatus(telaCadColaborador.getjComboBoxStatus().getSelectedItem().toString());
                 var cidade = telaCadColaborador.getjTextFieldCidade().getText();
-                var bairro = telaCadColaborador.getjLabelBairro().getText();
+                var bairro = telaCadColaborador.getjTextFieldBairro().getText();
                 var cep = telaCadColaborador.getjFormattedTextFieldCep().getText();
                 colaborador.setEndereco(buscaEndereco(cidade, bairro, cep));
                 
@@ -103,7 +103,7 @@ public class ControlerCadastroColaborador implements ActionListener {
         if(cidade != null && bairro != null){
             return enderecoDAO.search(DescricaoCidade, DescricaoBairro);
         }
-        return enderecoDAO.create(new Endereco(telaCadColaborador.getjLabelLogradouro().getText(), telaCadColaborador.getjLabelCep().getText(), bairro, cidade));
+        return enderecoDAO.create(new Endereco(telaCadColaborador.getjTextFieldLogradouro().getText(), telaCadColaborador.getjFormattedTextFieldCep().getText(), bairro, cidade));
     }
 
     private String getDataCadastro() {
