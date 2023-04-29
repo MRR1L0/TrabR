@@ -608,8 +608,6 @@ public class CadastroFornecedor extends javax.swing.JFrame {
 
         jLabelBairro.setText("Bairro");
 
-        jTextFieldCidade.setEditable(false);
-
         jLabelLogradouro.setText("Logradouro ");
 
         jTextFieldLogradouro.setEditable(false);
@@ -617,8 +615,6 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         jLabelComplemento.setText("Complemento");
 
         jLabelCidade.setText("Cidade");
-
-        jTextFieldBairro.setEditable(false);
 
         jButton3.setText("-");
 

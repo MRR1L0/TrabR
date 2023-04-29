@@ -482,13 +482,14 @@ public class CadastroProduto extends javax.swing.JFrame {
 
         jLabelMarcaProduto.setText("Marca do Produto");
 
-        jTextFieldMarcaProduto.setEditable(false);
-
         jButtonMarcaProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
+        jButtonMarcaProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMarcaProdutoActionPerformed(evt);
+            }
+        });
 
         jLabelClasse.setText("Classe");
-
-        jTextFieldClasse.setEditable(false);
 
         jButtonClassse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
 
@@ -697,6 +698,10 @@ public class CadastroProduto extends javax.swing.JFrame {
     private void jButtonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGravarActionPerformed
 
     }//GEN-LAST:event_jButtonGravarActionPerformed
+
+    private void jButtonMarcaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMarcaProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonMarcaProdutoActionPerformed
 
     /**
      * @param args the command line arguments

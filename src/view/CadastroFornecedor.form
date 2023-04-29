@@ -482,9 +482,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldCidade">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelLogradouro">
           <Properties>
@@ -509,9 +506,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldBairro">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
