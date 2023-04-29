@@ -28,13 +28,13 @@ public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor> {
             pstm.setObject(6, objeto.getDtCadastro());
             pstm.setString(7, objeto.getObservacao());
             pstm.setString(8, objeto.getStatus());
-            pstm.setString(5, objeto.getCnpj());
-            pstm.setString(5, objeto.getInscEstadual());
-            pstm.setString(0, objeto.getContato());
-            pstm.setString(0, objeto.getRazaoSocial());
-            pstm.setString(9, objeto.getCpf());
-            pstm.setString(10, objeto.getRg());
-            pstm.setInt(11, objeto.getEndereco().getId());
+            pstm.setString(9, objeto.getCnpj());
+            pstm.setString(10, objeto.getInscEstadual());
+            pstm.setString(11, objeto.getContato());
+            pstm.setString(12, objeto.getRazaoSocial());
+            pstm.setString(13, objeto.getCpf());
+            pstm.setString(14, objeto.getRg());
+            pstm.setInt(15, objeto.getEndereco().getId());
 
             pstm.executeUpdate();
         } catch (SQLException ex) {

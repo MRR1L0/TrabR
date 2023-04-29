@@ -3,7 +3,6 @@ package controler;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 import model.DAO.BairroDAO;
 import model.DAO.CidadeDAO;
@@ -17,10 +16,6 @@ import view.FormBusFornecedor;
 public class ControlerCadastroFornecedor implements ActionListener {
 
     CadastroFornecedor telaCadFornecedor;
-    CidadeDAO cidadeDAO;
-    BairroDAO bairroDAO;
-    EnderecoDAO enderecoDAO;
-    FornecedorDAO fornecedorDAO;
     public static int codigo;
 
     public ControlerCadastroFornecedor(CadastroFornecedor parTelaCadFornecedor) {
@@ -92,6 +87,7 @@ public class ControlerCadastroFornecedor implements ActionListener {
                 var cep = telaCadFornecedor.getjFormattedTextFieldCep().getText();
                 fornecedor.setEndereco(buscaEndereco(cidade, bairro, cep));
                 
+                FornecedorDAO fornecedorDAO = new FornecedorDAO();
                 fornecedorDAO.create(fornecedor);
                 
                 telaCadFornecedor.ativa(true);
@@ -114,6 +110,9 @@ public class ControlerCadastroFornecedor implements ActionListener {
     }
     
     private Endereco buscaEndereco(String DescricaoCidade, String DescricaoBairro, String cep) {
+        CidadeDAO cidadeDAO = new CidadeDAO();
+        BairroDAO bairroDAO = new BairroDAO();
+        EnderecoDAO enderecoDAO = new EnderecoDAO();
         var cidade = cidadeDAO.search(DescricaoCidade);
         var bairro = bairroDAO.search(DescricaoBairro);
         if(cidade != null && bairro != null){

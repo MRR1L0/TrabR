@@ -22,9 +22,9 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setString(1, objeto.getDescricaoCondicao()); // atributo que estao no banco
             pstm.setInt(2, objeto.getNumeroParcelas());
-            pstm.setInt(0, objeto.getDiasEntreParcela());
-            pstm.setInt(0, objeto.getDiasEntreParcela());
-            pstm.setString(8, objeto.getStatus());
+            pstm.setInt(3, objeto.getDiasEntreParcela());
+            pstm.setInt(4, objeto.getDiasEntreParcela());
+            pstm.setString(5, objeto.getStatus());
 
             pstm.executeUpdate();
         } catch (SQLException ex) {

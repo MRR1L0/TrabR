@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.DAO.ClasseDAO;
 import model.DAO.MarcaDAO;
+import model.DAO.ProdutoDAO;
 import model.bo.Classe;
 import model.bo.Marca;
 import model.bo.Produto;
@@ -14,8 +15,6 @@ import view.FormBusProduto;
 public class ControlerCadastroProduto implements ActionListener {
 
     CadastroProduto telaCadProduto;
-    MarcaDAO marcaDAO;
-    ClasseDAO classeDAO;
     public static int codigo;
 
     public ControlerCadastroProduto(CadastroProduto parTelaCadProduto) {
@@ -68,6 +67,8 @@ public class ControlerCadastroProduto implements ActionListener {
                 produto.setMarca(buscaMarca(telaCadProduto.getjTextFieldMarcaProduto().getText()));
                 produto.setClasse(buscaClasse(telaCadProduto.getjTextFieldClasse().getText()));
                 
+                ProdutoDAO produtoDAO = new ProdutoDAO();
+                produtoDAO.create(produto);
                 telaCadProduto.ativa(true);
                 telaCadProduto.ligaDesliga(false);
             }
@@ -86,10 +87,12 @@ public class ControlerCadastroProduto implements ActionListener {
     }
 
     private Marca buscaMarca(String text) {
+        MarcaDAO marcaDAO = new MarcaDAO();
         return marcaDAO.search(text); //To change body of generated methods, choose Tools | Templates.
     }
 
     private Classe buscaClasse(String text) {
+        ClasseDAO classeDAO = new ClasseDAO();
        return classeDAO.search(text);//To change body of generated methods, choose Tools | Templates.
     }
 }

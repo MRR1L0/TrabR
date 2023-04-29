@@ -10,7 +10,6 @@ import view.FormBusMarca;
 
 public class ControlerCadastroMarca implements ActionListener {
     
-    MarcaDAO marcaDAO;
     CadastroMarca telaCadMarca;
     public static int codigo;
 
@@ -49,6 +48,7 @@ public class ControlerCadastroMarca implements ActionListener {
 
                 Marca marca = new Marca();
                 marca.setDescricao(telaCadMarca.getjTextDescricao().getText());
+                MarcaDAO marcaDAO = new MarcaDAO();
                 marcaDAO.create(marca);
                 telaCadMarca.ativa(true);
                 telaCadMarca.ligaDesliga(false);

@@ -17,10 +17,6 @@ import view.FormBusCliente;
 public class ControlerCadastroCliente implements ActionListener {
 
     CadastroCliente telaCadCliente;
-    CidadeDAO cidadeDAO;
-    BairroDAO bairroDAO;
-    EnderecoDAO enderecoDAO;
-    ClienteDAO clienteDAO;
     public static int codigo;
     
 
@@ -87,6 +83,7 @@ public class ControlerCadastroCliente implements ActionListener {
                 var cep = telaCadCliente.getjFormattedTextFieldCep().getText();
                 cliente.setEndereco(buscaEndereco(cidade, bairro, cep));
                 
+                ClienteDAO clienteDAO = new ClienteDAO();
                 clienteDAO.create(cliente);
                 //persistir o obj de bairro criado
                 telaCadCliente.ativa(true);
@@ -106,6 +103,10 @@ public class ControlerCadastroCliente implements ActionListener {
     }
 
     private Endereco buscaEndereco(String DescricaoCidade, String DescricaoBairro, String cep) {
+        CidadeDAO cidadeDAO = new CidadeDAO();
+        BairroDAO bairroDAO = new BairroDAO();
+        EnderecoDAO enderecoDAO = new EnderecoDAO();
+        
         var cidade = cidadeDAO.search(DescricaoCidade);
         var bairro = bairroDAO.search(DescricaoBairro);
         if(cidade != null && bairro != null){

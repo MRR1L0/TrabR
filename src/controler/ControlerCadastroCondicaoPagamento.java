@@ -10,7 +10,6 @@ import view.FormBusCondPgto;
 public class ControlerCadastroCondicaoPagamento implements ActionListener {
 
     CondicaoPgto telaCondicaoPgto;
-    CondicaoPagamentoDAO condicaoPgtoDAO;
     public static int codigo;
 
     public ControlerCadastroCondicaoPagamento(CondicaoPgto parTelaCadCondicaoPgto) {
@@ -51,7 +50,9 @@ public class ControlerCadastroCondicaoPagamento implements ActionListener {
                 condicaoPagamento.setDiasEntreParcela(0);
                 condicaoPagamento.setDiasPrimeiraParcela(0);
                 condicaoPagamento.setStatus(telaCondicaoPgto.getjComboStatus().getSelectedItem().toString());
-                condicaoPgtoDAO.create(condicaoPagamento);
+                
+                CondicaoPagamentoDAO condicaoPagamentoDAO = new CondicaoPagamentoDAO();
+                condicaoPagamentoDAO.create(condicaoPagamento);
                 telaCondicaoPgto.ativa(true);
                 telaCondicaoPgto.ligaDesliga(false);
 

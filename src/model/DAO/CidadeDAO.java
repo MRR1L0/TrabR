@@ -6,9 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import model.bo.Bairro;
 import model.bo.Cidade;
 
 public class CidadeDAO implements InterfaceDAO<Cidade> {
@@ -22,7 +19,7 @@ public class CidadeDAO implements InterfaceDAO<Cidade> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, objeto.getDescricao());
+            pstm.setString(1, objeto.getDescricao());
             pstm.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();

@@ -6,9 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import model.bo.Bairro;
 import model.bo.Marca;
 
 public class MarcaDAO implements InterfaceDAO<Marca> {
@@ -22,7 +19,7 @@ public class MarcaDAO implements InterfaceDAO<Marca> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, objeto.getDescricao()); // atributo que estao no banco
+            pstm.setString(1, objeto.getDescricao()); // atributo que estao no banco
             pstm.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();

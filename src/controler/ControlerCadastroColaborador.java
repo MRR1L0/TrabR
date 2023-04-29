@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import javax.swing.JOptionPane;
 import model.DAO.BairroDAO;
 import model.DAO.CidadeDAO;
@@ -18,10 +17,6 @@ import view.FormBusColaborador;
 public class ControlerCadastroColaborador implements ActionListener {
 
     CadastroColaborador telaCadColaborador;
-    CidadeDAO cidadeDAO;
-    BairroDAO bairroDAO;
-    EnderecoDAO enderecoDAO;
-    ColaboradorDAO colaboradorDAO;
     public static int codigo;
 
     public ControlerCadastroColaborador(CadastroColaborador parTelaCadColaborador) {
@@ -80,6 +75,7 @@ public class ControlerCadastroColaborador implements ActionListener {
                 var cep = telaCadColaborador.getjFormattedTextFieldCep().getText();
                 colaborador.setEndereco(buscaEndereco(cidade, bairro, cep));
                 
+                ColaboradorDAO colaboradorDAO = new ColaboradorDAO();
                 colaboradorDAO.create(colaborador);
                 
                 telaCadColaborador.ativa(true);
@@ -98,6 +94,10 @@ public class ControlerCadastroColaborador implements ActionListener {
         }
     }
      private Endereco buscaEndereco(String DescricaoCidade, String DescricaoBairro, String cep) {
+        CidadeDAO cidadeDAO = new CidadeDAO();
+        BairroDAO bairroDAO = new BairroDAO();
+        EnderecoDAO enderecoDAO = new EnderecoDAO();
+        
         var cidade = cidadeDAO.search(DescricaoCidade);
         var bairro = bairroDAO.search(DescricaoBairro);
         if(cidade != null && bairro != null){

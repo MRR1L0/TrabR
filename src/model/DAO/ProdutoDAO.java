@@ -31,8 +31,8 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto> {
             pstm.setString(10, objeto.getBarraSaida());
             pstm.setFloat(11, objeto.getEstoqueMinino());
             pstm.setFloat(12, objeto.getEstoqueMaximo());
-            pstm.setInt(11, objeto.getMarca().getId());
-            pstm.setInt(12, objeto.getClasse().getId());
+            pstm.setInt(13, objeto.getMarca().getId());
+            pstm.setInt(14, objeto.getClasse().getId());
             pstm.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();

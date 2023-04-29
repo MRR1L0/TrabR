@@ -27,9 +27,9 @@ public class CupomFiscalDAO implements InterfaceDAO<CupomFiscal> {
             pstm.setFloat(3, objeto.getValorDesconto());
             pstm.setFloat(4, objeto.getValorAcrescimo());
             pstm.setFloat(5, objeto.getTotalCupom());
-            pstm.setInt(8, objeto.getStatus());
-             pstm.setInt(1, objeto.getCliente().getId());
-            pstm.setInt(2, objeto.getColaborador().getId());
+            pstm.setInt(6, objeto.getStatus());
+             pstm.setInt(7, objeto.getCliente().getId());
+            pstm.setInt(8, objeto.getColaborador().getId());
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

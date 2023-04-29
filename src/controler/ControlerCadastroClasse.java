@@ -11,7 +11,6 @@ import view.FormBusClasse;
 public class ControlerCadastroClasse implements ActionListener {
 
     CadastroClasse telaCadClasse;
-    ClasseDAO classeDAO;
     public static int codigo;
     
     public ControlerCadastroClasse(CadastroClasse parTelaCadClasse) {
@@ -51,6 +50,7 @@ public class ControlerCadastroClasse implements ActionListener {
 
                 Classe classe = new Classe();
                 classe.setDescricao(telaCadClasse.getjTextDescricao().getText());
+                ClasseDAO classeDAO = new ClasseDAO();
                 classeDAO.create(classe);
 
                 telaCadClasse.ativa(true);

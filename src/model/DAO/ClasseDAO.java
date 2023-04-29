@@ -19,7 +19,7 @@ public class ClasseDAO implements InterfaceDAO<Classe> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, objeto.getDescricao()); // atributo que estao no banco
+            pstm.setString(1, objeto.getDescricao()); // atributo que estao no banco
             pstm.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();

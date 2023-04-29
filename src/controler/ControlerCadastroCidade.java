@@ -11,7 +11,6 @@ import view.FormBusCidade;
 public class ControlerCadastroCidade implements ActionListener {
 
     CadastroCidade telaCadCidade;
-    CidadeDAO cidadeDAO;
     public static int codigo;
 
     public ControlerCadastroCidade(CadastroCidade parTelaCadCidade) {
@@ -51,6 +50,7 @@ public class ControlerCadastroCidade implements ActionListener {
 
                 Cidade cidade = new Cidade();
                 cidade.setDescricao(telaCadCidade.getjTextDescricao().getText());
+                CidadeDAO cidadeDAO = new CidadeDAO();
                 cidadeDAO.create(cidade);
                 telaCadCidade.ativa(true);
                 telaCadCidade.ligaDesliga(false);

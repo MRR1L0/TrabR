@@ -15,9 +15,6 @@ import view.FormBusEndereco;
 public class ControlerCadastroEndereco implements ActionListener {
 
     CadastroEndereco telaCadEndereco;
-    BairroDAO bairroDao;
-    CidadeDAO cidadeDAO;
-    EnderecoDAO enderecoDAO;
     public static int codigo;
 
     public ControlerCadastroEndereco(CadastroEndereco parTelaCadEndereco) {
@@ -63,6 +60,8 @@ public class ControlerCadastroEndereco implements ActionListener {
                 endereco.setBairro(buscaBairro(bairro));
                 endereco.setCidade(buscaCidade(cidade));
                 endereco.setLogradouro(telaCadEndereco.getjTextLogradouro().getText());
+                
+                EnderecoDAO enderecoDAO = new EnderecoDAO();
                 enderecoDAO.create(endereco);
                 telaCadEndereco.ativa(true);
                 telaCadEndereco.ligaDesliga(false);
@@ -80,10 +79,12 @@ public class ControlerCadastroEndereco implements ActionListener {
     }
 
     private Bairro buscaBairro(String DescricaoBairro) {
-        return bairroDao.search(DescricaoBairro);
+        BairroDAO bairroDAO = new BairroDAO();
+        return bairroDAO.search(DescricaoBairro);
     }
 
     private Cidade buscaCidade(String DescricaoCidade) {
+        CidadeDAO cidadeDAO =  new CidadeDAO();
         return cidadeDAO.search(DescricaoCidade);
     }
 }
