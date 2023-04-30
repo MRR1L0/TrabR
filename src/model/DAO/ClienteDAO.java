@@ -84,17 +84,17 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
     }
 
     @Override
-    public Cliente search(String descricao) {
+    public Cliente search(String nome) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT cliente.id, cliente.nome, cliente.cpf, cliente.telefone, cliente.status from cliente where cliente.nome = ?";
+        String sqlExecutar = "SELECT cliente.id, cliente.nome, cliente.cpf, cliente.fone1, cliente.status from cliente where cliente.nome = ?";
 
         PreparedStatement pstm = null;
         ResultSet rst = null;
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(1, descricao);
+            pstm.setString(1, nome);
             rst = pstm.executeQuery();
             Cliente cliente = new Cliente();
 
@@ -102,7 +102,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
                 cliente.setId(rst.getInt("id"));
                 cliente.setNome(rst.getString("nome"));
                 cliente.setCpf(rst.getString("cpf"));
-                cliente.setFone1(rst.getString("telefone"));
+                cliente.setFone1(rst.getString("fone1"));
                 cliente.setStatus(rst.getString("status"));                  //o valor do campo status é retornado como uma String e o primeiro caractere é obtido utilizando o método charAt(0), convertendo-o em um char.
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
@@ -120,7 +120,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
     public List<Cliente> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT cliente.id, cliente.nome, cliente.cpf, cliente.telefone, cliente.status from cliente";
+        String sqlExecutar = "SELECT cliente.id, cliente.nome, cliente.cpf, cliente.fone1, cliente.status, cliente.sexo, cliente.dtCadastro  from cliente";
 
         PreparedStatement pstm = null;
         ResultSet rst = null;
@@ -136,8 +136,10 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
                 cliente.setId(rst.getInt("id"));
                 cliente.setNome(rst.getString("nome"));
                 cliente.setCpf(rst.getString("cpf"));
-                cliente.setFone1(rst.getString("telefone"));
+                cliente.setFone1(rst.getString("fone1"));
                 cliente.setStatus(rst.getString("status"));
+                cliente.setSexo(rst.getString("sexo"));
+                cliente.setDtCadastro(rst.getString("dtCadastro"));
                 listaCliente.add(cliente);
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);

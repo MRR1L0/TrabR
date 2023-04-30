@@ -21,14 +21,14 @@ public class ControlerBuscaCliente implements ActionListener {
         ///carregar os dados para a jTable
         DefaultTableModel tabela = (DefaultTableModel) this.formBusCliente.getjTableBuscas().getModel();
         ClienteDAO clienteDAO = new ClienteDAO();
-        for (Cliente objetoAtualDaLista : clienteDAO.search()) {
-            tabela.addRow(new Object[]{objetoAtualDaLista.getId(), objetoAtualDaLista.getCpf(), objetoAtualDaLista.getRg(),
-                objetoAtualDaLista.getDtNascimento(), objetoAtualDaLista.getSexo()});
+        var clientes = clienteDAO.search();
+        for (Cliente cliente : clientes) {
+            tabela.addRow(new Object[]{cliente.getId(), cliente.getNome(),cliente.getCpf(),
+                cliente.getSexo(), cliente.getFone1(), cliente.getStatus(), cliente.getDtCadastro()});
         }
     }
 
     @Override
-
     public void actionPerformed(ActionEvent evento) {
         //
         if (evento.getSource() == this.formBusCliente.getjButtonCarregar()) {

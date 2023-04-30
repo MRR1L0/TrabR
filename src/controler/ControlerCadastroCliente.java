@@ -12,6 +12,7 @@ import model.DAO.EnderecoDAO;
 import model.bo.Cliente;
 import model.bo.Endereco;
 import view.CadastroCliente;
+import view.FormBusBairro;
 import view.FormBusCliente;
 
 public class ControlerCadastroCliente implements ActionListener {
@@ -77,7 +78,7 @@ public class ControlerCadastroCliente implements ActionListener {
                 cliente.setDtCadastro(getDataCadastro());
                 cliente.setComplementoEndereco(telaCadCliente.getjTextFieldEmail().getText());
                 cliente.setObservacao(telaCadCliente.getjTextAreaObserv().getText());
-                cliente.setStatus(telaCadCliente.getjComboBoxSexo().getSelectedItem().toString());
+                cliente.setStatus(telaCadCliente.getjComboBoxStatus().getSelectedItem().toString());
                 var cidade = telaCadCliente.getjTextFieldCidade().getText();
                 var bairro = telaCadCliente.getjTextFieldBairro().getText();
                 var cep = telaCadCliente.getjFormattedTextFieldCep().getText();
@@ -93,7 +94,9 @@ public class ControlerCadastroCliente implements ActionListener {
 
         } else if (acao.getSource() == telaCadCliente.getjButtonBuscar()) {
 
+            this.codigo = 0;
             FormBusCliente formBusCliente = new FormBusCliente();
+            ControlerBuscaCliente controlerBuscaCliente = new ControlerBuscaCliente(formBusCliente);
             formBusCliente.setVisible(true);
 
         } else if (acao.getSource() == telaCadCliente.getjButtonSair()) {
