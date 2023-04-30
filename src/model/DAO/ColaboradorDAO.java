@@ -52,7 +52,7 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(0, codigo);
+            pstm.setInt(1, codigo);
             rst = pstm.executeQuery();
             Colaborador colaborador = new Colaborador();
 
@@ -73,7 +73,7 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
     }
 
     @Override
-    public Colaborador search(String descricao) {
+    public Colaborador search(String nome) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT colaborador.id, colaborador.nome, colaborador.login, colaborador.status from colaborador where colaborador.nome = ?";
@@ -83,7 +83,7 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, descricao);
+            pstm.setString(1, nome);
             rst = pstm.executeQuery();
             Colaborador colaborador = new Colaborador();
 
@@ -147,8 +147,8 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, objeto.getNome());
-            pstm.setInt(1, objeto.getId());
+            pstm.setString(1, objeto.getNome());
+            pstm.setInt(2, objeto.getId());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {
@@ -168,7 +168,7 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(0, objeto.getId());
+            pstm.setInt(1, objeto.getId());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {

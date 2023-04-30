@@ -2,6 +2,8 @@ package controler;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 import model.DAO.ClasseDAO;
 import model.DAO.MarcaDAO;
@@ -83,7 +85,11 @@ public class ControlerCadastroProduto implements ActionListener {
         }
     }
     private String dataCadastro() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         LocalDateTime currentLocalDateTime = LocalDateTime.now();
+
+       DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+ 
+       return currentLocalDateTime.format(dateTimeFormatter); //To change body of generated methods, choose Tools | Templates.
     }
 
     private Marca buscaMarca(String text) {

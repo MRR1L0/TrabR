@@ -64,7 +64,7 @@ public class ClasseDAO implements InterfaceDAO<Classe> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, descricao);
+            pstm.setString(1, descricao);
             rst = pstm.executeQuery();
             Classe classe = new Classe();
 
@@ -124,8 +124,8 @@ public class ClasseDAO implements InterfaceDAO<Classe> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, objeto.getDescricao());
-            pstm.setInt(1, objeto.getId());
+            pstm.setString(1, objeto.getDescricao());
+            pstm.setInt(2, objeto.getId());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {
@@ -145,7 +145,7 @@ public class ClasseDAO implements InterfaceDAO<Classe> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(0, objeto.getId());
+            pstm.setInt(1, objeto.getId());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {
