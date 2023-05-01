@@ -202,13 +202,6 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         this.jLabelCpf = jLabelCpf;
     }
 
-    public JLabel getjLabelDatCadastro() {
-        return jLabelDatCadastro;
-    }
-
-    public void setjLabelDatCadastro(JLabel jLabelDatCadastro) {
-        this.jLabelDatCadastro = jLabelDatCadastro;
-    }
 
     public JLabel getjLabelEmail() {
         return jLabelEmail;
@@ -370,13 +363,7 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         this.jTextFieldContato = jTextFieldContato;
     }
 
-    public JTextField getjTextFieldDatCadastro() {
-        return jTextFieldDatCadastro;
-    }
-
-    public void setjTextFieldDatCadastro(JTextField jTextFieldDatCadastro) {
-        this.jTextFieldDatCadastro = jTextFieldDatCadastro;
-    }
+ 
 
     public JTextField getjTextFieldEmail() {
         return jTextFieldEmail;
@@ -470,8 +457,6 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         jFormattedTextFieldInscricaoEstadual = new javax.swing.JFormattedTextField();
         jLabelRazaoSocial = new javax.swing.JLabel();
         jTextFieldRazaoSocial = new javax.swing.JTextField();
-        jLabelDatCadastro = new javax.swing.JLabel();
-        jTextFieldDatCadastro = new javax.swing.JTextField();
         jLabelCpf = new javax.swing.JLabel();
         jFormattedTextFieldCpf = new javax.swing.JFormattedTextField();
         jLabelRg = new javax.swing.JLabel();
@@ -537,6 +522,11 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         jLabelNome.setText("Nome*");
 
         jTextFieldId.setEditable(false);
+        jTextFieldId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIdActionPerformed(evt);
+            }
+        });
 
         jLabelStatus.setText("Status");
 
@@ -553,8 +543,6 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         jLabelInscricaoEstadual.setText("Inscrição Estadual*");
 
         jLabelRazaoSocial.setText("Razão Social*");
-
-        jLabelDatCadastro.setText("Data de Cadastro");
 
         jLabelCpf.setText("CPF");
 
@@ -692,10 +680,7 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jComboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldDatCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelDatCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(144, 144, 144))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
                                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -772,14 +757,12 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelId)
                     .addComponent(jLabelNome)
-                    .addComponent(jLabelStatus)
-                    .addComponent(jLabelDatCadastro))
+                    .addComponent(jLabelStatus))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldDatCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelCnpj)
@@ -859,17 +842,21 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
+    private void jButtonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGravarActionPerformed
 
-    }//GEN-LAST:event_jButtonNovoActionPerformed
+    }//GEN-LAST:event_jButtonGravarActionPerformed
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
 
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
-    private void jButtonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGravarActionPerformed
+    private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
 
-    }//GEN-LAST:event_jButtonGravarActionPerformed
+    }//GEN-LAST:event_jButtonNovoActionPerformed
+
+    private void jTextFieldIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -930,7 +917,6 @@ public class CadastroFornecedor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelComplemento;
     private javax.swing.JLabel jLabelContato;
     private javax.swing.JLabel jLabelCpf;
-    private javax.swing.JLabel jLabelDatCadastro;
     private javax.swing.JLabel jLabelEmail;
     private javax.swing.JLabel jLabelFone1;
     private javax.swing.JLabel jLabelId;
@@ -951,7 +937,6 @@ public class CadastroFornecedor extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldCidade;
     private javax.swing.JTextField jTextFieldComplemento;
     private javax.swing.JTextField jTextFieldContato;
-    private javax.swing.JTextField jTextFieldDatCadastro;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldId;
     private javax.swing.JTextField jTextFieldLogradouro;

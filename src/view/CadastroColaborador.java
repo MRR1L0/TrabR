@@ -99,14 +99,6 @@ public class CadastroColaborador extends javax.swing.JFrame {
         this.jFormattedTextFieldCep = jFormattedTextFieldCep;
     }
 
-    public JFormattedTextField getjFormattedTextFieldDatCadastro() {
-        return jFormattedTextFieldDatCadastro;
-    }
-
-    public void setjFormattedTextFieldDatCadastro(JFormattedTextField jFormattedTextFieldDatCadastro) {
-        this.jFormattedTextFieldDatCadastro = jFormattedTextFieldDatCadastro;
-    }
-
     public JFormattedTextField getjFormattedTextFieldFone1() {
         return jFormattedTextFieldFone1;
     }
@@ -163,13 +155,7 @@ public class CadastroColaborador extends javax.swing.JFrame {
         this.jLabelComplemento = jLabelComplemento;
     }
 
-    public JLabel getjLabelDatCadastro() {
-        return jLabelDatCadastro;
-    }
 
-    public void setjLabelDatCadastro(JLabel jLabelDatCadastro) {
-        this.jLabelDatCadastro = jLabelDatCadastro;
-    }
 
     public JLabel getjLabelEmail() {
         return jLabelEmail;
@@ -416,8 +402,6 @@ public class CadastroColaborador extends javax.swing.JFrame {
         jLabelFone2 = new javax.swing.JLabel();
         jLabelEmail = new javax.swing.JLabel();
         jTextFieldEmail = new javax.swing.JTextField();
-        jLabelDatCadastro = new javax.swing.JLabel();
-        jFormattedTextFieldDatCadastro = new javax.swing.JFormattedTextField();
         jLabelLogin = new javax.swing.JLabel();
         jLabelSenha = new javax.swing.JLabel();
         jFormattedTextFieldSenha = new javax.swing.JFormattedTextField();
@@ -486,8 +470,6 @@ public class CadastroColaborador extends javax.swing.JFrame {
         jLabelFone2.setText("Fone 2");
 
         jLabelEmail.setText("E-mail");
-
-        jLabelDatCadastro.setText("Data de Cadastro");
 
         jLabelLogin.setText("Login*");
 
@@ -584,7 +566,6 @@ public class CadastroColaborador extends javax.swing.JFrame {
                                 .addComponent(jTextFieldLogradouro))
                             .addGap(20, 20, 20)
                             .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabelDatCadastro)
                                 .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabelSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabelBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -592,7 +573,6 @@ public class CadastroColaborador extends javax.swing.JFrame {
                                 .addComponent(jTextFieldComplemento)
                                 .addComponent(jTextFieldBairro)
                                 .addComponent(jFormattedTextFieldSenha)
-                                .addComponent(jFormattedTextFieldDatCadastro)
                                 .addComponent(jComboBoxStatus, 0, 195, Short.MAX_VALUE)))))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
@@ -612,12 +592,10 @@ public class CadastroColaborador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelFone1)
-                    .addComponent(jLabelEmail)
-                    .addComponent(jLabelDatCadastro))
+                    .addComponent(jLabelEmail))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextFieldDatCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jFormattedTextFieldFone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -782,7 +760,6 @@ public class CadastroColaborador extends javax.swing.JFrame {
     private javax.swing.JButton jButtonSair;
     private javax.swing.JComboBox<String> jComboBoxStatus;
     private javax.swing.JFormattedTextField jFormattedTextFieldCep;
-    private javax.swing.JFormattedTextField jFormattedTextFieldDatCadastro;
     private javax.swing.JFormattedTextField jFormattedTextFieldFone1;
     private javax.swing.JFormattedTextField jFormattedTextFieldFone2;
     private javax.swing.JFormattedTextField jFormattedTextFieldSenha;
@@ -790,7 +767,6 @@ public class CadastroColaborador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelBairro;
     private javax.swing.JLabel jLabelCep;
     private javax.swing.JLabel jLabelComplemento;
-    private javax.swing.JLabel jLabelDatCadastro;
     private javax.swing.JLabel jLabelEmail;
     private javax.swing.JLabel jLabelFone1;
     private javax.swing.JLabel jLabelFone2;
