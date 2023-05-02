@@ -101,6 +101,9 @@ public class ControlerCadastroCliente implements ActionListener {
         } else if (acao.getSource() == telaCadCliente.getjButtonBuscar()) {
 
             this.codigo = 0;
+            telaCadCliente.ativa(false);
+            telaCadCliente.ligaDesliga(true);
+            telaCadCliente.getjTextId().setEnabled(false);
             FormBusCliente formBusCliente = new FormBusCliente();
             ControlerBuscaCliente controlerBuscaCliente = new ControlerBuscaCliente(formBusCliente);
             formBusCliente.setVisible(true);
@@ -109,9 +112,7 @@ public class ControlerCadastroCliente implements ActionListener {
                
             if (this.codigo != 0){
                 
-                telaCadCliente.ativa(false);
-                telaCadCliente.ligaDesliga(true);
-                telaCadCliente.getjTextId().setEnabled(false);
+                
                 
                 var cliente = new Cliente();
                 var clienteDAO = new ClienteDAO();
