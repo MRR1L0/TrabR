@@ -80,5 +80,9 @@ public class CondicaoPgto {
         return "descricaoCondicao, numeroParcelas, diasPrimeiraParcela, diasEntreParcela, status";
    
    }
+
+    public int getDiasParcela() {
+     return diasEntreParcela;
+    }
    
 }

@@ -22,6 +22,30 @@ public class CondicaoPgto extends javax.swing.JFrame {
         return jButtonBuscar;
     }
 
+    public JTextField getjTextDiasEntreParcela() {
+        return jTextDiasEntreParcela;
+    }
+
+    public void setjTextDiasEntreParcela(JTextField jTextDiasEntreParcela) {
+        this.jTextDiasEntreParcela = jTextDiasEntreParcela;
+    }
+
+    public JTextField getjTextDiasPrimeiraParcela() {
+        return jTextDiasPrimeiraParcela;
+    }
+
+    public void setjTextDiasPrimeiraParcela(JTextField jTextDiasPrimeiraParcela) {
+        this.jTextDiasPrimeiraParcela = jTextDiasPrimeiraParcela;
+    }
+
+    public JTextField getjTextNumeroParcela() {
+        return jTextNumeroParcela;
+    }
+
+    public void setjTextNumeroParcela(JTextField jTextNumeroParcela) {
+        this.jTextNumeroParcela = jTextNumeroParcela;
+    }
+
     public void setjButtonBuscar(JButton jButtonBuscar) {
         this.jButtonBuscar = jButtonBuscar;
     }
@@ -43,35 +67,35 @@ public class CondicaoPgto extends javax.swing.JFrame {
     }
 
     public JTextField getjFormattedTextFieldDescricao() {
-        return jFormattedTextFieldDescricao;
+        return jTextDescricao;
     }
 
     public void setjFormattedTextFieldDescricao(JTextField jFormattedTextFieldDescricao) {
-        this.jFormattedTextFieldDescricao = jFormattedTextFieldDescricao;
+        this.jTextDescricao = jFormattedTextFieldDescricao;
     }
 
     public JTextField getjFormattedTextFieldDiasEntreParcelas() {
-        return jFormattedTextFieldDiasEntreParcelas;
+        return jTextDiasEntreParcela;
     }
 
     public void setjFormattedTextFieldDiasEntreParcelas(JTextField jFormattedTextFieldDiasEntreParcelas) {
-        this.jFormattedTextFieldDiasEntreParcelas = jFormattedTextFieldDiasEntreParcelas;
+        this.jTextDiasEntreParcela = jFormattedTextFieldDiasEntreParcelas;
     }
 
     public JTextField getjFormattedTextFieldDiasPrimeiraParcelas() {
-        return jFormattedTextFieldDiasPrimeiraParcelas;
+        return jTextDiasPrimeiraParcela;
     }
 
     public void setjFormattedTextFieldDiasPrimeiraParcelas(JTextField jFormattedTextFieldDiasPrimeiraParcelas) {
-        this.jFormattedTextFieldDiasPrimeiraParcelas = jFormattedTextFieldDiasPrimeiraParcelas;
+        this.jTextDiasPrimeiraParcela = jFormattedTextFieldDiasPrimeiraParcelas;
     }
 
     public JTextField getjFormattedTextFieldNumeroParcelas() {
-        return jFormattedTextFieldNumeroParcelas;
+        return jTextNumeroParcela;
     }
 
     public void setjFormattedTextFieldNumeroParcelas(JTextField jFormattedTextFieldNumeroParcelas) {
-        this.jFormattedTextFieldNumeroParcelas = jFormattedTextFieldNumeroParcelas;
+        this.jTextNumeroParcela = jFormattedTextFieldNumeroParcelas;
     }
 
     public JLabel getjLabel1() {
@@ -211,11 +235,11 @@ public class CondicaoPgto extends javax.swing.JFrame {
     }
 
     public JTextField getjTextDescricao() {
-        return jFormattedTextFieldDescricao;
+        return jTextDescricao;
     }
 
     public void setjTextDescricao(JTextField jTextDescricao) {
-        this.jFormattedTextFieldDescricao = jTextDescricao;
+        this.jTextDescricao = jTextDescricao;
     }
 
     public JTextField getjTextId() {
@@ -272,15 +296,15 @@ public class CondicaoPgto extends javax.swing.JFrame {
         jLabelId = new javax.swing.JLabel();
         jTextId = new javax.swing.JTextField();
         jLabelX = new javax.swing.JLabel();
-        jFormattedTextFieldDescricao = new javax.swing.JTextField();
+        jTextDescricao = new javax.swing.JTextField();
         jLabelStatus = new javax.swing.JLabel();
         jComboStatus = new javax.swing.JComboBox<>();
         jLabelDescricao1 = new javax.swing.JLabel();
         jLabelDescricao2 = new javax.swing.JLabel();
-        jFormattedTextFieldDiasPrimeiraParcelas = new javax.swing.JTextField();
+        jTextDiasPrimeiraParcela = new javax.swing.JTextField();
         jLabelX6 = new javax.swing.JLabel();
-        jFormattedTextFieldNumeroParcelas = new javax.swing.JTextField();
-        jFormattedTextFieldDiasEntreParcelas = new javax.swing.JTextField();
+        jTextNumeroParcela = new javax.swing.JTextField();
+        jTextDiasEntreParcela = new javax.swing.JTextField();
         jPanelBotoes = new javax.swing.JPanel();
         jButtonNovo = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
@@ -329,9 +353,9 @@ public class CondicaoPgto extends javax.swing.JFrame {
 
         jLabelX.setText("Número Parcelas");
 
-        jFormattedTextFieldDescricao.addActionListener(new java.awt.event.ActionListener() {
+        jTextDescricao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextFieldDescricaoActionPerformed(evt);
+                jTextDescricaoActionPerformed(evt);
             }
         });
 
@@ -365,19 +389,19 @@ public class CondicaoPgto extends javax.swing.JFrame {
                             .addGroup(jLabelX2Layout.createSequentialGroup()
                                 .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabelX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jFormattedTextFieldNumeroParcelas))
+                                    .addComponent(jTextNumeroParcela))
                                 .addGap(66, 66, 66)
                                 .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabelX6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jFormattedTextFieldDiasEntreParcelas))
+                                    .addComponent(jTextDiasEntreParcela))
                                 .addGap(55, 55, 55)))
                         .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jFormattedTextFieldDiasPrimeiraParcelas, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextDiasPrimeiraParcela, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabelDescricao2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addComponent(jFormattedTextFieldDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 41, Short.MAX_VALUE))
         );
         jLabelX2Layout.setVerticalGroup(
@@ -401,13 +425,13 @@ public class CondicaoPgto extends javax.swing.JFrame {
                     .addComponent(jLabelDescricao2))
                 .addGap(26, 26, 26)
                 .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFormattedTextFieldNumeroParcelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextFieldDiasEntreParcelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextFieldDiasPrimeiraParcelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextNumeroParcela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextDiasEntreParcela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextDiasPrimeiraParcela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addComponent(jLabelDescricao1)
                 .addGap(18, 18, 18)
-                .addComponent(jFormattedTextFieldDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -492,9 +516,9 @@ public class CondicaoPgto extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonGravarActionPerformed
 
-    private void jFormattedTextFieldDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldDescricaoActionPerformed
+    private void jTextDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextDescricaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextFieldDescricaoActionPerformed
+    }//GEN-LAST:event_jTextDescricaoActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
@@ -543,10 +567,6 @@ public class CondicaoPgto extends javax.swing.JFrame {
     private javax.swing.JButton jButtonSair;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboStatus;
-    private javax.swing.JTextField jFormattedTextFieldDescricao;
-    private javax.swing.JTextField jFormattedTextFieldDiasEntreParcelas;
-    private javax.swing.JTextField jFormattedTextFieldDiasPrimeiraParcelas;
-    private javax.swing.JTextField jFormattedTextFieldNumeroParcelas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelDescricao1;
     private javax.swing.JLabel jLabelDescricao2;
@@ -558,6 +578,10 @@ public class CondicaoPgto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabeltitulo;
     private javax.swing.JPanel jPanelBotoes;
     private javax.swing.JPanel jPanelTitulo;
+    private javax.swing.JTextField jTextDescricao;
+    private javax.swing.JTextField jTextDiasEntreParcela;
+    private javax.swing.JTextField jTextDiasPrimeiraParcela;
     private javax.swing.JTextField jTextId;
+    private javax.swing.JTextField jTextNumeroParcela;
     // End of variables declaration//GEN-END:variables
 }

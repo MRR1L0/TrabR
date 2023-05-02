@@ -71,27 +71,23 @@ public class ControlerCadastroCondicaoPagamento implements ActionListener {
             ControlerBuscaCondicaoPagamento controllerBusCondPgto = new ControlerBuscaCondicaoPagamento(formBusCondPgto);
             formBusCondPgto.setVisible(true);
 
-            /*
-            if (this.codigo != 0){
-                
-                Bairro bairro = new Bairro();
-                BairroDAO bairroDAO = new BairroDAO();
-                bairro = bairroDAO.search(codigo);
-                
-                telaCadBairro.ativa(false);
-                telaCadBairro.ligaDesliga(true);
-                telaCadBairro.getjTextId().setText(bairro.getId()+"");
-                telaCadBairro.getjTextDescricao().setText(bairro.getDescricao());
-                telaCadBairro.getjTextId().setEnabled(false);
-                
-                
+            if (this.codigo != 0) {
+
+                CondicaoPgto condicaoPgto = new CondicaoPgto();
+                var CondicaoPamantoDAO = new CondicaoPagamentoDAO();
+                var CondicaoPgto = CondicaoPamantoDAO.search(codigo);
+
+                telaCondicaoPgto.ativa(false);
+                telaCondicaoPgto.ligaDesliga(true);
+                telaCondicaoPgto.getjTextId().setText(CondicaoPgto.getId() + "");
+                telaCondicaoPgto.getjTextDescricao().setText(CondicaoPgto.getDescricaoCondicao());
+                telaCondicaoPgto.getjTextId().setEnabled(false);
+                telaCondicaoPgto.getjTextNumeroParcela().setText(Integer.toString(CondicaoPgto.getNumeroParcelas()));
+                telaCondicaoPgto.getjTextDiasPrimeiraParcela().setText(Integer.toString(CondicaoPgto.getDiasParcela()));
+                telaCondicaoPgto.getjTextDiasEntreParcela().setText(Integer.toString(CondicaoPgto.getDiasEntreParcela()));
+
             }
-            
-            */
-            
-            
-            
-            
+
         } else if (acao.getSource() == telaCondicaoPgto.getjButtonSair()) {
 
             telaCondicaoPgto.dispose();

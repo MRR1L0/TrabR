@@ -12,7 +12,7 @@ public class ControlerCadastroClasse implements ActionListener {
 
     CadastroClasse telaCadClasse;
     public static int codigo;
-    
+
     public ControlerCadastroClasse(CadastroClasse parTelaCadClasse) {
 
         this.telaCadClasse = parTelaCadClasse;
@@ -51,12 +51,12 @@ public class ControlerCadastroClasse implements ActionListener {
                 Classe classe = new Classe();
                 classe.setDescricao(telaCadClasse.getjTextDescricao().getText());
                 ClasseDAO classeDAO = new ClasseDAO();
-                if (this.telaCadClasse.getjTextId().getText().equalsIgnoreCase("")){
+                if (this.telaCadClasse.getjTextId().getText().equalsIgnoreCase("")) {
                     classeDAO.create(classe);
-            }else{
+                } else {
                     classe.setId(Integer.parseInt(telaCadClasse.getjTextId().getText()));
                     classeDAO.update(classe);
-                    }
+                }
 
                 telaCadClasse.ativa(true);
                 telaCadClasse.ligaDesliga(false);
@@ -68,12 +68,11 @@ public class ControlerCadastroClasse implements ActionListener {
             FormBusClasse formBusClasse = new FormBusClasse(null, true);
             ControlerBuscaClasse controllerBusClasse = new ControlerBuscaClasse(formBusClasse);
             formBusClasse.setVisible(true);
-             
-            
+
             if (this.codigo != 0) {
-               Classe classe = new Classe();
-               //Classe classeDAO = new ClasseDAO();
-              // classe = classeDAO.search(codigo);
+                Classe classe = new Classe();
+                var classeDAO = new ClasseDAO();
+                classe = classeDAO.search(codigo);
 
                 telaCadClasse.ativa(false);
                 telaCadClasse.ligaDesliga(true);
@@ -81,9 +80,6 @@ public class ControlerCadastroClasse implements ActionListener {
                 telaCadClasse.getjTextDescricao().setText(classe.getDescricao());
                 telaCadClasse.getjTextId().setEnabled(false);
             }
-
-            
-            
 
         } else if (acao.getSource() == telaCadClasse.getjButtonSair()) {
 

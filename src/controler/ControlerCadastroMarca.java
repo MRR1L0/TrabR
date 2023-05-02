@@ -66,6 +66,19 @@ public class ControlerCadastroMarca implements ActionListener {
             FormBusMarca formBusMarca = new FormBusMarca(null, true);
             ControlerBuscaMarca controllerBusMarca = new ControlerBuscaMarca(formBusMarca);
             formBusMarca.setVisible(true);
+            
+            if (this.codigo != 0) {
+                Marca marca = new Marca();
+                var marcaDAO = new MarcaDAO();
+                marca = marcaDAO.search(codigo);
+
+                telaCadMarca.ativa(false);
+                telaCadMarca.ligaDesliga(true);
+                telaCadMarca.getjTextId().setText(marca.getId() + "");
+                telaCadMarca.getjTextDescricao().setText(marca.getDescricao());
+                telaCadMarca.getjTextId().setEnabled(false);
+            }
+
 
         } else if (acao.getSource() == telaCadMarca.getjButtonSair()) {
 
