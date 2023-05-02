@@ -46,7 +46,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
     public Cliente search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT cliente.id, cliente.nome from cliente where cliente.id = ?";
+        String sqlExecutar = "SELECT * from cliente where cliente.id = ?";
 //Para corrigir isso, você deve atualizar a consulta SQL para selecionar todas as colunas necessárias. Por exemplo, se quiser selecionar todas as colunas da tabela cliente, a consulta deve ser:
 
         PreparedStatement pstm = null;
@@ -87,7 +87,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
     public Cliente search(String nome) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT cliente.id, cliente.nome, cliente.cpf, cliente.fone1, cliente.status from cliente where cliente.nome = ?";
+        String sqlExecutar = "SELECT * from cliente where cliente.nome = ?";
 
         PreparedStatement pstm = null;
         ResultSet rst = null;
@@ -120,7 +120,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
     public List<Cliente> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT cliente.id, cliente.nome, cliente.cpf, cliente.fone1, cliente.status, cliente.sexo, cliente.dtCadastro  from cliente";
+        String sqlExecutar = "SELECT *   from cliente";
 
         PreparedStatement pstm = null;
         ResultSet rst = null;

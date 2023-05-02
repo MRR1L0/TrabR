@@ -20,7 +20,7 @@ import view.FormBusCliente;
 public class ControlerCadastroCliente implements ActionListener {
 
     CadastroCliente telaCadCliente;
-    public static int codigo;
+    public static int codigo = 0;
 
     public ControlerCadastroCliente(CadastroCliente parTelaCadCliente) {
 
@@ -108,12 +108,8 @@ public class ControlerCadastroCliente implements ActionListener {
             ControlerBuscaCliente controlerBuscaCliente = new ControlerBuscaCliente(formBusCliente);
             formBusCliente.setVisible(true);
             
-            
-               
             if (this.codigo != 0){
-                
-                
-                
+               
                 var cliente = new Cliente();
                 var clienteDAO = new ClienteDAO();
                 var cidade = new  Cidade();
@@ -124,8 +120,8 @@ public class ControlerCadastroCliente implements ActionListener {
                 var enderecoDAO = new EnderecoDAO();
                 
                 cliente = clienteDAO.search(codigo);
-                endereco = enderecoDAO.search(cliente.getEndereco().getId());
-                bairro = endereco.getBairro();
+                //endereco = enderecoDAO.search(cliente.getEndereco().getId());
+                //bairro = endereco.getBairro();
                 
                 telaCadCliente.getjFormattedCpf().setText(cliente.getCpf());
                 telaCadCliente.getjFormattedRg().setText(cliente.getRg());
