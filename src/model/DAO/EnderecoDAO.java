@@ -51,9 +51,13 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
             Endereco endereco = new Endereco();
 
             while (rst.next()) {
+                var cidadeDao = new CidadeDAO();
+                var bairroDao = new BairroDAO();
                 endereco.setId(rst.getInt("id"));
                 endereco.setLogradouro(rst.getString("Logradouro"));
                 endereco.setCep(rst.getString("CEP"));
+                endereco.setCidade(cidadeDao.search(rst.getInt("cidade_id")));
+                endereco.setBairro(bairroDao.search(rst.getInt("bairro_id")));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
             return endereco;
@@ -80,11 +84,15 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
             pstm.setString(0, descricao);
             rst = pstm.executeQuery();
             Endereco endereco = new Endereco();
+            var cidadeDao = new CidadeDAO();
+            var bairroDao = new BairroDAO();
 
             while (rst.next()) {
                 endereco.setId(rst.getInt("id"));
                 endereco.setLogradouro(rst.getString("Logradouro"));
                 endereco.setCep(rst.getString("CEP"));
+                endereco.setCidade(cidadeDao.search(rst.getInt("cidade_id")));
+                endereco.setBairro(bairroDao.search(rst.getInt("bairro_id")));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
             return endereco;

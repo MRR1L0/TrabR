@@ -100,29 +100,27 @@ public class ControlerCadastroCliente implements ActionListener {
 
         } else if (acao.getSource() == telaCadCliente.getjButtonBuscar()) {
 
-            
-            telaCadCliente.ativa(false);
-            telaCadCliente.ligaDesliga(true);
-            telaCadCliente.getjTextId().setEnabled(false);
-            FormBusCliente formBusCliente = new FormBusCliente();
+            this.codigo = 0;
+
+            FormBusCliente formBusCliente = new FormBusCliente(null, true);
             ControlerBuscaCliente controlerBuscaCliente = new ControlerBuscaCliente(formBusCliente);
             formBusCliente.setVisible(true);
-            
-            if (this.codigo != 0){
-               
+
+            if (this.codigo != 0) {
+
                 var cliente = new Cliente();
                 var clienteDAO = new ClienteDAO();
-                var cidade = new  Cidade();
+                var cidade = new Cidade();
                 var cidadeDAO = new CidadeDAO();
                 var bairro = new Bairro();
                 var bairroDAO = new BairroDAO();
                 var endereco = new Endereco();
                 var enderecoDAO = new EnderecoDAO();
-                
+
                 cliente = clienteDAO.search(codigo);
-                //endereco = enderecoDAO.search(cliente.getEndereco().getId());
-                //bairro = endereco.getBairro();
-                
+                endereco = enderecoDAO.search(cliente.getEndereco().getId());
+                bairro = endereco.getBairro();
+
                 telaCadCliente.getjFormattedCpf().setText(cliente.getCpf());
                 telaCadCliente.getjFormattedRg().setText(cliente.getRg());
                 telaCadCliente.getjFormattedDatNasci().setText(cliente.getDtCadastro());
@@ -137,10 +135,8 @@ public class ControlerCadastroCliente implements ActionListener {
                 telaCadCliente.getjTextFieldCidade().setText(cidade.getDescricao());
                 telaCadCliente.getjTextFieldLogradouro().setText(endereco.getLogradouro());
                 telaCadCliente.getjFormattedTextFieldCep().setText(endereco.getCep());
-                
-                
+
             }
-            
 
         } else if (acao.getSource() == telaCadCliente.getjButtonSair()) {
 

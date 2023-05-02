@@ -8,10 +8,11 @@ import javax.swing.JRootPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-public class FormBusCliente extends javax.swing.JFrame {
+public class FormBusCliente extends javax.swing.JDialog {
 
  
-    public FormBusCliente() {
+    public FormBusCliente(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
     }
 
