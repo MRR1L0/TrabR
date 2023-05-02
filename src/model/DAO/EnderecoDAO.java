@@ -169,13 +169,23 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
     public void update(Endereco objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "UPDATE endereco set endereco.logradouro = ? where endereco.id = ?";
+        String sqlExecutar = "UPDATE endereco set endereco.logradouro = ?, endereco.cidade_id = ?, endereco.bairro_id = ?, endereco.cep = ? where endereco.id = ?";
         PreparedStatement pstm = null;
 
         try {
+            var cidadeDao = new CidadeDAO();
+            var cidade = cidadeDao.search(objeto.getCidade().getId());
+            var bairroDao = new BairroDAO();
+            var bairro = bairroDao.search(objeto.getBairro().getId());
+            
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, objeto.getLogradouro());
-            pstm.setInt(1, objeto.getId());
+            pstm.setString(1, objeto.getLogradouro());
+            pstm.setInt(2, objeto.getCidade().getId());
+            pstm.setInt(3, objeto.getBairro().getId());
+            pstm.setString(4, objeto.getLogradouro());
+            pstm.setInt(5, objeto.getId());
+            cidadeDao.update(cidade);
+            bairroDao.update(bairro);
             pstm.executeUpdate();
 
         } catch (SQLException ex) {
