@@ -23,6 +23,22 @@ public class CadastroColaborador extends javax.swing.JFrame {
         return jTextFieldCidade;
     }
 
+    public JLabel getjLabelId() {
+        return jLabelId;
+    }
+
+    public void setjLabelId(JLabel jLabelId) {
+        this.jLabelId = jLabelId;
+    }
+
+    public JTextField getjTextFieldId() {
+        return jTextFieldId;
+    }
+
+    public void setjTextFieldId(JTextField jTextFieldId) {
+        this.jTextFieldId = jTextFieldId;
+    }
+
     public void setjTextFieldCidade(JTextField jTextFieldCidade) {
         this.jTextFieldCidade = jTextFieldCidade;
     }

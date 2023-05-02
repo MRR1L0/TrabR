@@ -51,16 +51,16 @@ public class ControlerCadastroCliente implements ActionListener {
         } else if (acao.getSource() == telaCadCliente.getjButtonGravar()) {
             //verificar espaÃ§os em branco
             if (telaCadCliente.getjTextFieldNome().getText().trim().equalsIgnoreCase("")) {
-                JOptionPane.showMessageDialog(null, "Nome: Campo com preenchimento obrigatório");
+                JOptionPane.showMessageDialog(null, "Nome: Campo com preenchimento obrigatï¿½rio");
 
             } else if (telaCadCliente.getjFormattedCpf().getText().trim().length() < 14) {
-                JOptionPane.showMessageDialog(null, "CPF: Campo com preenchimento obrigatório");
+                JOptionPane.showMessageDialog(null, "CPF: Campo com preenchimento obrigatï¿½rio");
 
             } else if (telaCadCliente.getjFormattedTextFieldFone1().getText().trim().length() < 14) {
-                JOptionPane.showMessageDialog(null, "Fone 1: Campo com preenchimento obrigatório");
+                JOptionPane.showMessageDialog(null, "Fone 1: Campo com preenchimento obrigatï¿½rio");
 
             } else if (telaCadCliente.getjFormattedTextFieldCep().getText().trim().length() < 9) {
-                JOptionPane.showMessageDialog(null, "CEP: Campo com preenchimento obrigatório");
+                JOptionPane.showMessageDialog(null, "CEP: Campo com preenchimento obrigatï¿½rio");
 
             } else {
 

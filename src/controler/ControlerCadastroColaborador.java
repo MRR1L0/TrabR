@@ -76,7 +76,12 @@ public class ControlerCadastroColaborador implements ActionListener {
                 colaborador.setEndereco(buscaEndereco(cidade, bairro, cep));
                 
                 ColaboradorDAO colaboradorDAO = new ColaboradorDAO();
-                colaboradorDAO.create(colaborador);
+                if (this.telaCadColaborador.getjTextFieldId().getText().equalsIgnoreCase("")){
+                    colaboradorDAO.create(colaborador);
+            }else{
+                    colaborador.setId(Integer.parseInt(telaCadColaborador.getjTextFieldId().getText()));
+                    colaboradorDAO.update(colaborador);
+                    }
                 
                 telaCadColaborador.ativa(true);
                 telaCadColaborador.ligaDesliga(false);
