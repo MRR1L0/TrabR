@@ -93,6 +93,24 @@ public class ControlerCadastroColaborador implements ActionListener {
             FormBusColaborador busColaborador = new FormBusColaborador();
             ControlerBuscaColaborador controlerBuscaColaborador = new ControlerBuscaColaborador(busColaborador);
             busColaborador.setVisible(true);
+            
+            
+               /*
+            if (this.codigo != 0){
+                
+                Bairro bairro = new Bairro();
+                BairroDAO bairroDAO = new BairroDAO();
+                bairro = bairroDAO.search(codigo);
+                
+                telaCadBairro.ativa(false);
+                telaCadBairro.ligaDesliga(true);
+                telaCadBairro.getjTextId().setText(bairro.getId()+"");
+                telaCadBairro.getjTextDescricao().setText(bairro.getDescricao());
+                telaCadBairro.getjTextId().setEnabled(false);
+                
+                
+            }
+            */
 
         } else if (acao.getSource() == telaCadColaborador.getjButtonSair()) {
 

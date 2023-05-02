@@ -51,7 +51,7 @@ public class ControlerCadastroCondicaoPagamento implements ActionListener {
                 condicaoPagamento.setDiasEntreParcela(Integer.parseInt(telaCondicaoPgto.getjFormattedTextFieldDiasEntreParcelas().getText()));
                 condicaoPagamento.setDiasPrimeiraParcela(Integer.parseInt(telaCondicaoPgto.getjFormattedTextFieldDiasPrimeiraParcelas().getText()));
                 condicaoPagamento.setStatus(telaCondicaoPgto.getjComboStatus().getSelectedItem().toString());
-                
+
                 CondicaoPagamentoDAO condicaoPagamentoDAO = new CondicaoPagamentoDAO();
 
                 if (this.telaCondicaoPgto.getjTextId().getText().equalsIgnoreCase("")) {
@@ -71,6 +71,27 @@ public class ControlerCadastroCondicaoPagamento implements ActionListener {
             ControlerBuscaCondicaoPagamento controllerBusCondPgto = new ControlerBuscaCondicaoPagamento(formBusCondPgto);
             formBusCondPgto.setVisible(true);
 
+            /*
+            if (this.codigo != 0){
+                
+                Bairro bairro = new Bairro();
+                BairroDAO bairroDAO = new BairroDAO();
+                bairro = bairroDAO.search(codigo);
+                
+                telaCadBairro.ativa(false);
+                telaCadBairro.ligaDesliga(true);
+                telaCadBairro.getjTextId().setText(bairro.getId()+"");
+                telaCadBairro.getjTextDescricao().setText(bairro.getDescricao());
+                telaCadBairro.getjTextId().setEnabled(false);
+                
+                
+            }
+            
+            */
+            
+            
+            
+            
         } else if (acao.getSource() == telaCondicaoPgto.getjButtonSair()) {
 
             telaCondicaoPgto.dispose();

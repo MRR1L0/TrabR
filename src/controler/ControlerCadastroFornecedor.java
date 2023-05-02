@@ -105,6 +105,23 @@ public class ControlerCadastroFornecedor implements ActionListener {
             ControlerBuscaFornecedor controlerBuscaFornecedor = new ControlerBuscaFornecedor(formBusFornecedor);
             formBusFornecedor.setVisible(true);
 
+               /*
+            if (this.codigo != 0){
+                
+                Bairro bairro = new Bairro();
+                BairroDAO bairroDAO = new BairroDAO();
+                bairro = bairroDAO.search(codigo);
+                
+                telaCadBairro.ativa(false);
+                telaCadBairro.ligaDesliga(true);
+                telaCadBairro.getjTextId().setText(bairro.getId()+"");
+                telaCadBairro.getjTextDescricao().setText(bairro.getDescricao());
+                telaCadBairro.getjTextId().setEnabled(false);
+                
+                
+            }
+            */
+            
         } else if (acao.getSource() == telaCadFornecedor.getjButtonSair()) {
 
             telaCadFornecedor.dispose();

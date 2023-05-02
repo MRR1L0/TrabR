@@ -68,6 +68,22 @@ public class ControlerCadastroClasse implements ActionListener {
             FormBusClasse formBusClasse = new FormBusClasse(null, true);
             ControlerBuscaClasse controllerBusClasse = new ControlerBuscaClasse(formBusClasse);
             formBusClasse.setVisible(true);
+             
+            
+            if (this.codigo != 0) {
+               Classe classe = new Classe();
+               //Classe classeDAO = new ClasseDAO();
+              // classe = classeDAO.search(codigo);
+
+                telaCadClasse.ativa(false);
+                telaCadClasse.ligaDesliga(true);
+                telaCadClasse.getjTextId().setText(classe.getId() + "");
+                telaCadClasse.getjTextDescricao().setText(classe.getDescricao());
+                telaCadClasse.getjTextId().setEnabled(false);
+            }
+
+            
+            
 
         } else if (acao.getSource() == telaCadClasse.getjButtonSair()) {
 

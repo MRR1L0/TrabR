@@ -87,6 +87,25 @@ public class ControlerCadastroProduto implements ActionListener {
             FormBusProduto formBusProduto = new FormBusProduto();
             var controlerBuscaProduto = new ControlerBuscaProduto(formBusProduto);
             formBusProduto.setVisible(true);
+            
+            
+            
+               /*
+            if (this.codigo != 0){
+                
+                Bairro bairro = new Bairro();
+                BairroDAO bairroDAO = new BairroDAO();
+                bairro = bairroDAO.search(codigo);
+                
+                telaCadBairro.ativa(false);
+                telaCadBairro.ligaDesliga(true);
+                telaCadBairro.getjTextId().setText(bairro.getId()+"");
+                telaCadBairro.getjTextDescricao().setText(bairro.getDescricao());
+                telaCadBairro.getjTextId().setEnabled(false);
+                
+                
+            }
+            */
 
         } else if (acao.getSource() == telaCadProduto.getjButtonSair()) {
             telaCadProduto.dispose();
