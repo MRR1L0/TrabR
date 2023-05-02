@@ -16,13 +16,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         initComponents();
     }
 
-    public JTextField getjTextId() {
-        return jTextId;
-    }
-
-    public void setjTextId(JTextField jTextId) {
-        this.jTextId = jTextId;
-    }
 
     public JButton getjButton1() {
         return jButton1;
@@ -218,14 +211,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         this.jLabelFone2 = jLabelFone2;
     }
 
-    public JLabel getjLabelId() {
-        return jLabelId;
-    }
-
-    public void setjLabelId(JLabel jLabelId) {
-        this.jLabelId = jLabelId;
-    }
-
     public JLabel getjLabelLogradouro() {
         return jLabelLogradouro;
     }
@@ -356,14 +341,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         this.jTextFieldEmail = jTextFieldEmail;
     }
 
-    public JTextField getjTextFieldId() {
-        return jTextId;
-    }
-
-    public void setjTextFieldId(JTextField jTextFieldId) {
-        this.jTextId = jTextFieldId;
-    }
-
     public JTextField getjTextFieldLogradouro() {
         return jTextFieldLogradouro;
     }
@@ -431,9 +408,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         jComboBoxSexo = new javax.swing.JComboBox<>();
         jLabelSexo = new javax.swing.JLabel();
         jFormattedDatNasci = new javax.swing.JFormattedTextField();
-        jLabelId = new javax.swing.JLabel();
         jLabelNome = new javax.swing.JLabel();
-        jTextId = new javax.swing.JTextField();
         jTextFieldNome = new javax.swing.JTextField();
         jLabelStatus = new javax.swing.JLabel();
         jComboBoxStatus = new javax.swing.JComboBox<>();
@@ -520,17 +495,7 @@ public class CadastroCliente extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        jLabelId.setText("Código");
-
         jLabelNome.setText("Nome*");
-
-        jTextId.setEditable(false);
-        jTextId.setDragEnabled(true);
-        jTextId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextIdActionPerformed(evt);
-            }
-        });
 
         jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -647,13 +612,7 @@ public class CadastroCliente extends javax.swing.JFrame {
                                         .addComponent(jFormattedTextFieldFone2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanelDadosLayout.createSequentialGroup()
-                                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelId, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(20, 20, 20)
-                                .addComponent(jLabelNome, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabelCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelObserv, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
@@ -671,11 +630,11 @@ public class CadastroCliente extends javax.swing.JFrame {
                                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jComboBoxSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabelSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(27, 27, 27))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDadosLayout.createSequentialGroup()
-                                        .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)))
+                                            .addComponent(jLabelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextFieldNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabelNome, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jComboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -690,15 +649,12 @@ public class CadastroCliente extends javax.swing.JFrame {
             .addGroup(jPanelDadosLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelId)
                     .addComponent(jLabelNome)
                     .addComponent(jLabelStatus))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelCpf)
@@ -837,12 +793,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNomeActionPerformed
 
-    private void jTextIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIdActionPerformed
-        jTextId.setEnabled(false);
-        
-     
-    }//GEN-LAST:event_jTextIdActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -903,7 +853,6 @@ public class CadastroCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelEmail;
     private javax.swing.JLabel jLabelFone1;
     private javax.swing.JLabel jLabelFone2;
-    private javax.swing.JLabel jLabelId;
     private javax.swing.JLabel jLabelLogradouro;
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JLabel jLabelObserv;
@@ -922,6 +871,5 @@ public class CadastroCliente extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldLogradouro;
     private javax.swing.JTextField jTextFieldNome;
-    private javax.swing.JTextField jTextId;
     // End of variables declaration//GEN-END:variables
 }

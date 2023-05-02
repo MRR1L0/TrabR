@@ -37,7 +37,7 @@ public class ControlerCadastroBairro implements ActionListener {
         if (acao.getSource() == telaCadBairro.getjButtonNovo()) {
             telaCadBairro.ativa(false);
             telaCadBairro.ligaDesliga(true);
-            telaCadBairro.getjTextId().setEnabled(false);
+          
 
         } else if (acao.getSource() == telaCadBairro.getjButtonCancelar()) {
             telaCadBairro.ativa(true);

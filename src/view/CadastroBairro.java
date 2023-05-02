@@ -68,14 +68,6 @@ public class CadastroBairro extends javax.swing.JFrame {
         this.jLabelDescricao = jLabelDescricao;
     }
 
-    public JLabel getjLabelId() {
-        return jLabelId;
-    }
-
-    public void setjLabelId(JLabel jLabelId) {
-        this.jLabelId = jLabelId;
-    }
-
     public JLabel getjLabeltitulo() {
         return jLabeltitulo;
     }
@@ -114,14 +106,6 @@ public class CadastroBairro extends javax.swing.JFrame {
 
     public void setjTextDescricao(JTextField jTextDescricao) {
         this.jTextDescricao = jTextDescricao;
-    }
-
-    public JTextField getjTextId() {
-        return jTextId;
-    }
-
-    public void setjTextId(JTextField jTextId) {
-        this.jTextId = jTextId;
     }
 
     public void ativa(boolean estadoComponente) {
@@ -164,9 +148,7 @@ public class CadastroBairro extends javax.swing.JFrame {
         jPanelTitulo = new javax.swing.JPanel();
         jLabeltitulo = new javax.swing.JLabel();
         jPanelDados = new javax.swing.JPanel();
-        jLabelId = new javax.swing.JLabel();
         jLabelDescricao = new javax.swing.JLabel();
-        jTextId = new javax.swing.JTextField();
         jTextDescricao = new javax.swing.JTextField();
         jPanelBotoes = new javax.swing.JPanel();
         jButtonNovo = new javax.swing.JButton();
@@ -202,16 +184,7 @@ public class CadastroBairro extends javax.swing.JFrame {
         jPanelDados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanelDados.setName(""); // NOI18N
 
-        jLabelId.setText("Código");
-
         jLabelDescricao.setText("Descrição*");
-
-        jTextId.setEditable(false);
-        jTextId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextIdActionPerformed(evt);
-            }
-        });
 
         jTextDescricao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,21 +200,15 @@ public class CadastroBairro extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelDescricao)
-                    .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelId, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanelDadosLayout.setVerticalGroup(
             jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDadosLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabelId)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
+                .addGap(62, 62, 62)
                 .addComponent(jLabelDescricao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(30, 30, 30)
                 .addComponent(jTextDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(37, Short.MAX_VALUE))
         );
@@ -330,10 +297,6 @@ public class CadastroBairro extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonGravarActionPerformed
 
-    private void jTextIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIdActionPerformed
-
-    }//GEN-LAST:event_jTextIdActionPerformed
-
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
 
     }//GEN-LAST:event_jButtonBuscarActionPerformed
@@ -384,13 +347,11 @@ public class CadastroBairro extends javax.swing.JFrame {
     private javax.swing.JButton jButtonNovo;
     private javax.swing.JButton jButtonSair;
     private javax.swing.JLabel jLabelDescricao;
-    private javax.swing.JLabel jLabelId;
     private javax.swing.JLabel jLabeltitulo;
     private javax.swing.JPanel jPanelBotoes;
     private javax.swing.JPanel jPanelDados;
     private javax.swing.JPanel jPanelTitulo;
     private javax.swing.JTextField jTextDescricao;
-    private javax.swing.JTextField jTextId;
     // End of variables declaration//GEN-END:variables
 
     public Object getjTextFieldId() {
