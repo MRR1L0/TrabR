@@ -14,8 +14,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
     public CondicaoPgto create(CondicaoPgto objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO condicaopgto (descricaoCondicao, numeroParcelas, diasPrimeiraParcela, diasEntreParcela\n"
-                + "status) VALUES (?,?,?,?,?)";
+        String sqlExecutar = "INSERT INTO condicaopgto (descricaoCondicao, numeroParcelas, diasPrimeiraParcela, diasEntreParcela, status) VALUES (?,?,?,?,?)";
         PreparedStatement pstm = null; // interagir com o banco de dados
 
         try {
@@ -39,7 +38,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
     public CondicaoPgto search(int codigo) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT condicaopgto.id, condicaopgto.descricaoCondicao from condicaopgto where condicaopgto.id = ?";
+        String sqlExecutar = "SELECT * from condicaopgto where condicaopgto.id = ?";
 
         PreparedStatement pstm = null;
         ResultSet rst = null;
@@ -52,7 +51,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
 
             while (rst.next()) {
                 condicaoPagamento.setId(rst.getInt("id"));
-                condicaoPagamento.setDescricaoCondicao(rst.getString("descricao"));
+                condicaoPagamento.setDescricaoCondicao(rst.getString("descricaoCondicao"));
                 condicaoPagamento.setNumeroParcelas(rst.getInt("numeroParcelas"));
                 condicaoPagamento.setDiasPrimeiraParcela(rst.getInt("diasPrimeiraParcela"));
                 condicaoPagamento.setDiasEntreParcela(rst.getInt("diasEntreParcela"));
@@ -72,7 +71,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
     public CondicaoPgto search(String descricao) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT condicaopgto.id, condicaopgto.descricaoCondicao from condicaopgto where condicaopgto.descricaoCondicao = ?";
+        String sqlExecutar = "SELECT * from condicaopgto where condicaopgto.descricaoCondicao = ?";
 
         PreparedStatement pstm = null;
         ResultSet rst = null;
@@ -85,7 +84,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
 
             while (rst.next()) {
                 condicaoPagamento.setId(rst.getInt("id"));
-                condicaoPagamento.setDescricaoCondicao(rst.getString("descricao"));
+                condicaoPagamento.setDescricaoCondicao(rst.getString("descricaoCondicao"));
                 condicaoPagamento.setStatus(rst.getString("status"));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
@@ -103,7 +102,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
     public List<CondicaoPgto> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT condicaopgto.id, condicaopgto.descricaoCondicao, condicaopgto.status  from condicaopgto";
+        String sqlExecutar = "SELECT *  from condicaopgto";
 
         PreparedStatement pstm = null;
         ResultSet rst = null;
@@ -117,7 +116,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
             while (rst.next()) {
                 CondicaoPgto condicaoPagamento = new CondicaoPgto();
                 condicaoPagamento.setId(rst.getInt("id"));
-                condicaoPagamento.setDescricaoCondicao(rst.getString("descricao"));
+                condicaoPagamento.setDescricaoCondicao(rst.getString("descricaoCondicao"));
                 condicaoPagamento.setStatus(rst.getString("status"));
                 listaCondicaoPagamento.add(condicaoPagamento);
             }
@@ -136,7 +135,7 @@ public class CondicaoPagamentoDAO implements InterfaceDAO<CondicaoPgto> {
     public void update(CondicaoPgto objeto) {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "UPDATE condicaopgto set condicaopgto.descricao = ? where condicaopgto.id = ?";
+        String sqlExecutar = "UPDATE condicaopgto set condicaopgto.descricaoCondicao = ? where condicaopgto.id = ?";
         PreparedStatement pstm = null;
 
         try {

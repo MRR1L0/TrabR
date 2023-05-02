@@ -67,9 +67,7 @@ public class ControlerCadastroCidade implements ActionListener {
             FormBusCidade formBusCidade = new FormBusCidade(null, true);
             ControlerBuscaCidade controllerBusCidade = new ControlerBuscaCidade(formBusCidade);
             formBusCidade.setVisible(true);
-
             
-
             if (this.codigo != 0) {
                 Cidade cidade = new Cidade();
                 CidadeDAO cidadeDAO = new CidadeDAO();
