@@ -53,6 +53,13 @@ public class ControlerCadastroCondicaoPagamento implements ActionListener {
                 
                 CondicaoPagamentoDAO condicaoPagamentoDAO = new CondicaoPagamentoDAO();
                 condicaoPagamentoDAO.create(condicaoPagamento);
+
+                if (this.telaCondicaoPgto.getjTextId().getText().equalsIgnoreCase("")) {
+                    condicaoPagamentoDAO.create(condicaoPagamento);
+                } else {
+                    condicaoPagamentoDAO.setId(Integer.parseInt(telaCondicaoPgto.getjTextId().getText()));
+                    condicaoPagamentoDAO.update(condicaoPagamento);
+                }
                 telaCondicaoPgto.ativa(true);
                 telaCondicaoPgto.ligaDesliga(false);
 

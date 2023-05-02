@@ -53,7 +53,7 @@ public class ControlerCadastroProduto implements ActionListener {
             } else {
 
                 Produto produto = new Produto();
-                
+
                 produto.setDescricao(telaCadProduto.getjTextDescricao().getText());
                 produto.setValorCompra(Integer.parseInt(telaCadProduto.getjTextValorCompra().getText()));
                 produto.setValorVenda(Integer.parseInt(telaCadProduto.getjTextValorVenda().getText()));
@@ -68,9 +68,17 @@ public class ControlerCadastroProduto implements ActionListener {
                 produto.setEstoqueMaximo(Integer.parseInt(telaCadProduto.getjTextEstoqueMax().getText()));
                 produto.setMarca(buscaMarca(telaCadProduto.getjTextFieldMarcaProduto().getText()));
                 produto.setClasse(buscaClasse(telaCadProduto.getjTextFieldClasse().getText()));
-                
+
                 ProdutoDAO produtoDAO = new ProdutoDAO();
                 produtoDAO.create(produto);
+
+                if (this.telaCadProduto.getjTextId().getText().equalsIgnoreCase("")) {
+                    produtoDAO.create(produto);
+                } else {
+                    produto.setId(Integer.parseInt(telaCadProduto.getjTextId().getText()));
+                    produtoDAO.update(produto);
+                }
+
                 telaCadProduto.ativa(true);
                 telaCadProduto.ligaDesliga(false);
             }
@@ -85,12 +93,13 @@ public class ControlerCadastroProduto implements ActionListener {
             telaCadProduto.dispose();
         }
     }
-    private String dataCadastro() {
-         LocalDateTime currentLocalDateTime = LocalDateTime.now();
 
-       DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
- 
-       return currentLocalDateTime.format(dateTimeFormatter); //To change body of generated methods, choose Tools | Templates.
+    private String dataCadastro() {
+        LocalDateTime currentLocalDateTime = LocalDateTime.now();
+
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
+        return currentLocalDateTime.format(dateTimeFormatter); //To change body of generated methods, choose Tools | Templates.
     }
 
     private Marca buscaMarca(String text) {
@@ -100,6 +109,6 @@ public class ControlerCadastroProduto implements ActionListener {
 
     private Classe buscaClasse(String text) {
         ClasseDAO classeDAO = new ClasseDAO();
-       return classeDAO.search(text);//To change body of generated methods, choose Tools | Templates.
+        return classeDAO.search(text);//To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -60,9 +60,17 @@ public class ControlerCadastroEndereco implements ActionListener {
                 endereco.setBairro(buscaBairro(bairro));
                 endereco.setCidade(buscaCidade(cidade));
                 endereco.setCep(telaCadEndereco.getjFormattedTextCep().getText());
-                
+
                 EnderecoDAO enderecoDAO = new EnderecoDAO();
                 enderecoDAO.create(endereco);
+
+                if (this.telaCadEndereco.getjTextId().getText().equalsIgnoreCase("")) {
+                    enderecoDAO.create(endereco);
+                } else {
+                    endereco.setId(Integer.parseInt(telaCadEndereco.getjTextId().getText()));
+                    enderecoDAO.update(endereco);
+                }
+
                 telaCadEndereco.ativa(true);
                 telaCadEndereco.ligaDesliga(false);
             }
@@ -85,7 +93,7 @@ public class ControlerCadastroEndereco implements ActionListener {
     }
 
     private Cidade buscaCidade(String DescricaoCidade) {
-        CidadeDAO cidadeDAO =  new CidadeDAO();
+        CidadeDAO cidadeDAO = new CidadeDAO();
         return cidadeDAO.search(DescricaoCidade);
     }
 }

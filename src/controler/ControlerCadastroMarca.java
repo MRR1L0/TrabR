@@ -9,7 +9,7 @@ import view.CadastroMarca;
 import view.FormBusMarca;
 
 public class ControlerCadastroMarca implements ActionListener {
-    
+
     CadastroMarca telaCadMarca;
     public static int codigo;
 
@@ -50,17 +50,24 @@ public class ControlerCadastroMarca implements ActionListener {
                 marca.setDescricao(telaCadMarca.getjTextDescricao().getText());
                 MarcaDAO marcaDAO = new MarcaDAO();
                 marcaDAO.create(marca);
+
+                if (this.telaCadMarca.getjTextId().getText().equalsIgnoreCase("")) {
+                    marcaDAO.create(marca);
+                } else {
+                    marca.setId(Integer.parseInt(telaCadMarca.getjTextId().getText()));
+                    marcaDAO.update(marca);
+                }
+
                 telaCadMarca.ativa(true);
                 telaCadMarca.ligaDesliga(false);
 
             }
-
         } else if (acao.getSource() == telaCadMarca.getjButtonBuscar()) {
 
             FormBusMarca formBusMarca = new FormBusMarca(null, true);
             ControlerBuscaMarca controllerBusMarca = new ControlerBuscaMarca(formBusMarca);
             formBusMarca.setVisible(true);
-            
+
         } else if (acao.getSource() == telaCadMarca.getjButtonSair()) {
 
             telaCadMarca.dispose();

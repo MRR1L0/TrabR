@@ -19,7 +19,6 @@ public class ControlerCadastroCliente implements ActionListener {
 
     CadastroCliente telaCadCliente;
     public static int codigo;
-    
 
     public ControlerCadastroCliente(CadastroCliente parTelaCadCliente) {
 
@@ -67,7 +66,6 @@ public class ControlerCadastroCliente implements ActionListener {
 
                 Cliente cliente = new Cliente();
                 cliente.setCpf(telaCadCliente.getjFormattedCpf().getText());
-                
                 cliente.setRg(telaCadCliente.getjFormattedRg().getText());
                 cliente.setDtNascimento(telaCadCliente.getjFormattedDatNasci().getText());
                 cliente.setSexo(telaCadCliente.getjComboBoxSexo().getSelectedItem().toString());
@@ -83,9 +81,17 @@ public class ControlerCadastroCliente implements ActionListener {
                 var bairro = telaCadCliente.getjTextFieldBairro().getText();
                 var cep = telaCadCliente.getjFormattedTextFieldCep().getText();
                 cliente.setEndereco(buscaEndereco(cidade, bairro, cep));
-                
+
                 ClienteDAO clienteDAO = new ClienteDAO();
                 clienteDAO.create(cliente);
+
+                if (this.telaCadCliente.getjTextId().getText().equalsIgnoreCase("")) {
+                    clienteDAO.create(cliente);
+                } else {
+                    cliente.setId(Integer.parseInt(telaCadCliente.getjTextId().getText()));
+                    clienteDAO.update(cliente);
+                }
+
                 //persistir o obj de bairro criado
                 telaCadCliente.ativa(true);
                 telaCadCliente.ligaDesliga(false);
@@ -109,20 +115,20 @@ public class ControlerCadastroCliente implements ActionListener {
         CidadeDAO cidadeDAO = new CidadeDAO();
         BairroDAO bairroDAO = new BairroDAO();
         EnderecoDAO enderecoDAO = new EnderecoDAO();
-        
+
         var cidade = cidadeDAO.search(DescricaoCidade);
         var bairro = bairroDAO.search(DescricaoBairro);
-        if(cidade != null && bairro != null){
+        if (cidade != null && bairro != null) {
             return enderecoDAO.search(DescricaoCidade, DescricaoBairro);
         }
         return enderecoDAO.create(new Endereco(telaCadCliente.getjTextFieldLogradouro().getText(), telaCadCliente.getjFormattedTextFieldCep().getText(), bairro, cidade));
     }
 
     private String getDataCadastro() {
-       LocalDateTime currentLocalDateTime = LocalDateTime.now();
+        LocalDateTime currentLocalDateTime = LocalDateTime.now();
 
-       DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
- 
-       return currentLocalDateTime.format(dateTimeFormatter);
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
+        return currentLocalDateTime.format(dateTimeFormatter);
     }
 }
