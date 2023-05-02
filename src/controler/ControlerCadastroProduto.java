@@ -70,7 +70,12 @@ public class ControlerCadastroProduto implements ActionListener {
                 produto.setClasse(buscaClasse(telaCadProduto.getjTextFieldClasse().getText()));
                 
                 ProdutoDAO produtoDAO = new ProdutoDAO();
-                produtoDAO.create(produto);
+                if (this.telaCadProduto.getjTextId().getText().equalsIgnoreCase("")){
+                    produtoDAO.create(produto);
+            }else{
+                    produto.setId(Integer.parseInt(telaCadProduto.getjTextId().getText()));
+                    produtoDAO.update(produto);
+                    }
                 telaCadProduto.ativa(true);
                 telaCadProduto.ligaDesliga(false);
             }

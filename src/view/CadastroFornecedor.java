@@ -22,6 +22,22 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         return jButton3;
     }
 
+    public JLabel getjLabelId() {
+        return jLabelId;
+    }
+
+    public void setjLabelId(JLabel jLabelId) {
+        this.jLabelId = jLabelId;
+    }
+
+    public JTextField getjTextFieldId() {
+        return jTextFieldId;
+    }
+
+    public void setjTextFieldId(JTextField jTextFieldId) {
+        this.jTextFieldId = jTextFieldId;
+    }
+
     public void setjButton3(JButton jButton3) {
         this.jButton3 = jButton3;
     }

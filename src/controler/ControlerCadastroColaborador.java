@@ -76,10 +76,10 @@ public class ControlerCadastroColaborador implements ActionListener {
                 colaborador.setEndereco(buscaEndereco(cidade, bairro, cep));
                 
                 ColaboradorDAO colaboradorDAO = new ColaboradorDAO();
-                if (this.telaCadColaborador.getjTextId().getText().equalsIgnoreCase("")){
+                if (this.telaCadColaborador.getjTextFieldId().getText().equalsIgnoreCase("")){
                     colaboradorDAO.create(colaborador);
             }else{
-                    bairro.setId(Integer.parseInt(telaCadColaborador.getjTextId().getText()));
+                    colaborador.setId(Integer.parseInt(telaCadColaborador.getjTextFieldId().getText()));
                     colaboradorDAO.update(colaborador);
                     }
                 
