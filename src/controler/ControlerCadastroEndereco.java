@@ -80,6 +80,26 @@ public class ControlerCadastroEndereco implements ActionListener {
             ControlerBuscaEndereco controlerBuscaEndereco = new ControlerBuscaEndereco(formBusEndereco);
             formBusEndereco.setVisible(true);
 
+            if (this.codigo != 0) {
+                Cidade cidade = new Cidade();
+                Bairro bairro = new Bairro();
+                BairroDAO bairroDAO = new BairroDAO();
+                
+                CidadeDAO cidadeDAO = new CidadeDAO();
+               
+                var enderecoDAO = new EnderecoDAO();
+                var endereco = enderecoDAO.search(codigo);
+
+                telaCadEndereco.ativa(false);
+                telaCadEndereco.ligaDesliga(true);
+                telaCadEndereco.getjTextId().setText(endereco.getId() + "");
+                telaCadEndereco.getjTextLogradouro().setText(endereco.getLogradouro());
+                telaCadEndereco.getjTextId().setEnabled(false);
+                telaCadEndereco.getjTextBairro().setText(bairroDAO.search(endereco.getBairro().getDescricao()).getDescricao());
+                telaCadEndereco.getjTextCidade().setText(cidadeDAO.search(endereco.getCidade().getDescricao()).getDescricao());
+
+            }
+
         } else if (acao.getSource() == telaCadEndereco.getjButtonSair()) {
 
             telaCadEndereco.dispose();

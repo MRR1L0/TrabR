@@ -51,12 +51,12 @@ public class ControlerCadastroCidade implements ActionListener {
                 Cidade cidade = new Cidade();
                 cidade.setDescricao(telaCadCidade.getjTextDescricao().getText());
                 CidadeDAO cidadeDAO = new CidadeDAO();
-                if (this.telaCadCidade.getjTextId().getText().equalsIgnoreCase("")){
+                if (this.telaCadCidade.getjTextId().getText().equalsIgnoreCase("")) {
                     cidadeDAO.create(cidade);
-            }else{
+                } else {
                     cidade.setId(Integer.parseInt(telaCadCidade.getjTextId().getText()));
                     cidadeDAO.update(cidade);
-                    }
+                }
                 telaCadCidade.ativa(true);
                 telaCadCidade.ligaDesliga(false);
 
@@ -68,6 +68,20 @@ public class ControlerCadastroCidade implements ActionListener {
             ControlerBuscaCidade controllerBusCidade = new ControlerBuscaCidade(formBusCidade);
             formBusCidade.setVisible(true);
 
+            
+
+            if (this.codigo != 0) {
+                Cidade cidade = new Cidade();
+                CidadeDAO cidadeDAO = new CidadeDAO();
+                cidade = cidadeDAO.search(codigo);
+
+                telaCadCidade.ativa(false);
+                telaCadCidade.ligaDesliga(true);
+                telaCadCidade.getjTextId().setText(cidade.getId() + "");
+                telaCadCidade.getjTextDescricao().setText(cidade.getDescricao());
+                telaCadCidade.getjTextId().setEnabled(false);
+
+            }
         } else if (acao.getSource() == telaCadCidade.getjButtonSair()) {
 
             telaCadCidade.dispose();

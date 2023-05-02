@@ -34,6 +34,7 @@ public class ControlerBuscaCidade implements ActionListener {
             if (this.formBusCidade.getjTableBuscas().getValueAt(this.formBusCidade.getjTableBuscas().getSelectedRow(), 0) != null) {
                 ControlerCadastroCidade.codigo = (int) this.formBusCidade.getjTableBuscas().getValueAt(this.formBusCidade.getjTableBuscas().getSelectedRow(), 0);
                 formBusCidade.dispose();
+                
             } else if (evento.getSource() == formBusCidade.getjButtonSair()) {
                 formBusCidade.dispose();
             }
