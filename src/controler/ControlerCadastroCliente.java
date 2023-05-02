@@ -100,7 +100,7 @@ public class ControlerCadastroCliente implements ActionListener {
 
         } else if (acao.getSource() == telaCadCliente.getjButtonBuscar()) {
 
-            this.codigo = 0;
+            
             telaCadCliente.ativa(false);
             telaCadCliente.ligaDesliga(true);
             telaCadCliente.getjTextId().setEnabled(false);
