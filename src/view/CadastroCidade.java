@@ -18,6 +18,14 @@ public class CadastroCidade extends javax.swing.JFrame {
          initComponents();
     }
 
+    public JTextField getjTextId() {
+        return jTextId;
+    }
+
+    public void setjTextId(JTextField jTextId) {
+        this.jTextId = jTextId;
+    }
+
     
     public JButton getjButtonBuscar() {
         return jButtonBuscar;

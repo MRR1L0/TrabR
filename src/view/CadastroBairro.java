@@ -24,6 +24,14 @@ public class CadastroBairro extends javax.swing.JFrame {
         return jButtonBuscar;
     }
 
+    public JTextField getjTextId() {
+        return jTextId;
+    }
+
+    public void setjTextId(JTextField jTextId) {
+        this.jTextId = jTextId;
+    }
+
     public void setjButtonBuscar(JButton jButtonBuscar) {
         this.jButtonBuscar = jButtonBuscar;
     }

@@ -88,12 +88,9 @@ public class ControlerCadastroFornecedor implements ActionListener {
                 fornecedor.setEndereco(buscaEndereco(cidade, bairro, cep));
                 
                 FornecedorDAO fornecedorDAO = new FornecedorDAO();
-                if (this.telaCadFornecedor.getjTextFieldId().getText().equalsIgnoreCase("")){
-                    fornecedorDAO.create(fornecedor);
-            }else{
-                    fornecedor.setId(Integer.parseInt(telaCadFornecedor.getjTextFieldId().getText()));
-                    fornecedorDAO.update(fornecedor);
-                    }
+                fornecedorDAO.create(fornecedor);
+                
+                
                 
                 telaCadFornecedor.ativa(true);
                 telaCadFornecedor.ligaDesliga(false);
