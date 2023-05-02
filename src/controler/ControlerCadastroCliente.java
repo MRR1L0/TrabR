@@ -109,6 +109,10 @@ public class ControlerCadastroCliente implements ActionListener {
                
             if (this.codigo != 0){
                 
+                telaCadCliente.ativa(false);
+                telaCadCliente.ligaDesliga(true);
+                telaCadCliente.getjTextId().setEnabled(false);
+                
                 var cliente = new Cliente();
                 var clienteDAO = new ClienteDAO();
                 var cidade = new  Cidade();
