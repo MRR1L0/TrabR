@@ -14,7 +14,6 @@ import model.bo.Cidade;
 import model.bo.Cliente;
 import model.bo.Endereco;
 import view.CadastroCliente;
-import view.FormBusBairro;
 import view.FormBusCliente;
 
 public class ControlerCadastroCliente implements ActionListener {
@@ -109,18 +108,15 @@ public class ControlerCadastroCliente implements ActionListener {
             formBusCliente.setVisible(true);
             
             if (this.codigo != 0){
-               
-                var cliente = new Cliente();
                 var clienteDAO = new ClienteDAO();
                 var cidade = new  Cidade();
                 var cidadeDAO = new CidadeDAO();
                 var bairro = new Bairro();
                 var bairroDAO = new BairroDAO();
-                var endereco = new Endereco();
                 var enderecoDAO = new EnderecoDAO();
                 
-                cliente = clienteDAO.search(codigo);
-                //endereco = enderecoDAO.search(cliente.getEndereco().getId());
+                var cliente = clienteDAO.search(codigo);
+                var endereco = enderecoDAO.search(cliente.getEndereco().getId());
                 //bairro = endereco.getBairro();
                 
                 telaCadCliente.getjFormattedCpf().setText(cliente.getCpf());
