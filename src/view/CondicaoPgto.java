@@ -34,6 +34,94 @@ public class CondicaoPgto extends javax.swing.JFrame {
         this.jButtonCancelar = jButtonCancelar;
     }
 
+    public JComboBox<String> getjComboBox1() {
+        return jComboBox1;
+    }
+
+    public void setjComboBox1(JComboBox<String> jComboBox1) {
+        this.jComboBox1 = jComboBox1;
+    }
+
+    public JTextField getjFormattedTextFieldDescricao() {
+        return jFormattedTextFieldDescricao;
+    }
+
+    public void setjFormattedTextFieldDescricao(JTextField jFormattedTextFieldDescricao) {
+        this.jFormattedTextFieldDescricao = jFormattedTextFieldDescricao;
+    }
+
+    public JTextField getjFormattedTextFieldDiasEntreParcelas() {
+        return jFormattedTextFieldDiasEntreParcelas;
+    }
+
+    public void setjFormattedTextFieldDiasEntreParcelas(JTextField jFormattedTextFieldDiasEntreParcelas) {
+        this.jFormattedTextFieldDiasEntreParcelas = jFormattedTextFieldDiasEntreParcelas;
+    }
+
+    public JTextField getjFormattedTextFieldDiasPrimeiraParcelas() {
+        return jFormattedTextFieldDiasPrimeiraParcelas;
+    }
+
+    public void setjFormattedTextFieldDiasPrimeiraParcelas(JTextField jFormattedTextFieldDiasPrimeiraParcelas) {
+        this.jFormattedTextFieldDiasPrimeiraParcelas = jFormattedTextFieldDiasPrimeiraParcelas;
+    }
+
+    public JTextField getjFormattedTextFieldNumeroParcelas() {
+        return jFormattedTextFieldNumeroParcelas;
+    }
+
+    public void setjFormattedTextFieldNumeroParcelas(JTextField jFormattedTextFieldNumeroParcelas) {
+        this.jFormattedTextFieldNumeroParcelas = jFormattedTextFieldNumeroParcelas;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabelDescricao1() {
+        return jLabelDescricao1;
+    }
+
+    public void setjLabelDescricao1(JLabel jLabelDescricao1) {
+        this.jLabelDescricao1 = jLabelDescricao1;
+    }
+
+    public JLabel getjLabelDescricao2() {
+        return jLabelDescricao2;
+    }
+
+    public void setjLabelDescricao2(JLabel jLabelDescricao2) {
+        this.jLabelDescricao2 = jLabelDescricao2;
+    }
+
+    public JLabel getjLabelX() {
+        return jLabelX;
+    }
+
+    public void setjLabelX(JLabel jLabelX) {
+        this.jLabelX = jLabelX;
+    }
+
+    public JPanel getjLabelX2() {
+        return jLabelX2;
+    }
+
+    public void setjLabelX2(JPanel jLabelX2) {
+        this.jLabelX2 = jLabelX2;
+    }
+
+    public JLabel getjLabelX6() {
+        return jLabelX6;
+    }
+
+    public void setjLabelX6(JLabel jLabelX6) {
+        this.jLabelX6 = jLabelX6;
+    }
+
     public JButton getjButtonGravar() {
         return jButtonGravar;
     }

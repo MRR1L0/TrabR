@@ -16,6 +16,22 @@ public class CadastroCliente extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JLabel getjLabelId() {
+        return jLabelId;
+    }
+
+    public void setjLabelId(JLabel jLabelId) {
+        this.jLabelId = jLabelId;
+    }
+
+    public JTextField getjTextId() {
+        return jTextId;
+    }
+
+    public void setjTextId(JTextField jTextId) {
+        this.jTextId = jTextId;
+    }
+
 
     public JButton getjButton1() {
         return jButton1;

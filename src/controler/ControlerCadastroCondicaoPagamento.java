@@ -46,9 +46,10 @@ public class ControlerCadastroCondicaoPagamento implements ActionListener {
             } else {
 
                 var condicaoPagamento = new model.bo.CondicaoPgto();
-                condicaoPagamento.setDescricaoCondicao(telaCondicaoPgto.getjTextDescricao().getText());
-                condicaoPagamento.setDiasEntreParcela(0);
-                condicaoPagamento.setDiasPrimeiraParcela(0);
+                condicaoPagamento.setDescricaoCondicao(telaCondicaoPgto.getjFormattedTextFieldDescricao().getText());
+                condicaoPagamento.setNumeroParcelas(Integer.parseInt(telaCondicaoPgto.getjFormattedTextFieldNumeroParcelas().getText()));
+                condicaoPagamento.setDiasEntreParcela(Integer.parseInt(telaCondicaoPgto.getjFormattedTextFieldDiasEntreParcelas().getText()));
+                condicaoPagamento.setDiasPrimeiraParcela(Integer.parseInt(telaCondicaoPgto.getjFormattedTextFieldDiasPrimeiraParcelas().getText()));
                 condicaoPagamento.setStatus(telaCondicaoPgto.getjComboStatus().getSelectedItem().toString());
                 
                 CondicaoPagamentoDAO condicaoPagamentoDAO = new CondicaoPagamentoDAO();

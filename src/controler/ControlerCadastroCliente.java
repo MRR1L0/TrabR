@@ -67,7 +67,6 @@ public class ControlerCadastroCliente implements ActionListener {
 
                 Cliente cliente = new Cliente();
                 cliente.setCpf(telaCadCliente.getjFormattedCpf().getText());
-                
                 cliente.setRg(telaCadCliente.getjFormattedRg().getText());
                 cliente.setDtNascimento(telaCadCliente.getjFormattedDatNasci().getText());
                 cliente.setSexo(telaCadCliente.getjComboBoxSexo().getSelectedItem().toString());
@@ -85,7 +84,12 @@ public class ControlerCadastroCliente implements ActionListener {
                 cliente.setEndereco(buscaEndereco(cidade, bairro, cep));
                 
                 ClienteDAO clienteDAO = new ClienteDAO();
-                clienteDAO.create(cliente);
+                if (this.telaCadCliente.getjTextId().getText().equalsIgnoreCase("")){
+                    clienteDAO.create(cliente);
+            }else{
+                    cliente.setId(Integer.parseInt(telaCadCliente.getjTextId().getText()));
+                    clienteDAO.update(cliente);
+                    }
                 //persistir o obj de bairro criado
                 telaCadCliente.ativa(true);
                 telaCadCliente.ligaDesliga(false);
