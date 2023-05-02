@@ -35,6 +35,9 @@ public class FornecedorDAO implements InterfaceDAO<model.bo.Fornecedor> {
             pstm.setString(13, objeto.getCpf());
             pstm.setString(14, objeto.getRg());
             pstm.setInt(15, objeto.getEndereco().getId());
+            var enderecoDAO = new EnderecoDAO();
+            var endereco = enderecoDAO.search(objeto.getEndereco().getId());
+            enderecoDAO.update(endereco);
 
             pstm.executeUpdate();
         } catch (SQLException ex) {

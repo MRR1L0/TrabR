@@ -170,8 +170,10 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador> {
             pstm.setString(8, objeto.getStatus());
             pstm.setString(9, objeto.getLogin());
             pstm.setString(10, objeto.getSenha());
-             pstm.setInt(11, objeto.getEndereco().getId());
-
+            pstm.setInt(11, objeto.getEndereco().getId());
+            var enderecoDAO = new EnderecoDAO();
+            var endereco = enderecoDAO.search(objeto.getEndereco().getId());
+            enderecoDAO.update(endereco);
             pstm.executeUpdate();
 
 

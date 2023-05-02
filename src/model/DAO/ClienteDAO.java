@@ -176,8 +176,11 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
             pstm.setString(9, objeto.getCpf());
             pstm.setString(10, objeto.getRg());
             pstm.setObject(11, objeto.getDtNascimento());
-            pstm.setString(12, objeto.getSexo());   ///// convertendo char para string
+            pstm.setString(12, objeto.getSexo()); ///// convertendo char para string
+            var enderecoDAO = new EnderecoDAO();
+            var endereco = enderecoDAO.search(objeto.getEndereco().getId());
             pstm.setInt(13, objeto.getId());
+            enderecoDAO.update(endereco);
             pstm.executeUpdate();
 
         } catch (SQLException ex) {

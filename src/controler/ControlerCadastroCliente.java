@@ -9,6 +9,8 @@ import model.DAO.BairroDAO;
 import model.DAO.CidadeDAO;
 import model.DAO.ClienteDAO;
 import model.DAO.EnderecoDAO;
+import model.bo.Bairro;
+import model.bo.Cidade;
 import model.bo.Cliente;
 import model.bo.Endereco;
 import view.CadastroCliente;
@@ -104,22 +106,40 @@ public class ControlerCadastroCliente implements ActionListener {
             formBusCliente.setVisible(true);
             
             
-               /*
+               
             if (this.codigo != 0){
                 
-                Bairro bairro = new Bairro();
-                BairroDAO bairroDAO = new BairroDAO();
-                bairro = bairroDAO.search(codigo);
+                var cliente = new Cliente();
+                var clienteDAO = new ClienteDAO();
+                var cidade = new  Cidade();
+                var cidadeDAO = new CidadeDAO();
+                var bairro = new Bairro();
+                var bairroDAO = new BairroDAO();
+                var endereco = new Endereco();
+                var enderecoDAO = new EnderecoDAO();
                 
-                telaCadBairro.ativa(false);
-                telaCadBairro.ligaDesliga(true);
-                telaCadBairro.getjTextId().setText(bairro.getId()+"");
-                telaCadBairro.getjTextDescricao().setText(bairro.getDescricao());
-                telaCadBairro.getjTextId().setEnabled(false);
+                cliente = clienteDAO.search(codigo);
+                endereco = enderecoDAO.search(cliente.getEndereco().getId());
+                bairro = endereco.getBairro();
+                
+                telaCadCliente.getjFormattedCpf().setText(cliente.getCpf());
+                telaCadCliente.getjFormattedRg().setText(cliente.getRg());
+                telaCadCliente.getjFormattedDatNasci().setText(cliente.getDtCadastro());
+                telaCadCliente.getjComboBoxSexo().setSelectedItem(cliente.getSexo());
+                telaCadCliente.getjTextFieldNome().setText(cliente.getNome());
+                telaCadCliente.getjFormattedTextFieldFone1().setText(cliente.getFone1());
+                telaCadCliente.getjFormattedTextFieldFone2().setText(cliente.getFone2());
+                telaCadCliente.getjTextFieldEmail().setText(cliente.getEmail());
+                telaCadCliente.getjTextAreaObserv().setText(cliente.getObservacao());
+                telaCadCliente.getjComboBoxStatus().setSelectedItem(cliente.getStatus());
+                telaCadCliente.getjTextFieldBairro().setText(bairro.getDescricao());
+                telaCadCliente.getjTextFieldCidade().setText(cidade.getDescricao());
+                telaCadCliente.getjTextFieldLogradouro().setText(endereco.getLogradouro());
+                telaCadCliente.getjFormattedTextFieldCep().setText(endereco.getCep());
                 
                 
             }
-            */
+            
 
         } else if (acao.getSource() == telaCadCliente.getjButtonSair()) {
 
