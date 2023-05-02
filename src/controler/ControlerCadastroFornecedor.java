@@ -100,6 +100,7 @@ public class ControlerCadastroFornecedor implements ActionListener {
         } else if (acao.getSource() == telaCadFornecedor.getjButtonBuscar()) {
 
             FormBusFornecedor formBusFornecedor = new FormBusFornecedor();
+            ControlerBuscaFornecedor controlerBuscaFornecedor = new ControlerBuscaFornecedor(formBusFornecedor);
             formBusFornecedor.setVisible(true);
 
         } else if (acao.getSource() == telaCadFornecedor.getjButtonSair()) {

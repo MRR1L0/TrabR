@@ -21,7 +21,6 @@ public class ControlerBuscaCondicaoPagamento implements ActionListener {
         DefaultTableModel tabela = (DefaultTableModel) this.formBusCondPgto.getjTableBuscas().getModel();
         var condicaoPagamentoDAO = new model.DAO.CondicaoPagamentoDAO();
         for (model.bo.CondicaoPgto objetoAtualDaLista : condicaoPagamentoDAO.search()) {
-
             tabela.addRow(new Object[]{objetoAtualDaLista.getId(),
                 objetoAtualDaLista.getDescricaoCondicao()});
         }

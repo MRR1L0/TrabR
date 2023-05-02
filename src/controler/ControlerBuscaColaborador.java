@@ -2,6 +2,8 @@ package controler;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.table.DefaultTableModel;
+import model.DAO.ColaboradorDAO;
 import view.FormBusColaborador;
 
 public class ControlerBuscaColaborador implements ActionListener {
@@ -14,10 +16,16 @@ public class ControlerBuscaColaborador implements ActionListener {
 
         this.formBusColaborador.getjButtonCarregar().addActionListener(this);
         this.formBusColaborador.getjButtonSair().addActionListener(this);
+        
+        DefaultTableModel tabela = (DefaultTableModel) this.formBusColaborador.getjTableBuscas().getModel();
+        var DAO = new ColaboradorDAO();
+        var lista = DAO.search();
+        for (var item : lista) {
+            tabela.addRow(new Object[]{item.getId(), item.getNome(),item.getLogin(),item.getStatus()});
+        }
     }
 
     @Override
-
     public void actionPerformed(ActionEvent evento) {
         if (evento.getSource() == this.formBusColaborador.getjButtonCarregar()) {
             if (this.formBusColaborador.getjTableBuscas().getValueAt(this.formBusColaborador.getjTableBuscas().getSelectedRow(), 0) != null) {

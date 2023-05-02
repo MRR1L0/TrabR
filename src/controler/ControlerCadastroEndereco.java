@@ -70,6 +70,7 @@ public class ControlerCadastroEndereco implements ActionListener {
         } else if (acao.getSource() == telaCadEndereco.getjButtonBuscar()) {
 
             FormBusEndereco formBusEndereco = new FormBusEndereco();
+            ControlerBuscaEndereco controlerBuscaEndereco = new ControlerBuscaEndereco(formBusEndereco);
             formBusEndereco.setVisible(true);
 
         } else if (acao.getSource() == telaCadEndereco.getjButtonSair()) {

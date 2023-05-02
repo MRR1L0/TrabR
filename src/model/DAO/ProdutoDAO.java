@@ -129,7 +129,7 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto> {
     public List<Produto> search() {
 
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT produto.id, produto.descricao from produto";
+        String sqlExecutar = "SELECT * from produto";
 
         PreparedStatement pstm = null;
         ResultSet rst = null;
@@ -155,6 +155,10 @@ public class ProdutoDAO implements InterfaceDAO<model.bo.Produto> {
                 produto.setBarraSaida(rst.getString("barraSaida"));
                 produto.setEstoqueMinino(rst.getInt("estoqueMinimo"));
                 produto.setEstoqueMaximo(rst.getInt("estoqueMaximo"));
+                var marcaDAO = new MarcaDAO();
+                var classeDAO = new ClasseDAO();
+                produto.setMarca(marcaDAO.search(rst.getInt("marca_id")));
+                produto.setClasse(classeDAO.search(rst.getInt("classe_id")));
                 listaProduto.add(produto);
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);

@@ -84,8 +84,10 @@ public class ControlerCadastroColaborador implements ActionListener {
 
         } else if (acao.getSource() == telaCadColaborador.getjButtonBuscar()) {
 
-            FormBusColaborador formBusColaborador = new FormBusColaborador();
-            formBusColaborador.setVisible(true);
+            this.codigo = 0;
+            FormBusColaborador busColaborador = new FormBusColaborador();
+            ControlerBuscaColaborador controlerBuscaColaborador = new ControlerBuscaColaborador(busColaborador);
+            busColaborador.setVisible(true);
 
         } else if (acao.getSource() == telaCadColaborador.getjButtonSair()) {
 

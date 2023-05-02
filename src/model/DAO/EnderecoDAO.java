@@ -46,7 +46,7 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(0, codigo);
+            pstm.setInt(1, codigo);
             rst = pstm.executeQuery();
             Endereco endereco = new Endereco();
 

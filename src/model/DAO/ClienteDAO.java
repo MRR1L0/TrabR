@@ -157,7 +157,10 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
     public void update(Cliente objeto) {
 //// (nome, fone1, fone2, complementoEndereco, email, dtCadastro, observacao, status, cpf, rg, dtNascimento, sexo
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "UPDATE cliente set cliente.nome, cliente.fone1, cliente.fone2, cliente.complementoEndereco, cliente.email, cliente.dtCadastro, cliente.observacao, cliente.status, cliente.cpf, cliente.rg, cliente.dtNascimento, cliente.sexo= ? where cliente.id = ?";   //descrição do cliente e o ID do cliente estão sendo utilizados para atualizar o registro no banco de dados.
+        String sqlExecutar = "UPDATE cliente SET cliente.nome = ?, "
+                + "cliente.fone1 = ?, cliente.fone2 = ?, cliente.complementoEndereco = ?, cliente.email = ?, "
+                + "cliente.dtCadastro = ?, cliente.observacao = ?, cliente.status = ?, cliente.cpf = ?, cliente.rg = ?, "
+                + "cliente.dtNascimento = ?, cliente.sexo= ? where cliente.id = ?";   //descrição do cliente e o ID do cliente estão sendo utilizados para atualizar o registro no banco de dados.
         PreparedStatement pstm = null;
 
         try {
@@ -193,7 +196,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(0, objeto.getId());
+            pstm.setInt(1, objeto.getId());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {

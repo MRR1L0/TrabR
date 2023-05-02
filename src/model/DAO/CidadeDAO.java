@@ -124,8 +124,8 @@ public class CidadeDAO implements InterfaceDAO<Cidade> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, objeto.getDescricao());
-            pstm.setInt(1, objeto.getId());
+            pstm.setString(1, objeto.getDescricao());
+            pstm.setInt(2, objeto.getId());
             pstm.executeUpdate();
 
         } catch (SQLException ex) {

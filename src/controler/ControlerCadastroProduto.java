@@ -78,6 +78,7 @@ public class ControlerCadastroProduto implements ActionListener {
         } else if (acao.getSource() == telaCadProduto.getjButtonBuscar()) {
 
             FormBusProduto formBusProduto = new FormBusProduto();
+            var controlerBuscaProduto = new ControlerBuscaProduto(formBusProduto);
             formBusProduto.setVisible(true);
 
         } else if (acao.getSource() == telaCadProduto.getjButtonSair()) {
