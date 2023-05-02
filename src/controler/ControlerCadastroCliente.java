@@ -14,7 +14,6 @@ import model.bo.Cidade;
 import model.bo.Cliente;
 import model.bo.Endereco;
 import view.CadastroCliente;
-import view.FormBusBairro;
 import view.FormBusCliente;
 
 public class ControlerCadastroCliente implements ActionListener {
@@ -114,7 +113,6 @@ public class ControlerCadastroCliente implements ActionListener {
                 var cidadeDAO = new CidadeDAO();
                 var bairro = new Bairro();
                 var bairroDAO = new BairroDAO();
-                var endereco = new Endereco();
                 var enderecoDAO = new EnderecoDAO();
 
                 cliente = clienteDAO.search(codigo);
