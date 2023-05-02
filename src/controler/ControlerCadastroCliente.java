@@ -43,7 +43,7 @@ public class ControlerCadastroCliente implements ActionListener {
         if (acao.getSource() == telaCadCliente.getjButtonNovo()) {
             telaCadCliente.ativa(false);
             telaCadCliente.ligaDesliga(true);
-            //   telaCadCliente.getjTextId().setEnabled(false);
+            telaCadCliente.getjTextId().setEnabled(false);
 
         } else if (acao.getSource() == telaCadCliente.getjButtonCancelar()) {
             telaCadCliente.ativa(true);

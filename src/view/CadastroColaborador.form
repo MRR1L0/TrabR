@@ -155,7 +155,6 @@
                               </Group>
                               <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabelDatCadastro" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabelStatus" min="-2" pref="37" max="-2" attributes="0"/>
                                   <Component id="jLabelSenha" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
                                   <Component id="jLabelBairro" min="-2" pref="37" max="-2" attributes="0"/>
@@ -163,7 +162,6 @@
                                   <Component id="jTextFieldComplemento" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jTextFieldBairro" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jFormattedTextFieldSenha" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jFormattedTextFieldDatCadastro" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jComboBoxStatus" alignment="0" pref="195" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -192,12 +190,10 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabelFone1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabelEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelDatCadastro" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jTextFieldEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jFormattedTextFieldDatCadastro" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jFormattedTextFieldFone1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -303,13 +299,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldEmail">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelDatCadastro">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Data de Cadastro"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jFormattedTextFieldDatCadastro">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelLogin">
           <Properties>

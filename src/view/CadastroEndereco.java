@@ -236,6 +236,11 @@ public class CadastroEndereco extends javax.swing.JFrame {
         jLabelId.setText("Código");
 
         jTextId.setEditable(false);
+        jTextId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextIdActionPerformed(evt);
+            }
+        });
 
         jLabelLogradouro.setText("Logradouro*");
 
@@ -411,6 +416,10 @@ public class CadastroEndereco extends javax.swing.JFrame {
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonBuscarActionPerformed
+
+    private void jTextIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextIdActionPerformed
 
     /**
      * @param args the command line arguments
