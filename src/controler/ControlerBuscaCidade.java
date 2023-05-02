@@ -10,7 +10,6 @@ import view.FormBusCidade;
 public class ControlerBuscaCidade implements ActionListener {
 
     FormBusCidade formBusCidade;
-    
 
     public ControlerBuscaCidade(FormBusCidade formBusCidade) {
 
@@ -18,14 +17,13 @@ public class ControlerBuscaCidade implements ActionListener {
 
         this.formBusCidade.getjButtonCarregar().addActionListener(this);
         this.formBusCidade.getjButtonSair().addActionListener(this);
-        
+
         //carregar os dados para a jTable
         DefaultTableModel tabela = (DefaultTableModel) this.formBusCidade.getjTableBuscas().getModel();
         CidadeDAO cidadeDAO = new CidadeDAO();
         for (Cidade objetoAtualDaLista : cidadeDAO.search()) {
-            
             tabela.addRow(new Object[]{objetoAtualDaLista.getId(),
-                                       objetoAtualDaLista.getDescricao()});            
+                objetoAtualDaLista.getDescricao()});
         }
     }
 

@@ -32,14 +32,16 @@ public class CidadeDAO implements InterfaceDAO<Cidade> {
     @Override
     public Cidade search(int t) {
         Connection conexao = ConnectionFactory.getConnection();
-        var sqlExecutar = "SELECT id, descricao from cidade where cidade.id = "+ t;
+        var sqlExecutar = "SELECT cidade.id, cidade.descricao from cidade where cidade.id = "+ t;
         var cidade = new Cidade();
         PreparedStatement pstm = null;
         ResultSet rst = null;
         
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
+            
             rst = pstm.executeQuery();
+            
             while (rst.next()) {
                 cidade.setId(rst.getInt("id"));
                 cidade.setDescricao(rst.getString("descricao"));

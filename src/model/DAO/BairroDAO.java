@@ -34,7 +34,6 @@ public class BairroDAO implements InterfaceDAO<Bairro> {
     public Bairro search(int codigo) {
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT bairro.id, bairro.descricao from bairro where bairro.id = ?";
-
         PreparedStatement pstm = null;
         ResultSet rst = null;
 

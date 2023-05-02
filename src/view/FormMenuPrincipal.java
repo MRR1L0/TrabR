@@ -27,6 +27,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenu1 = new javax.swing.JMenu();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastros = new javax.swing.JMenu();
         jMenuItemBairro = new javax.swing.JMenuItem();
@@ -52,6 +53,17 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Super Mercado Java ");
+
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 703, Short.MAX_VALUE)
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 418, Short.MAX_VALUE)
+        );
 
         jMenuCadastros.setText("1 - Cadastros");
 
@@ -86,6 +98,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         jMenuCadastros.add(jMenuItemEndereco);
         jMenuCadastros.add(jSeparator1);
 
+        jMenuItemCliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItemCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/People.png"))); // NOI18N
         jMenuItemCliente.setText("Cliente...");
         jMenuItemCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +108,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         });
         jMenuCadastros.add(jMenuItemCliente);
 
+        jMenuItemColaborador.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItemColaborador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Male.png"))); // NOI18N
         jMenuItemColaborador.setText("Colaborador...");
         jMenuItemColaborador.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +118,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         });
         jMenuCadastros.add(jMenuItemColaborador);
 
+        jMenuItemFornecedor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F6, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItemFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/forneced.png"))); // NOI18N
         jMenuItemFornecedor.setText("Fornecedor...");
         jMenuItemFornecedor.addActionListener(new java.awt.event.ActionListener() {
@@ -114,6 +129,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         jMenuCadastros.add(jMenuItemFornecedor);
         jMenuCadastros.add(jSeparator2);
 
+        jMenuItemClasse.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F7, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItemClasse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/classe-de-energia.png"))); // NOI18N
         jMenuItemClasse.setText("Classe...");
         jMenuItemClasse.addActionListener(new java.awt.event.ActionListener() {
@@ -123,6 +139,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         });
         jMenuCadastros.add(jMenuItemClasse);
 
+        jMenuItemMarca.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F8, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItemMarca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Blue bookmark.png"))); // NOI18N
         jMenuItemMarca.setText("Marca...");
         jMenuItemMarca.addActionListener(new java.awt.event.ActionListener() {
@@ -132,6 +149,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         });
         jMenuCadastros.add(jMenuItemMarca);
 
+        jMenuItemProduto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F9, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItemProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Buy.png"))); // NOI18N
         jMenuItemProduto.setText("Produto...");
         jMenuItemProduto.addActionListener(new java.awt.event.ActionListener() {
@@ -142,6 +160,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         jMenuCadastros.add(jMenuItemProduto);
         jMenuCadastros.add(jSeparator3);
 
+        jMenuItemCondPagamento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F10, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItemCondPagamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Dollar.png"))); // NOI18N
         jMenuItemCondPagamento.setText("Condição de Pagamento...");
         jMenuItemCondPagamento.addActionListener(new java.awt.event.ActionListener() {
@@ -152,6 +171,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         jMenuCadastros.add(jMenuItemCondPagamento);
         jMenuCadastros.add(jSeparator4);
 
+        jMenuItemSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F11, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItemSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
         jMenuItemSair.setText("Sair...");
         jMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
@@ -178,11 +198,11 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 703, Short.MAX_VALUE)
+            .addComponent(jDesktopPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 418, Short.MAX_VALUE)
+            .addComponent(jDesktopPane1)
         );
 
         pack();
@@ -307,6 +327,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenuAjuda;
     private javax.swing.JMenuBar jMenuBar1;
