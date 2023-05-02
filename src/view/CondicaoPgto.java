@@ -74,6 +74,13 @@ public class CondicaoPgto extends javax.swing.JFrame {
         this.jLabelX = jLabelDescricao;
     }
 
+    public JLabel getjLabelId() {
+        return jLabelId;
+    }
+
+    public void setjLabelId(JLabel jLabelId) {
+        this.jLabelId = jLabelId;
+    }
 
     public JLabel getjLabelStatus() {
         return jLabelStatus;
@@ -123,6 +130,13 @@ public class CondicaoPgto extends javax.swing.JFrame {
         this.jFormattedTextFieldDescricao = jTextDescricao;
     }
 
+    public JTextField getjTextId() {
+        return jTextId;
+    }
+
+    public void setjTextId(JTextField jTextId) {
+        this.jTextId = jTextId;
+    }
 
     public void ativa(boolean estadoComponente) {
         jButtonNovo.setEnabled(estadoComponente);
@@ -167,6 +181,8 @@ public class CondicaoPgto extends javax.swing.JFrame {
         jPanelTitulo = new javax.swing.JPanel();
         jLabeltitulo = new javax.swing.JLabel();
         jLabelX2 = new javax.swing.JPanel();
+        jLabelId = new javax.swing.JLabel();
+        jTextId = new javax.swing.JTextField();
         jLabelX = new javax.swing.JLabel();
         jFormattedTextFieldDescricao = new javax.swing.JTextField();
         jLabelStatus = new javax.swing.JLabel();
@@ -219,6 +235,10 @@ public class CondicaoPgto extends javax.swing.JFrame {
 
         jLabelX2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
+        jLabelId.setText("Código");
+
+        jTextId.setEditable(false);
+
         jLabelX.setText("Número Parcelas");
 
         jFormattedTextFieldDescricao.addActionListener(new java.awt.event.ActionListener() {
@@ -244,32 +264,49 @@ public class CondicaoPgto extends javax.swing.JFrame {
             .addGroup(jLabelX2Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelDescricao1)
                     .addGroup(jLabelX2Layout.createSequentialGroup()
-                        .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jFormattedTextFieldNumeroParcelas))
-                        .addGap(66, 66, 66)
-                        .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelX6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jFormattedTextFieldDiasEntreParcelas))
-                        .addGap(55, 55, 55)
-                        .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jFormattedTextFieldDiasPrimeiraParcelas, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelDescricao2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jLabelX2Layout.createSequentialGroup()
+                                    .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(233, 233, 233))
+                                .addGroup(jLabelX2Layout.createSequentialGroup()
+                                    .addComponent(jLabelId, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(250, 250, 250)))
+                            .addGroup(jLabelX2Layout.createSequentialGroup()
+                                .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabelX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jFormattedTextFieldNumeroParcelas))
+                                .addGap(66, 66, 66)
+                                .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabelX6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jFormattedTextFieldDiasEntreParcelas))
+                                .addGap(55, 55, 55)))
+                        .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jFormattedTextFieldDiasPrimeiraParcelas, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabelDescricao2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addComponent(jFormattedTextFieldDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 56, Short.MAX_VALUE))
+                .addGap(0, 41, Short.MAX_VALUE))
         );
         jLabelX2Layout.setVerticalGroup(
             jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLabelX2Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jLabelStatus)
+                .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelId)
+                    .addComponent(jLabelStatus))
+                .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jLabelX2Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jLabelX2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(jComboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
                 .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelX)
                     .addComponent(jLabelX6)
@@ -425,6 +462,7 @@ public class CondicaoPgto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelDescricao1;
     private javax.swing.JLabel jLabelDescricao2;
+    private javax.swing.JLabel jLabelId;
     private javax.swing.JLabel jLabelStatus;
     private javax.swing.JLabel jLabelX;
     private javax.swing.JPanel jLabelX2;
@@ -432,5 +470,6 @@ public class CondicaoPgto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabeltitulo;
     private javax.swing.JPanel jPanelBotoes;
     private javax.swing.JPanel jPanelTitulo;
+    private javax.swing.JTextField jTextId;
     // End of variables declaration//GEN-END:variables
 }
