@@ -123,11 +123,11 @@ public class CondicaoPgto extends javax.swing.JFrame {
     }
 
     public JTextField getjTextDescricao() {
-        return jTextDescricao;
+        return jFormattedTextFieldDescricao;
     }
 
     public void setjTextDescricao(JTextField jTextDescricao) {
-        this.jTextDescricao = jTextDescricao;
+        this.jFormattedTextFieldDescricao = jTextDescricao;
     }
 
     public JTextField getjTextId() {
@@ -177,30 +177,22 @@ public class CondicaoPgto extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jPanelTitulo = new javax.swing.JPanel();
         jLabeltitulo = new javax.swing.JLabel();
         jLabelX2 = new javax.swing.JPanel();
         jLabelId = new javax.swing.JLabel();
         jTextId = new javax.swing.JTextField();
         jLabelX = new javax.swing.JLabel();
-        jTextDescricao = new javax.swing.JTextField();
+        jFormattedTextFieldDescricao = new javax.swing.JTextField();
         jLabelStatus = new javax.swing.JLabel();
         jComboStatus = new javax.swing.JComboBox<>();
         jLabelDescricao1 = new javax.swing.JLabel();
         jLabelDescricao2 = new javax.swing.JLabel();
-        jLabelX3 = new javax.swing.JLabel();
-        jLabelX4 = new javax.swing.JLabel();
-        jTextDescricao1 = new javax.swing.JTextField();
-        jTextDescricao2 = new javax.swing.JTextField();
-        jTextDescricao3 = new javax.swing.JTextField();
-        jTextDescricao4 = new javax.swing.JTextField();
-        jTextDescricao5 = new javax.swing.JTextField();
-        jLabelX5 = new javax.swing.JLabel();
+        jFormattedTextFieldDiasPrimeiraParcelas = new javax.swing.JTextField();
         jLabelX6 = new javax.swing.JLabel();
-        jLabelX7 = new javax.swing.JLabel();
-        jTextDescricao6 = new javax.swing.JTextField();
-        jTextDescricao7 = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        jFormattedTextFieldNumeroParcelas = new javax.swing.JTextField();
+        jFormattedTextFieldDiasEntreParcelas = new javax.swing.JTextField();
         jPanelBotoes = new javax.swing.JPanel();
         jButtonNovo = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
@@ -209,6 +201,13 @@ public class CondicaoPgto extends javax.swing.JFrame {
         jButtonSair = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Condição de Pagamento");
@@ -240,7 +239,13 @@ public class CondicaoPgto extends javax.swing.JFrame {
 
         jTextId.setEditable(false);
 
-        jLabelX.setText("X");
+        jLabelX.setText("Número Parcelas");
+
+        jFormattedTextFieldDescricao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldDescricaoActionPerformed(evt);
+            }
+        });
 
         jLabelStatus.setText("Status");
 
@@ -248,24 +253,9 @@ public class CondicaoPgto extends javax.swing.JFrame {
 
         jLabelDescricao1.setText("Descrição*");
 
-        jLabelDescricao2.setText("X");
+        jLabelDescricao2.setText("Dias Primeira Parcela");
 
-        jLabelX3.setText("X");
-
-        jLabelX4.setText("X");
-
-        jLabelX5.setText("X");
-
-        jLabelX6.setText("X");
-
-        jLabelX7.setText("X");
-
-        jCheckBox1.setText("jCheckBox1");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
+        jLabelX6.setText("Dias Entre Parcela");
 
         javax.swing.GroupLayout jLabelX2Layout = new javax.swing.GroupLayout(jLabelX2);
         jLabelX2.setLayout(jLabelX2Layout);
@@ -274,53 +264,33 @@ public class CondicaoPgto extends javax.swing.JFrame {
             .addGroup(jLabelX2Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextDescricao)
+                    .addComponent(jLabelDescricao1)
                     .addGroup(jLabelX2Layout.createSequentialGroup()
                         .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelId, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 336, Short.MAX_VALUE)
+                            .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jLabelX2Layout.createSequentialGroup()
+                                    .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(233, 233, 233))
+                                .addGroup(jLabelX2Layout.createSequentialGroup()
+                                    .addComponent(jLabelId, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(250, 250, 250)))
+                            .addGroup(jLabelX2Layout.createSequentialGroup()
+                                .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabelX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jFormattedTextFieldNumeroParcelas))
+                                .addGap(66, 66, 66)
+                                .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabelX6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jFormattedTextFieldDiasEntreParcelas))
+                                .addGap(55, 55, 55)))
                         .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(45, 45, 45))
-                    .addGroup(jLabelX2Layout.createSequentialGroup()
-                        .addComponent(jLabelX)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabelX3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(100, 100, 100))
-                    .addGroup(jLabelX2Layout.createSequentialGroup()
-                        .addComponent(jLabelDescricao2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabelX4)
-                        .addGap(167, 167, 167))
-                    .addGroup(jLabelX2Layout.createSequentialGroup()
-                        .addComponent(jLabelDescricao1)
-                        .addContainerGap())
-                    .addGroup(jLabelX2Layout.createSequentialGroup()
-                        .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextDescricao2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextDescricao1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelX6)
-                            .addComponent(jTextDescricao6, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jLabelX2Layout.createSequentialGroup()
-                                .addGap(264, 264, 264)
-                                .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelX5)
-                                    .addComponent(jTextDescricao4, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextDescricao7, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jCheckBox1))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jLabelX2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextDescricao3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(35, 35, 35))))
-                    .addGroup(jLabelX2Layout.createSequentialGroup()
-                        .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextDescricao5, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelX7))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(jComboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jFormattedTextFieldDiasPrimeiraParcelas, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabelDescricao2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(jFormattedTextFieldDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 41, Short.MAX_VALUE))
         );
         jLabelX2Layout.setVerticalGroup(
             jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -329,45 +299,28 @@ public class CondicaoPgto extends javax.swing.JFrame {
                 .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelId)
                     .addComponent(jLabelStatus))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelDescricao1)
-                .addGap(10, 10, 10)
-                .addComponent(jTextDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jLabelX2Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jLabelX2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelX)
-                    .addComponent(jLabelX3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabelX6)
+                    .addComponent(jLabelDescricao2))
+                .addGap(26, 26, 26)
                 .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextDescricao1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextDescricao3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelDescricao2)
-                    .addComponent(jLabelX4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextDescricao2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextDescricao4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
-                .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelX5)
-                    .addComponent(jLabelX6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextDescricao6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextDescricao7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jFormattedTextFieldNumeroParcelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextFieldDiasEntreParcelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextFieldDiasPrimeiraParcelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addComponent(jLabelDescricao1)
                 .addGap(18, 18, 18)
-                .addGroup(jLabelX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelX7)
-                    .addComponent(jCheckBox1))
-                .addGap(18, 18, 18)
-                .addComponent(jTextDescricao5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addComponent(jFormattedTextFieldDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jPanelBotoes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -420,7 +373,10 @@ public class CondicaoPgto extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabelX2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanelBotoes, javax.swing.GroupLayout.DEFAULT_SIZE, 626, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -428,8 +384,8 @@ public class CondicaoPgto extends javax.swing.JFrame {
                 .addComponent(jPanelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelX2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(jPanelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -448,9 +404,13 @@ public class CondicaoPgto extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonGravarActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void jFormattedTextFieldDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldDescricaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_jFormattedTextFieldDescricaoActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -493,8 +453,12 @@ public class CondicaoPgto extends javax.swing.JFrame {
     private javax.swing.JButton jButtonGravar;
     private javax.swing.JButton jButtonNovo;
     private javax.swing.JButton jButtonSair;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboStatus;
+    private javax.swing.JTextField jFormattedTextFieldDescricao;
+    private javax.swing.JTextField jFormattedTextFieldDiasEntreParcelas;
+    private javax.swing.JTextField jFormattedTextFieldDiasPrimeiraParcelas;
+    private javax.swing.JTextField jFormattedTextFieldNumeroParcelas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelDescricao1;
     private javax.swing.JLabel jLabelDescricao2;
@@ -502,22 +466,10 @@ public class CondicaoPgto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelStatus;
     private javax.swing.JLabel jLabelX;
     private javax.swing.JPanel jLabelX2;
-    private javax.swing.JLabel jLabelX3;
-    private javax.swing.JLabel jLabelX4;
-    private javax.swing.JLabel jLabelX5;
     private javax.swing.JLabel jLabelX6;
-    private javax.swing.JLabel jLabelX7;
     private javax.swing.JLabel jLabeltitulo;
     private javax.swing.JPanel jPanelBotoes;
     private javax.swing.JPanel jPanelTitulo;
-    private javax.swing.JTextField jTextDescricao;
-    private javax.swing.JTextField jTextDescricao1;
-    private javax.swing.JTextField jTextDescricao2;
-    private javax.swing.JTextField jTextDescricao3;
-    private javax.swing.JTextField jTextDescricao4;
-    private javax.swing.JTextField jTextDescricao5;
-    private javax.swing.JTextField jTextDescricao6;
-    private javax.swing.JTextField jTextDescricao7;
     private javax.swing.JTextField jTextId;
     // End of variables declaration//GEN-END:variables
 }
