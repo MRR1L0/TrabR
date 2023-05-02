@@ -62,7 +62,6 @@ public class ControlerCadastroEndereco implements ActionListener {
                 endereco.setCep(telaCadEndereco.getjFormattedTextCep().getText());
 
                 EnderecoDAO enderecoDAO = new EnderecoDAO();
-                enderecoDAO.create(endereco);
 
                 if (this.telaCadEndereco.getjTextId().getText().equalsIgnoreCase("")) {
                     enderecoDAO.create(endereco);

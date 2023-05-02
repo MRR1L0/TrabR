@@ -49,7 +49,6 @@ public class ControlerCadastroMarca implements ActionListener {
                 Marca marca = new Marca();
                 marca.setDescricao(telaCadMarca.getjTextDescricao().getText());
                 MarcaDAO marcaDAO = new MarcaDAO();
-                marcaDAO.create(marca);
 
                 if (this.telaCadMarca.getjTextId().getText().equalsIgnoreCase("")) {
                     marcaDAO.create(marca);

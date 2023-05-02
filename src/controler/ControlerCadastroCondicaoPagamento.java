@@ -53,12 +53,11 @@ public class ControlerCadastroCondicaoPagamento implements ActionListener {
                 condicaoPagamento.setStatus(telaCondicaoPgto.getjComboStatus().getSelectedItem().toString());
                 
                 CondicaoPagamentoDAO condicaoPagamentoDAO = new CondicaoPagamentoDAO();
-                condicaoPagamentoDAO.create(condicaoPagamento);
 
                 if (this.telaCondicaoPgto.getjTextId().getText().equalsIgnoreCase("")) {
                     condicaoPagamentoDAO.create(condicaoPagamento);
                 } else {
-                    condicaoPagamentoDAO.setId(Integer.parseInt(telaCondicaoPgto.getjTextId().getText()));
+                    condicaoPagamento.setId(Integer.parseInt(telaCondicaoPgto.getjTextId().getText()));
                     condicaoPagamentoDAO.update(condicaoPagamento);
                 }
                 telaCondicaoPgto.ativa(true);

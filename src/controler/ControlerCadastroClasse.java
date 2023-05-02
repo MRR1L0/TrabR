@@ -51,7 +51,12 @@ public class ControlerCadastroClasse implements ActionListener {
                 Classe classe = new Classe();
                 classe.setDescricao(telaCadClasse.getjTextDescricao().getText());
                 ClasseDAO classeDAO = new ClasseDAO();
-                classeDAO.create(classe);
+                if (this.telaCadClasse.getjTextId().getText().equalsIgnoreCase("")){
+                    classeDAO.create(classe);
+            }else{
+                    classe.setId(Integer.parseInt(telaCadClasse.getjTextId().getText()));
+                    classeDAO.update(classe);
+                    }
 
                 telaCadClasse.ativa(true);
                 telaCadClasse.ligaDesliga(false);

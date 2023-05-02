@@ -83,8 +83,6 @@ public class ControlerCadastroCliente implements ActionListener {
                 cliente.setEndereco(buscaEndereco(cidade, bairro, cep));
 
                 ClienteDAO clienteDAO = new ClienteDAO();
-                clienteDAO.create(cliente);
-
                 if (this.telaCadCliente.getjTextId().getText().equalsIgnoreCase("")) {
                     clienteDAO.create(cliente);
                 } else {

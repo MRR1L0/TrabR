@@ -70,7 +70,6 @@ public class ControlerCadastroProduto implements ActionListener {
                 produto.setClasse(buscaClasse(telaCadProduto.getjTextFieldClasse().getText()));
 
                 ProdutoDAO produtoDAO = new ProdutoDAO();
-                produtoDAO.create(produto);
 
                 if (this.telaCadProduto.getjTextId().getText().equalsIgnoreCase("")) {
                     produtoDAO.create(produto);
