@@ -75,7 +75,7 @@ public class ControlerCadastroCliente implements ActionListener {
                 cliente.setFone2(telaCadCliente.getjFormattedTextFieldFone2().getText());
                 cliente.setEmail(telaCadCliente.getjTextFieldEmail().getText());
                 cliente.setDtCadastro(getDataCadastro());
-                cliente.setComplementoEndereco(telaCadCliente.getjTextFieldEmail().getText());
+                cliente.setComplementoEndereco(telaCadCliente.getjTextFieldComplemento().getText());
                 cliente.setObservacao(telaCadCliente.getjTextAreaObserv().getText());
                 cliente.setStatus(telaCadCliente.getjComboBoxStatus().getSelectedItem().toString());
                 var cidade = telaCadCliente.getjTextFieldCidade().getText();
@@ -106,18 +106,21 @@ public class ControlerCadastroCliente implements ActionListener {
             formBusCliente.setVisible(true);
 
             if (this.codigo != 0) {
-
+                telaCadCliente.ativa(false);
+                telaCadCliente.ligaDesliga(true);
+                telaCadCliente.getjTextId().setEnabled(false);
                 var cliente = new Cliente();
                 var clienteDAO = new ClienteDAO();
-                var cidade = new Cidade();
+
                 var cidadeDAO = new CidadeDAO();
                 var bairro = new Bairro();
                 var bairroDAO = new BairroDAO();
                 var enderecoDAO = new EnderecoDAO();
 
                 cliente = clienteDAO.search(codigo);
-                endereco = enderecoDAO.search(cliente.getEndereco().getId());
+                var endereco  = enderecoDAO.search(cliente.getEndereco().getId());
                 bairro = endereco.getBairro();
+                var cidade = endereco.getCidade();
 
                 telaCadCliente.getjFormattedCpf().setText(cliente.getCpf());
                 telaCadCliente.getjFormattedRg().setText(cliente.getRg());
@@ -133,6 +136,9 @@ public class ControlerCadastroCliente implements ActionListener {
                 telaCadCliente.getjTextFieldCidade().setText(cidade.getDescricao());
                 telaCadCliente.getjTextFieldLogradouro().setText(endereco.getLogradouro());
                 telaCadCliente.getjFormattedTextFieldCep().setText(endereco.getCep());
+                endereco.setBairro(bairro);
+                endereco.setCidade(cidade);
+                enderecoDAO.update(endereco);
 
             }
 
@@ -149,9 +155,7 @@ public class ControlerCadastroCliente implements ActionListener {
 
         var cidade = cidadeDAO.search(DescricaoCidade);
         var bairro = bairroDAO.search(DescricaoBairro);
-        if (cidade != null && bairro != null) {
-            return enderecoDAO.search(DescricaoCidade, DescricaoBairro);
-        }
+
         return enderecoDAO.create(new Endereco(telaCadCliente.getjTextFieldLogradouro().getText(), telaCadCliente.getjFormattedTextFieldCep().getText(), bairro, cidade));
     }
 

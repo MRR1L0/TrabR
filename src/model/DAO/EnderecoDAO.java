@@ -11,7 +11,6 @@ import model.bo.Endereco;
 
 public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
 
- 
     @Override
     public Endereco create(Endereco objeto) {
 
@@ -104,16 +103,16 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
         }
 
     }
-    
+
     public Endereco search(String cidade, String bairro) {
 
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT endereco.id, endereco.cep, endereco.logradouro from endereco where endereco.cidade = ? and endereco.bairro = ?";
-        String sql = "SELECT endereco.id, endereco.cep, endereco.logradouro, cidade.descricao, bairro.descricao \n" +
-                    "FROM endereco \n" +
-                    "INNER JOIN cidade ON cidade.id = endereco.cidade_id \n" +
-                    "INNER JOIN bairro ON bairro.id = endereco.bairro_id \n" +
-                    "WHERE cidade.descricao = ? AND bairro.descricao = ?";
+        String sql = "SELECT endereco.id, endereco.cep, endereco.logradouro, cidade.descricao, bairro.descricao \n"
+                + "FROM endereco \n"
+                + "INNER JOIN cidade ON cidade.id = endereco.cidade_id \n"
+                + "INNER JOIN bairro ON bairro.id = endereco.bairro_id \n"
+                + "WHERE cidade.descricao = ? AND bairro.descricao = ?";
         PreparedStatement pstm = null;
         ResultSet rst = null;
 
@@ -138,7 +137,7 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
             return null;
         }
 
-    } 
+    }
 
     @Override
     public List<Endereco> search() {
@@ -183,17 +182,19 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
         try {
             var cidadeDao = new CidadeDAO();
             var cidade = cidadeDao.search(objeto.getCidade().getId());
+            cidade.setDescricao(objeto.getCidade().getDescricao());
             var bairroDao = new BairroDAO();
             var bairro = bairroDao.search(objeto.getBairro().getId());
-            
+            bairro.setDescricao(objeto.getBairro().getDescricao());
+            cidadeDao.update(cidade);
+            bairroDao.update(bairro);
+
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setString(1, objeto.getLogradouro());
             pstm.setInt(2, objeto.getCidade().getId());
             pstm.setInt(3, objeto.getBairro().getId());
             pstm.setString(4, objeto.getLogradouro());
             pstm.setInt(5, objeto.getId());
-            cidadeDao.update(cidade);
-            bairroDao.update(bairro);
             pstm.executeUpdate();
 
         } catch (SQLException ex) {

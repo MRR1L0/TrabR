@@ -59,6 +59,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
             Cliente cliente = new Cliente();
 
             while (rst.next()) {
+                var enderecoDAO = new EnderecoDAO();
                 cliente.setId(rst.getInt("id"));
                 cliente.setNome(rst.getString("nome"));
                 cliente.setFone1(rst.getString("fone1"));
@@ -72,6 +73,7 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
                 cliente.setRg(rst.getString("rg"));
                 cliente.setDtNascimento(rst.getString("dtNascimento"));
                 cliente.setSexo(rst.getString("sexo"));
+                cliente.setEndereco(enderecoDAO.search(rst.getInt("endereco_id")));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
             return cliente;
@@ -99,11 +101,21 @@ public class ClienteDAO implements InterfaceDAO<model.bo.Cliente> {
             Cliente cliente = new Cliente();
 
             while (rst.next()) {
+                   var enderecoDAO = new EnderecoDAO();
                 cliente.setId(rst.getInt("id"));
                 cliente.setNome(rst.getString("nome"));
-                cliente.setCpf(rst.getString("cpf"));
                 cliente.setFone1(rst.getString("fone1"));
-                cliente.setStatus(rst.getString("status"));                  //o valor do campo status é retornado como uma String e o primeiro caractere é obtido utilizando o método charAt(0), convertendo-o em um char.
+                cliente.setFone2(rst.getString("fone2"));
+                cliente.setComplementoEndereco(rst.getString("complementoEndereco"));
+                cliente.setEmail(rst.getString("email"));
+                cliente.setDtCadastro(rst.getString("dtCadastro"));
+                cliente.setObservacao(rst.getString("observacao"));
+                cliente.setStatus(rst.getString("status"));
+                cliente.setCpf(rst.getString("cpf"));
+                cliente.setRg(rst.getString("rg"));
+                cliente.setDtNascimento(rst.getString("dtNascimento"));
+                cliente.setSexo(rst.getString("sexo"));
+                cliente.setEndereco(enderecoDAO.search(rst.getInt("endereco_id")));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
             return cliente;
