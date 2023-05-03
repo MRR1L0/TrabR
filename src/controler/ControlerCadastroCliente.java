@@ -78,10 +78,13 @@ public class ControlerCadastroCliente implements ActionListener {
                 cliente.setComplementoEndereco(telaCadCliente.getjTextFieldComplemento().getText());
                 cliente.setObservacao(telaCadCliente.getjTextAreaObserv().getText());
                 cliente.setStatus(telaCadCliente.getjComboBoxStatus().getSelectedItem().toString());
-                var cidade = telaCadCliente.getjTextFieldCidade().getText();
-                var bairro = telaCadCliente.getjTextFieldBairro().getText();
+                //var cidade = telaCadCliente.getjTextFieldCidade().getText();
+                //var bairro = telaCadCliente.getjTextFieldBairro().getText();
                 var cep = telaCadCliente.getjFormattedTextFieldCep().getText();
-                cliente.setEndereco(buscaEndereco(cidade, bairro, cep));
+                Endereco endereco = new Endereco();
+                EnderecoDAO enderecoDAO = new EnderecoDAO();
+                endereco = enderecoDAO.search(cep);
+                cliente.setEndereco(endereco);
 
                 ClienteDAO clienteDAO = new ClienteDAO();
                 if (this.telaCadCliente.getjTextId().getText().equalsIgnoreCase("")) {

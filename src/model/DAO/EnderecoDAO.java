@@ -80,7 +80,7 @@ public class EnderecoDAO implements InterfaceDAO<model.bo.Endereco> {
 
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(0, descricao);
+            pstm.setString(1, descricao);
             rst = pstm.executeQuery();
             Endereco endereco = new Endereco();
             var cidadeDao = new CidadeDAO();
