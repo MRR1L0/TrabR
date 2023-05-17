@@ -8,12 +8,10 @@ import model.DAO.BairroDAO;
 import view.CadastroBairro;
 import view.FormBusBairro;
 
-
 public class ControlerCadastroBairro implements ActionListener {
 
     CadastroBairro telaCadBairro;
     public static int codigo = 0;
-
 
     public ControlerCadastroBairro(CadastroBairro parTelaCadBairro) {
 
@@ -48,45 +46,43 @@ public class ControlerCadastroBairro implements ActionListener {
             if (telaCadBairro.getjTextDescricao().getText().trim().equalsIgnoreCase("")) {
                 JOptionPane.showMessageDialog(null, "Descrição: Campo com preenchimento obrigatório");
 
-            } else if(codigo == 0){
+            } else if (codigo == 0) {
 
                 Bairro bairro = new Bairro();
-                
                 bairro.setDescricao(telaCadBairro.getjTextDescricao().getText());
-                
                 BairroDAO bairroDAO = new BairroDAO();
-                if (this.telaCadBairro.getjTextId().getText().equalsIgnoreCase("")){
+
+                if (this.telaCadBairro.getjTextId().getText().equalsIgnoreCase("")) {
                     bairroDAO.create(bairro);
-            }else{
+                } else {
                     bairro.setId(Integer.parseInt(telaCadBairro.getjTextId().getText()));
                     bairroDAO.update(bairro);
-                    }
-                     
+                }
+
                 telaCadBairro.ativa(true);
                 telaCadBairro.ligaDesliga(false);
             }
 
         } else if (acao.getSource() == telaCadBairro.getjButtonBuscar()) {
             ///carregar a tela da busca
-            
+
             this.codigo = 0;
 
             FormBusBairro formBuscaBairro = new FormBusBairro(null, true);
             ControlerBuscaBairro controllerBusBairro = new ControlerBuscaBairro(formBuscaBairro);
             formBuscaBairro.setVisible(true);
 
-            if (this.codigo != 0){
+            if (this.codigo != 0) {
                 Bairro bairro = new Bairro();
                 BairroDAO bairroDAO = new BairroDAO();
                 bairro = bairroDAO.search(codigo);
-                
+
                 telaCadBairro.ativa(false);
                 telaCadBairro.ligaDesliga(true);
-                telaCadBairro.getjTextId().setText(bairro.getId()+"");
+                telaCadBairro.getjTextId().setText(bairro.getId() + "");
                 telaCadBairro.getjTextDescricao().setText(bairro.getDescricao());
                 telaCadBairro.getjTextId().setEnabled(false);
-                
-                
+
             }
         } else if (acao.getSource() == telaCadBairro.getjButtonSair()) {
             telaCadBairro.dispose();

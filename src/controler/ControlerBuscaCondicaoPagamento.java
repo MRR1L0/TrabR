@@ -3,6 +3,7 @@ package controler;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
+import service.CondicaoPagamentoService;
 
 import view.FormBusCondPgto;
 
@@ -19,8 +20,10 @@ public class ControlerBuscaCondicaoPagamento implements ActionListener {
 
         //carregar os dados para a jTable
         DefaultTableModel tabela = (DefaultTableModel) this.formBusCondPgto.getjTableBuscas().getModel();
-        var condicaoPagamentoDAO = new model.DAO.CondicaoPagamentoDAO();
-        for (model.bo.CondicaoPgto objetoAtualDaLista : condicaoPagamentoDAO.search()) {
+        //var condicaoPagamentoDAO = new model.DAO.CondicaoPagamentoDAO();
+        
+        
+        for (model.bo.CondicaoPgto objetoAtualDaLista : CondicaoPagamentoService.buscar()) {
             tabela.addRow(new Object[]{objetoAtualDaLista.getId(),
                 objetoAtualDaLista.getDescricaoCondicao()});
         }

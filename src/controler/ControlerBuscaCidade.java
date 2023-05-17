@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
 import model.DAO.CidadeDAO;
 import model.bo.Cidade;
+import service.CidadeService;
 import view.FormBusCidade;
 
 public class ControlerBuscaCidade implements ActionListener {
@@ -20,8 +21,8 @@ public class ControlerBuscaCidade implements ActionListener {
 
         //carregar os dados para a jTable
         DefaultTableModel tabela = (DefaultTableModel) this.formBusCidade.getjTableBuscas().getModel();
-        CidadeDAO cidadeDAO = new CidadeDAO();
-        for (Cidade objetoAtualDaLista : cidadeDAO.search()) {
+
+        for (Cidade objetoAtualDaLista : CidadeService.buscar()) {
             tabela.addRow(new Object[]{objetoAtualDaLista.getId(),
                 objetoAtualDaLista.getDescricao()});
         }
@@ -34,7 +35,7 @@ public class ControlerBuscaCidade implements ActionListener {
             if (this.formBusCidade.getjTableBuscas().getValueAt(this.formBusCidade.getjTableBuscas().getSelectedRow(), 0) != null) {
                 ControlerCadastroCidade.codigo = (int) this.formBusCidade.getjTableBuscas().getValueAt(this.formBusCidade.getjTableBuscas().getSelectedRow(), 0);
                 formBusCidade.dispose();
-                
+
             } else if (evento.getSource() == formBusCidade.getjButtonSair()) {
                 formBusCidade.dispose();
             }

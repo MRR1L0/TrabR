@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
 import model.DAO.ClasseDAO;
 import model.bo.Classe;
+import service.ClasseService;
 import view.FormBusClasse;
 
 public class ControlerBuscaClasse implements ActionListener {
@@ -20,8 +21,9 @@ public class ControlerBuscaClasse implements ActionListener {
 
         //carregar os dados para a jTable
         DefaultTableModel tabela = (DefaultTableModel) this.formBusClasse.getjTableBuscas().getModel();
-        ClasseDAO classeDAO = new ClasseDAO();
-        for (Classe objetoAtualDaLista : classeDAO.search()) {
+       
+        
+        for (Classe objetoAtualDaLista : ClasseService.buscar()) {
 
             tabela.addRow(new Object[]{objetoAtualDaLista.getId(),
                 objetoAtualDaLista.getDescricao()});

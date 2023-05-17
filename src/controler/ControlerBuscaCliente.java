@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
 import model.DAO.ClienteDAO;
 import model.bo.Cliente;
+import service.ClienteService;
 import view.FormBusCliente;
 
 public class ControlerBuscaCliente implements ActionListener {
@@ -20,9 +21,8 @@ public class ControlerBuscaCliente implements ActionListener {
 
         ///carregar os dados para a jTable
         DefaultTableModel tabela = (DefaultTableModel) this.formBusCliente.getjTableBuscas().getModel();
-        ClienteDAO clienteDAO = new ClienteDAO();
-        var clientes = clienteDAO.search();
-        for (Cliente cliente : clientes) {
+       
+            for (Cliente cliente : ClienteService.buscar()) {
             tabela.addRow(new Object[]{cliente.getId(), cliente.getNome(),cliente.getCpf(),
                 cliente.getSexo(), cliente.getFone1(), cliente.getStatus(), cliente.getDtCadastro()});
         }

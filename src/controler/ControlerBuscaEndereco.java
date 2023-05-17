@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
 import model.DAO.EnderecoDAO;
 import model.bo.Endereco;
+import service.EnderecoService;
 import view.FormBusEndereco;
 
 public class ControlerBuscaEndereco implements ActionListener {
@@ -20,8 +21,8 @@ public class ControlerBuscaEndereco implements ActionListener {
         
         DefaultTableModel tabela = (DefaultTableModel) this.formBusEndereco.getjTableBuscas().getModel();
         
-        var enderecoDAO = new EnderecoDAO();
-        for (var objetoAtualDaLista : enderecoDAO.search()) {
+       // var enderecoDAO = new EnderecoDAO();
+        for (var objetoAtualDaLista : EnderecoService.buscar()) {
             tabela.addRow(new Object[]{objetoAtualDaLista.getId(),
                 objetoAtualDaLista.getCep(),objetoAtualDaLista.getLogradouro()});
         }

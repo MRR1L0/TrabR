@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
 import model.DAO.BairroDAO;
 import model.bo.Bairro;
+import service.BairroService;
 import view.FormBusBairro;
 
 public class ControlerBuscaBairro implements ActionListener {
@@ -20,8 +21,8 @@ public class ControlerBuscaBairro implements ActionListener {
 
         ///carregar os dados para a jTable
         DefaultTableModel tabela = (DefaultTableModel) this.formBusBairro.getjTableBuscas().getModel();
-        BairroDAO bairroDAO = new BairroDAO();
-        for (Bairro objetoAtualDaLista : bairroDAO.search()) {
+       
+        for (Bairro objetoAtualDaLista : BairroService.buscar()){
             tabela.addRow(new Object[]{objetoAtualDaLista.getId(), objetoAtualDaLista.getDescricao()});
 
         }

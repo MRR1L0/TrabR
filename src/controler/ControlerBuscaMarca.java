@@ -3,8 +3,8 @@ package controler;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
-import model.DAO.MarcaDAO;
 import model.bo.Marca;
+import service.MarcaService;
 import view.FormBusMarca;
 
 public class ControlerBuscaMarca implements ActionListener {
@@ -20,8 +20,8 @@ public class ControlerBuscaMarca implements ActionListener {
 
         //carregar os dados para a jTable
         DefaultTableModel tabela = (DefaultTableModel) this.formBusMarca.getjTableBuscas().getModel();
-        MarcaDAO marcaDAO = new MarcaDAO();
-        for (Marca objetoAtualDaLista : marcaDAO.search()) {
+
+        for (Marca objetoAtualDaLista : MarcaService.buscar()) {
             tabela.addRow(new Object[]{objetoAtualDaLista.getId(),
                 objetoAtualDaLista.getDescricao()});
         }

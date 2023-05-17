@@ -2,6 +2,9 @@ package controler;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.table.DefaultTableModel;
+import model.bo.Fornecedor;
+import service.FornecedorService;
 import view.FormBusFornecedor;
 
 public class ControlerBuscaFornecedor implements ActionListener {
@@ -14,6 +17,15 @@ public class ControlerBuscaFornecedor implements ActionListener {
 
         this.formBusFornecedor.getjButtonCarregar().addActionListener(this);
         this.formBusFornecedor.getjButtonSair().addActionListener(this);
+
+        ///carregar os dados para a jTable
+        DefaultTableModel tabela = (DefaultTableModel) this.formBusFornecedor.getjTableBuscas().getModel();
+
+        for (Fornecedor fornecedor : FornecedorService.buscar()) {
+            tabela.addRow(new Object[]{fornecedor.getId(), fornecedor.getNome(), fornecedor.getCpf(),
+                fornecedor.getFone1(), fornecedor.getStatus(), fornecedor.getDtCadastro()});
+        }
+
     }
 
     @Override

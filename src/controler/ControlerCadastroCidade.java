@@ -51,6 +51,7 @@ public class ControlerCadastroCidade implements ActionListener {
                 Cidade cidade = new Cidade();
                 cidade.setDescricao(telaCadCidade.getjTextDescricao().getText());
                 CidadeDAO cidadeDAO = new CidadeDAO();
+                
                 if (this.telaCadCidade.getjTextId().getText().equalsIgnoreCase("")) {
                     cidadeDAO.create(cidade);
                 } else {
